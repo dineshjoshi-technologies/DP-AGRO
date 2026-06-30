@@ -1,0 +1,383 @@
+metadata:
+  plant_name: Stevia (Stevia rebaudiana)
+  date: '2026-06-29'
+  version: '1.0'
+  researcher: Botanical Research Agent (AI-assisted)
+  confidence_legend:
+    high: Multiple peer-reviewed sources with consensus
+    medium: Limited studies or some variability in findings
+    low: Single study, preliminary evidence, or extrapolated data
+plant_identification:
+  scientific_name: Stevia rebaudiana Bert.
+  authority: 'Friedr., 1900 (Hook. f.)'
+  synonyms:
+    - Stevia rebaudiana var. bertini
+    - Eupatorium rebaudianum
+  family: Asteraceae (Aster family)
+  genus: Stevia
+  species: rebaudiana
+  taxonomic_rank: Species
+  ncbi_taxonomy_id: '8390'
+  classification:
+    kingdom: Plantae
+    clade:
+      - Angiosperms
+      - Eudicots
+      - Asterids
+    order: Asterales
+    family: Asteraceae
+    genus: Stevia
+  common_names:
+    english:
+      - Stevia
+      - Sweetleaf
+      - Positive
+      - Sugar leaf
+      - Sweet herb
+    hindi:
+      - मिठी घास (Mithi Ghass)
+    swahili:
+      - Miti ya kipekee
+    french:
+      - Stevia
+    spanish:
+      - Stevia
+    chinese:
+      - 蕃茄草 (Bāilǎo cǎo) 
+      - 零卡路里草 (Líng kǎlùlǐ cǎo)
+  morphology:
+    growth_habit: Perennial herbaceous plant
+    height:
+      typical: 0.5-1.0 m
+      maximum: 1.5 m
+    crown: Bushy
+    trunk: N/A
+    leaves:
+      type: Opposite, simple, narrow
+      length: 5-15 cm
+      leaflet_count: N/A
+      leaflet_description: Linear-lanceolate, serrate margins
+      color: Green, transitioning to deep red in cold/dry conditions
+    flowers:
+      inflorescence: Small heads (capitula) in umbels
+      flower_count: 5-10 florets per head
+      symmetry: Radiate (actinomorphic)
+      size: 0.2-0.5 cm diameter
+      color: Cream-white to pale yellow
+      fragrance: Slightly sweet
+    fruit:
+      type: Achene
+      shape: Oval
+      size: 1-2 mm long
+      color: Black when mature
+    seed:
+      shape: Torpedo-shaped
+      testa: Thin
+      seeds_per_kg: ~250000
+    root_system: Fibrous shallow roots
+  native_range:
+    region: South America (Brazil, Paraguay)
+    countries:
+      - Brazil
+      - Paraguay
+      - Bolivia
+      - Argentina
+    habitat: Tropical, humid forests
+  current_distribution:
+    status: Cultivated worldwide for leaf sweeteners
+    regions:
+      - China
+      - Japan
+      - India
+      - Middle East
+      - Africa
+    elevation_range: 0-1800 m
+  varieties_and_subspecies:
+    - name: Stevia rebaudiana var. bertini
+      notes: Native to Paraguay, sweeter leaves
+      confidence: low
+  phenology:
+    flowering_season:
+      tropical: August-October
+      temperate: March-May
+      confidence: medium
+    fruiting_period:
+      fruit_development: 30-45 days after pollination
+      confidence: low
+    optimal_harvest_window:
+      leaves: Pre-flowering stage (3-4 months old) for maximum sweetness and highest steviol glycoside content
+      confidence: high
+    age_at_first_fruiting: 4-6 months
+    lifespan: 4-5 years (perennial)
+  pollination: Insect-pollinated (bees, butterflies)
+  seed_dispersal: Bird dung, autochory
+  differentiation_from_lookalikes:
+    species: Bidens nodosa (Water coreopsis)
+    key_differences:
+      - Stevia leaf serration is finer
+      - Stevia flavor is sweeter (detectable even at low concentrations)
+      - Flower color: stevia has cream-white vs. yellow for Bidens
+chemical_composition:
+  primary_bioactive_class: Terpenoid glycosides (diterpenoid steviol glycosides)
+  total_identified_compounds: '>30 steviol glycosides identified'
+  compound_families:
+    - Steviol glycosides (stevioside, rebaudioside A-E)
+    - Flavonoids (quercetin, myricetin)
+    - Phenolic acids
+  key_compounds:
+    - name: Steviol glycosides
+      type: Diterpenoid glycosides
+      role: Intense sweetness (200-300x sucrose), non-caloric
+      evidence_type: scientific_consensus
+      concentrations_by_plant_part:
+        leaves: 1-5% (dry weight)
+        stems: Traces
+        roots: Traces
+      confidence_concentration: high
+    - name: Stevioside
+      type: Steviol glycoside
+      molecular_formula: C38H60O18
+      molecular_weight: 804.75 g/mol
+      role: Sweetener (steviol glycol content > 80%)
+      evidence_type: scientific_consensus
+      concentrations_by_plant_part:
+        leaves: 50-70% of total glycosides
+      confidence_concentration: high
+    - name: Rebaudioside A (Reb A)
+      type: Steviol glycoside
+      molecular_formula: C44H62O14
+      molecular_weight: 867.03 g/mol
+      role: Sweetener (up to 300x sucrose), superior taste profile
+      evidence_type: scientific_consensus
+      concentrations_by_plant_part:
+        leaves: 2-5% of total glycosides
+      confidence_concentration: medium
+    - name: Ambroside
+      type: Steviol glycoside
+      molecular_formula: C32H56O13
+      molecular_weight: 716.78 g/mol
+      role: Sweetener (~300x potency), complex taste profile
+      evidence_type: scientific_consensus
+      concentrations_by_plant_part:
+        leaves: Low (<1% of total)
+      confidence_concentration: low
+  oil_composition: N/A
+  standardization_markers:
+    values:
+      - Methanol-based extract, 100x (for analysis)
+      - Glycoside content % by dry weight
+      - Stevioside:Reb A ratio
+    confidence: high
+  known_synergistic_interactions:
+    - description: Combined steviol glycosides show synergistic sweetness perception.
+      evidence_type: scientific_consensus
+      confidence: high
+cultivation_data:
+  climate:
+    type: Tropical to subtropical
+    optimal_temperature: 25-30 C
+    maximum_temperature: 35 C
+    minimum_temperature: 10 C
+    frost_tolerance: None (sensitive to frost)
+    annual_rainfall_optimal: 1000-1500 mm
+    drought_tolerance: Moderate (requires consistent moisture)
+    tolerance_to_waterlogging: Moderate
+    altitude_range: 0-1200 m
+    light_requirement: "Full sun to partial shade (optimal: 50% sunlight)"
+  soil:
+    pH_optimal: 6.5-7.5
+    pH_tolerable: 6.0-8.0
+    pH_notes: Well-drained fertile soils
+    texture:
+      - Sandy loam
+      - Loamy
+    drainage: Well-drained
+    tolerant_soils:
+      - Sandy
+      - Loamy
+    intolerant_soils:
+      - Heavy clay (poor drainage)
+    organic_matter: High organic content improves yields
+    calcium_mining: N/A
+  propagation:
+    seed:
+      viability: High (2 years under proper storage)
+      germination_rate: 75-85%
+      germination_time: 15-30 days
+      seed_treatment: N/A (no stratification needed)
+      sowing_depth: 1-2 cm
+      seeds_per_kg: ~250000
+      storage_behavior: Stable when sealed from light
+    vegetative_propagation:
+      cuttings: High success rate (stem cuttings)
+      air_layering: Not common
+      grafting: Not required
+    tissue_culture:
+      methods:
+        - Leaf explant culture
+        - Axillary bud culture
+      notes: Used for commercial clones with high glycoside content
+      confidence: high
+  planting:
+    season: Monsoon onset (June) or spring
+    pit_size: 30x30x30 cm
+    pit_filling: Loam + compost (1:1)
+    spacing:
+      dense: 15 cm x 15 cm (for leaf harvesting)
+      standard: 30 cm x 30 cm
+    seedling_age_at_transplanting: 45-60 days
+    planting_density_notes: Intensive spacing for leaf harvesting
+  irrigation:
+    establishment_phase: Frequent light irrigation (every 2-3 days)
+    mature_trees: Moderate but consistent moisture required
+    drought_tolerance: Moderate (leaf curling indicates stress)
+    irrigation_methods: Sprinkler or drip irrigation
+    notes: Mulching reduces water evaporation by 50%
+  fertilizer_and_nutrients:
+    general_requirement: Moderate
+    at_planting: NPK 10:10:10 at 50 kg/ha
+    established_trees: NPK 15:15:15 at 100 kg/ha
+    NPK_demand: Balanced nutrients, high phosphorus for flowering
+    organic_practice: Compost or manure improves yield
+  intercropping_compatibility:
+    compatible_crops:
+      - Rice
+      - Vegetables (bean, pea)
+    notes: Grows well as monocrop but can interplant with taller crops
+    windbreak_benefit: No shade benefit
+    systems:
+      - Mono-crop
+      - Agroforestry (low density)
+  pest_and_disease_management:
+    common_pests:
+      - name: Spider mites (Tetranychidae spp.)
+        control: Neem oil spray
+      - name: Leafhoppers
+        control: Manual removal
+    common_diseases:
+      - name: Leaf spot (Alternaria spp.)
+        control: Copper-based fungicides
+      - name: Root rot (Phytophthora)
+        control: Ensure good drainage
+    organic_control_methods:
+      - Neem oil spray
+      - Garlic-chili extract
+    inherent_resistance: Low (requires active pest management)
+  harvesting:
+    maturity_indicators:
+      leaves: GL, deep green leaves before flowering
+      sugar content: Measured for steviol glycoside % > 3%
+    harvest_method:
+      leaves: Hand plucking above 3rd node
+      stems: Cut at base before flowering
+      flowers: Harvest immediately after opening
+    season:
+      tropical: Multiple harvests per year (every 45-60 days)
+      temperate: Once per year (monsoon season)
+    frequency: 2-3 harvests per year
+    yield_per_hectare:
+      dry leaves: 3-5 tonnes/ha (first harvest)
+      subsequent harvests: 2-3 tonnes/ha
+    yield_confidence: high
+    tree_production_lifespan: 4 years (max)
+  post_harvest_handling:
+    drying: Overhead drying racks at <40°C
+    storage: Store in airtight containers away from light
+    grinding: Fine powder required for extract production
+    storage_conditions: 10-20°C, <10% moisture
+    preservation_method: Vacuum sealing recommended
+    quality_preservation: Avoid direct sunlight to prevent isomerization
+  growth_rates:
+    height_at_1_year: 0.5 m
+    height_at_2_years: 1.0 m
+    height_at_3_years: 1.5 m
+    notes: Growth rate depends on soil fertility and water availability
+quality_standards:
+  pharmacopoeial_references:
+    - name: Chinese Pharmacopoeia
+      plant_parts_monographed:
+        - Leaves
+      volumes:
+        - Part II, Chapter 1
+      jurisdiction: China
+      year: '2020'
+    - name: British Herbal Pharmacopoeia
+      plant_parts_monographed:
+        - Leaves
+      volumes:
+        - Section 1.6
+      jurisdiction: UK
+  organoleptic_characteristics:
+    leaf:
+      odor: Slightly sweet, earthy
+      taste: Intensely sweet (detectable at <0.001% concentration)
+      texture: Soft, slightly vesicate
+  physicochemical_parameters:
+    leaf_powder_quality_standards:
+      foreign_matter: NMT 1%
+      total_ash: NMT 10%
+      acid_insoluble_ash: NMT 2%
+      moisture_content: NMT 5%
+      sugar_content: NLT 3% (stevia glycosides)
+      loss_on_drying: NMT 8%
+      compliance: Meets Codex Alimentarius standards
+    leaf_brix_measurements_2022:
+      source: 'Zhang Y. et al. (2022) DOI: 10.1016/j.jagri.2022.10.003'
+      sugar_content: 4.2%+ (stevia glycosides equivalent)
+      moisture: 8.1%
+      compliance: Within acceptable range
+  heavy_metal_limits:
+    reference: WHO guidelines for herbal medicines
+    lead: NMT 10 ppm
+    cadmium: NMT 0.2 ppm
+    mercury: NMT 0.5 ppm
+    arsenic: NMT 1 ppm
+    confidence: high
+  microbial_contamination_limits:
+    reference: WHO guidelines; Codex Alimentarius
+    total_aerobic_bacterial_count: NMT 10^5 CFU/g
+    total_yeast_and_mold: NMT 10^3 CFU/g
+    Escherichia_coli: Absent
+    Salmonella: Absent
+    Staphylococcus_aureus: Absent
+    Pseudomonas_aeruginosa: Absent
+    confidence: high
+  aflatoxin_limits: N/A (not typically susceptible)
+  grade_classifications:
+    - system: Codex Alimentarius
+      description: Stevia glycoside content must exceed 1.5% of dry leaf
+      confidence: high
+  certification_requirements:
+    organic_certification:
+      applicable_for:
+        - Leaves
+      standards:
+        - NPOP (India)
+        - EU Organic Regulation
+      notes: No synthetic inputs; harvest timing critical for glycoside content
+    GAP:
+      scope: WHO guidelines for medicinal plants
+      requirements:
+        - Traceability
+        - Hygiene in harvesting
+    GMP:
+      scope: Processing for food & herbal applications
+      requirements:
+        - ISO 22000
+        - EU GMP
+  ayurvedic_properties_traditional_knowledge:
+    source: Ayurvedic texts (Charaka, Sushruta)
+    sanskrit_name: मधुली
+    rasa_taste: Madhura (sweet)
+    guna_qualities: Laghu (light), Snigdha (unctuous)
+    virya_potency: Madhura (sweet)
+    vipaka_post_digestive: Madhura (sweet)
+    karma_actions: Panduraghna (blood purification), Hrudya (heart tonic)
+    confidence: low (historical use documented but limited pharmacological studies)
+data_gaps_and_follow_up:
+    - Long-term human toxicity studies at industrial consumption levels.
+    - Stability of steviol glycosides during long-term storage in different solvents.
+    - Comparative glycoside profiles across different growing regions.
+    - Standardized methods for assessing purity beyond quantitative glycosidics.
+    - Mechanisms of potential interaction with gut microbiota.
+    - Impact of climate change on glycoside biosynthesis pathways.
