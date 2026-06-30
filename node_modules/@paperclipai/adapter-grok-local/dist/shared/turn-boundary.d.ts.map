@@ -1,0 +1,1 @@
+{"version":3,"file":"turn-boundary.d.ts","sourceRoot":"","sources":["../../src/shared/turn-boundary.ts"],"names":[],"mappings":"AAMA,MAAM,WAAW,iBAAiB;IAChC,SAAS,EAAE,MAAM,CAAC;IAClB,cAAc,EAAE,CAAC,GAAG,CAAC,CAAC;CACvB;AAED,wBAAgB,uBAAuB,IAAI,iBAAiB,CAE3D;AAYD,wBAAgB,iBAAiB,CAAC,KAAK,EAAE,iBAAiB,EAAE,QAAQ,EAAE,MAAM,GAAG,MAAM,CA4BpF"}
