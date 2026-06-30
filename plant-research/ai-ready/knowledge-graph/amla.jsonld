@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "pc": "https://paperclip.ai/schema/",
+    "plant": "pc:plant",
+    "botanical": "pc:botanical",
+    "therapeutic": "pc:therapeutic",
+    "market": "pc:market"
+  },
+  "@type": "pc:PlantKnowledge",
+  "pc:plantName": "amla",
+  "pc:lastUpdated": "2026-06-30",
+  "pc:version": "1.0.0",
+  "pc:dataSource": "DPA-8 Botanical Research, DPA-9 Therapeutic & Market Research"
+}
