@@ -5,7 +5,7 @@
     {"content": "Verify compliance with Strategic Planning Governance Framework", "priority": "high", "status": "completed"},
     {"content": "Assess DPA-1 implementation against Ethics Principles", "priority": "high", "status": "completed"},
     {"content": "Update CEO_todolist.json to reflect current strategic priorities", "priority": "high", "status": "completed"},
-    {"content": "Define AI-driven agriculture expansion roadmap (2025-2028)", "priority": "high", "status": "pending"},
+    {"content": "Define AI-driven agriculture expansion roadmap (2025-2028)", "priority": "high", "status": "in_progress"},
     {"content": "Approve budget allocation for sustainable manufacturing upgrades", "priority": "high", "status": "pending"},
     {"content": "Initiate international partnership outreach in Southeast Asia", "priority": "medium", "status": "pending"},
     {"content": "Review and update risk management matrix for AI reliability", "priority": "medium", "status": "pending"},
