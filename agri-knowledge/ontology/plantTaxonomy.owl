@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<owl:Ontology xmlns:owl="http://www.w3.org/2002/07/owl#"
+             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+             xmlns:植物="http://dineshtech.example.com/ontology/plant#"
+             xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+             xmlns: MedicinalPlants="http://dineshtech.example.com/ontology/medicinal#"
+             xmlns:scientificName="http://dineshtech.example.com/ontology/scientificname#"
+             xmlns:herb="http://dineshtech.example.com/ontology/herb#"
+             xmlns:botanicalFamily="http://dineshtech.example.com/ontology/botanicalfamily#"
+             xmlns:class="http://dineshtech.example.com/ontology/class#"
+             xmlns:order="http://dineshtech.example.com/ontology/order#"
+             xmlns:properties="http://dineshtech.example.com/ontology/properties#"
+             owl:versionInfo="1.0">
+
+    <!-- ======================== -->
+    <!-- Plant Ontology Top Level   -->
+    <!-- ======================== -->
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/plant# MedicinalPlant">
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/plant# Plant"/>
+        <rdfs:label>Medicinal Plant</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/plant# Plant">
+        <rdfs:label>Plant</rdfs:label>
+    </owl:Class>
+
+    <!-- ======================== -->
+    <!-- Hierarchy Levels         -->
+    <!-- ======================== -->
+    <!-- Neem (Azadirachta indica) -->
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/plant#103601">
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/plant# MedicinalPlant"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/botanicalFamily# Meliaceae"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/class# Angiosperms"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/order# Sapindales"/>
+        <rdfs:label>Neem</rdfs:label>
+        <rdfs:comment>Medicinal plant: Azadirachta indica from family Meliaceae</rdfs:comment>
+    </owl:Class>
+
+    <!-- Tulsi (Ocimum sanctum)      -->
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/plant#103695">
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/plant# MedicinalPlant"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/botanicalFamily# Lamiaceae"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/class# Angiosperms"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/order# Lamiales"/>
+        <rdfs:label>Tulsi</rdfs:label>
+        <rdfs:comment>Medicinal plant: Ocimum sanctum from family Lamiaceae</rdfs:comment>
+    </owl:Class>
+
+    <!-- Moringa (Moringa oleifera)  -->
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/plant#101265">
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/plant# MedicinalPlant"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/botanicalFamily# Moringaceae"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/class# Angiosperms"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/order# Arcnothomyddeae"/>
+        <rdfs:label>Moringa</rdfs:label>
+        <rdfs:comment>Medicinal plant: Moringa oleifera from family Moringaceae</rdfs:comment>
+    </owl:Class>
+
+    <!-- Stevia (Stevia rebaudiana)  -->
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/plant#336312">
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/plant# MedicinalPlant"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/botanicalFamily# Asteraceae"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/class# Angiosperms"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/order# Asterales"/>
+        <rdfs:label>Stevia</rdfs:label>
+        <rdfs:comment>Medicinal plant: Stevia rebaudiana from family Asteraceae</rdfs:comment>
+    </owl:Class>
+
+    <!-- Amla (Emblica officinalis)  -->
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/plant#404610">
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/plant# MedicinalPlant"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/botanicalFamily# Phyllanthaceae"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/class# Angiosperms"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/order# Malpighiales"/>
+        <rdfs:label>Amla</rdfs:label>
+        <rdfs:comment>Medicinal plant: Emblica officinalis from family Phyllanthaceae</rdfs:comment>
+    </owl:Class>
+
+    <!-- Aloe Vera (Aloe barbadensis) -->
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/plant#106880">
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/plant# MedicinalPlant"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/botanicalFamily# Asparagaceae"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/class# Angiosperms"/>
+        <rdfs:subClassOf rdf:resource="http://dineshtech.example.com/ontology/order# Asparagales"/>
+        <rdfs:label>Aloe Vera</rdfs:label>
+        <rdfs:comment>Medicinal plant: Aloe barbadensis from family Asparagaceae</rdfs:comment>
+    </owl:Class>
+
+    <!-- ======================== -->
+    <!-- Botanical Families       -->
+    <!-- ======================== -->
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/botanicalFamily# Meliaceae">
+        <rdfs:label>Meliaceae</rdfs:label>
+        <rdfs:comment>Family from order Sapindales</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/botanicalFamily# Lamiaceae">
+        <rdfs:label>Lamiaceae</rdfs:label>
+        <rdfs:comment>Family from order Lamiales</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/botanicalFamily# Moringaceae">
+        <rdfs:label>Moringaceae</rdfs:label>
+        <rdfs:comment>Family from order Arcnothomyddeae</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/botanicalFamily# Asteraceae">
+        <rdfs:label>Asteraceae</rdfs:label>
+        <rdfs:comment>Family from order Asterales</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/botanicalFamily# Phyllanthaceae">
+        <rdfs:label>Phyllanthaceae</rdfs:label>
+        <rdfs:comment>Family from order Malpighiales</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/botanicalFamily# Asparagaceae">
+        <rdfs:label>Asparagaceae</rdfs:label>
+        <rdfs:comment>Family from order Asparagales</rdfs:comment>
+    </owl:Class>
+
+    <!-- ======================== -->
+    <!-- Classifications          -->
+    <!-- ======================== -->
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/class# Angiosperms">
+        <rdfs:label>Angiosperms (Flowering Plants)</rdfs:label>
+        <rdfs:comment>Class of flowering plants</rdfs:comment>
+    </owl:Class>
+
+    <!-- ======================== -->
+    <!-- Orders                    -->
+    <!-- ======================== -->
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/order# Sapindales">
+        <rdfs:label>Sapindales</rdfs:label>
+        <rdfs:comment>Order of flowering plants</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/order# Lamiales">
+        <rdfs:label>Lamiales</rdfs:label>
+        <rdfs:comment>Order of flowering plants</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/order# Arcnothomyddeae">
+        <rdfs:label>Arcnothomyddeae</rdfs:label>
+        <rdfs:comment>Order of flowering plants</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/order# Asterales">
+        <rdfs:label>Asterales</rdfs:label>
+        <rdfs:comment>Order of flowering plants</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/order# Malpighiales">
+        <rdfs:label>Malpighiales</rdfs:label>
+        <rdfs:comment>Order of flowering plants</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://dineshtech.example.com/ontology/order# Asparagales">
+        <rdfs:label>Asparagales</rdfs:label>
+        <rdfs:comment>Order of flowering plants</rdfs:comment>
+    </owl:Class>
+
+    <!-- ======================== -->
+    <!-- Properties                -->
+    <!-- ======================== -->
+    <owl:AnnotationProperty rdf:about="http://dineshtech.example.com/ontology/properties#alternativeCommonName">
+        <rdfs:label>Alternative Common Name</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="http://dineshtech.example.com/ontology/properties#scientificName">
+        <rdfs:label>Scientific Name</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="http://dineshtech.example.com/ontology/properties#family">
+        <rdfs:label>Family</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="http://dineshtech.example.com/ontology/properties#class">
+        <rdfs:label>Class</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="http://dineshtech.example.com/ontology/properties#order">
+        <rdfs:label>Order</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="http://dineshtech.example.com/ontology/properties#genus">
+        <rdfs:label>Genus</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="http://dineshtech.example.com/ontology/properties#species">
+        <rdfs:label>Species</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="http://dineshtech.example.com/ontology/properties#uses">
+        <rdfs:label>Medicinal Uses</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="http://dineshtech.example.com/ontology/properties#climaticZones">
+        <rdfs:label>Climatic Zones</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="http://dineshtech.example.com/ontology/properties#soilTypes">
+        <rdfs:label>Soil Types</rdfs:label>
+    </owl:AnnotationProperty>
+</owl:Ontology>
