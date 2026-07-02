@@ -7,6 +7,13 @@ Build one of the world's most trusted AI-powered medicinal agriculture and techn
 Create an integrated ecosystem where agriculture, artificial intelligence, manufacturing, software, research, and sustainability work together to improve farmer prosperity, deliver premium natural products, and build globally respected Indian brands.
 
 ## Strategic Priorities
+- Artificial Intelligence & Automation
+- Agriculture & Medicinal Plants
+- Manufacturing & Quality Automation
+- Research & Innovation
+- Export & Digital Transformation
+- Sustainability & Farmer Empowerment
+- Operational Excellence
 - Artificial Intelligence
 - Agriculture & Medicinal Plants
 - Manufacturing Excellence
