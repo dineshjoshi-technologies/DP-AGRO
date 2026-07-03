@@ -13,6 +13,7 @@ Build one of the world's most trusted AI-powered medicinal agriculture and techn
 - **Sustainability & ESG**: Embed circular economy practices, renewable energy, and ESG metrics across operations.
 - **Financial Sustainability**: Achieve profitability through diversified revenue streams, cost control, strategic partnerships, and export growth.
 - **Farmer Success**: Provide digital tools, premium seed varieties, fair pricing models, and capacity‑building programs.
+- **Southeast Asia Expansion**: Establish strategic partnerships and agricultural operations across Thailand, Vietnam, Philippines, Malaysia, and Indonesia to accelerate global market penetration and farmer impact.
 
 ## Key Initiatives (2025‑2030)
 1. Launch AI‑powered agronomy platform.

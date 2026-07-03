@@ -115,6 +115,15 @@ AI Ethics Board (Quarterly)
 | Year 2 | Federated learning network | Hugging Face, Ray | Delta Lake |
 | Year 3 | Quantum-classical hybrid | Quantum ML libraries | Lakehouse architecture |
 
+### 3.3 Southeast Asia Market Integration Roadmap
+
+| Quarter | Activity | Countries | Key Partners |
+|---------|----------|-----------|--------------|
+| Q3 2026 | Initial market entry pilots | Thailand, Vietnam | Thai Herb Cooperative, VIMEDIMEX |
+| Q4 2026 | Platform deployment & scaling | Philippines, Malaysia | PHMRC, MARDI |
+| Q1 2027 | Full operational launch | Indonesia | Sido Muncul |
+| Q2 2027 | Regional optimization & expansion | All markets | Local partnerships scaled |
+
 ---
 
 ## 4. Implementation Phases with Milestones

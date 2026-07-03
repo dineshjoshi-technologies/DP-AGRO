@@ -9,7 +9,7 @@ This document outlines the risk management framework for AI reliability, aligned
 | Risk ID | Risk Description | Likelihood | Impact | Risk Score (LxI) | Mitigation Strategy | Owner | Status |
 |---------|------------------|------------|--------|------------------|---------------------|-------|--------|
 | AI-R-001 | Model accuracy degradation over time | Medium | High | 6 | Continuous monitoring with automated retraining triggers | Chief AI Officer | In Progress |
-| AI-R-002 | Bias amplification in training data | Medium | High | 6 | Regular bias audits, diverse dataset curation | Chief AI Officer | Pending |
+| AI-R-002 | Bias amplification in training data | Medium | High | 6 | Regular bias audits, diverse dataset curation | Chief AI Officer | In Progress |
 | AI-R-003 | Overfitting to specific geographic/seasonal patterns | High | Medium | 6 | Cross-validation across multiple regions and seasons | Chief AI Officer | In Progress |
 | AI-R-004 | Inference latency exceeding operational thresholds | Low | Medium | 2 | Performance optimization, edge computing deployment | Chief Technology Officer | Pending |
 | AI-R-005 | Model hallucination in critical decision outputs | Medium | Critical | 8 | Confidence scoring, human-in-the-loop validation | Chief AI Officer | Pending |
