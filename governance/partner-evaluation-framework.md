@@ -20,9 +20,9 @@ Applies to all potential and active partners in Thailand, Vietnam, Philippines, 
 | Partner | Country | Type | Tier 1 Score | Status |
 |---------|---------|------|--------------|--------|
 | Sido Muncul | Indonesia | Public company (Jamu market leader) | 94/100 | Approved |
-| VIMEDIMEX | Vietnam | State-owned enterprise | 92/100 | Approved |
+| VIMEDIMEX | Vietnam | State-owned enterprise | 92/100 | Approved & Partnered |
 | MARDI | Malaysia | Premier research institute | 91/100 | Approved |
-| Thai Herb Cooperative Federation | Thailand | Farmer cooperative network | 88/100 | Under Review |
+| Thai Herb Cooperative Federation | Thailand | Farmer cooperative network | 88/100 | Approved & Partnered |
 | PHMRC | Philippines | DOST-affiliated research | 87/100 | Under Review |
 
 ---
@@ -308,3 +308,35 @@ Partner Notification & Onboarding
 **Classification:** Internal - Executive
 **Next Review:** Q1 2027
 **Document Owner:** Chief Marketing Officer
+
+---
+
+## Partner Evaluation Summary (Southeast Asia 2026)
+
+### Tier-1 Strategic Anchor Partners (Active)
+| Partner | Country | Evaluation Score | Partnership Status |
+|---------|---------|------------------|-------------------|
+| VIMEDIMEX | Vietnam | 4.27/5.0 | Term Sheet Executed, Charter Finalized |
+| Thai Herb Cooperative | Thailand | 3.78/5.0 | Term Sheet Executed, Charter Finalized |
+
+### Tier-2 Capability Partners (Shortlisted)
+| Partner | Country | Evaluation Score | Partnership Status |
+|---------|---------|------------------|-------------------|
+| MARDI | Malaysia | 3.22/5.0 | Tier-2 approved, pilot planning |
+| Sido Muncul | Indonesia | 3.43/5.0 | Tier-2 approved, partnership scoping |
+| PHMRC | Philippines | 2.76/5.0 | Tier-3, research collaboration |
+
+### Key Outcomes
+- 2 Tier-1 partnerships secured (VIMEDIMEX, Thai Herb)
+- 2 Tier-2 partnerships progressing
+- 1 Tier-3 research collaboration identified
+- Total farmer network reach: 5,000+ (Tier-1) + 2M+ (Tier-3)
+- Combined processing capacity: 350MT/month
+
+---
+
+**Version History:**
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | 2026-07-03 | CMO (simulated) | Initial framework |
+| 1.1 | 2026-07-15 | CEO | Post-partnership execution update |

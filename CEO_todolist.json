@@ -32,16 +32,31 @@
     {
         "content": "Develop partner evaluation framework with tiered ranking",
         "priority": "high",
-        "status": "pending"
+        "status": "completed"
+    },
+    {
+        "content": "Execute Tier-1 partnership term sheets with Thai Herb Cooperative and VIMEDIMEX",
+        "priority": "high",
+        "status": "completed"
+    },
+    {
+        "content": "Establish joint steering committees for both Tier-1 partnerships",
+        "priority": "high",
+        "status": "completed"
+    },
+    {
+        "content": "Finalize charter agreements with Thai Herb Cooperative and VIMEDIMEX",
+        "priority": "high",
+        "status": "completed"
     },
     {
         "content": "Develop Global Trusted Data Commons for Medicinal Agriculture",
-        "priority": "high",
+        "priority": "critical",
         "status": "pending"
     },
     {
         "content": "Build AI-Powered Patient-Outcome Feedback Loop",
-        "priority": "high",
+        "priority": "critical",
         "status": "pending"
     },
     {
