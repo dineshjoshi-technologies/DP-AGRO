@@ -1,91 +1,36 @@
 [
     {
-        "content": "Define AI-driven agriculture expansion roadmap (2025-2028)",
+        "content": "Finalize Thai Herb Cooperative Tier-1 partnership term sheet",
         "priority": "high",
         "status": "completed"
     },
     {
-        "content": "Launch Trusted AI Platform for Crop-Specific Phytochemical Optimization initiative",
+        "content": "Finalize VIMEDIMEX Tier-1 partnership term sheet",
         "priority": "high",
         "status": "completed"
     },
     {
-        "content": "Establish Sustainable, Climate-Resilient Farm Networks",
+        "content": "Final signature collection for VIMEDIMEX Tier-1 partnership with Thai Herb Cooperative",
+        "priority": "medium",
+        "status": "completed"
+    },
+    {
+        "content": "Secure government approval for VIMEDIMEX partnership (21-day window per evaluation notes)",
+        "priority": "high",
+        "status": "in_progress"
+    },
+    {
+        "content": "Authorize MoU drafting for all 3 Tier-1 partners (Thai_Herb_Cooperative, VIMEDIMEX, Sido_Muncul)",
         "priority": "high",
         "status": "completed"
     },
     {
-        "content": "Implement AI-Enabled Clinical-Grade Extract Standardization",
-        "priority": "high",
-        "status": "completed"
-    },
-    {
-        "content": "Initiate Tier-1 partnership outreach in Southeast Asia with Thai Herb Cooperative (Thailand), VIMEDIMEX (Vietnam), PHMRC (Philippines), MARDI (Malaysia), and Sido Muncul (Indonesia) as per market analysis findings",
-        "priority": "high",
-        "status": "completed"
-    },
-    {
-        "content": "Conduct market analysis for Southeast Asia countries (Thailand, Vietnam, Philippines, Malaysia, Indonesia)",
-        "priority": "high",
-        "status": "completed"
-    },
-    {
-        "content": "Develop partner evaluation framework with tiered ranking",
-        "priority": "high",
-        "status": "completed"
-    },
-    {
-        "content": "Execute Tier-1 partnership term sheets with Thai Herb Cooperative and VIMEDIMEX",
-        "priority": "high",
-        "status": "completed"
-    },
-    {
-        "content": "Establish joint steering committees for both Tier-1 partnerships",
-        "priority": "high",
-        "status": "completed"
-    },
-    {
-        "content": "Finalize charter agreements with Thai Herb Cooperative and VIMEDIMEX",
-        "priority": "high",
-        "status": "completed"
-    },
-    {
-        "content": "Develop Global Trusted Data Commons for Medicinal Agriculture",
-        "priority": "critical",
-        "status": "pending"
-    },
-    {
-        "content": "Build AI-Powered Patient-Outcome Feedback Loop",
-        "priority": "critical",
-        "status": "pending"
-    },
-    {
-        "content": "Approve budget allocation for sustainable manufacturing upgrades",
-        "priority": "high",
-        "status": "completed"
-    },
-    {
-        "content": "Review and update risk management matrix for AI reliability",
-        "priority": "high",
-        "status": "completed"
-    },
-    {
-        "content": "Establish Phase 2 Productivity Review framework",
-        "priority": "high",
-        "status": "completed"
-    },
-    {
-        "content": "Develop automated productivity dashboard integration with advertising",
-        "priority": "high",
-        "status": "pending"
-    },
-    {
-        "content": "Establish KPI tracking protocols with monthly reporting",
+        "content": "Document completed signatures and evaluation status in CEO_todolist.json",
         "priority": "medium",
         "status": "pending"
     },
     {
-        "content": "Schedule quarterly strategic review with C-suite executives",
+        "content": "Update GLOBAL_EXPANSION_STRATEGY_2026.md with current status",
         "priority": "low",
         "status": "pending"
     }

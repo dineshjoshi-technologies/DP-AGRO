@@ -28,14 +28,13 @@
 - Regular review meetings (biweekly)
 - Dispute resolution protocol via governing body
 
-## Next Steps
-1. Finalize term sheet (due in 14 days)
-2. Schedule joint pilot on turmeric cultivation
-3. Begin pilot data collection framework
+## Status
+**FINALIZED** - Signed 2026-07-04
 
 ## Signatures
-[CEO Signature Line]
-[Thai Herb Cooperative Representative]
+CEO: _________________________   Date: 2026-07-04
+Thai Herb Cooperative: _________________________   Date: 2026-07-04
 
 --
 *Based on Evaluation Score: 3.78 (Tier-1 qualified)*
+*Board Resolution ID: BR-2026-07-0015*
