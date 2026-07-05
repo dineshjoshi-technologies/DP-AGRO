@@ -1,37 +1,18 @@
 [
     {
-        "content": "Finalize Thai Herb Cooperative Tier-1 partnership term sheet",
+        "content": "Finalize Singapore data hub site selection (3 site options shortlisted)",
+        "priority": "high",
+        "status": "in_progress",
+        "owner": "Chief Export Officer"
+    },
+    {
+        "content": "Initiate VIMEDIMEX MoU negotiations (conditional on government approval)",
         "priority": "high",
         "status": "completed"
     },
     {
-        "content": "Finalize VIMEDIMEX Tier-1 partnership term sheet",
+        "content": "Schedule Thai Herb Cooperative pilot inauguration for August 15, 2026",
         "priority": "high",
-        "status": "completed"
-    },
-    {
-        "content": "Final signature collection for VIMEDIMEX Tier-1 partnership with Thai Herb Cooperative",
-        "priority": "medium",
-        "status": "completed"
-    },
-    {
-        "content": "Secure government approval for VIMEDIMEX partnership (21-day window per evaluation notes)",
-        "priority": "high",
-        "status": "in_progress"
-    },
-    {
-        "content": "Authorize MoU drafting for all 3 Tier-1 partners (Thai_Herb_Cooperative, VIMEDIMEX, Sido_Muncul)",
-        "priority": "high",
-        "status": "completed"
-    },
-    {
-        "content": "Document completed signatures and evaluation status in CEO_todolist.json",
-        "priority": "medium",
-        "status": "pending"
-    },
-    {
-        "content": "Update GLOBAL_EXPANSION_STRATEGY_2026.md with current status",
-        "priority": "low",
         "status": "pending"
     }
 ]
