@@ -1,19 +1,25 @@
 [
     {
-        "content": "Finalize Singapore data hub site selection (3 site options shortlisted)",
+        "content": "Approved VIMEDIMEX MoU negotiation terms - Proceeding to government approval stage",
+        "priority": "high",
+        "status": "completed"
+    },
+    {
+        "content": "Authorize VIMEDIMEX-Joint R&D Center full funding and initiate Singapore data hub site selection (3 site options shortlisted)",
         "priority": "high",
         "status": "in_progress",
         "owner": "Chief Export Officer"
-    },
-    {
-        "content": "Initiate VIMEDIMEX MoU negotiations (conditional on government approval)",
-        "priority": "high",
-        "status": "completed"
     },
     {
         "content": "Schedule Thai Herb Cooperative pilot inauguration for August 15, 2026",
         "priority": "high",
         "status": "in_progress",
         "owner": "Chief Agriculture Officer"
+    },
+    {
+        "content": "Establish Sido Muncul Tier-1 upgrade pathway for 2027",
+        "priority": "medium",
+        "status": "in_progress",
+        "owner": "Chief Export Officer"
     }
 ]
