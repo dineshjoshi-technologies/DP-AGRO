@@ -21,5 +21,11 @@
         "priority": "medium",
         "status": "in_progress",
         "owner": "Chief Export Officer"
+    },
+    {
+        "content": "Schedule board review of Strategic Alignment Plan for Q3 2026",
+        "priority": "high",
+        "status": "pending",
+        "owner": "Chief Executive Officer"
     }
 ]
