@@ -63,7 +63,7 @@ To mitigate supply chain risk as outlined in Risk Mitigation Strategies §72:
 | **Total Estimated Budget** | | | **$55,355** |
 
 ## 4.4 Approvals
-- [x] Budget approval ($55,355) - Obtained via CEO Office (July 9, 2026)
+- [ ] Budget approval ($55,355) - PENDING CFO sign-off
 - [ ] Vendor shortlist approval (Technical Review Committee)
 - [ ] Procurement execution plan sign-off
 
@@ -96,7 +96,7 @@ To mitigate supply chain risk as outlined in Risk Mitigation Strategies §72:
 - System fully operational for Phase 1 deployment by end of Week 6
 
 ## 8. Outstanding Approvals
-- [x] Budget approval ($55,355 estimate) - Obtained July 9, 2026
+- [ ] Budget approval ($55,355 estimate) - PENDING CFO sign-off
 - [ ] Vendor shortlist approval (Technical Review Committee)
 - [ ] Procurement execution plan sign-off
 
@@ -117,8 +117,15 @@ Validated procurement requirements against AI Data Governance Policy v1.0 (§3 S
 
 ## 9. Follow-up Actions
 - [x] Distribute this plan to Technical Review Committee by EOD tomorrow
+- [x] Submit budget approval request to CFO (Subject: DPA-80 Procurement Budget Approval - Required by July 12, 2026)
 - [ ] Schedule vendor evaluation kickoff meeting with Operations team
 - [ ] Create vendor evaluation matrix and RFP documents
+- [ ] Arrange edge gateway buffering test with top 2 vendors (Particle/Helium)
+
+**Blocker Status Update:**
+- Budget approval blocked by CFO (requires executive sign-off)
+- Edge gateway testing blocked by vendor cooperation
+- Contingency reserve blocked until budget approval
 
 ## 10. Vendor Shortlist (Draft)
 | Vendor | Country | Edge Gateway Model | Sensor Range | Key Strength | Status |
@@ -127,6 +134,20 @@ Validated procurement requirements against AI Data Governance Policy v1.0 (§3 S
 | Helium | USA | Hotspot Edge | Multi-sensor support | LoRaWAN coverage, blockchain-native | Shortlisted |
 | Telit | Italy | ME910C1 | Cellular IoT modules | Global carrier support, 3-year warranty | Shortlisted |
 | Quectel | China | BG95-M3 | LTE-M/NB-IoT | Cost-effective, dual-source option | Shortlisted | 
+
+## 11. Blockers & Unblock Path
+
+**Blocker 1: Budget approval for $55,355 IoT sensor procurement**
+- **Unblock Owner:** CFO (Chief Financial Officer)
+- **Required Action:** Formally sign off on the $55,355 procurement budget allocation from the AI & ML Research / Farm Integration budget lines
+- **Status:** Pending — not yet in CURRENT_APPROVALS.md register
+- **Impact:** Blocks contract negotiation (Milestone Week 3), hardware procurement (Week 4), and ultimately sensor network deployment (Weeks 5-6)
+
+**Blocker 2: Vendor shortlist approval**
+- **Unblock Owner:** Technical Review Committee (chaired by CTO)
+- **Required Action:** Review and approve the 4-vendor shortlist in §10; authorize RFP issuance
+- **Status:** Draft complete; awaiting committee review
+- **Impact:** Blocks final vendor selection and contract award
 
 ---
 
