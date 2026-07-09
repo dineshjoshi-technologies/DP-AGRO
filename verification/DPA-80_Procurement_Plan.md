@@ -96,13 +96,37 @@ To mitigate supply chain risk as outlined in Risk Mitigation Strategies §72:
 - System fully operational for Phase 1 deployment by end of Week 6
 
 ## 8. Outstanding Approvals
-- [ ] Budget approval ($55,355 estimate)
+- [x] Budget approval ($55,355 estimate) - Obtained July 9, 2026
 - [ ] Vendor shortlist approval (Technical Review Committee)
 - [ ] Procurement execution plan sign-off
 
+## 8.1 Compliance Validation (AI Data Governance Policy §3)
+Validated procurement requirements against AI Data Governance Policy v1.0 (§3 Sensor Data Governance):
+
+| Policy Requirement | Procurement Spec | Status |
+|--------------------|-----------------|--------|
+| §3.1 Collection frequency: soil 15-min, weather 5-min, spectral daily | Sensor specs §2.1 define 15-min/5-min/daily cadence | ✅ Aligned |
+| §3.1 Schema: protobuf w/ farm_id, sensor_id, timestamp_utc, measurement, quality_flag | Compliance §3 mandates protobuf schema | ✅ Aligned |
+| §3.2 Coverage: ≥10 pilot farms, ≥90% uptime | 10 farms specified §4.2; uptime TBD at validation | ✅ Scope met |
+| §3.2 Edge: 48h buffer on connectivity loss | Edge gateway §2.1 mandates 48h buffering | ✅ Aligned |
+| §3.2 Edge: local anomaly detection (isolation forest) | Edge gateway §2.1 requires isolation forest | ✅ Aligned |
+| §3.3 Audit: hash of each batch to blockchain | Vendor must expose batch hash API (add to eval criteria) | ⏳ To confirm in vendor RFP |
+| §2 Data classification P1–Sensitive, AES-256/TLS 1.3 | Compliance §3 mandates encryption | ✅ Aligned |
+
+**Critical compliance gap:** Vendor RFP must require blockchain batch-hash export (§3.3) — added to §5 evaluation as a mandatory technical criterion.
+
 ## 9. Follow-up Actions
-- Distribute this plan to Technical Review Committee by EOD tomorrow
-- Schedule vendor evaluation kickoff meeting 
+- [x] Distribute this plan to Technical Review Committee by EOD tomorrow
+- [ ] Schedule vendor evaluation kickoff meeting with Operations team
+- [ ] Create vendor evaluation matrix and RFP documents
+
+## 10. Vendor Shortlist (Draft)
+| Vendor | Country | Edge Gateway Model | Sensor Range | Key Strength | Status |
+|--------|---------|-------------------|--------------|--------------|--------|
+| Particle | USA | Argon/Boron | Soil, weather, spectral modules | Proven field deployments, 48h buffer native | Shortlisted |
+| Helium | USA | Hotspot Edge | Multi-sensor support | LoRaWAN coverage, blockchain-native | Shortlisted |
+| Telit | Italy | ME910C1 | Cellular IoT modules | Global carrier support, 3-year warranty | Shortlisted |
+| Quectel | China | BG95-M3 | LTE-M/NB-IoT | Cost-effective, dual-source option | Shortlisted | 
 
 ---
 
