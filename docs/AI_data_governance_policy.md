@@ -1,4 +1,4 @@
-# AI Data Governance Policy — AI-Agriculture Convergence
+# AI Data Governance Policy \-- AI-Agriculture Convergence
 
 ## 1. Purpose & Scope
 This policy governs all AI initiatives under the AI-Agriculture Convergence program, including:
@@ -9,7 +9,7 @@ This policy governs all AI initiatives under the AI-Agriculture Convergence prog
 
 Applies to all data flowing through the AI pipeline: raw sensor feeds, derived features, model artifacts, predictions, and audit logs.
 
----
+--- 
 
 ## 2. Data Classification
 | Tier | Description | Examples | Retention | Encryption |
@@ -19,7 +19,7 @@ Applies to all data flowing through the AI pipeline: raw sensor feeds, derived f
 | **P2 – Internal** | Aggregated metrics, dashboards | Farm-level yield forecasts, regional RMSE reports | 3 years | AES-256 at rest |
 | **P3 – Public** | Published research, open datasets | Anonymized benchmark datasets, methodology papers | Indefinite | Optional |
 
----
+--- 
 
 ## 3. Sensor Data Governance (Phase 1)
 ### 3.1 Collection Standards
@@ -36,7 +36,7 @@ Applies to all data flowing through the AI pipeline: raw sensor feeds, derived f
 - Local anomaly detection (isolation forest) flags outliers before cloud ingest
 - Hash of each batch recorded to blockchain audit trail (see §6)
 
----
+--- 
 
 ## 4. Model Training & Validation Data
 ### 4.1 Training Data Requirements
@@ -58,7 +58,7 @@ Applies to all data flowing through the AI pipeline: raw sensor feeds, derived f
 - Promotion: `staging` → `production` requires 2 approvals (MLOps Lead + Domain Expert)
 - Rollback: automatic if RMSE degrades >10% vs baseline over 7-day window
 
----
+--- 
 
 ## 5. Blockchain Audit Trail Integration
 Per coordination with Blockchain Integration lead (DPA-79):
@@ -70,7 +70,7 @@ Per coordination with Blockchain Integration lead (DPA-79):
 - **Smart contract** validates: schema compliance, uptime SLA, metric thresholds
 - **Verification protocol**: Weekly sync with Blockchain lead; shared verification scripts in `/verification`
 
----
+--- 
 
 ## 6. Access Control & Roles
 | Role | P0 | P1 | P2 | P3 | Actions |
@@ -81,14 +81,14 @@ Per coordination with Blockchain Integration lead (DPA-79):
 | Blockchain Lead | — | R (audit) | R | R | Audit trail verification |
 | Farmers (data subjects) | R (own) | — | — | R | Access own data via portal |
 
----
+--- 
 
 ## 7. Incident Response
 - **P0 breach**: Notify within 4h, contain within 24h, board report within 72h
 - **Model drift alert**: Auto-rollback + retrain trigger within 1h
 - **Sensor network outage**: Failover to satellite-only mode; log gap in audit trail
 
----
+--- 
 
 ## 8. Metrics & Reporting (Tracked Weekly)
 | Metric | Target | Source |
@@ -99,21 +99,21 @@ Per coordination with Blockchain Integration lead (DPA-79):
 | Audit trail completeness | 100% critical events | Blockchain explorer |
 | Data quality pass rate | ≥ 98% | Ingestion pipeline |
 
----
+--- 
 
 ## 9. Compliance & Retention
 - **GDPR/PDPA**: Farmer consent for P0 data; right to deletion (exempt: audit trail hashes)
 - **India DPDP Act 2023**: Data localization for P0/P1; DPIA for new model deployments
 - **Audit**: Quarterly internal; annual external (ISO 27001 aligned)
 
----
+--- 
 
 ## 10. Review Cycle
 - **Policy**: Bi-annual review (MLOps Lead + Legal + Blockchain Lead)
 - **Operational**: Monthly metrics review with CEO
 - **Technical**: Sprint retro includes governance debt items
 
----
+--- 
 
 ## Appendix A: Verification Checklist (Pre-Production)
 - [ ] Sensor schema registry deployed
@@ -124,6 +124,6 @@ Per coordination with Blockchain Integration lead (DPA-79):
 - [ ] Incident runbook tested (tabletop)
 - [ ] Farmer consent flow UAT complete
 
----
+--- 
 
 *Policy Version: 1.0 | Author: MLOps Lead | Status: FINAL — Approved for Implementation*

@@ -1,0 +1,15 @@
+{
+  "farm_id": "FARM-001",
+  "sensor_id": "SENS-SM-001",
+  "timestamp_utc": "2026-07-09T05:30:00Z",
+  "timestamp": "2026-07-09T05:30:00Z",
+  "measurement": "soil_moisture",
+  "quality_flag": 0,
+  "latitude": 12.9716,
+  "longitude": 77.5946,
+  "readings": {
+    "value": 0.25,
+    "unit": "m3/m3",
+    "confidence": 0.95
+  }
+}
