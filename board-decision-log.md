@@ -13,6 +13,7 @@ Standing issue for board decision log and operations tracking.
 |------|-------------|-------|----------|--------|-------|
 | 2026-09-03 | DPA-143-001 | Strategic Alignment Framework | Framework approved for board review | Ready for Review | CEO |
 | 2026-09-03 | DPA-143-002 | Board Reporting Cadence | Bi-weekly operational updates, monthly milestone reviews, quarterly strategic assessments | Approved | CEO |
+| 2026-09-05 | DPA-143-003 | IoT Sensor Procurement (DPA-80) | Budget $55,355 + 4-vendor shortlist + execution plan approved | Approved | CEO |
 
 ## Strategic Alignment Framework Decisions
 
@@ -33,6 +34,13 @@ Standing issue for board decision log and operations tracking.
   - Quarterly strategic alignment assessments with risk re-evaluation
   - Real-time KPI dashboard accessible to board members
 - **Status:** Approved
+
+### DPA-143-003: IoT Sensor Procurement Approvals (DPA-80)
+- **Date:** 2026-09-05
+- **Topic:** Phase 1 IoT sensor hardware procurement decision
+- **Decision:** CEO Office approved (1) the $55,355 procurement budget (incl. 15% contingency reserve, from AI & ML Research / Farm Integration lines), (2) the 4-vendor shortlist (Particle/Helium primary + Telit/Quectel dual-source backup), and (3) the procurement execution plan. Records in verification/DPA-80_Procurement_Plan.md.
+- **Status:** Approved
+- **Next:** Hardware ordering, RFP issuance, contract negotiation and Phase 1 sensor-network deployment executed under DPA-82 (MLOps Lead).
 
 ## Cross-functional Coordination
 

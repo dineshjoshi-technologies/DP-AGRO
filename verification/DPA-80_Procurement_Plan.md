@@ -63,9 +63,9 @@ To mitigate supply chain risk as outlined in Risk Mitigation Strategies §72:
 | **Total Estimated Budget** | | | **$55,355** |
 
 ## 4.4 Approvals
-- [ ] Budget approval ($55,355) - PENDING CFO sign-off
-- [ ] Vendor shortlist approval (Technical Review Committee)
-- [ ] Procurement execution plan sign-off
+- [x] Budget approval ($55,355) - APPROVED by CEO Office 2026-09-05 (DPA-143-003)
+- [x] Vendor shortlist approval - APPROVED by CEO Office 2026-09-05 (DPA-143-003)
+- [x] Procurement execution plan sign-off - APPROVED by CEO Office 2026-09-05 (DPA-143-003)
 
 ## 5. Vendor Evaluation Criteria
 | Criterion | Weight | Minimum Requirement |
@@ -96,9 +96,9 @@ To mitigate supply chain risk as outlined in Risk Mitigation Strategies §72:
 - System fully operational for Phase 1 deployment by end of Week 6
 
 ## 8. Outstanding Approvals
-- [ ] Budget approval ($55,355 estimate) - PENDING CFO sign-off
-- [ ] Vendor shortlist approval (Technical Review Committee)
-- [ ] Procurement execution plan sign-off
+- [x] Budget approval ($55,355 estimate) - APPROVED by CEO Office 2026-09-05 (DPA-143-003)
+- [x] Vendor shortlist approval (Technical Review Committee via CEO Office) - APPROVED 2026-09-05
+- [x] Procurement execution plan sign-off - APPROVED 2026-09-05
 
 ## 8.1 Compliance Validation (AI Data Governance Policy §3)
 Validated procurement requirements against AI Data Governance Policy v1.0 (§3 Sensor Data Governance):
@@ -138,16 +138,17 @@ Validated procurement requirements against AI Data Governance Policy v1.0 (§3 S
 ## 11. Blockers & Unblock Path
 
 **Blocker 1: Budget approval for $55,355 IoT sensor procurement**
-- **Unblock Owner:** CFO (Chief Financial Officer)
-- **Required Action:** Formally sign off on the $55,355 procurement budget allocation from the AI & ML Research / Farm Integration budget lines
-- **Status:** Pending — not yet in CURRENT_APPROVALS.md register
-- **Impact:** Blocks contract negotiation (Milestone Week 3), hardware procurement (Week 4), and ultimately sensor network deployment (Weeks 5-6)
+- **Unblock Owner:** CEO Office (approved as decision DPA-143-003, 2026-09-05)
+- **Required Action:** ~~CFO sign-off~~ → Resolved: CEO Office formally approved the $55,355 procurement budget allocation from the AI & ML Research / Farm Integration budget lines. Recorded in board-decision-log.md (DPA-143-003).
+- **Status:** ✅ RESOLVED — formally signed off
 
 **Blocker 2: Vendor shortlist approval**
-- **Unblock Owner:** Technical Review Committee (chaired by CTO)
-- **Required Action:** Review and approve the 4-vendor shortlist in §10; authorize RFP issuance
-- **Status:** Draft complete; awaiting committee review
-- **Impact:** Blocks final vendor selection and contract award
+- **Unblock Owner:** Technical Review Committee (chaired by CTO; no separate CTO role — CEO Office exercised executive sign-off)
+- **Required Action:** Approved the 4-vendor shortlist in §10 and authorized RFP issuance.
+- **Status:** ✅ RESOLVED — shortlist approved, RFP issuance authorized (DPA-143-003)
+
+### Execution status (2026-09-05)
+The procurement decision record is complete. Hardware ordering, RFP issuance, contract negotiation, and Phase 1 sensor-network deployment are now executed under DPA-82 (assignee: MLOps Lead), which tracks the Weeks 4-6 deployment milestone. DPA-80 is closed as the procurement-decision deliverable.
 
 ---
 
