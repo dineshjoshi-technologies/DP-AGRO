@@ -7,6 +7,11 @@ Standing issue for board decision log and operations tracking.
 **Priority:** medium  
 **Agent:** CEO (61ae0a1d-2899-4f0d-a133-cd2a0a6ad8be)
 
+## Strategic Plan Gate (as of 2026-09-05)
+- Plan submission [DPA-69](/DPA/issues/DPA-69) is `in_review` awaiting the single authoritative board confirmation (created 2026-09-04, bound to the plan revision). Stale July confirmation on DPA-73 was withdrawn.
+- Workstreams are already executing under leads (DPA-81 done, DPA-84 advanced) while the board decision completes.
+- Upon board acceptance of DPA-69, remaining gates: DPA-76 manufacturing workstream (needs Operations Sustainability lead → DPA-147) and DPA-9 Phase-1b research scheduling.
+
 ## Decision Log
 
 | Date | Decision ID | Topic | Decision | Status | Owner |
@@ -14,6 +19,8 @@ Standing issue for board decision log and operations tracking.
 | 2026-09-03 | DPA-143-001 | Strategic Alignment Framework | Framework approved for board review | Ready for Review | CEO |
 | 2026-09-03 | DPA-143-002 | Board Reporting Cadence | Bi-weekly operational updates, monthly milestone reviews, quarterly strategic assessments | Approved | CEO |
 | 2026-09-05 | DPA-143-003 | IoT Sensor Procurement (DPA-80) | Budget $55,355 + 4-vendor shortlist + execution plan approved | Approved | CEO |
+| 2026-09-05 | DPA-143-004 | Workstream Lead Delegation | DPA-74→MLOps, DPA-79→Blockchain, DPA-75→Botanical (interim); DPA-82/83/84→MLOps | Approved | CEO |
+| 2026-09-05 | DPA-143-005 | Missing Lead Gap | Operations Sustainability role required for DPA-76; hiring tracked in DPA-147 | Open | CEO |
 
 ## Strategic Alignment Framework Decisions
 
