@@ -1,0 +1,250 @@
+---
+document_key: dpa153-toxicity-data
+issue_id: "DPA-153"
+version: "1.0.0"
+last_updated: "2026-09-05"
+owner: Botanical Research Agent (DPA)
+
+screening_overview:
+  title: "Phase 4 Toxicity Screening — Engineered Strains"
+  cell_line: "L-929 mouse fibroblast cells (ATCC CCL-1)"
+  assay_method: "MTT (3-(4,5-dimethylthiazol-2-yl)-2,5-diphenyltetrazolium bromide)"
+  primary_endpoint: "IC50 (half-maximal inhibitory concentration)"
+  secondary_endpoints:
+    - "CC50 (cytotoxic concentration 50%)"
+    - "Selectivity Index (SI)"
+    - "Dose-response curve parameters"
+  exposure_duration: "24-48 hours"
+  replicates: "Triplicate wells per concentration; minimum 3 independent experiments"
+  pharmacopoeial_reference: "ISO 10993-5:2009; Indian Pharmacopoeia 2022"
+
+compounds_tested:
+  - compound_id: "compound-1"
+    name: "Azadirachtin A"
+    source_plant: "Neem"
+    scientific_name: "Azadirachta indica A. Juss."
+    cas_number: "11141-17-6"
+    molecular_formula: "C35H44O16"
+    molecular_weight: "720.7 g/mol"
+    plant_part: "Seeds, Leaves"
+    concentration_in_plant: "0.2-0.6% in seeds; 0.04-0.08% in leaves"
+    standardization_markers:
+      - "Azadirachtin A content (HPLC-UV)"
+      - "1500 ppm minimum (technical grade)"
+      - "3000 ppm minimum (pharmaceutical grade)"
+    existing_safety_data:
+      acute_oral_ld50_rat: ">5000 mg/kg"
+      chronic_exposure: "NOAEL: 100 mg/kg/day (90-day rat study)"
+      environmental_persistence: "Soil half-life 3-44 days; low bioaccumulation"
+      bee_toxicity: "LD50 >200 ug/bee (low toxicity)"
+      aquatic_toxicity: "LC50 (Daphnia): >100 mg/L"
+      confidence: "high"
+      sources:
+        - "WHO Monographs on Selected Medicinal Plants (1999)"
+        - "FAO Azadirachtin Monograph"
+    predicted_ic50:
+      value: "50-200 ug/mL"
+      cell_line: "L-929 mouse fibroblast cells"
+      confidence: "low"
+      note: "Literature estimate; experimental IC50 values required via MTT assay"
+    wild_type_baseline:
+      description: "Neem seed oil extract (standardized to azadirachtin A)"
+      preparation: "Cold-pressed neem oil; 1500-3000 ppm azadirachtin A"
+      ic50_data: "NOT TESTED"
+      confidence: "not_tested"
+      note: "Baseline determination required for comparison"
+    engineered_strain_data:
+      strain_description: "Engineered Neem lines with enhanced azadirachtin via CRISPR-edited CYP71B expression"
+      patent_reference: "US 2026/0241893 (provisional filing 2026-08-15)"
+      ic50_data: "NOT TESTED"
+      confidence: "not_tested"
+      note: "Experimental testing required"
+    safety_recommendations:
+      - "Low acute toxicity profile supports further development"
+      - "Comprehensive metabolite toxicity characterization needed"
+      - "Monitor for unexpected byproducts in engineered strains"
+    ip_implications:
+      - "Novel strains with improved safety profiles may qualify for utility patent claims"
+      - "Document selectivity index improvements vs. wild-type for composition claims"
+    data_gaps:
+      - "Actual IC50 values via MTT assay on L-929 cells (HIGH PRIORITY)"
+      - "Comprehensive metabolite toxicity profile (confidence: low)"
+      - "Genotoxicity assessment (Ames test, micronucleus) if IC50 lt 50 ug/mL"
+
+  - compound_id: "compound-2"
+    name: "Eugenol"
+    source_plant: "Tulsi (Holy Basil)"
+    scientific_name: "Ocimum tenuiflorum L."
+    cas_number: "97-53-0"
+    molecular_formula: "C10H12O2"
+    molecular_weight: "164.2 g/mol"
+    plant_part: "Leaves (essential oil)"
+    concentration_in_plant: "40-70% of leaf essential oil"
+    standardization_markers:
+      - "Eugenol content (GC-FID)"
+      - "70 percent minimum eugenol in essential oil"
+      - "10 percent maximum methyl eugenol"
+    existing_safety_data:
+      acute_oral_ld50_rat: "1680-2000 mg/kg (literature values vary)"
+      mechanism: "TRPV1 agonist; membrane disruption at high concentrations"
+      therapeutic_use: "Anti-inflammatory, analgesic, antimicrobial"
+      evidence_level: "High (multiple RCTs, clinical studies)"
+      confidence: "high"
+      sources:
+        - "Indian Pharmacopoeia (IP): Tulsi monograph"
+        - "Ayurvedic Pharmacopoeia of India (API)"
+        - "Prakash & Suri (2005) Indian J Physiol Pharmacol"
+        - "Singh & Majumdar (1997) J Pharm Pharmacol"
+    predicted_ic50:
+      value: "200-500 ug/mL"
+      cell_line: "L-929 mouse fibroblast cells"
+      confidence: "low"
+      note: "Literature estimate; experimental IC50 required"
+    wild_type_baseline:
+      description: "Tulsi essential oil (70%+ eugenol) or leaf extract"
+      preparation: "Steam distilled essential oil or hydroethanolic leaf extract"
+      ic50_data: "NOT TESTED"
+      confidence: "not_tested"
+      note: "Baseline determination required for comparison"
+    engineered_strain_data:
+      strain_description: "Engineered Tulsi lines with enhanced eugenol via EGS (eugenol synthase) overexpression"
+      target_enhancement: "Increased eugenol content in essential oil"
+      ic50_data: "NOT TESTED"
+      confidence: "not_tested"
+      note: "Experimental testing required with standardized concentrations"
+    safety_recommendations:
+      - "Eugenol has dose-dependent cytotoxic effects; therapeutic window exists"
+      - "Membrane-disrupting properties require monitoring"
+      - "Methyl eugenol content should be monitored (potential genotoxin)"
+      - "Topical applications generally safer than systemic"
+    ip_implications:
+      - "High-eugenol strains may qualify for composition patents"
+      - "EGS gene variant expression cassette potentially patentable"
+    data_gaps:
+      - "Actual IC50 values via MTT assay on L-929 cells (HIGH PRIORITY)"
+      - "Comparative cytotoxicity at equivalent eugenol concentrations"
+      - "Methyl eugenol content in engineered vs wild-type strains"
+      - "Time-dependent cytotoxicity assessment"
+
+  - compound_id: "compound-3"
+    name: "Rebaudioside M (Reb M)"
+    source_plant: "Stevia"
+    scientific_name: "Stevia rebaudiana (Bertoni) Bertoni"
+    cas_number: "Not standard (isomer mixture)"
+    molecular_formula: "C44H70O23"
+    molecular_weight: "967.0 g/mol (approx)"
+    plant_part: "Leaves"
+    concentration_in_plant: "Trace in native plant; 1-5% in selected cultivars or via enzymatic conversion"
+    standardization_markers:
+      - "Reb M content 5 percent minimum for premium extracts"
+      - "Reb A quantification by HPLC"
+      - "Total steviol glycosides 10 percent minimum (HPLC)"
+    existing_safety_data:
+      regulatory_status: "GRAS (FDA GRAS Notice No. 000223, 2008)"
+      acute_oral_ld50_rat: ">5000 mg/kg (stevioside)"
+      genotoxicity: "Negative in Ames test and micronucleus assay"
+      human_studies: "No adverse effects at normal consumption levels"
+      evidence_level: "High (regulatory assessment)"
+      confidence: "high"
+      sources:
+        - "FDA GRAS Notice No. 000223 (2008)"
+        - "Japanese Pharmacopoeia (JP)"
+        - "United States Pharmacopeia (USP)"
+        - "Geuns (2003) Phytochemistry"
+        - "Yeo & Shah (2012) J Med Food"
+    predicted_ic50:
+      value: "<1000 ug/mL"
+      cell_line: "L-929 mouse fibroblast cells"
+      confidence: "medium"
+      note: "Literature estimate based on high safety margin"
+    wild_type_baseline:
+      description: "Standard Stevia leaf extract or Reb M-enriched extract"
+      preparation: "Water extraction or enzymatic conversion; standardized to Reb M content"
+      ic50_data: "NOT TESTED"
+      confidence: "not_tested"
+      note: "Baseline determination required for comparison"
+    engineered_strain_data:
+      strain_description: "Engineered Stevia lines with enhanced Reb M via CYP716A53v2 variant plus glucosidase expression"
+      patent_reference: "US 2026/0241892 (provisional filing 2026-08-15)"
+      target: "Reb M enrichment achieving 3.2 percent of total glycosides (target: >5%)"
+      ic50_data: "NOT TESTED"
+      confidence: "not_tested"
+      note: "Experimental testing required"
+    safety_recommendations:
+      - "Excellent safety profile supports broad applications"
+      - "Reb M preferred over Reb A due to cleaner taste and potentially improved safety"
+      - "Monitor for residual glucosidase or fermentation byproducts"
+      - "Heavy metal limits should be verified in engineered lines"
+    ip_implications:
+      - "Reb M enrichment process potentially patentable as method patent"
+      - "CYP716A53v2 variant for enhanced Reb M production may be patentable"
+    data_gaps:
+      - "Actual IC50 values via MTT assay on L-929 cells (MEDIUM PRIORITY)"
+      - "Comparative data: Reb M vs Reb A cytotoxicity profiles"
+      - "Residual enzyme/protein characterization in engineered extracts"
+      - "Long-term stability of Reb M in engineered strain extracts"
+
+assay_protocol:
+  cell_line_details:
+    name: "L-929 mouse fibroblast cells"
+    atcc_crl: "CCL-1"
+    passage_range: "Passages 5-20 recommended"
+    media: "DMEM + 10% FBS + 1% penicillin/streptomycin"
+    seeding_density: "5000-10000 cells per well in 96-well plate"
+    incubation: "37 C, 5% CO2, 95% humidity"
+  mtt_procedure:
+    step_1: "Seed cells in 96-well plates, allow 24 h attachment"
+    step_2: "Remove medium, add serial dilutions of test compounds (0.1-1000 ug/mL)"
+    step_3: "Incubate for 24-48 hours"
+    step_4: "Add MTT reagent (0.5 mg/mL final), incubate 2-4 hours"
+    step_5: "Remove medium, solubilize formazan with DMSO + 0.1% Triton X-100"
+    step_6: "Measure absorbance at 570 nm (reference 630-650 nm)"
+    step_7: "Calculate cell viability and IC50 using GraphPad Prism or similar"
+  concentration_preparation:
+    pure_compounds: "Dissolve in DMSO (stock 10 mM), dilute to working concentrations"
+    plant_extracts: "Prepare standardized extracts with known compound concentrations"
+    solvent_control: "DMSO final concentration not exceed 0.5 percent in wells"
+  data_analysis:
+    ic50_calculation: "Non-linear regression (log[inhibitor] vs response -- Variable slope)"
+    viability_calculation: "(Test absorbance - blank) / (Control absorbance - blank) x 100"
+    statistical_test: "One-way ANOVA with Dunnett's post-hoc test vs control"
+
+control_strains:
+  negative_control: "Cell culture medium only"
+  positive_control: "Doxorubicin (1-10 uM)"
+  vehicle_control: "Equivalent DMSO concentration"
+  wild_type_extractions:
+    - "Neem seed oil extract (azadirachtin A standardized)"
+    - "Tulsi essential oil (eugenol standardized)"
+    - "Stevia leaf extract (total steviol glycosides standardized)"
+
+quality_assurance:
+  compound_verification: "HPLC/LC-MS confirmation of identity and purity"
+  cell_authentication: "STR profiling of L-929 cells every 6 months"
+  assay_robustness: "Z-prime factor >0.5 required for valid run"
+  interference_check: "Test compounds for direct MTT reduction"
+
+data_gaps:
+  - "Actual IC50 values via MTT assay (requires laboratory execution)"
+  - "Eugenol-specific cytotoxicity/IC50 data missing from tulsi-botanical.yaml"
+  - "Reb M-specific cytotoxicity/IC50 data missing from stevia-botanical.yaml"
+  - "Comprehensive metabolite toxicity profile for all three compounds"
+  - "Genotoxicity assessment per ISO 10993-5 if IC50 lt 50 ug/mL"
+  - "Dose-response curves require full concentration range testing"
+
+confidence_legend:
+  high: "Multiple peer-reviewed studies, pharmacopoeial standards, or regulatory assessments"
+  medium: "Single studies, preliminary data, or literature averages"
+  low: "Literature estimates only; experimental verification required"
+  not_tested: "Data not yet generated; experimental work required"
+
+references:
+  - "WHO. (1999). WHO Monographs on Selected Medicinal Plants, Vol. 1."
+  - "FAO. (1995). Azadirachtin: A Natural Product for Pest Control."
+  - "FDA GRAS Notice No. 000223 (2008)."
+  - "Indian Pharmacopoeia Commission. (2022). Indian Pharmacopoeia, 9th Edition."
+  - "ISO 10993-5:2009. Biological evaluation of medical devices."
+  - "Prakash, P. & Suri, S. (2005). Indian J Physiol Pharmacol. 49(2):125-135."
+  - "Singh, S. & Majumdar, D.K. (1997). J Pharm Pharmacol. 49(4):357-363."
+  - "Geuns, J.M.C. (2003). Phytochemistry. 64(5):913-921."
+  - "Yeo, J. & Shah, S.V. (2012). J Med Food. 15(6):547-552."
