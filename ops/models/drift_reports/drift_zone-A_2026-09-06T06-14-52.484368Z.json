@@ -1,0 +1,20 @@
+{
+  "zone": "zone-A",
+  "timestamp_utc": "2026-09-06T06:14:52.484368Z",
+  "psi_per_feature": {
+    "x": 37.752734754811385
+  },
+  "overall_psi": 37.752734754811385,
+  "alerts": [
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 37.752734754811385,
+      "threshold": 0.1,
+      "message": "Critical drift in x (PSI=37.7527)",
+      "timestamp_utc": "2026-09-06T06:14:52.484368Z"
+    }
+  ],
+  "drift_detected": true
+}

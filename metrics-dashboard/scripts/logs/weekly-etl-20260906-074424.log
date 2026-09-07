@@ -1,0 +1,2 @@
+[2026-09-06T07:44:24Z] Starting weekly ETL
+python3: can't open file '/home/paperclip/paperclip/metrics-dashboard/scripts/cron/weekly-etl.py': [Errno 2] No such file or directory

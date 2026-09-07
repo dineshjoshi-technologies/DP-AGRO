@@ -1,0 +1,202 @@
+[
+  {
+    "farm_id": "farm-01",
+    "sensor_id": "sensor-01-1",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-01",
+    "sensor_id": "sensor-01-2",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-01",
+    "sensor_id": "sensor-01-3",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-01",
+    "sensor_id": "sensor-01-4",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-02",
+    "sensor_id": "sensor-02-1",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-02",
+    "sensor_id": "sensor-02-2",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-02",
+    "sensor_id": "sensor-02-3",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-02",
+    "sensor_id": "sensor-02-4",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-03",
+    "sensor_id": "sensor-03-1",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-03",
+    "sensor_id": "sensor-03-2",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-03",
+    "sensor_id": "sensor-03-3",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-03",
+    "sensor_id": "sensor-03-4",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-04",
+    "sensor_id": "sensor-04-1",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-04",
+    "sensor_id": "sensor-04-2",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-04",
+    "sensor_id": "sensor-04-3",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-04",
+    "sensor_id": "sensor-04-4",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-05",
+    "sensor_id": "sensor-05-1",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-05",
+    "sensor_id": "sensor-05-2",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-05",
+    "sensor_id": "sensor-05-3",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-05",
+    "sensor_id": "sensor-05-4",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-06",
+    "sensor_id": "sensor-06-1",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-06",
+    "sensor_id": "sensor-06-2",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-06",
+    "sensor_id": "sensor-06-3",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-06",
+    "sensor_id": "sensor-06-4",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-07",
+    "sensor_id": "sensor-07-1",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-07",
+    "sensor_id": "sensor-07-2",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-07",
+    "sensor_id": "sensor-07-3",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-07",
+    "sensor_id": "sensor-07-4",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-08",
+    "sensor_id": "sensor-08-1",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-08",
+    "sensor_id": "sensor-08-2",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-08",
+    "sensor_id": "sensor-08-3",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-08",
+    "sensor_id": "sensor-08-4",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-09",
+    "sensor_id": "sensor-09-1",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-09",
+    "sensor_id": "sensor-09-2",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-09",
+    "sensor_id": "sensor-09-3",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-09",
+    "sensor_id": "sensor-09-4",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-10",
+    "sensor_id": "sensor-10-1",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-10",
+    "sensor_id": "sensor-10-2",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-10",
+    "sensor_id": "sensor-10-3",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "farm-10",
+    "sensor_id": "sensor-10-4",
+    "last_ingest_at": "2026-09-06T14:48:44.167221+00:00"
+  }
+]

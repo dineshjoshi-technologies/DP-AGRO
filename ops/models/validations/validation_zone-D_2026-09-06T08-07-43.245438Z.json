@@ -1,0 +1,38 @@
+{
+  "zone": "zone-D",
+  "n_test_samples": 10,
+  "rmse": 0.03951206516025765,
+  "mae": 0.03413698350223204,
+  "r2": 0.1488668690400049,
+  "passes_governance": false,
+  "feature_importance": {
+    "soil_moisture_mean": 0.0,
+    "soil_moisture_std": 0.0,
+    "soil_ph_mean": 0.0,
+    "soil_ec_mean": 0.0,
+    "temp_mean": 0.0,
+    "temp_max": 0.0,
+    "temp_min": 0.0,
+    "humidity_mean": 0.0,
+    "rainfall_total_mm": 0.0,
+    "ndvi_current": 0.0,
+    "ndvi_lag7": 0.0,
+    "ndvi_lag14": 0.0,
+    "ndvi_trend": 0.0,
+    "growing_degree_days": 0.0,
+    "soil_water_deficit": 0.0
+  },
+  "errors": [
+    -0.011587170114256917,
+    -0.012684170826433583,
+    0.04095065158261724,
+    0.028092666530848298,
+    -0.018156311018491245,
+    -0.020628233156573028,
+    0.07005927995846362,
+    -0.06774097763424702,
+    -0.04044702683342649,
+    0.031023347366962994
+  ],
+  "timestamp_utc": "2026-09-06T08:07:43.245438Z"
+}
