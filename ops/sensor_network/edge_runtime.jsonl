@@ -1,0 +1,2 @@
+{"dropped": 1, "event": "buffer_overflow_prune", "policy": "drop_oldest_with_audit_note", "ts": "2026-09-11T09:21:44.092530Z"}
+{"dropped": 1, "event": "buffer_overflow_prune", "policy": "drop_oldest_with_audit_note", "ts": "2026-09-11T09:21:44.168607Z"}

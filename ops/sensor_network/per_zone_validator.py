@@ -38,6 +38,7 @@ class ZoneValidationResult:
     feature_importance: Dict[str, float]
     errors: List[float]  # per-sample prediction errors
     timestamp_utc: str
+    low_variance: bool = False  # True when test-label variance is too low for reliable R²
 
 
 class PerZoneValidator:
@@ -96,6 +97,7 @@ class PerZoneValidator:
                 zone=zone, n_test_samples=0, rmse=float("inf"), mae=float("inf"),
                 r2=0.0, passes_governance=False, feature_importance={},
                 errors=[], timestamp_utc=datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+                low_variance=False,
             )
 
         rmse = math.sqrt(sum(e ** 2 for e in errors) / n)
@@ -103,7 +105,12 @@ class PerZoneValidator:
         mean_actual = sum(test_labels) / n
         ss_res = sum(e ** 2 for e in errors)
         ss_tot = sum((a - mean_actual) ** 2 for a in test_labels)
-        r2 = 1 - (ss_res / ss_tot) if ss_tot > 0 else (1.0 if rmse == 0 else 0.0)
+        r2_raw = 1 - (ss_res / ss_tot) if ss_tot > 0 else (1.0 if rmse == 0 else 0.0)
+        # Clamp R² to [-1, 1] — extreme negatives occur when test-set variance
+        # is very low (ss_tot ≈ 0) making the metric unreliable rather than
+        # indicating genuinely poor model performance.
+        r2 = max(-1.0, min(1.0, r2_raw))
+        low_variance = ss_tot / n < 0.001 if n > 0 else False
 
         # Feature importance via permutation (simplified)
         importance = self._compute_feature_importance(model, test_features, test_labels, feature_names)
@@ -112,7 +119,8 @@ class PerZoneValidator:
             rmse <= self.thresholds["rmse"] and
             mae <= self.thresholds["mae"] and
             r2 >= self.thresholds["r2_min"] and
-            n >= self.thresholds.get("min_samples", 30)
+            n >= self.thresholds.get("min_samples", 30) and
+            not low_variance
         )
 
         result = ZoneValidationResult(
@@ -125,6 +133,7 @@ class PerZoneValidator:
             feature_importance=importance,
             errors=errors[:100],  # Cap for storage
             timestamp_utc=datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+            low_variance=low_variance,
         )
 
         self.validation_history.append(asdict(result))
@@ -135,7 +144,12 @@ class PerZoneValidator:
     def _compute_feature_importance(self, model, test_features: List[Any],
                                      test_labels: List[float],
                                      feature_names: List[str]) -> Dict[str, float]:
-        """Compute feature importance via permutation correlation."""
+        """Compute feature importance via permutation.
+
+        For each feature, randomly permute its values across samples and measure
+        the increase in MSE. A feature is important if permuting it increases error.
+        Handles both FarmFeatures-like objects and plain feature-vector lists.
+        """
         import random
         import copy
         rng = random.Random(42)
@@ -143,67 +157,51 @@ class PerZoneValidator:
         if n_samples == 0:
             return {}
 
-        # Compute base predictions using correct zone for each feature
-        base_pred = []
-        for f in test_features:
-            if hasattr(model, "zone_models"):
-                # Use the feature's actual zone, not hardcoded "zone-A"
-                zone = f.zone if hasattr(f, "zone") else "zone-A"
-                base_pred.append(model.predict("test-farm", zone, f))
-            else:
-                base_pred.append(model.predict(f) if hasattr(model, "predict") else model.predict([f])[0])
+        def _predict(features_list):
+            preds = []
+            for f in features_list:
+                if hasattr(model, "zone_models"):
+                    zone = f.zone if hasattr(f, "zone") else "zone-A"
+                    preds.append(model.predict("test-farm", zone, f))
+                else:
+                    preds.append(model.predict(f) if hasattr(model, "predict") else model.predict([f])[0])
+            return preds
+
+        base_pred = _predict(test_features)
         base_mse = sum((p - a) ** 2 for p, a in zip(base_pred, test_labels)) / n_samples
+
+        is_farm_features = hasattr(test_features[0], "to_vector")
+        from yield_model import FEATURE_ORDER as _FO_DEFAULT
 
         importance = {}
         n_features = len(feature_names)
 
         for fi in range(n_features):
-            # Deep copy to avoid mutating original test features
             shuffled = [copy.deepcopy(f) for f in test_features]
-            # Permute one feature column
-            for i, seq in enumerate(shuffled):
-                if hasattr(seq, "__dict__"):
-                    vec = seq.to_vector()
-                    idx = rng.randint(0, n_samples - 1)
-                    other_vec = test_features[idx].to_vector()
-                    vec[fi] = other_vec[fi]
-                    # Reconstruct with permuted value using actual field names
-                    shuffled[i] = type(seq)(
-                        farm_id=seq.farm_id,
-                        zone=seq.zone,
-                        season_week=seq.season_week,
-                        soil_moisture_mean=vec[0],
-                        soil_moisture_std=vec[1],
-                        soil_ph_mean=vec[2],
-                        soil_ec_mean=vec[3],
-                        temp_mean=vec[4],
-                        temp_max=vec[5],
-                        temp_min=vec[6],
-                        humidity_mean=vec[7],
-                        rainfall_total_mm=vec[8],
-                        ndvi_current=vec[9],
-                        ndvi_lag7=vec[10],
-                        ndvi_lag14=vec[11],
-                        ndvi_trend=vec[12],
-                        growing_degree_days=vec[13],
-                        soil_water_deficit=vec[14],
-                    )
+            for i in range(n_samples):
+                j = rng.randint(0, n_samples - 1)
+                if is_farm_features:
+                    vec_i = shuffled[i].to_vector()
+                    vec_j = test_features[j].to_vector()
+                    vec_i[fi] = vec_j[fi]
+                    # Reconstruct with permuted feature value
+                    orig = test_features[i]
+                    kwargs = {}
+                    for attr in ["farm_id", "zone", "season_week"]:
+                        kwargs[attr] = getattr(orig, attr)
+                    for k, v in zip(_FO_DEFAULT, vec_i):
+                        kwargs[k] = v
+                    if hasattr(orig, "yield_t_per_ha"):
+                        kwargs["yield_t_per_ha"] = orig.yield_t_per_ha
+                    shuffled[i] = type(orig)(**kwargs)
                 else:
-                    seq = list(seq)
-                    idx = rng.randint(0, n_samples - 1)
-                    seq[fi] = test_features[idx][fi]
+                    seq = list(shuffled[i])
+                    seq[fi] = list(test_features[j])[fi]
                     shuffled[i] = seq
 
-            # Compute permuted MSE using correct zone
-            perm_pred = []
-            for x in shuffled:
-                if hasattr(model, "zone_models"):
-                    zone = x.zone if hasattr(x, "zone") else "zone-A"
-                    perm_pred.append(model.predict("test-farm", zone, x))
-                else:
-                    perm_pred.append(model.predict(x) if hasattr(model, "predict") else model.predict([x])[0])
+            perm_pred = _predict(shuffled)
             perm_mse = sum((p - a) ** 2 for p, a in zip(perm_pred, test_labels)) / n_samples
-            importance[feature_names[fi]] = (perm_mse - base_mse) / max(base_mse, 1e-10)
+            importance[feature_names[fi]] = (perm_mse - base_mse) / max(abs(base_mse), 1e-10)
 
         return importance
 
@@ -257,6 +255,9 @@ class PerZoneValidator:
             lines.append(f"    MAE:         {result.mae:.4f} t/ha")
             lines.append(f"    R²:          {result.r2:.4f}")
             lines.append(f"    Governance:  {status}")
+
+            if result.low_variance:
+                lines.append(f"    Note:        Test-label variance too low for reliable R² (clamped)")
 
             if result.feature_importance:
                 top_feats = sorted(result.feature_importance.items(), key=lambda x: abs(x[1]), reverse=True)[:5]
