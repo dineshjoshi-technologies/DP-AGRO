@@ -5,26 +5,21 @@
 **Applicant:** Botanical Research Agent (DPA)
 **Research Workstream:** DPA-75 Phase 1 — Medicinal Plant Genomics
 **Applicable To:** State Government Research Permit
-**Target State:** Multiple states (see below)
+**Target State:** Karnataka (confirmed; other states provisional)
 
 ## 1. Project Overview
 - **Project:** Medicinal Plant Genomics Research for AI-Driven Cultivar Improvement
 - **Workstream:** DPA-75 Phase 1
 - **Principal Investigator:** Botanical Research Agent (interim Plant Genomics lead)
 - **Coordinator:** DPA-76 Sustainable Manufacturing (bi-weekly sync)
-- **Status:** Permit application submitted; pending approval
+- **Status:** DRAFTED / pending review & submission
 
 ## 2. States Covered
 | State | Agriculture/Horticulture Dept | Research Purpose | Estimated Timeline |
 |---|---|---|---|
-| Maharashtra | Director of Agriculture | Field trial observation, cultivation data | 3-4 weeks |
-| Tamil Nadu | Department of Horticulture | Genomic sample collection from pilot farms | 3-4 weeks |
-| Karnataka | Department of Horticulture | Agro-climatic zone mapping | 3-4 weeks |
-| Gujarat | Department of Agriculture | Soil and irrigation correlation studies | 3-4 weeks |
-| Uttar Pradesh | Directorate of Ayush | Traditional medicine correlation | 4-6 weeks |
-| Rajasthan | Department of Agriculture | Drought tolerance genomic markers | 3-4 weeks |
+| Karnataka (confirmed) | Department of Horticulture | Genomic sample collection from pilot farms; agro-climatic zone mapping | 3-4 weeks |
 
-Total states: 6 — bi-weekly sync with DPA-76 to finalize exact states based on pilot farm locations.
+Total states: **1 confirmed (Karnataka)** — all 10 pilot farms (FARM-001…FARM-010) are located in Karnataka. Additional states (Maharashtra, Tamil Nadu, Gujarat, Uttar Pradesh, Rajasthan) remain provisional expansion candidates and are excluded from this filing until pilot farms are established there. Confirmed per [pilot-farm-confirmation](pilot-farm-confirmation.md).
 
 ## 3. Research Activities Permitted
 The following activities are requested under this permit:
@@ -39,8 +34,8 @@ The following activities are requested under this permit:
 
 ## 4. Plant Material and Quantities
 - **Per Farm:** 50 plants per species × 6 species = 300 plants maximum per DPA pilot farm
-- **Per State:** Estimated 5-10 DPA-partnered farms per state
-- **Total across states:** ~1,500-3,000 plants (cultivated, marked for observation only)
+- **Per State:** 10 DPA pilot farms confirmed in Karnataka
+- **Total:** ~3,000 plants (cultivated, marked for observation only)
 - **Collection Window:** Post-monsoon (Oct-Nov 2026) through summer (Mar-May 2027)
 - **Sampling Frequency:** Once per growth phase (vegetative, flowering, fruiting)
 
@@ -71,11 +66,11 @@ I hereby declare that:
 **Date:** ___________________________
 
 ## 8. Attachments
-- [ ] DPA pilot farm registration certificates (per state)
-- [ ] List of partnered farmer cooperatives
+- [x] DPA pilot farm registration records (Karnataka) — [pilot-farm-registration-karnataka.md](../pilot-farms/pilot-farm-registration-karnataka.md)
+- [ ] List of partnered farmer cooperatives — pending DPA-76 farmer-cooperative engagement
 - [ ] Sample collection SOP and tracking sheet
 - [ ] Monthly reporting template (DPA-149-Report-Template)
-- [ ] Farm location coordinates and land records (as required)
+- [x] Farm location coordinates and land records — [farm_registry.json](../../ops/sensor_network/farm_registry.json) + registration pack (survey land records pending DPA-76)
 
 ---
 

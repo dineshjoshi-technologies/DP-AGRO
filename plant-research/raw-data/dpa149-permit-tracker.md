@@ -11,7 +11,7 @@
 | NBA Access Permit | National Biodiversity Authority | DPA-149-NBA-001 | DRAFTED | 2026-09-05 | 2026-10-15 | — | Awaiting legal review |
 | ICAR Research Permit | ICAR (NMPB) | DPA-149-ICAR-001 | DRAFTED | 2026-09-05 | 2026-10-15 | — | Awaiting legal review |
 | DBT Genomics Approval | DBT (RCGM/IBSC) | DPA-149-DBT-001 | DRAFTED | 2026-09-05 | 2026-10-15 | — | IBSC clearance pending |
-| State Agriculture Permits | 6 State Depts | DPA-149-STATE-001 | DRAFTED | 2026-09-05 | 2026-10-01 | — | DPA-76 coordination needed |
+| State Agriculture Permits | Karnataka (confirmed) + 5 provisional | DPA-149-STATE-001 | DRAFTED | 2026-09-12 | 2026-10-01 | — | Confirmed Karnataka pilot farms; pending review & submission |
 | GEAC Environmental Approval | MOEFCC | DPA-149-GEAC-001 | NOT APPLICABLE | — | — | — | No GMO work planned |
 | CITES Export/Import | DGFT | DPA-149-CITES-001 | NOT APPLICABLE | — | — | — | No international collaboration |
 | IBSC Registration | DPA Internal | DPA-IBSC-2026-01 | PENDING | 2026-09-05 | 2026-09-19 | — | Internal protocol submission |
