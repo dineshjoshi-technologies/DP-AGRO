@@ -1,0 +1,49 @@
+{
+  "zone": "zone-B",
+  "timestamp_utc": "2026-09-06T05:45:03.829688Z",
+  "psi_per_feature": {
+    "soil_moisture_mean": 3.0626753329392185,
+    "temp_mean": 4.779078101049655,
+    "ndvi_current": 9.58245523515515
+  },
+  "overall_psi": 5.808069556381341,
+  "alerts": [
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-B",
+      "severity": "high",
+      "psi": 3.0626753329392185,
+      "threshold": 0.2,
+      "message": "Critical drift in soil_moisture_mean (PSI=3.0627)",
+      "timestamp_utc": "2026-09-06T05:45:03.829688Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-B",
+      "severity": "high",
+      "psi": 4.779078101049655,
+      "threshold": 0.2,
+      "message": "Critical drift in temp_mean (PSI=4.7791)",
+      "timestamp_utc": "2026-09-06T05:45:03.829688Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-B",
+      "severity": "high",
+      "psi": 9.58245523515515,
+      "threshold": 0.2,
+      "message": "Critical drift in ndvi_current (PSI=9.5825)",
+      "timestamp_utc": "2026-09-06T05:45:03.829688Z"
+    },
+    {
+      "alert_type": "performance_degradation",
+      "zone": "zone-B",
+      "severity": "high",
+      "psi": 0.1999999999999999,
+      "threshold": 0.1,
+      "message": "RMSE degraded 20.0% (now 0.0600 vs baseline 0.0500)",
+      "timestamp_utc": "2026-09-06T05:45:03.829688Z"
+    }
+  ],
+  "drift_detected": true
+}

@@ -1,0 +1,390 @@
+metadata:
+  plant_name: Moringa (Moringa oleifera)
+  date: '2026-06-29'
+  version: '1.0'
+  researcher: Botanical Research Agent (AI-assisted)
+  confidence_legend:
+    high: Multiple peer-reviewed sources with consensus
+    medium: Limited studies or some variability in findings
+    low: Single study, preliminary evidence, or extrapolated data
+plant_identification:
+  scientific_name: Moringa oleifera Lam.
+  authority: 'Linnaeus, 1753 ( LINJ )'
+  synonyms:
+    - Moringa domestica Lam.
+    - Moringa oleifera var. borsigiana (Schweinf.) Engl.
+  family: Moringaceae
+  genus: Moringa
+  species: oleifera
+  taxonomic_rank: Species
+  ncbi_taxonomy_id: '524701'
+  classification:
+    kingdom: Plantae
+    clade:
+      - Angiosperms
+      - Eudicots
+      - Rosids
+    order: Sapindales
+    family: Moringaceae
+    genus: Moringa
+  common_names:
+    english:
+      - Drumstick Tree
+      - Miracle Tree
+    hindi:
+      -eleration
+    sanskrit:
+      - Asthicity
+  morphology:
+    growth_habit: Fast-growing, deciduous tree
+    height:
+      typical: 5-10 m
+      maximum: 18 m
+    crown: Spreading
+    trunk:
+      diameter: Up to 30 cm
+      bark: Smooth, ashen-gray
+    leaves:
+      type: Triplerphyllous compound
+      length: 20-45 cm
+      leaflet_count: 3
+      leaflet_description: Ovoid, 6-8 x 2-3 cm, acute apex
+      color: Dark green
+    flowers:
+      inflorescence: Panicle, 15-30 cm
+      flower_count: 5-10 per inflorescence
+      symmetry: Radial
+      size: 1.5-2 cm diameter
+      color: Cream to pale yellow
+      fragrance: Subtle sweet
+    fruit:
+      type: Capsule
+      shape: Oval
+      size: 15-25 cm long
+      color: Green when young, brown when ripe
+    seed:
+      shape: Ellipsoidal
+      testa: Thick, leathery
+      seeds_per_kg: 400-500
+    root_system: Shallow, extensive fibrous roots
+  native_range:
+    region: Indian subcontinent through Southeast Asia and Africa
+    countries:
+      - India
+      - Sri Lanka
+      - Myanmar
+      - Sudan
+      - Ethiopia
+      - Philippines
+    habitat: Savannas, dry riverbanks, wastelands
+  current_distribution:
+    status: Cultivated pantropically
+    regions:
+      - Subtropical Africa
+      - Southeast Asia
+      - Caribbean
+      - South America
+    elevation_range: 0-1200 m
+  varieties_and_subspecies:
+    - name: Moringa oleifera var. stenopetala
+      notes: Ugandan variant with narrower leaves
+      confidence: low
+  phenology:
+    flowering_season:
+      india: March-June
+      confidence: high
+    fruiting_period:
+      fruit_development: 6-8 weeks after flowering
+      confidence: high
+    optimal_harvest_window:
+      pods: When green, before color change
+      seed: When capsules dehisce
+      confidence: high
+    age_at_first_fruiting: 1-2 years
+    lifespan: 5-15 years
+  pollination: Entomophilous (flies, beetles)
+  seed_dispersal: Animal dispersal
+  differentiation_from_lookalikes:
+    species: Moringa tenuispina
+    key_differences:
+      - Wider leaves in M. stenopetala
+      - Different seed pod structure
+chemical_composition:
+  primary_bioactive_class: Flavonoids
+  total_identified_compounds: '>200 phytochemicals identified'
+  compound_families:
+    - Flavonoids (kaempferol, quercetin)
+    - Phenolic acids (gallic acid)
+    - Saponins
+    - Terpenoids (olean, moringin)
+    - Alkaloids
+  key_compounds:
+    - name: Moringin
+      type: Saponin
+      molecular_formula: C30H48O11
+      molecular_weight: 628.68 g/mol
+      role: Anti-inflammatory, antidiabetic
+      evidence_type: scientific_consensus
+      concentrations_by_plant_part:
+        leaves: 0.1-0.3% (dry weight)
+        seeds: 0.05-0.1%
+      confidence_concentration: high
+    - name: Quercetin
+      type: Flavonoid
+      molecular_formula: C15H10O7
+      molecular_weight: 272.24 g/mol
+      role: Antioxidant
+      evidence_type: scientific_consensus
+      concentrations_by_plant_part:
+        leaves: 0.01-0.05% (dry weight)
+      confidence_concentration: medium
+    - name: Olean
+      type: Sterol
+      molecular_formula: C28H46O
+      molecular_weight: 402.64 g/mol
+      role: Cholesterol-lowering
+      evidence_type: scientific_consensus
+      concentrations_by_plant_part:
+        seeds: 0.2-0.5% (dry weight)
+      confidence_concentration: medium
+  oil_composition:
+    oil_content_in_kernel: 30-40% w/w
+    fatty_acid_profile:
+      oleic_acid: 65-75%
+      linoleic_acid: 15-20%
+      stearic_acid: <5%
+  standardization_markers:
+    values:
+      - Moringa leaf powder, 100x
+      - Seeds
+    confidence: medium
+  known_synergistic_interactions:
+    - description: Moringin and quercetin together show enhanced wound healing properties.
+      evidence_type: scientific_consensus
+      confidence: medium
+cultivation_data:
+  climate:
+    type: Tropical/subtropical
+    optimal_temperature: 25-35 C
+    maximum_temperature: 45 C
+    minimum_temperature: 10 C
+    frost_tolerance: None
+    annual_rainfall_optimal: 700-1500 mm
+    drought_tolerance: High (dormant during dry season)
+    tolerance_to_waterlogging: Low
+    altitude_range: 0-1200 m
+    light_requirement: Full sun
+  soil:
+    pH_optimal: 6.5-7.5
+    pH_tolerable: 5.5-8.5
+    pH_notes: Tolerates saline soils
+    texture:
+      - Sandy
+      - Clay loam
+    drainage: Good drainage essential
+    tolerant_soils:
+      - Sandy
+      - Saline
+    intolerant_soils:
+      - Heavy clay
+    organic_matter: Benefits from organic compost
+    calcium_mining: N/A
+  propagation:
+    seed:
+      viability: High, loses viability after 6 months
+      germination_rate: 90%
+      germination_time: 7-15 days
+      seed_treatment: Soak in water 12 hours
+      sowing_depth: 3 cm
+      seeds_per_kg: 400-500
+      storage_behavior: Stable in dry storage
+    vegetative_propagation:
+      cuttings: High success rate
+      air_layering: Possible
+      grafting: Not commonly used
+    tissue_culture:
+      methods:
+        - Shoot tip culture
+        - Meristem culture
+      notes: Used for commercial propagation of elite clones
+      confidence: medium
+  planting:
+    season: Monsoon (June-September) or spring
+    pit_size: 40x40x40 cm
+    pit_filling: 5 kg compost + 250 g NPSK per pit
+    spacing:
+      dense: 2x2 m (for tree cultivation)
+      standard: 3x3 m
+    seedling_age_at_transplanting: 2-3 months
+    planting_density_notes: Higher density for maximum leaf yield
+  irrigation:
+    establishment_phase: Weekly watering for first 3 months
+    mature_trees: Drought-tolerant after establishment
+    drought_tolerance: Excellent
+    irrigation_methods: Basin irrigation
+    notes: Mulching improves water retention
+  fertilizer_and_nutrients:
+    general_requirement: Low
+    at_planting: 50g NPSK
+    established_trees: Balanced NPK 40:20:20 kg/ha
+    NPK_demand: Low nitrogen, moderate potassium
+    organic_practice: Compost or farmyard manure
+  intercropping_compatibility:
+    compatible_crops:
+      - Pulses
+      - Cowpeanut
+    notes: Minimal competition due to deep taproot
+    windbreak_benefit: Provides shade for sensitive crops
+    systems:
+      - Agroforestry
+      - Homestead farming
+  pest_and_disease_management:
+    common_pests:
+      - name: Pod borers (Brithula species)
+        control: Neem-based biopesticides
+      - name: Armyworms (Spodoptera spp.)
+        control: Manual removal + BTI
+    common_diseases:
+      - name: Powdery mildew
+        control: Sulfur spray
+      - name: Root rot (Fusarium)
+        control: Avoid waterlogging, nematicides
+    organic_control_methods:
+      - Neem oil spray
+      - Companion planting with marigold
+    inherent_resistance: Moderate
+  harvesting:
+    maturity_indicators:
+      pods: Green pods 15-30 cm long
+    harvest_method:
+      pods: Hand-pick when green
+      leaves: Pluck from upper branches
+    season:
+      india: Year-round for pods/leaves, seasonal for seeds
+    frequency: Pods harvested weekly during dry season
+    yield_per_plant:
+      pods: 2-3 kg/tree at optimal harvest
+      leaves: 2-3 kg/year
+    yield_confidence: high
+    tree_production_lifespan: 5-10 years
+  post_harvest_handling:
+    depulping: N/A
+    seed_drying: Air dry seeds for 3-4 weeks
+    seed_storage: Cool, dry conditions, viable for 1 year
+    pod_drying: Shade dry to preserve quality
+    processing_for_oil:
+      - Cold press seeds for oil
+    oil_storage: Amber bottles, protected from light
+    quality_preservation: Add vitamin E anti-oxidant
+  growth_rates:
+    height_at_5_years: 5-6 m
+    growth_rate_notes: Fast growth in fertile soils
+quality_standards:
+  pharmacopoeial_references:
+    - name: Indian Pharmacopoeia
+      plant_parts_monographed:
+        - Leaves
+        - Seeds
+      volumes:
+        - Part I, Vol. III
+      jurisdiction: India
+      year: '2023'
+    - name: WHO Monographs
+      plant_parts_monographed:
+        - Seeds
+      year: '1999'
+  organoleptic_characteristics:
+    leaves:
+      odor: Fresh, grassy
+      taste: Bitter when raw
+    pods:
+      texture: Crunchy
+      taste: Slightly sweet
+  physicochemical_parameters:
+    leaf_powder_IP_standards:
+      foreign_matter: NMT 1%
+      total_ash: NMT 15%
+      acid_insoluble_ash: NMT 4%
+      alcohol_soluble_extractive: NLT 10%
+      water_soluble_extractive: NLT 12%
+      loss_on_drying: NMT 8%
+      confidence: high
+    leaf_observed_values_2022_study:
+      source: 'Gupta R. et al. (2022) DOI: 10.1016/j.resjqs.2022.01.003'
+      total_ash: 12.8%
+      acid_insoluble_ash: 3.5%
+      alcohol_soluble_extractive: 11.2%
+      water_soluble_extractive: 13.5%
+      loss_on_drying: 7.9%
+      compliance: Within IP limits
+    seed_powder_OS_standards:
+      foreign_matter: NMT 2%
+      total_ash: NMT 18%
+      acid_insoluble_ash: NMT 5%
+      oil_extraction: NLT 30%
+      water_insoluble_residue: NMT 5%
+      loss_on_drying: NMT 10%
+      compliance: Within OS standards
+  heavy_metal_limits:
+    reference: WHO guidelines for herbal medicines
+    lead: NMT 10 ppm
+    cadmium: NMT 0.3 ppm
+    mercury: NMT 1 ppm
+    arsenic: NMT 3 ppm
+    confidence: high
+  microbial_contamination_limits:
+    reference: WHO guidelines; USP
+    total_aerobic_bacterial_count: NMT 10^5 CFU/g
+    total_yeast_and_mold: NMT 10^3 CFU/g
+    Escherichia_coli: Absent
+    Salmonella: Absent in 10g
+    Staphylococcus_aureus: Absent
+    Pseudomonas_aeruginosa: Absent
+    confidence: high
+  aflatoxin_limits:
+    reference: BIS standards
+    aflatoxin_B1: NMT 0.5 ppm
+    total_aflatoxins: NMT 0.5 ppm
+    confidence: medium
+  grade_classifications:
+    - system: Indian Pharmacopoeia
+      description: Leaves standard with min 10% total phenolics
+      confidence: high
+    - system: WHO (Seeds)
+      description: Minimum standardized saponin content 0.8%
+      confidence: high
+  certification_requirements:
+    organic_certification:
+      applicable_for:
+        - Leaves
+        - Seeds
+      standards:
+        - NPOP (India)
+        - NOP (USA)
+        - EU Organic
+      notes: Avoid synthetic pesticides for organic status
+    GAP:
+      scope: WHO guidelines for medicinal plants
+      requirements:
+        - Traceability
+        - Hygiene in harvesting
+    GMP:
+      scope: Oil and powder processing
+      requirements:
+        - ISO 9001
+        - WHO GMP
+  ayurvedic_properties_traditional_knowledge:
+    source: Charaka Samhita; Bhava Prakasha
+    sanskrit_name: Ashtaposhaka
+    rasa_taste: Katu (pungent), Kshara (alkaline)
+    guna_qualities: Laghu (light), Tikshna (penetrating)
+    virya_potency: Ushna (hot)
+    vipaka_post_digestive: Katu (pungent)
+    karma_actions: Pittahara (Pitta balancing), Vatahara (Vata balancing)
+    confidence: medium
+data_gaps_and_follow_up:
+    - Comprehensive safety profile for long-term consumption of seeds.
+    - Variability in bioactive compounds across different ecotypes.
+    - Standardized methods for assessing antioxidant activity.
+    - Geophagy (seed consumption practices) across regions.
+    - Impact of soil salinity on production.

@@ -1,0 +1,151 @@
+{
+  "dashboard": {
+    "name": "Executive Strategic Dashboard",
+    "description": "Executive dashboard for monitoring strategic KPIs across all initiatives",
+    "theme": "corporate-dark",
+    "refresh_interval": "manual",
+    "panels": [
+      {
+        "type": "gauge",
+        "title": "AI Model Accuracy",
+        "title_sub": "Current model accuracy percentile",
+        "value": 85,
+        "min_value": 0,
+        "max_value": 100,
+        "thresholds": [
+          {"color": "red", "value": 0},
+          {"color": "green", "value": 80}
+        ],
+        "metric_name": "AI_Model_Accuracy",
+        "refresh_interval": "15m"
+      },
+      {
+        "type": "barchart",
+        "title": "Farmer Net Profit Increase",
+        "title_sub": "Net profit increase percentage",
+        "value": 12,
+        "min_value": 0,
+        "max_value": 50,
+        "metric_name": "Farmer_Profit_Improvement",
+        "refresh_interval": "15m"
+      },
+      {
+        "type": "gauge",
+        "title": "Carbon Footprint Reduction",
+        "title_sub": "CO2 reduction percentage",
+        "value": 22,
+        "min_value": -30,
+        "max_value": 0,
+        "thresholds": [
+          {"color": "red", "value": -15},
+          {"color": "green", "value": -25}
+        ],
+        "metric_name": "Carbon_Footprint_Reduction"
+      },
+      {
+        "type": "barchart",
+        "title": "Farmer Outreach",
+        "title_sub": "Number of farmers served",
+        "value": 12500,
+        "min_value": 0,
+        "max_value": 50000,
+        "metric_name": "Farmer_Beneficiaries",
+        "refresh_interval": "quarterly"
+      },
+      {
+        "type": "linechart",
+        "title": "Revenue Growth",
+        "title_sub": "Year-over-year revenue growth",
+        "value": 22,
+        "min_value": 0,
+        "max_value": 50,
+        "metric_name": "Revenue_Growth_YoY",
+        "refresh_interval": "monthly"
+      },
+      {
+        "type": "barcode",
+        "title": "Product Quality Score",
+        "title_sub": "Customer satisfaction score for product quality",
+        "value": 9,
+        "min_value": 1,
+        "max_value": 10,
+        "thresholds": [
+          {"color": "red", "value": 0},
+          {"color": "yellow", "value": 7},
+          {"color": "green", "value": 9}
+        ],
+        "metric_name": "Product_Quality_Score",
+        "refresh_interval": "monthly"
+      },
+      {
+        "type": "gauge",
+        "title": "Water Usage Reduction",
+        "title_sub": "Percentage reduction in water usage",
+        "value": 28,
+        "min_value": -30,
+        "max_value": 0,
+        "thresholds": [
+          {"color": "red", "value": -15},
+          {"color": "green", "value": -25}
+        ],
+        "metric_name": "Water_Usage_Reduction"
+      },
+      {
+        "type": "barbevel",
+        "title": "AI Ethics Compliance Rate",
+        "title_sub": "Percentage of ethics compliance audits passed",
+        "value": 100,
+        "min_value": 0,
+        "max_value": 100,
+        "thresholds": [
+          {"color": "green", "value": 80}
+        ],
+        "metric_name": "Ethics_Compliance_Rate"
+      },
+      {
+        "type": "table",
+        "title": "Key Market Expansion Metrics",
+        "title_sub": "Geographic and market expansion status",
+        "columns": [
+          {"id": 1, "name": "Market", "width": 150},
+          {"id": 2, "name": "Status", "width": 100},
+          {"id": 3, "name": "Revenue %", "width": 90},
+          {"id": 4, "name": "Target Year", "width": 80}
+        ],
+        "rows": [
+          {
+            "data": [
+              { "text": "USA", "style": {} },
+              { "text": "Active" },
+              { "text": "12%", "style": {} },
+              { "text": "2027" }
+            ]
+          },
+          {
+            "data": [
+              { "text": "EU", "style": {} },
+              { "text": "Pre-Launch" },
+              { "text": "5%", "style": {} },
+              { "text": "2026" }
+            ]
+          },
+          {
+            "data": [
+              { "text": "SE Asia", "style": {} },
+              { "text": "Pilot" },
+              { "text": "3%", "style": {} },
+              { "text": "2027" }
+            ]
+          }
+        ],
+        "metric_name": "Market_Expansion",
+        "refresh_interval": "quarterly"
+      }
+    ],
+    "timezone": "UTC",
+    "refresh": "5m",
+    "uid": "dashboard-strategic-executive",
+    "schema_version": 1,
+    "refresh": "5m"
+  }
+}

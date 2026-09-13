@@ -1,0 +1,75 @@
+Partner: Sido Muncul
+Country: Indonesia
+Type: Herbal pharma manufacturer (public)
+Priority: Tier-1 candidate
+Status: Evaluation in progress
+
+Evaluation Date: 2026-07-03
+
+## 1. Strategic Alignment (25%)
+- Mission & values compatibility: 3 - Commercial focus, some sustainability initiatives
+- Long-term vision match: 4 - Aligns with national herbal industry development
+- Commitment to AI-driven agriculture: 3 - Limited AI adoption, open to modernization
+- Sustainable/regenerative farming ethos: 2 - Basic sustainability programs
+- Willingness for deep integration: 4 - Public company, can commit to partnerships
+
+## 2. Operational Capability (20%)
+- Cultivation/processing scale: 4 - Manages 800 hectares, 150MT/month capacity
+- Technical talent: 3 - Strong manufacturing team, limited R&D depth
+- Digital infrastructure: 2 - Basic ERP, some production monitoring
+- Quality systems: 4 - GMP, ISO certified facilities
+- Supply chain resilience: 4 - Established logistics network in Indonesia
+
+## 3. Financial Viability (20%)
+- Revenue stability: 4 - Public company with steady revenue growth
+- Profitability: 4 - Consistent profitability
+- Investment capacity: 4 - Strong balance sheet, access to capital markets
+- ROI potential: 4 - High potential in premium extract market
+- Financial risk: 4 - Low debt, diversified product portfolio
+
+## 4. Market Access & Influence (15%)
+- Farmer network size: 3 - Works with ~1,500 contract farmers
+- Regulatory relationships: 4 - Strong ties to Indonesian FDA and agriculture ministry
+- Distribution channels: 5 - Dominant player in Indonesian herbal market
+- Brand reputation: 5 - Leading herbal brand in Indonesia
+- Germplasm access: 2 - Limited access to high-quality germplasm
+
+## 5. Innovation Readiness (10%)
+- AI/ML pilots: 1 - No current AI initiatives in agriculture
+- Data maturity: 2 - Basic production data, limited quality data
+- R&D budget: 3 - 4% of revenue, focused on product development
+- IP portfolio: 3 - Some patents in formulations and processes
+- Cultural openness: 3 - Open to partnerships with clear commercial terms
+
+## 6. Governance & Compliance (10%)
+- ESG reporting: 3 - Basic sustainability reporting
+- Data sovereignty: 3 - Compliant with Indonesian data regulations
+- IP protection: 4 - Strong legal team, active enforcement
+- Anti-corruption: 3 - Standard public company policies
+- Board transparency: 4 - Public company with disclosure requirements
+
+## Weighted Score Calculation
+Strategic Alignment: 3.4 * 0.25 = 0.85
+Operational Capability: 3.0 * 0.20 = 0.60
+Financial Viability: 4.0 * 0.20 = 0.80
+Market Access: 4.2 * 0.15 = 0.63
+Innovation Readiness: 2.2 * 0.10 = 0.22
+Governance & Compliance: 3.3 * 0.10 = 0.33
+
+Total Weighted Score: 3.43
+
+## Tier Assignment: Tier-2 (Growth Partner)
+Score between 3.0-3.49 qualifies for Tier-2.
+
+## Recommendation
+Proceed with Tier-2 partnership as a Growth Partner. Note: While initially a Tier-1 candidate due to market position, score indicates Tier-2. Consider:
+- Manufacturing partnership for extract production
+- Distribution expansion across Southeast Asia
+- Technology upgrade collaboration for quality optimization
+- Potential upgrade to Tier-1 with AI adoption investment
+
+## Next Steps
+1. Define partnership scope and commercial terms (30 days)
+2. Establish technical integration plan (45 days)
+3. Identify pilot product lines for optimization (60 days)
+4. Quarterly review to assess AI adoption and potential Tier-1 upgrade

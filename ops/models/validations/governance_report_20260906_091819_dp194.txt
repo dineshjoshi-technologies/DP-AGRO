@@ -1,0 +1,46 @@
+============================================================
+DPA-83 — Per-Zone Model Validation Report
+Generated: 2026-09-06T09:18:19.912392Z
+============================================================
+
+GOVERNANCE THRESHOLDS:
+  RMSE <= 0.15 t/ha
+  MAE <= 0.1 t/ha
+  R²  >= 0.85
+
+ZONE RESULTS:
+  zone-A:
+    Samples:     30
+    RMSE:        0.0406 t/ha
+    MAE:         0.0333 t/ha
+    R²:          0.8626
+    Governance:  PASS
+    Top features: f8(13.000), f4(0.398), f9(0.332), f0(0.238), f11(0.206)
+
+  zone-B:
+    Samples:     28
+    RMSE:        0.0660 t/ha
+    MAE:         0.0502 t/ha
+    R²:          0.8164
+    Governance:  FAIL
+    Top features: f8(3.775), f11(0.149), f9(0.140), f12(0.139), f1(0.061)
+
+  zone-C:
+    Samples:     37
+    RMSE:        0.0522 t/ha
+    MAE:         0.0427 t/ha
+    R²:          0.8358
+    Governance:  FAIL
+    Top features: f8(11.001), f9(0.536), f11(0.209), f6(0.143), f12(0.083)
+
+  zone-D:
+    Samples:     32
+    RMSE:        0.0525 t/ha
+    MAE:         0.0438 t/ha
+    R²:          0.8309
+    Governance:  FAIL
+    Top features: f8(10.736), f9(0.527), f12(0.234), f0(0.156), f1(-0.076)
+
+============================================================
+OVERALL: REQUIRES REVIEW
+============================================================

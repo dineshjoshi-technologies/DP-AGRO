@@ -1,0 +1,75 @@
+Partner: VIMEDIMEX
+Country: Vietnam
+Type: State-owned pharma / herbal medicine
+Priority: Tier-1 candidate
+Status: Evaluation in progress
+
+Evaluation Date: 2026-07-03
+
+## 1. Strategic Alignment (25%)
+- Mission & values compatibility: 4 - Strong government backing for modernization
+- Long-term vision match: 4 - Aligns with national healthcare modernization plan
+- Commitment to AI-driven agriculture: 4 - Has AI initiatives in pharma R&D
+- Sustainable/regenerative farming ethos: 3 - Growing focus on sustainable sourcing
+- Willingness for deep integration: 5 - State-owned, can commit long-term resources
+
+## 2. Operational Capability (20%)
+- Cultivation/processing scale: 5 - Controls 5,000+ hectares, 200MT/month capacity
+- Technical talent: 4 - Strong pharma R&D team, growing agri-tech unit
+- Digital infrastructure: 4 - Modern ERP, sensor networks in processing
+- Quality systems: 5 - GMP, ISO, HACCP certified facilities
+- Supply chain resilience: 5 - Robust state-backed logistics network
+
+## 3. Financial Viability (20%)
+- Revenue stability: 5 - Stable state funding + commercial revenue
+- Profitability: 4 - Steady profitability with government support
+- Investment capacity: 5 - Significant state budget allocation for expansion
+- ROI potential: 4 - 5 - High potential for premium extract market
+- Financial risk: 5 - Very low risk due to government backing
+
+## 4. Market Access & Influence (15%)
+- Farmer network size: 4 - Works with 1,800 contract farmers
+- Regulatory relationships: 5 - Direct ties to Ministry of Health & Agriculture
+- Distribution channels: 5 - National distribution, growing export channels
+- Brand reputation: 5 - Most trusted herbal medicine brand in Vietnam
+- Germplasm access: 4 - Access to national germplasm banks
+
+## 5. Innovation Readiness (10%)
+- AI/ML pilots: 4 - Several AI pilots in drug discovery, starting in agriculture
+- Data maturity: 4 - Good data infrastructure, improving quality metrics
+- R&D budget: 5 - 8% of revenue, strong university partnerships
+- IP portfolio: 4 - Growing patent portfolio in formulations
+- Cultural openness: 4 - Open to partnerships with clear framework
+
+## 6. Governance & Compliance (10%)
+- ESG reporting: 4 - Comprehensive sustainability reporting
+- Data sovereignty: 5 - Fully compliant with Vietnamese data laws
+- IP protection: 5 - Strong legal team, active patent enforcement
+- Anti-corruption: 4 - Standard for state enterprises, improving
+- Board transparency: 3 - Government ownership, limited public disclosure
+
+## Weighted Score Calculation
+Strategic Alignment: 4.0 * 0.25 = 1.00
+Operational Capability: 4.4 * 0.20 = 0.88
+Financial Viability: 4.4 * 0.20 = 0.88
+Market Access: 4.6 * 0.15 = 0.69
+Innovation Readiness: 4.2 * 0.10 = 0.42
+Governance & Compliance: 4.0 * 0.10 = 0.40
+
+Total Weighted Score: 4.27
+
+## Tier Assignment: Tier-1 (Strategic Anchor)
+Score ≥ 3.5 qualifies for Tier-1.
+
+## Recommendation
+Proceed with Tier-1 partnership as a Strategic Anchor. Key opportunities:
+- National scale cultivation of medicinal plants for consistent supply
+- Joint R&D center for AI-driven phytochemical optimization
+- Export-focused partnership targeting ASEAN and EU markets
+- Technology transfer for advanced extraction and processing
+
+## Next Steps
+1. Secure government approvals for partnership (21 days)
+2. Establish joint R&D committee with defined IP framework (30 days)
+3. Develop 3-year investment plan with milestones (45 days)
+4. Initial pilot on Vietnamese ginseng and green tea extracts

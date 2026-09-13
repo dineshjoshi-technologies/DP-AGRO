@@ -1,0 +1,79 @@
+{
+  "zone": "zone-C",
+  "timestamp_utc": "2026-09-06T09:17:58.649929Z",
+  "psi_per_feature": {
+    "soil_moisture_mean": 0.07687104551758406,
+    "soil_moisture_std": 0.07128053894641803,
+    "soil_ph_mean": 0.16706001173583532,
+    "soil_ec_mean": 0.08644048158064346,
+    "temp_mean": 0.19008823148283402,
+    "temp_max": 0.2558644576925516,
+    "temp_min": 0.05144122523203123,
+    "humidity_mean": 0.031256334317626866,
+    "rainfall_total_mm": 0.3048450564958225,
+    "ndvi_current": 0.2427584991128547,
+    "ndvi_lag7": 0.23840859202757592,
+    "ndvi_lag14": 0.18609689666218235,
+    "ndvi_trend": 0.1033352848786162,
+    "growing_degree_days": 0.19008823148283402,
+    "soil_water_deficit": 0.0009524609494374055
+  },
+  "overall_psi": 0.09763499324954879,
+  "alerts": [
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-C",
+      "severity": "medium",
+      "psi": 0.17057630512836774,
+      "threshold": 0.15000000000000002,
+      "message": "Moderate drift in temp_max (calibrated PSI=0.1706)",
+      "timestamp_utc": "2026-09-06T09:17:58.649929Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-C",
+      "severity": "medium",
+      "psi": 0.20323003766388167,
+      "threshold": 0.15000000000000002,
+      "message": "Moderate drift in rainfall_total_mm (calibrated PSI=0.2032)",
+      "timestamp_utc": "2026-09-06T09:17:58.649929Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-C",
+      "severity": "medium",
+      "psi": 0.1618389994085698,
+      "threshold": 0.15000000000000002,
+      "message": "Moderate drift in ndvi_current (calibrated PSI=0.1618)",
+      "timestamp_utc": "2026-09-06T09:17:58.649929Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-C",
+      "severity": "medium",
+      "psi": 0.1589390613517173,
+      "threshold": 0.15000000000000002,
+      "message": "Moderate drift in ndvi_lag7 (calibrated PSI=0.1589)",
+      "timestamp_utc": "2026-09-06T09:17:58.649929Z"
+    }
+  ],
+  "drift_detected": true,
+  "psi_per_feature_calibrated": {
+    "soil_moisture_mean": 0.05124736367838937,
+    "soil_moisture_std": 0.04752035929761202,
+    "soil_ph_mean": 0.11137334115722354,
+    "soil_ec_mean": 0.05762698772042898,
+    "temp_mean": 0.12672548765522268,
+    "temp_max": 0.17057630512836774,
+    "temp_min": 0.03429415015468749,
+    "humidity_mean": 0.020837556211751245,
+    "rainfall_total_mm": 0.20323003766388167,
+    "ndvi_current": 0.1618389994085698,
+    "ndvi_lag7": 0.1589390613517173,
+    "ndvi_lag14": 0.12406459777478823,
+    "ndvi_trend": 0.06889018991907746,
+    "growing_degree_days": 0.12672548765522268,
+    "soil_water_deficit": 0.0006349739662916036
+  },
+  "overall_psi_raw": 0.1464524898743232
+}

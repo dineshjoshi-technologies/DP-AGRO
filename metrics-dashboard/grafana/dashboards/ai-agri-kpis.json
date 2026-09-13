@@ -1,0 +1,186 @@
+{
+  "title": "AI-Agriculture KPIs (DPA-84)",
+  "uid": "ai-agri-kpis",
+  "tags": ["dpa-84", "ai-agriculture", "kpi"],
+  "timezone": "utc",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "5m",
+  "editable": false,
+  "graphTooltip": 1,
+  "time": { "from": "now-90d", "to": "now" },
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": { "type": "grafana", "uid": "-- Grafana --" },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "templating": {
+    "list": [
+      {
+        "name": "farm",
+        "label": "Farm",
+        "type": "query",
+        "datasource": { "type": "postgres", "uid": "postgres-metrics" },
+        "query": "SELECT DISTINCT COALESCE(farm_id, 'ALL') FROM kpi_rollups ORDER BY 1",
+        "refresh": 2,
+        "includeAll": true,
+        "multi": false,
+        "current": { "selected": true, "text": "All", "value": "$__all" }
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Sensor data coverage (% farms)",
+      "description": "Weekly % of deployed farms with fresh sensor ingest. Phase 1 target >= 90%.",
+      "type": "stat",
+      "datasource": { "type": "postgres", "uid": "postgres-metrics" },
+      "gridPos": { "h": 6, "w": 8, "x": 0, "y": 0 },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "decimals": 1,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "red", "value": null },
+              { "color": "yellow", "value": 80 },
+              { "color": "green", "value": 90 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "time_series",
+          "rawSql": "SELECT window_end AS time, metric_value AS \"coverage_pct\" FROM kpi_rollups WHERE metric_key = 'sensor_coverage' AND farm_id IS NULL ORDER BY window_end"
+        }
+      ],
+      "options": {
+        "reduceOptions": { "values": false, "calcs": ["lastNotNull"], "fields": "" },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Yield prediction RMSE (t/ha)",
+      "description": "Weekly company-wide yield prediction RMSE. Phase 1 target <= 0.15 t/ha; page at > 0.18 for 3 days.",
+      "type": "timeseries",
+      "datasource": { "type": "postgres", "uid": "postgres-metrics" },
+      "gridPos": { "h": 6, "w": 8, "x": 8, "y": 0 },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "decimals": 3,
+          "custom": { "drawStyle": "line", "fillOpacity": 8, "lineWidth": 2, "showPoints": "auto" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "yellow", "value": 0.15 },
+              { "color": "red", "value": 0.18 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "time_series",
+          "rawSql": "SELECT window_end AS time, metric_value AS \"rmse_t_ha\" FROM kpi_rollups WHERE metric_key = 'yield_rmse' AND farm_id IS NULL ORDER BY window_end"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Labor hours saved (hrs/season)",
+      "description": "Cumulative labor hours saved per farm per season, weekly rollup. Phase 1 target >= 20 hrs/farm/season.",
+      "type": "timeseries",
+      "datasource": { "type": "postgres", "uid": "postgres-metrics" },
+      "gridPos": { "h": 6, "w": 8, "x": 16, "y": 0 },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "decimals": 1,
+          "custom": { "drawStyle": "bars", "fillOpacity": 40, "lineWidth": 1 },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "red", "value": null },
+              { "color": "green", "value": 20 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "time_series",
+          "rawSql": "SELECT window_end AS time, metric_value AS \"labor_hours\" FROM kpi_rollups WHERE metric_key = 'labor_hours_saved' AND farm_id IS NULL ORDER BY window_end"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Coverage by farm (top 15 worst)",
+      "description": "Per-farm latest coverage from farm_sensor_online freshness view; drives per-farm alert routing.",
+      "type": "table",
+      "datasource": { "type": "postgres", "uid": "postgres-metrics" },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 6 },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawSql": "SELECT farm_id, sensors_expected, sensors_online, coverage_pct FROM coverage_current ORDER BY coverage_pct ASC LIMIT 15"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Audit-trail gap (min since last chain event)",
+      "description": "Minutes since last blockchain audit event. Gap > 15 min routes a ticket to the Blockchain team (spec §1.3); contract itself is DPA-79's deliverable.",
+      "type": "stat",
+      "datasource": { "type": "postgres", "uid": "postgres-metrics" },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 6 },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "m",
+          "decimals": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "orange", "value": 10 },
+              { "color": "red", "value": 15 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "time_series",
+          "rawSql": "SELECT window_end AS time, metric_value AS \"audit_gap_min\" FROM kpi_rollups WHERE metric_key = 'audit_gap_minutes' AND farm_id IS NULL ORDER BY window_end"
+        }
+      ]
+    }
+  ]
+}

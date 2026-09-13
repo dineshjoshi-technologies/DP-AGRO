@@ -1,0 +1,75 @@
+Partner: Thai Herb Cooperative
+Country: Thailand
+Type: Farmer cooperative / processor
+Priority: Tier-1 candidate
+Status: Evaluation in progress
+
+Evaluation Date: 2026-07-03
+
+## 1. Strategic Alignment (25%)
+- Mission & values compatibility: 5 - Strong commitment to sustainable farming and ethical sourcing
+- Long-term vision match: 4 - Aligns with 5-10 year expansion goals
+- Commitment to AI-driven agriculture: 3 - Basic digital infrastructure, willing to learn
+- Sustainable/regenerative farming ethos: 5 - Organic certified, soil health programs active
+- Willingness for deep integration: 4 - Open to joint roadmap discussions
+
+## 2. Operational Capability (20%)
+- Cultivation/processing scale: 4 - Manages 1,200 hectares, 50MT/month capacity
+- Technical talent: 3 - Has agronomists, limited data science capability
+- Digital infrastructure: 2 - Basic ERP, some sensor data available
+- Quality systems: 4 - Organic, GAP, FairWild certified
+- Supply chain resilience: 4 - Multiple processing facilities, good logistics
+
+## 3. Financial Viability (20%)
+- Revenue stability: 4 - Steady growth over 3 years
+- Profitability: 3 - Marginal profitability, improving
+- Investment capacity: 3 - Limited but stable cash position
+- ROI potential: 4 - High potential in premium extracts
+- Financial risk: 4 - Low debt, diversified revenue
+
+## 4. Market Access & Influence (15%)
+- Farmer network size: 5 - 3,200 registered farmers
+- Regulatory relationships: 3 - Good local ministry ties
+- Distribution channels: 4 - Established domestic distribution
+- Brand reputation: 4 - Well-known in Thai herbal market
+- Germplasm access: 3 - Some seed bank partnerships
+
+## 5. Innovation Readiness (10%)
+- AI/ML pilots: 2 - No production AI pilots yet
+- Data maturity: 2 - Limited data collection, basic quality logs
+- R&D budget: 2 - 3% of revenue, local university partnerships
+- IP portfolio: 1 - Some traditional knowledge documentation
+- Cultural openness: 3 - Open to co-innovation with proper incentives
+
+## 6. Governance & Compliance (10%)
+- ESG reporting: 3 - Basic sustainability reporting
+- Data sovereignty: 3 - PDPA compliant, basic data practices
+- IP protection: 3 - Some confidentiality agreements
+- Anti-corruption: 4 - Clear policies, training completed
+- Board transparency: 4 - Cooperative structure with member representation
+
+## Weighted Score Calculation
+Strategic Alignment: 5 * 0.25 = 1.25
+Operational Capability: 3.5 * 0.20 = 0.70
+Financial Viability: 3.4 * 0.20 = 0.68
+Market Access: 4.0 * 0.15 = 0.60
+Innovation Readiness: 2.2 * 0.10 = 0.22
+Governance & Compliance: 3.3 * 0.10 = 0.33
+
+Total Weighted Score: 3.78
+
+## Tier Assignment: Tier-1 (Strategic Anchor)
+Score ≥ 3.5 qualifies for Tier-1.
+
+## Recommendation
+Proceed with Tier-1 partnership. Recommend deep integration with:
+- Joint cultivation protocols for high-value medicinal plants
+- Co-development of AI-driven quality optimization system
+- Shared data lake for traceability and outcome correlation
+- Premium pricing structure for outcome-linked batches
+
+## Next Steps
+1. Draft Tier-1 term sheet (14 days)
+2. Joint steering committee formation (30 days)
+3. 90-day integration plan with milestones
+4. Initial pilot on turmeric and ginseng cultivation

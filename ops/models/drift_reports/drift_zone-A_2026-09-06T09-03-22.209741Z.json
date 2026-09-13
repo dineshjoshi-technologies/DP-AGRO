@@ -1,0 +1,160 @@
+{
+  "zone": "zone-A",
+  "timestamp_utc": "2026-09-06T09:03:22.209741Z",
+  "psi_per_feature": {
+    "soil_moisture_mean": 18.95083472211138,
+    "soil_moisture_std": 16.2357824125969,
+    "soil_ph_mean": 14.532214329348932,
+    "soil_ec_mean": 17.056119113552977,
+    "temp_mean": 6.0966200777437205,
+    "temp_max": 0.42213567782208555,
+    "temp_min": 2.0371311736584485,
+    "humidity_mean": 1.617354381246595,
+    "rainfall_total_mm": 0.7134663479544613,
+    "ndvi_current": 44.33186926521643,
+    "ndvi_lag7": 17.87368196350151,
+    "ndvi_lag14": 18.534865547972203,
+    "ndvi_trend": 14.750536075920138,
+    "growing_degree_days": 1.4869612343174903,
+    "soil_water_deficit": 18.950834720258783
+  },
+  "overall_psi": 12.906027136214805,
+  "alerts": [
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 18.95083472211138,
+      "threshold": 0.2,
+      "message": "Critical drift in soil_moisture_mean (PSI=18.9508)",
+      "timestamp_utc": "2026-09-06T09:03:22.209741Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 16.2357824125969,
+      "threshold": 0.2,
+      "message": "Critical drift in soil_moisture_std (PSI=16.2358)",
+      "timestamp_utc": "2026-09-06T09:03:22.209741Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 14.532214329348932,
+      "threshold": 0.2,
+      "message": "Critical drift in soil_ph_mean (PSI=14.5322)",
+      "timestamp_utc": "2026-09-06T09:03:22.209741Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 17.056119113552977,
+      "threshold": 0.2,
+      "message": "Critical drift in soil_ec_mean (PSI=17.0561)",
+      "timestamp_utc": "2026-09-06T09:03:22.209741Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 6.0966200777437205,
+      "threshold": 0.2,
+      "message": "Critical drift in temp_mean (PSI=6.0966)",
+      "timestamp_utc": "2026-09-06T09:03:22.209741Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 0.42213567782208555,
+      "threshold": 0.2,
+      "message": "Critical drift in temp_max (PSI=0.4221)",
+      "timestamp_utc": "2026-09-06T09:03:22.209741Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 2.0371311736584485,
+      "threshold": 0.2,
+      "message": "Critical drift in temp_min (PSI=2.0371)",
+      "timestamp_utc": "2026-09-06T09:03:22.209741Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 1.617354381246595,
+      "threshold": 0.2,
+      "message": "Critical drift in humidity_mean (PSI=1.6174)",
+      "timestamp_utc": "2026-09-06T09:03:22.209741Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 0.7134663479544613,
+      "threshold": 0.2,
+      "message": "Critical drift in rainfall_total_mm (PSI=0.7135)",
+      "timestamp_utc": "2026-09-06T09:03:22.209741Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 44.33186926521643,
+      "threshold": 0.2,
+      "message": "Critical drift in ndvi_current (PSI=44.3319)",
+      "timestamp_utc": "2026-09-06T09:03:22.209741Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 17.87368196350151,
+      "threshold": 0.2,
+      "message": "Critical drift in ndvi_lag7 (PSI=17.8737)",
+      "timestamp_utc": "2026-09-06T09:03:22.209741Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 18.534865547972203,
+      "threshold": 0.2,
+      "message": "Critical drift in ndvi_lag14 (PSI=18.5349)",
+      "timestamp_utc": "2026-09-06T09:03:22.209741Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 14.750536075920138,
+      "threshold": 0.2,
+      "message": "Critical drift in ndvi_trend (PSI=14.7505)",
+      "timestamp_utc": "2026-09-06T09:03:22.209741Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 1.4869612343174903,
+      "threshold": 0.2,
+      "message": "Critical drift in growing_degree_days (PSI=1.4870)",
+      "timestamp_utc": "2026-09-06T09:03:22.209741Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 18.950834720258783,
+      "threshold": 0.2,
+      "message": "Critical drift in soil_water_deficit (PSI=18.9508)",
+      "timestamp_utc": "2026-09-06T09:03:22.209741Z"
+    }
+  ],
+  "drift_detected": true
+}

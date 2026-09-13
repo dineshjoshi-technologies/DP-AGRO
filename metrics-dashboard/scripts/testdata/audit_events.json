@@ -1,0 +1,32 @@
+[
+  {
+    "eventType": "sensor_batch_ingest",
+    "eventId": "a1b2c3d4-e4f5-6789-abcd-ef0123456789",
+    "timestamp": "2026-09-06T14:48:44.167221+00:00",
+    "actor": "agent-blockchain-lead",
+    "payloadHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e449d4d320e1f7b89c3f7f3b3e",
+    "prevEventRef": null,
+    "signature": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "timestamp_utc": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "eventType": "model_training",
+    "eventId": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+    "timestamp": "2026-09-06T14:48:44.167221+00:00",
+    "actor": "agent-mlops-lead",
+    "payloadHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e449d4d320e1f7b89c3f7f3b3e",
+    "prevEventRef": "a1b2c3d4-e4f5-6789-abcd-ef0123456789",
+    "signature": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "timestamp_utc": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "eventType": "prediction_batch",
+    "eventId": "c3d4e5f6-a7b8-9012-cdef-012345678901",
+    "timestamp": "2026-09-06T14:48:44.167221+00:00",
+    "actor": "agent-mlops-lead",
+    "payloadHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e449d4d320e1f7b89c3f7f3b3e",
+    "prevEventRef": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+    "signature": "0xcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "timestamp_utc": "2026-09-06T14:48:44.167221+00:00"
+  }
+]

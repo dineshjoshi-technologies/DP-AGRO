@@ -1,0 +1,62 @@
+[
+  {
+    "content": "Schedule board review of Strategic Alignment Plan for Q3 2026",
+    "priority": "high",
+    "status": "in_progress",
+    "owner": "Chief Executive Officer"
+  },
+  {
+    "content": "Finalize data governance policy for AI initiatives (Weeks 1-3)",
+    "priority": "high",
+    "status": "pending",
+    "owner": "MLOps"
+  },
+  {
+    "content": "Secure genomic sequencing equipment and laboratory space (Weeks 1-3)",
+    "priority": "high",
+    "status": "pending",
+    "owner": "Plant Genomics"
+  },
+  {
+    "content": "Complete blockchain security audit requirements (Weeks 1-3)",
+    "priority": "high",
+    "status": "pending",
+    "owner": "Blockchain Integration"
+  },
+  {
+    "content": "Deploy initial crop sensor network Phase 1 (Weeks 4-6)",
+    "priority": "high",
+    "status": "pending",
+    "owner": "MLOps"
+  },
+  {
+    "content": "Begin strain validation for top 3 engineered compounds (Weeks 4-6)",
+    "priority": "high",
+    "status": "pending",
+    "owner": "Plant Genomics"
+  },
+  {
+    "content": "Complete smart contract blueprint validation (Weeks 4-6)",
+    "priority": "high",
+    "status": "pending",
+    "owner": "Blockchain Integration"
+  },
+  {
+    "content": "Scale crop monitoring model to 100+ farms (Weeks 7-10)",
+    "priority": "high",
+    "status": "pending",
+    "owner": "MLOps"
+  },
+  {
+    "content": "Complete validation of engineered strains (Weeks 7-10)",
+    "priority": "high",
+    "status": "pending",
+    "owner": "Plant Genomics"
+  },
+  {
+    "content": "Deploy Phase 1 manufacturing optimization (Weeks 7-10)",
+    "priority": "high",
+    "status": "pending",
+    "owner": "Operations Sustainability"
+  }
+]
