@@ -14,6 +14,7 @@ Standing issue for board decision log and operations tracking. Executive orchest
 |------|-------------|-------|----------|--------|-------|
 | 2026-08-09 | DPA-143-001 | Strategic Alignment Framework | **Approved by board** (approvals d1638089, 51438509, 4fc23e6e, c17ced9a) | Approved | Board |
 | 2026-09-03 | DPA-143-002 | Board Reporting Cadence | Bi-weekly operational updates, monthly milestone reviews, quarterly strategic assessments | Approved | CEO |
+| 2026-09-13 | DPA-143-003 | Productivity-review dispositions (DPA-245/DPA-243) | Expected pattern — wedged adapter runs, not inefficiency. Board terminations requested (approval dfe4be32) | Pending | Board |
 
 ## Strategic Alignment Framework Decisions
 
@@ -32,6 +33,15 @@ Standing issue for board decision log and operations tracking. Executive orchest
 - **Date:** 2026-09-03
 - **Decision:** Bi-weekly operational updates, monthly milestone reviews, quarterly strategic assessments, real-time KPI dashboard.
 - **Status:** Approved (in effect)
+
+### DPA-143-003: Productivity-review dispositions — DPA-245 (for DPA-182) and DPA-243 (for DPA-224)
+- **Date:** 2026-09-13 (CEO disposition; board approval pending)
+- **Decision:** Both open productivity reviews are **expected pattern — not productivity issues**.
+  - `long_active_duration` triggers caused by wedged MLOps adapter runs (zero output >27h); MLOps produced real work before the wedge.
+  - Already covered by pending approval [a909390a](/DPA/approvals/a909390a-eefc-4cbb-b7c2-cebfcbb261c8) (terminate 4 wedged MLOps runs).
+  - Two additional **CEO** wedged runs (`41f2f917` holding DPA-245 checkout; `5a171733` holding DPA-243 checkout) block closing the review issues to `done`. New approval [dfe4be32](/DPA/approvals/dfe4be32-e079-49e1-bd38-5de5f56288d2) requests their termination.
+- **Status:** **Pending board approval** (dfe4be32). Next step: CEO closes DPA-245/DPA-243 `done` after board terminates the wedged runs.
+- **Detail:** [HEARTBEAT-20260913-CEO-productivity-reviews.md](/home/paperclip/paperclip/HEARTBEAT-20260913-CEO-productivity-reviews.md)
 
 ## Cross-functional Coordination
 
