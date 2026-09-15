@@ -50,9 +50,28 @@ Standard herbal-extraction opportunities to be screened once loads exist:
 - Process integration (pinch analysis)
 - Solar PV (Indian grid factor 0.82 tCO2/MWh for Scope 2)
 
-## Next action
+## Design-phase sub-metering requirement (so the baseline is measurable at commissioning)
 
-Owner: Operations Sustainability Lead. When facility commissioning data is
-available, complete the baseline per the `energy-audit-baseline` methodology
-and produce the ranked opportunities report. Coordinate with CEO on GMP design
-to embed sub-metering now so the baseline is measurable at commissioning.
+Phase 1 GMP design (owner: CEO/design team) must embed, at-design so the
+baseline is measurable from first operation:
+
+1. **Sub-metering on major energy consumers**: CO2 extraction skids, dryers,
+   HVAC (ISO 7), compressed air, milling/pulverizing, packaging line, lighting,
+   and water heating/recovery. Specify pulse-output energy meters (EN/IEC
+   62053-21) feeding the DPA metrics stack.
+2. **Production-output metering**: batch/weight record per line (kg output)
+   per metering interval, so kWh/kg is computable per product family.
+3. **Waste metering**: weighbridge/in-line waste and byproduct weights per line
+   (feeds waste-to-value ratio).
+4. **Interval resolution**: 15-min logging, 30-day retention onboard, monthly
+   rollup to the metrics dashboard.
+5. **Scope 2 enabler**: main utility tie-in measurement (kWh, kVA, PF) at the
+   service entrance, plus space for on-site solar PV generation metering later.
+
+Adding sub-metering at design is far cheaper than retrofit. This requirement
+should be attached to the GMP design RFP.
+
+**Next action (owner: Operations Sustainability Lead → CEO):** propose this
+sub-metering clause to be embedded in the Phase 1 GMP design scope, so the
+audit baseline and Phase 1 optimization reporting are measurable at
+commissioning (coordinated with CEO milestone review).
