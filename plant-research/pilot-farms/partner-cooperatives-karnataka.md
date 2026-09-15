@@ -57,6 +57,13 @@ specifications; written stewardship agreement covering trial-farm plots.
 - This document will be updated to a verified named list (with registration
   references) once cooperative engagement completes.
 
+## Outreach kit
+
+The operationalization path (registry screen → qualification questionnaire →
+decision → permit attachment) is captured in
+[`ops/manufacturing/dpa251-cooperative-outreach-kit.md`](../../ops/manufacturing/dpa251-cooperative-outreach-kit.md),
+mapped to the DPA-235 SC-01 qualification criteria.
+
 ## What is needed to close DPA-251
 
 1. Run DPA-76 supply chain / farmer-cooperative engagement in Karnataka
