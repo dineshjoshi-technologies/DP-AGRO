@@ -38,6 +38,19 @@ partners. Sources:
    (proximity to farm coordinates).
 4. Organic producer / medicinal-plant grower clusters in the Bangalore plateau.
 
+### Candidate leads identified by web research (2026-09-15) — UNVERIFIED
+
+These entities surfaced in public listings and are **unverified candidate
+leads only**; they will be named cooperatives for any official filing only
+after RCS registration verification:
+
+| Lead ref | Entity (as listed) | Why relevant | Verification needed |
+|---|---|---|---|
+| KA-COOP-A-1 | KSFPOCOS — Karnataka State Farmer Producer Organisations Cooperative Society (raithasiri.org; "154+ FPOs", GoK-facilitated) | Umbrella cooperative society across Karnataka FPOs | RCS registration, list of member FPOs per zone |
+| KA-COOP-A-2 | Arkavathi Horticulture Farmers Producer Company (Ramanagara) | Ramanagara district = near FARM-003/007 zone C | Certificate of Incorporation (producer company), FPO status, crops |
+| KA-COOP-A-3 | COE-FPO (GoK Centre of Excellence for FPOs, Bengaluru) | State facilitation hub; can refer district FPOs | Confirm facilitation role + district FPO contacts |
+| KA-COOP-A-4 | SFAC/NAFPO FPO registries (bharatfpofinder.nafpo.in, 10kfpomis.dac.gov.in, coefpo.org FPO list PDF) | District-level FPO directories for Bangalore plateau | Extract district FPO names/contacts per zone A–D |
+
 Each candidate gets a `KA-COOP-<zone>-<n>` ref. Only verified registrations
 carry a "verified" status; everything else is "candidate — verification pending".
 

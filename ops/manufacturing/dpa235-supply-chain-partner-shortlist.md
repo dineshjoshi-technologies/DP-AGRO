@@ -1,6 +1,6 @@
 # DPA-235 — Supply Chain Partner Shortlist and Qualification
 
-**Status:** DRAFT v1 — qualification criteria written; candidate landscape defined; NO partner is asserted as "qualified" until scored against written criteria with evidence
+**Status:** DRAFT v2 — qualification criteria written; **named candidate lists compiled (web research 2026-09-15)**; NO partner is asserted as "qualified" until scored against written criteria with evidence
 **Date:** 2026-09-15
 **Prepared by:** Operations Sustainability Lead (DPA-76 / DPA-235)
 **Sources:** MANUFACTURING_SCALING_PLAN.md, governance/partner-evaluation-framework.md, plant-research/pilot-farms/* (Karnataka confirmed), DPA-76 Weeks 1-3 scope
@@ -80,28 +80,29 @@ ISO 7 HVAC, packaging line (per MANUFACTURING_SCALING_PLAN).
 
 ## Candidate Shortlist (status = candidate, pending qualification)
 
-All rows below are **candidates**, not qualified partners. Programs/entities
-referenced are real but must be screened, scored, and documented before
-onboarding. IRRELEVANT/unknown entities are deliberately not asserted.
+All rows below are **candidates**, not qualified partners. Named entities were
+identified from public listings (web research 2026-09-15) and have NOT yet been
+qualified — outreach, screening, and evidence collection remain. Every entity
+must be scored against the written criteria above before onboarding.
 
-| # | Input | Candidate source | Zone / Region | Candidate status | Evidence needed to qualify | Owner |
+| # | Input | Candidate source (named) | Zone / Region | Candidate status | Evidence needed to qualify | Owner |
 |---|---|---|---|---|---|---|
-| SC-01 | Raw botanical | Karnataka farmer cooperatives / FPOs (A–D agro-climatic zones per pilot-farm registry) | Karnataka (Bangalore plateau) | Candidate — outreach not started | RCS registration, cultivation cert, capacity, agreement | Ops Sustainability Lead |
+| SC-01 | Raw botanical | Karnataka FPO/cooperative ecosystem: KSFPOCOS (Karnataka State Farmer Producer Organisations Cooperative Society, 154+ FPOs, raithasiri.org); Arkavathi Horticulture Farmers Producer Company (Ramanagara); COE-FPO (GoK Centre of Excellence for FPOs, Bengaluru); SFAC/NAFPO FPO registries (bharatfpofinder.nafpo.in, 10kfpomis.dac.gov.in) | Karnataka (A–D zones per pilot-farm registry) | Candidate — outreach not started | RCS registration, cultivation cert, capacity, quality agreement | Ops Sustainability Lead |
 | SC-02 | Raw botanical | DPA 10 pilot farms (FARM-001..010) as own-managed supply | Karnataka | Candidate — own supply core-priority | Farm plot records, quality agreement | Ops Sustainability Lead |
 | SC-03 | Raw botanical | Additional accredited contract cultivator (national organic/good-ag-practice network) | Karnataka / peninsular India | Candidate — to be identified via screening | Certification, residue result, capacity, agreement | Ops Sustainability Lead |
-| SC-04 | Packaging (jar/closure/foil) | FSSAI-registered food-packaging manufacturers (to be screened) | Karnataka / NCR / W. India | Candidate — screening list pending | FSSAI+BIS certs, ISO 9001, audit | Ops Sustainability Lead |
-| SC-05 | Solvent ethanol | State-excise-licensed food-grade ethanol suppliers | Karnataka | Candidate — license verification pending | Excise license, COA, supply commitment | Ops Sustainability Lead |
-| SC-06 | Solvent CO2 | Food-grade CO2 producers | Karnataka / industrial corridor | Candidate — to be screened | FSSAI/IS 3076 COA + license | Ops Sustainability Lead |
-| SC-07 | Equipment (extractors, dryers, milling, packaging, HVAC, HPLC) | Vendor-agnostic tenders against DPA spec | Global + India representation | Candidate — RFP pending facility design | Spec sheet, energy spec, refs, validation pkg | Ops Sustainability Lead |
+| SC-04 | Packaging (jar/closure/foil) | FSSAI-registered food-packaging manufacturers: Manjushree Technopack Ltd (Bommasandra, Bengaluru); Alpha Omega Trading Co (Bengaluru glass); Cimpex Packaging (Baddi, HP; ISO 9001); FortunaPET / Nishant Mouldings | Karnataka / W. India | Candidate — screening list compiled 2026-09-15 | FSSAI+BIS certs, ISO 9001, audit | Ops Sustainability Lead |
+| SC-05 | Solvent ethanol | State-excise-licensed food-grade ethanol suppliers: Zenith Biochemical Industries (food-grade, FSSAI); Tano Distilleries & Chemicals (est. 1975); Harp Chemicals; Shanker International (Delhi) | Karnataka / pan-India | Candidate — license verification pending | Excise license, COA, supply commitment | Ops Sustainability Lead |
+| SC-06 | Solvent CO2 | Food-grade CO2 producers/suppliers: Universal Air Products (Bangalore); Maha Gases & Dry Ice (Bengaluru); SLN Enterprises (Bengaluru); Harmain Technologies (Bengaluru, food-grade) | Karnataka / industrial corridor | Candidate — screening compiled 2026-09-15 | FSSAI/IS 3076 COA + license | Ops Sustainability Lead |
+| SC-07 | Equipment (extractors, dryers, milling, packaging, HVAC, HPLC) | Vendor-agnostic tenders against DPA spec. Supercritical CO2 extraction candidates: Wellness Supercritical (turnkey SS316 plants); Amar Equipment; Orbit Technologies (India); Best Engineering Technologies; Chemtron (Thane) | Global + India representation | Candidate — RFP pending facility design | Spec sheet, energy spec, refs, validation pkg | Ops Sustainability Lead |
 
 ## Dual-Source Coverage (critical inputs)
 
 | Critical input | Primary | Backup | Coverage status |
-|---|---|---|---|
-| Raw botanical (each species) | Pilot farms (own) + Karnataka cooperatives/FPOs | Accredited contract cultivator | GAP — second source not yet qualified (DPA-251 ties here) |
-| Packaging | TBD (screening) | Second region manufacturer | Not yet covered |
-| Solvent ethanol | TBD (excise-licensed) | Second licensed supplier | Not yet covered |
-| CO2 | TBD | Second producer | Not yet covered |
+|---|---|---|---|---|
+| Raw botanical (each species) | Pilot farms (own) + Karnataka cooperatives/FPOs | Accredited contract cultivator (SC-03) | GAP — second source not yet qualified (DPA-251 ties here) |
+| Packaging | Manjushree Technopack (Bengaluru) | Cimpex (HP) / FortunaPET (pan-India) | Candidates identified — qualification pending |
+| Solvent ethanol | Zenith Biochemical (pan-India) | Tano Distilleries / Harp Chemicals / Shanker Intl | Candidates identified — licence + COA verification pending |
+| CO2 | Universal Air Products / Maha Gases (Bengaluru) | SLN Enterprises / Harmain Technologies (Bengaluru) | Candidates identified — IS 3076 COA verification pending |
 | Equipment | Vendor A (bid winner) | Vendor B (second-lowest qualified bid) | By construction at tender |
 
 Critical-input dual-source gaps are real and open: raw-botanical backup,
@@ -111,16 +112,17 @@ packaging backup, solvent backup. These are tracked in the risk register below.
 
 | Risk | Category | Severity | Owner | Mitigation / next action |
 |---|---|---|---|---|
-| Single-source botanical (cooperative outreach not started) | Supply | High | Ops Sustainability Lead | Launch SC-01 outreach under DPA-251/DPA-235; qualify ≥2 sources per species |
-| Packaging backup missing | Supply | Medium | Ops Sustainability Lead | Screen 3+ FSSAI packaging mfrs; dual-region target |
-| Solvent ethanol single license territory | Supply | Medium | Ops Sustainability Lead | Verify 2 state-excise suppliers |
+| Single-source botanical (cooperative outreach not started) | Supply | High | Ops Sustainability Lead | Launch SC-01 outreach via KSFPOCOS + district FPOs under DPA-251/DPA-235; qualify ≥2 sources per species |
+| Packaging candidates not yet audited | Supply | Medium | Ops Sustainability Lead | Audit + qualify ≥2 of SC-04 candidates (Manjushree/Cimpex/FortunaPET) |
+| Solvent ethanol excise licence territory | Supply/Compliance | Medium | Ops Sustainability Lead | Verify Karnataka excise licensure + food-grade COA for 2 suppliers |
+| CO2 candidates not yet COA-verified | Supply | Medium | Ops Sustainability Lead | Request IS 3076 COA + food-grade status from 2 Bengaluru suppliers |
 | Facility in design → no order volume yet | Demand | Informational | CEO | Align RFP to GMP design milestone (Q3-2026) |
 | RCS Karnataka verification gap | Compliance | High | Ops Sustainability Lead + CEO | Do not name cooperatives in permit until verified (DPA-251) |
 
 ## Next Actions
 
-1. Launch Karnataka cooperative/FPO outreach (SC-01) — directly services DPA-251 attachment for DPA-149-STATE-001.
-2. Stand up screening list for packaging (SC-04), solvent (SC-05/06) once facility design confirms volumes/bags; RFP (SC-07) aligned to design milestone.
+1. Launch Karnataka cooperative/FPO outreach (SC-01) via KSFPOCOS + district FPOs — directly services DPA-251 attachment for DPA-149-STATE-001.
+2. Send qualification packages to SC-04/05/06 candidates (packaging audits, excise licence + COA requests, IS 3076 COA) once facility design confirms volumes/bags; RFP (SC-07) aligned to design milestone.
 3. Qualification scoring records must be attached per partner before "qualified" status is used.
 4. CEO sign-off required for capital-equipment RFP award and for any single-source acceptance.
 
