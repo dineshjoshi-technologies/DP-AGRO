@@ -192,6 +192,47 @@ def test_real_data_drift_with_proper_samples():
         assert "psi_per_feature" in report
 
 
+def test_drift_act_on_report_no_retrain():
+    """DPA-188: NO_ACTION reports must not trigger the retraining pipeline."""
+    _redis_log_paths()  # hermetically redirect any retraining persistence
+    monitor = DriftMonitor()
+    decision = monitor.act_on_report(
+        {"zone": "zone-A", "drift_detected": False, "alerts": []},
+        dry_run=True, retraining_path=Path(tempfile.mkdtemp(prefix="retrain-noop-")),
+    )
+    assert decision["retraining_triggered"] is False
+    assert decision["outcome"] is None
+    assert "NO_ACTION" in decision["recommendation"]
+
+
+def test_drift_act_on_report_triggers_retrain():
+    """DPA-188: high-severity drift RETRAIN reports invoke the retraining pipeline."""
+    _redis_log_paths()
+    # Ensure the retraining write path is hermetic: redirect manifest + audit log
+    import retraining_pipeline
+    tmp = Path(tempfile.mkdtemp(prefix="retrain-drift-"))
+    original_manifest = retraining_pipeline.MANIFEST_PATH
+    original_audit = retraining_pipeline.AUDIT_PATH
+    retraining_pipeline.MANIFEST_PATH = tmp / "training_manifest.json"
+    retraining_pipeline.AUDIT_PATH = tmp / "model_training_audit.jsonl"
+    try:
+        monitor = DriftMonitor()
+        decision = monitor.act_on_report(
+            {"zone": "zone-A", "timestamp_utc": "2026-09-15T00:00:00Z",
+             "drift_detected": True,
+             "alerts": [{"severity": "high", "psi": 0.5}]},
+            dry_run=True, n_farms=80,
+            retraining_path=tmp,
+        )
+        assert decision["retraining_triggered"] is True
+        assert decision["outcome"] is not None
+        assert "run_id" in decision["outcome"]
+        assert decision["outcome"]["status"] in ("staging", "rejected", "rollback_candidate")
+    finally:
+        retraining_pipeline.MANIFEST_PATH = original_manifest
+        retraining_pipeline.AUDIT_PATH = original_audit
+
+
 if __name__ == "__main__":
     tests = [
         test_compute_psi_no_drift,
@@ -208,6 +249,8 @@ if __name__ == "__main__":
         test_drift_monitor_zone_calibration,
         test_drift_monitor_calibration_factor,
         test_real_data_drift_with_proper_samples,
+        test_drift_act_on_report_no_retrain,
+        test_drift_act_on_report_triggers_retrain,
     ]
     passed = 0
     failed = 0

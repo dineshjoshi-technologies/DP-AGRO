@@ -14,6 +14,7 @@ Governance alignment: policy §4.2 (drift detection: PSI < 0.1 weekly),
 from __future__ import annotations
 
 import json
+import hashlib
 import math
 import sys
 from dataclasses import dataclass, asdict
@@ -299,6 +300,62 @@ class DriftMonitor:
 
         return "MONITOR: Moderate drift detected. Increase monitoring frequency."
 
+    def act_on_report(self, report: Dict[str, Any], dry_run: bool = True,
+                      n_farms: int = 120, cadence_days: int = 7,
+                      retraining_path: Optional[Path] = None) -> Dict[str, Any]:
+        """Wire a drift report into the retraining pipeline (DPA-188).
+
+        When the report recommendation is RETRAIN, invokes the governance-gated
+        RetrainingPipeline (staging -> production promotion with RMSE gate and
+        auto-rollback). A ``retraining_path`` pointing at an alternative repo
+        root lets tests run the integration hermetically.
+
+        Returns a decision record with the recommendation and, when triggered,
+        the retraining run outcome.
+        """
+        rec = self.get_recommendation(report)
+        decision: Dict[str, Any] = {
+            "zone": report.get("zone"),
+            "timestamp_utc": report.get("timestamp_utc") or self._now_iso(),
+            "recommendation": rec,
+            "retraining_triggered": False,
+            "outcome": None,
+        }
+        if "RETRAIN" not in rec:
+            return decision
+
+        from retraining_pipeline import RetrainingPipeline
+        from yield_model import generate_training_data
+
+        pipeline = RetrainingPipeline(cadence_days=cadence_days,
+                                      model_dir=retraining_path or (REPO_ROOT / "ops" / "models"))
+        data = generate_training_data(n_farms=n_farms)
+        dataset_hash = hashlib.sha256(
+            json.dumps([asdict(f) for f in data], sort_keys=True, default=str).encode()
+        ).hexdigest()
+
+        def train_fn(training_data):
+            from yield_model import YieldPredictor
+            predictor = YieldPredictor(seed=42)
+            metrics = predictor.fit(training_data)
+            return predictor, metrics
+
+        run = pipeline.run_training(data, train_fn, dataset_hash, dry_run=dry_run)
+        decision["retraining_triggered"] = True
+        decision["outcome"] = {
+            "run_id": run.run_id,
+            "status": run.status,
+            "rmse": run.rmse,
+            "n_samples": run.n_samples,
+        }
+        print(f"[DRIFT->RETRAIN] zone={decision['zone']} run={run.run_id} "
+              f"status={run.status} rmse={run.rmse:.4f}")
+        return decision
+
+    @staticmethod
+    def _now_iso() -> str:
+        return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
     def status_summary(self) -> str:
         lines = ["=== Drift Monitor Status ==="]
         if not self.history:
@@ -341,6 +398,10 @@ def main():
     parser.add_argument("--check", action="store_true", help="Run drift check on current data")
     parser.add_argument("--status", action="store_true", help="Show drift history")
     parser.add_argument("--zone", type=str, default=None, help="Specific zone to check")
+    parser.add_argument("--act", type=str, default=None,
+                        help="Act on a drift report JSON file: trigger retraining if RETRAIN")
+    parser.add_argument("--dry-run", action="store_true",
+                        help="With --act: run retraining in governance-gated dry-run (no promotion)")
     args = parser.parse_args()
 
     monitor = DriftMonitor()
@@ -348,6 +409,23 @@ def main():
     if args.status:
         print(monitor.status_summary())
         return 0
+
+    if args.act:
+        from pathlib import Path as _Path
+        report_path = _Path(args.act)
+        if not report_path.exists():
+            print(f"drift report not found: {report_path}")
+            return 1
+        report = json.loads(report_path.read_text())
+        decision = monitor.act_on_report(report, dry_run=args.dry_run)
+        print(json.dumps(decision, indent=2, default=str))
+        rec = decision.get("recommendation", "")
+        triggered = decision.get("retraining_triggered")
+        if rec.startswith("RETRAIN") and triggered:
+            return 0
+        if rec.startswith("NO_ACTION") and not triggered:
+            return 0
+        return 1
 
     if args.check:
         # Synthetic check — in production this loads live feature streams
