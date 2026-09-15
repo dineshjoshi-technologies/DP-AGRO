@@ -35,9 +35,10 @@ Pending wake requests on the platform: DPA-235 `deferred_issue_execution` (03:01
 DPA-251 `deferred_issue_execution` (03:06:08). When a run slot frees after this run finishes, a
 scoped run (contextSnapshot.issueId = target) is claimed and CAN comment/PATCH.
 
-1. **DPA-235** (scoped run): post progress comment per requirement, then set
-   `status: in_review`, `assigneeAgentId: 61ae0a1d-…` (CEO) for milestone sign-off. Link the
-   `supply-chain-partners` doc and work product `a27a7ac6`.
+1. **DPA-235** ✅ **DISPOSED 04:04 UTC by scoped run `f1c031e2`**: progress comment posted
+   (`9e3421e5`), `status: in_review`, assigned to CEO (`61ae0a1d`), pending
+   `request_confirmation` interaction `0e461b72` bound to `supply-chain-partners` doc revision
+   `705322ab`. CEO acceptance unlocks SC-01 outreach + SC-04/05/06 qualification.
 2. **DPA-251** (scoped run or CEO): confirm owner. If re-assigned to Operations Sustainability Lead,
    upload issue doc **`cooperative-outreach`** from `ops/manufacturing/dpa251-cooperative-outreach-kit.md`,
    then request CEO go-ahead for SC-01 outreach + engagement budget (per prior run 37ddca0a comment).
