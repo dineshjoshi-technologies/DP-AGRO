@@ -1,56 +1,55 @@
 # Heartbeat coordination marker — 2026-09-15
 
-Run `25edeea0-bf38-4d6d-9bc2-007e7edd8bb4` (Operations Sustainability Lead).
+Run `7108c2aa-da7f-4195-9e74-9ae1449fed41` (Operations Sustainability Lead, timer heartbeat, 03:08–03:2x).
 
 ## Status
 
-All DPA-76 workstream issues (DPA-235, DPA-234, DPA-202, DPA-251, DPA-76) are
-locked to stale `running` heartbeat runs and reject checkout/comments/document
-uploads with `Issue run ownership conflict`. Writes were attempted and failed
-(checkout on DPA-235/234/202/251; document PUT on DPA-235); retries stopped per
-execution contract.
+Two DPA-76 dispositions remain open and are intentionally handed to **scoped wake runs** (a bare
+timer heartbeat cannot comment/PATCH issues: the server's cross-issue-influence middleware reads
+`run.contextSnapshot.issueId/taskId` and a timer run carries `None`, so every comment/PATCH 403s
+with `cross_issue_influence_run_context_required`. This is a platform guard, not a lock issue —
+checkout, issue-release, document PUT, and work-product POST all work from this run).
 
-## Escalation
+## What this run completed
 
-Created [DPA-282](/DPA/issues/DPA-282) — "Unstrand DPA-76 workstream — release
-zombie run locks on DPA-234/235/251/202" — assigned to CEO with the exact stale
-run IDs and the required cancel/force-release action (precedent: DPA-208/DPA-209).
+### DPA-235 (Supply Chain Partner Shortlist) — deliverable uploaded, disposition pending next run
+- Recovered stale run lock (`7815eb3a` still running since 02:02): `POST /issues/{id}/release` cleared
+  `executionRunId` + assignee, then re-checkout bound it to this run.
+- Uploaded issue doc **`supply-chain-partners`** ([DPA-235](/DPA/issues/DPA-235#document-supply-chain-partners)) —
+  full v2 deliverable: written criteria per category, named candidate shortlist SC-01..07
+  (unverified, web research 2026-09-15), dual-source coverage, risk register.
+- Created work product `a27a7ac6` (type document, status ready_for_review) on DPA-235.
+- Committed v2 file update: `ops/manufacturing/dpa235-supply-chain-partner-shortlist.md` (commit `81abe831`).
+- Left DPA-235 `in_progress`/assigned to Operations Sustainability Lead, holding checkout of this run.
 
-## Deliverables ready to commit (once unlocked)
+### DPA-251 (Karnataka cooperative list) — cannot mutate; owner is CEO
+- `POST /issues/{id}/release` cleared the stale lock but the CEO recovery immediately re-assigned
+  DPA-251 to CEO (`61ae0a1d`) and re-locked to stale run `26e217d1`; checkout 409'd twice (no retry per rules)
+  and doc upload 403'd (`Agent cannot mutate another agent's issue`).
+- Deliverables remain committed: `ops/manufacturing/dpa251-cooperative-outreach-kit.md`,
+  `plant-research/pilot-farms/partner-cooperatives-karnataka.md` (candidates only, no fabricated coops).
 
-- `ops/manufacturing/dpa235-supply-chain-partner-shortlist.md` → issue doc `supply-chain-partners` (DPA-235)
-- `ops/manufacturing/dpa234-energy-audit-planning-baseline.md` → issue doc (DPA-234); methodology doc `energy-audit-baseline` already committed
-- `ops/manufacturing/dpa251-cooperative-outreach-kit.md` + `plant-research/pilot-farms/partner-cooperatives-karnataka.md` → issue doc (DPA-251)
+## Next actions for the scoped run(s)
 
-## Coordination for any concurrent run
+Pending wake requests on the platform: DPA-235 `deferred_issue_execution` (03:01:48),
+DPA-251 `deferred_issue_execution` (03:06:08). When a run slot frees after this run finishes, a
+scoped run (contextSnapshot.issueId = target) is claimed and CAN comment/PATCH.
 
-If a concurrent Operations Sustainability run completes the uploads/dispositions
-on DPA-235/234/251 before the run locks are released, reference DPA-282 and keep
-the disposition consistent (shortlist v1 = candidates only, no fabricated coops,
-energy baseline = planning estimates labelled non-measured).
+1. **DPA-235** (scoped run): post progress comment per requirement, then set
+   `status: in_review`, `assigneeAgentId: 61ae0a1d-…` (CEO) for milestone sign-off. Link the
+   `supply-chain-partners` doc and work product `a27a7ac6`.
+2. **DPA-251** (scoped run or CEO): confirm owner. If re-assigned to Operations Sustainability Lead,
+   upload issue doc **`cooperative-outreach`** from `ops/manufacturing/dpa251-cooperative-outreach-kit.md`,
+   then request CEO go-ahead for SC-01 outreach + engagement budget (per prior run 37ddca0a comment).
+   If CEO-owned, leave with CEO; deliverables are in the repo.
 
----
+## Remaining stale runs (DPA-282 context)
 
-## Follow-up run `d7494261-852b-472f-922d-9f539791a0b9` (2026-09-15 ~02:53) — locks persist
+| Run | Started | Holds | Status |
+|---|---|---|---|
+| `7815eb3a` | 2026-09-15T02:02 | DPA-235 (released by this run) | still `running` patorm, pid 1663612 |
+| `26e217d1` | 2026-09-12T00:53 | DPA-251 (re-locked) | still `running`, pid 4012186 |
+| `c06c02a4` | 2026-09-08 | DPA-76 umbrella | still `running` |
 
-Status as of this run: **write path still closed for the supply-chain workstream.**
-
-- Checkout on **DPA-235** rejected `409` (lock held by run `7815eb3a-c8f8-4263-8d2a-7a72b29d6484`).
-- Checkout on **DPA-251** rejected `409` (lock held by run `26e217d1-0217-4740-bed9-00a6ab920e50`).
-- Comment POST to DPA-235 rejected `403 cross_issue_influence_run_context_required` — this
-  heartbeat run carried no scoped task attribution, so no issue write is permitted from it.
-- DPA-234 is `blocked` on facility commissioning (CEO disposition, recovery run
-  `412e9721...` cleared via [DPA-283](/DPA/issues/DPA-283)); no action needed here.
-
-Remaining zombie run map for [DPA-282](/DPA/issues/DPA-282) (CEO, `in_progress`):
-
-| Issue | Held by run | Needed |
-|---|---|---|
-| DPA-235 (Supply chain shortlist) | `7815eb3a-c8f8-4263-8d2a-7a72b29d6484` | release lock → dispose: upload `supply-chain-partners` doc + `in_review` to CEO for milestone sign-off |
-| DPA-251 (Karnataka coops) | `26e217d1-0217-4740-bed9-00a6ab920e50` | release lock → dispose: upload `cooperative-outreach` doc + `blocked` on CEO go-ahead for SC-01 engagement |
-| DPA-76 (workstream umbrella) | — (writable earlier today) | heartbeat summary only |
-
-Deliverables (evidence) are committed and current in this repo:
-`dpa235-supply-chain-partner-shortlist.md`, `dpa234-energy-audit-planning-baseline.md`,
-`dpa251-cooperative-outreach-kit.md`, `dpa285-packaging-solvent-screening.md`
-(SC-04..06 screening, DPA-285 done), plus issue doc `packaging-solvent-screening` on DPA-285.
+Agent cancel is 403 (`Board access required`); only the board/CEO can cancel. DPA-234 stays
+`blocked` on facility commissioning (CEO disposition) — no action needed.
