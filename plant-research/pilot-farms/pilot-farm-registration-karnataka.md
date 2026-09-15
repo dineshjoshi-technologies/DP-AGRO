@@ -39,7 +39,7 @@ recorded in the registry.
 |---|---|---|
 | Farm location coordinates / land records | ✅ Available | `ops/sensor_network/farm_registry.json` (coordinates) + this pack; survey land records pending DPA-76 partnership docs |
 | DPA pilot farm registration records (Karnataka) | ✅ Available | This pack (registry-generated) |
-| List of partnered farmer cooperatives | ⏳ Pending | DPA-76 farmer-cooperative engagement — follow-up issue tracked |
+| List of partnered farmer cooperatives | ⏳ Engagement record on file (registration verification pending) | [partner-cooperatives-karnataka.md](./partner-cooperatives-karnataka.md) — DPA-76; do NOT cite until registration verified |
 | Sample collection SOP and tracking sheet | ⏳ Pending | Botanical Research Agent (permit owner) |
 | Monthly reporting template | ⏳ Pending | Botanical Research Agent (permit owner) |
 

@@ -67,7 +67,7 @@ I hereby declare that:
 
 ## 8. Attachments
 - [x] DPA pilot farm registration records (Karnataka) — [pilot-farm-registration-karnataka.md](../pilot-farms/pilot-farm-registration-karnataka.md)
-- [ ] List of partnered farmer cooperatives — pending DPA-76 farmer-cooperative engagement
+- [ ] List of partnered farmer cooperatives — engagement record on file ([partner-cooperatives-karnataka.md](../pilot-farms/partner-cooperatives-karnataka.md)); pending real cooperative engagement + RCS verification before filing cites registration numbers
 - [ ] Sample collection SOP and tracking sheet
 - [ ] Monthly reporting template (DPA-149-Report-Template)
 - [x] Farm location coordinates and land records — [farm_registry.json](../../ops/sensor_network/farm_registry.json) + registration pack (survey land records pending DPA-76)
