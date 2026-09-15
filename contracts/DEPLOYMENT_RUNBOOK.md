@@ -8,11 +8,31 @@ runbook makes the deploy deterministic so any credentialed operator (MLOps or th
 Blockchain Integration Lead, whose disposition path is now restored) can execute it
 without re-deriving the contract state.
 
-> Status update (2026-09-15): the previously-missing `contracts/scripts/deploy.js` is
-> now in the workspace and guards correctly (fails fast with a clean message when
-> `AMOY_RPC_URL` is absent). Smoke test re-verified `ALL PASS` this heartbeat
-> (`node contracts/verification/smoke-test.js`). The only open gate is provisioning the
-> Amoy RPC endpoint + funded deployer key from the deployment secret store.
+> Status update (2026-09-15, Blockchain Integration Lead — DPA-281 execution):
+> - **Critical fix applied**: `contracts/scripts/deploy.js` previously called
+>   `factory.deploy()` with no constructor argument. `AuditTrail`'s constructor
+>   requires `address initialOwner` and rejects `address(0)` — the un-fixed script
+>   would have **reverted on-chain and burned deployer gas**. Fixed to
+>   `factory.deploy(wallet.address)` (owner = deployer, deployer auto-recorder).
+> - **Reproducible build verified**: `solc 0.8.36` + `--evm-version paris` +
+>   optimizer 200 rebuild matches pinned `contracts/AuditTrail.bin` exactly
+>   (4227 bytes, sha256 `caa91469f8899726d6d372a0ed259bb52446c560179052be35726936c27ef18b`).
+> - **Smoke test re-verified** `ALL PASS` (gas figures match 2026-09-08 report).
+> - **Deploy-path validation executed on EVM harness**
+>   (`contracts/verification/validate-deploy-path.js`): owner==deployer, deployer
+>   auto-recorder, ETL write reverts pre-`setRecorder`, succeeds post-
+>   `setRecorder(ETL,true)`, `verifySchemaCompliance(known)=true`,
+>   `verifySchemaCompliance(unknown)=false`. ALL PASS.
+> - **Amoy RPC endpoint provisioned**: `https://polygon-amoy-bor-rpc.publicnode.com`
+>   (chainId verified `80002`). Official `rpc-amoy.polygon.technology` does not
+>   resolve in this environment.
+> - **Deployer key provisioning started**: fresh key generated
+>   (`0xAe134606Ae503fB1c74Ca35D60DfcE21d553b4E2`), filed as pending secret
+>   proposal `amoy_deployer_key` in the deployment secret store. Key is
+>   **UNFUNDED (0 POL)** — this is the open gate. All Amoy faucets observed in this
+>   environment are captcha/login-gated (403 on official faucet; login walls on
+>   QuickNode/Alchemy) so funding needs a credentialed human or a paid/provider
+>   faucet approved by the CEO.
 
 ## Milestone mapping (Strategic Alignment Plan)
 
@@ -101,15 +121,17 @@ The deploy script must:
 ## Primary blocker for execution
 
 Actual Amoy deployment needs:
-- Amoy RPC endpoint
-- funded deployer key (secure store)
-- recorder service address (`setRecorder(<ETL-service-address>)` after deploy)
+- Amoy RPC endpoint — **PROVISIONED** (`https://polygon-amoy-bor-rpc.publicnode.com`, chainId 80002)
+- **funded** deployer key (secure store) — **OPEN GATE**: key exists (`0xAe134606...`,
+  secret proposal `amoy_deployer_key` pending), but has **0 POL** and all Amoy faucets in
+  this environment are captcha/login-gated
+- recorder service address (`setRecorder(<ETL-service-address>)` after deploy) — grant
+  target must be the ETL signer address (owned by MLOps `AUDIT_RECORDER_KEY`)
 
-The `contracts/scripts/deploy.js` helper **exists** in the workspace and is ready
-(guards on `AMOY_RPC_URL`/`AMOY_DEPLOYER_KEY`, emits `{ address, txHash, blockNumber,
-chainId, bytecodeSha256 }`). The remaining gate is **only** the secret-store credentials
-above; the deploy itself — and the post-deploy `setRecorder` step — is delegated to the
-restored Blockchain Integration Lead under the DPA-84 deployment follow-up issue.
+The `contracts/scripts/deploy.js` helper **exists**, is syntax-checked, has the
+constructor-owner-arg fix applied, and the full deploy+`setRecorder`+`verifySchemaCompliance`
+path is validated on the EVM harness. Deploy is executable as soon as the deployer key
+is funded (≥ 0.05 POL per script guard). Funding is the only gate.
 
 ## Handoff
 
@@ -126,5 +148,32 @@ restored Blockchain Integration Lead under the DPA-84 deployment follow-up issue
 
 | Network | Address | Deployed by | Date | Verified |
 |---------|---------|-------------|------|----------|
-| Amoy (testnet) | _pending_ | _pending_ | _pending_ | |
+| Amoy (testnet) | _pending (blocked on funded deployer key)_ | Blockchain Integration Lead | 2026-09-15 | build sha256 match + smoke ALL PASS |
+| Amoy deployer (ready, unfunded) | `0xAe134606Ae503fB1c74Ca35D60DfcE21d553b4E2` | generated 2026-09-15 | | needs >= 0.05 POL |
+| Amoy recorder (for `setRecorder`) | `0xfd09fAE57198Bfa2e33337990deCEA1B48Dd5C82` | generated 2026-09-15 | | pending secret-proposal approval |
 | Mainnet | _gated on external audit_ | | | |
+
+## Deploy preflight re-verified (2026-09-15 heartbeat)
+
+- **Reproducible build**: `solcjs 0.8.36` (`paris`, optimizer 200) output sha256
+  `caa91469f8899726d6d372a0ed259bb52446c560179052be35726936c27ef18b`
+  == pinned `contracts/AuditTrail.bin` (8454 hex chars) — **exact match**.
+- **Smoke suite**: `node contracts/verification/smoke-test.js` → **ALL PASS**
+  (deploy gas 860,105; sensor batch 163,859; predictions 125,797; revert paths pass).
+- **Amoy RPC live**: `https://polygon-amoy-bor-rpc.publicnode.com` → chainId
+  `0x13882` (80002), block height advancing at verification time.
+- **Deploy guard**: `node contracts/scripts/deploy.js` fails fast with
+  `AMOY_RPC_URL is required` when env absent (guard confirmed working).
+
+## Open gate (blocker)
+
+Deployer key is generated but **unfunded**; the deployment secret store had no Amoy
+credentials as of 2026-09-15. Funding requires an approval decision (free Amoy faucets
+are GitHub-OAuth/Cloudflare-gated or paid). Tracked as blocker issue
+[DPA-286](/DPA/issues/DPA-286) (owner: CEO). Secret proposals pending approval:
+`AMOY_RPC_URL` (`51d8674e-2512-49fb-b1ef-481373dabf32`),
+`AMOY_DEPLOYER_KEY` (`77884763-8259-40cb-bbe5-d8cac702cfc2`),
+`AUDIT_RECORDER_KEY` (`eea10a8e-a72c-4e41-966c-f4c3f624f293`).
+On funding, run `AMOY_RPC_URL=... AMOY_DEPLOYER_KEY=... node contracts/scripts/deploy.js`
+then `setRecorder(0xfd09fAE57198Bfa2e33337990deCEA1B48Dd5C82)` and record the address above.
+| ETL recorder (Amoy) | _pending_ — grant via `setRecorder(<ETL-service-address>)` after deploy | | | |
