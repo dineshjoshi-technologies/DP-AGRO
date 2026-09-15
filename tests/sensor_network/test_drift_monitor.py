@@ -8,9 +8,19 @@ and bounded feature distributions.
 import sys
 import os
 import random
+import tempfile
+from pathlib import Path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "ops", "sensor_network"))
 
+import drift_monitor
 from drift_monitor import DriftMonitor, compute_psi_per_feature, DriftAlert, _compute_psi
+
+
+def _redis_log_paths():
+    """Point persistence (drift log + reports) at a throwaway temp location so tests are hermetic."""
+    tmp = Path(tempfile.mkdtemp(prefix="drift-test-"))
+    drift_monitor.DRIFT_LOG = tmp / "drift_monitor.jsonl"
+    drift_monitor.DRIFT_REPORTS = tmp / "reports"
 
 
 def test_compute_psi_no_drift():
@@ -102,6 +112,7 @@ def test_drift_monitor_recommendation():
 
 
 def test_status_summary():
+    _redis_log_paths()  # fresh empty persistence so the summary reflects a clean monitor
     monitor = DriftMonitor()
     summary = monitor.status_summary()
     assert "No drift reports yet" in summary

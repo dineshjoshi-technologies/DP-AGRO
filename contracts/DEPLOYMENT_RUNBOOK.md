@@ -1,11 +1,18 @@
 # AuditTrail.sol — Polygon Testnet Deployment Runbook
 
-**Status: READY FOR EXECUTION** (2026-09-08, CEO recovery run for DPA-79)
+**Status: READY FOR EXECUTION** (2026-09-08, CEO recovery run for DPA-79; re-verified 2026-09-15 by MLOps Lead)
 
 Prepared by the CEO as recovery owner of the Blockchain Integration workstream because
-the Blockchain Integration Lead has no functional disposition path. This runbook makes
-the deploy deterministic so any credentialed operator (MLOps or the Blockchain Lead, once
-restored) can execute it without re-deriving the contract state.
+the Blockchain Integration Lead had no functional disposition path at the time. This
+runbook makes the deploy deterministic so any credentialed operator (MLOps or the
+Blockchain Integration Lead, whose disposition path is now restored) can execute it
+without re-deriving the contract state.
+
+> Status update (2026-09-15): the previously-missing `contracts/scripts/deploy.js` is
+> now in the workspace and guards correctly (fails fast with a clean message when
+> `AMOY_RPC_URL` is absent). Smoke test re-verified `ALL PASS` this heartbeat
+> (`node contracts/verification/smoke-test.js`). The only open gate is provisioning the
+> Amoy RPC endpoint + funded deployer key from the deployment secret store.
 
 ## Milestone mapping (Strategic Alignment Plan)
 
@@ -23,6 +30,7 @@ restored) can execute it without re-deriving the contract state.
 | `contracts/AuditTrail.bin` | compiled creation bytecode, solc 0.8.36, evmVersion `paris`, optimizer 200 |
 | `contracts/AuditTrail.abi.json` | ABI |
 | `contracts/verification/VERIFICATION_REPORT.md` | smoke-test evidence (ALL PASS, gas within spec) |
+| `contracts/verification/smoke-test.js` | EVM-harness smoke test (re-verified 2026-09-15) |
 | `contracts/SECURITY_AUDIT_REQUIREMENTS.md` | Weeks 1-3 audit + key handling + DPDP note |
 
 ## Target Network
@@ -95,12 +103,13 @@ The deploy script must:
 Actual Amoy deployment needs:
 - Amoy RPC endpoint
 - funded deployer key (secure store)
-- recorder service address
+- recorder service address (`setRecorder(<ETL-service-address>)` after deploy)
 
-The `contracts/scripts/deploy.js` helper does not yet exist in the workspace — it is the
-one remaining code artifact needed before the address can be produced. This is a small,
-self-contained step that MLOps (who owns the ETL and pipeline) can complete, or the
-Blockchain Lead once its disposition path is restored.
+The `contracts/scripts/deploy.js` helper **exists** in the workspace and is ready
+(guards on `AMOY_RPC_URL`/`AMOY_DEPLOYER_KEY`, emits `{ address, txHash, blockNumber,
+chainId, bytecodeSha256 }`). The remaining gate is **only** the secret-store credentials
+above; the deploy itself — and the post-deploy `setRecorder` step — is delegated to the
+restored Blockchain Integration Lead under the DPA-84 deployment follow-up issue.
 
 ## Handoff
 
@@ -108,6 +117,10 @@ Blockchain Lead once its disposition path is restored.
   "Smart contract deployed (address shared by Blockchain Lead)" and the ETL + Grafana
   items become unblocked.
 - Record the address in this runbook's registry section below.
+- The Amoy deploy + `setRecorder` step is tracked as a first-class follow-up under
+  [DPA-84](/DPA/issues/DPA-84) (blocker on DPA-84/DPA-182); owner: Blockchain Integration
+  Lead. When that issue completes, the ETL audit recorder can switch from `--dry-run`
+  to live submission and the audit-gap panel goes online.
 
 ## Address registry
 

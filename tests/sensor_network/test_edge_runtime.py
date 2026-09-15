@@ -14,11 +14,11 @@ from edge_anomaly import fit_isolation_forest
 from ingest_validator import EnvelopeValidator
 
 
-def make_reading(farm="FARM-001", sensor="SOIL-ZA-001", quality=0):
+def make_reading(farm="FARM-001", sensor="SOIL-ZA-001", quality=0, ts=None):
     return EdgeReading(
         farm_id=farm,
         sensor_id=sensor,
-        timestamp_utc="2026-09-06T12:00:00Z",
+        timestamp_utc=ts or now_iso(),
         measurement={"type": "soil", "moisture": 0.28, "ec": 0.45, "ph": 6.8},
         quality_flag=quality,
     )

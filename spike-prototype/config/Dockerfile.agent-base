@@ -1,0 +1,65 @@
+# Base agent sandbox image
+# Build: docker build -t djtech/agent-base:latest -f spike-prototype/config/Dockerfile.agent-base .
+
+FROM gcr.io/distroless/cc-debian12:nonroot AS base
+
+# Install minimal runtime dependencies
+# Using distroless means no shell, no package manager - add what we need at build time
+
+# Python runtime layer
+FROM base AS python-runtime
+COPY --from=python:3.11-slim /usr/local/bin/python3 /usr/local/bin/python3
+COPY --from=python:3.11-slim /usr/local/lib/python3.11 /usr/local/lib/python3.11
+ENV PYTHONPATH=/usr/local/lib/python3.11
+ENV PATH="/usr/local/bin:${PATH}"
+
+# Node.js runtime layer
+FROM base AS node-runtime
+COPY --from=node:20-slim /usr/local/bin/node /usr/local/bin/node
+COPY --from=node:20-slim /usr/local/lib/node_modules /usr/local/lib/node_modules
+ENV PATH="/usr/local/bin:${PATH}"
+
+# Go runtime layer
+FROM base AS go-runtime
+COPY --from=golang:1.22-alpine /usr/local/go/bin/go /usr/local/bin/go
+COPY --from=golang:1.22-alpine /usr/local/go/pkg /usr/local/go/pkg
+ENV PATH="/usr/local/go/bin:${PATH}"
+ENV GOPATH=/workspace/go
+
+# Rust runtime layer
+FROM base AS rust-runtime
+COPY --from=rust:1.78-slim /usr/local/cargo/bin/rustc /usr/local/bin/rustc
+COPY --from=rust:1.78-slim /usr/local/cargo/bin/cargo /usr/local/bin/cargo
+COPY --from=rust:1.78-slim /usr/local/rustup /usr/local/rustup
+ENV PATH="/usr/local/cargo/bin:${PATH}"
+ENV RUSTUP_HOME=/usr/local/rustup
+ENV CARGO_HOME=/usr/local/cargo
+
+# Multi-runtime final image
+FROM base AS multi-runtime
+COPY --from=python-runtime /usr/local/bin/python3 /usr/local/bin/python3
+COPY --from=python-runtime /usr/local/lib/python3.11 /usr/local/lib/python3.11
+COPY --from=node-runtime /usr/local/bin/node /usr/local/bin/node
+COPY --from=node-runtime /usr/local/lib/node_modules /usr/local/lib/node_modules
+COPY --from=go-runtime /usr/local/go/bin/go /usr/local/bin/go
+COPY --from=go-runtime /usr/local/go/pkg /usr/local/go/pkg
+COPY --from=rust-runtime /usr/local/bin/rustc /usr/local/bin/rustc
+COPY --from=rust-runtime /usr/local/bin/cargo /usr/local/bin/cargo
+COPY --from=rust-runtime /usr/local/rustup /usr/local/rustup
+COPY --from=rust-runtime /usr/local/cargo /usr/local/cargo
+
+ENV PYTHONPATH=/usr/local/lib/python3.11
+ENV PATH="/usr/local/bin:/usr/local/go/bin:/usr/local/cargo/bin:${PATH}"
+ENV GOPATH=/workspace/go
+ENV RUSTUP_HOME=/usr/local/rustup
+ENV CARGO_HOME=/usr/local/cargo
+
+# Create workspace and secrets directories
+RUN mkdir -p /workspace /secrets && \
+    chown -R nonroot:nonroot /workspace /secrets
+
+WORKDIR /workspace
+USER nonroot
+
+# Default entrypoint - overridden by agent runtime
+ENTRYPOINT ["/usr/local/bin/python3", "-c", "print('Agent sandbox ready')"]

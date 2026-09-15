@@ -23,9 +23,11 @@ def make_mock_model(predict_fn):
 
 def test_validate_zone_passes():
     validator = PerZoneValidator()
-    model = make_mock_model(lambda x: 3.0)
-    features = [[1.0, 2.0, 3.0] for _ in range(30)]
-    labels = [3.0] * 30
+    # Features encode an index so the mock model can reproduce a label with
+    # non-zero variance — zero-variance labels correctly trip low_variance gate.
+    model = make_mock_model(lambda x: 3.0 + x[0] * 0.01)
+    features = [[i, 0.0, 0.0] for i in range(30)]
+    labels = [3.0 + i * 0.01 for i in range(30)]
 
     result = validator.validate_zone(model, "zone-A", features, labels, ["f1", "f2", "f3"])
     assert isinstance(result, ZoneValidationResult)

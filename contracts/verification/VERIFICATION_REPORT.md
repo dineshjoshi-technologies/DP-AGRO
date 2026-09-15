@@ -1,6 +1,6 @@
 # AuditTrail.sol — Verification Report
 
-**Status: PASSED (2026-09-08, CEO-run integration test)**
+**Status: PASSED (2026-09-08, CEO-run integration test; RE-VERIFIED 2026-09-15 by MLOps Lead — `ALL PASS` on the EVM harness, gas figures identical)**
 
 Contract: `contracts/AuditTrail.sol` (SPDX MIT, Solidity ^0.8.20)
 Compiled: solc 0.8.36, `evmVersion: paris`, optimizer enabled (200 runs)
@@ -43,6 +43,11 @@ node contracts/verification/smoke-test.js
 ```
 
 Expect `ALL PASS` and positive gas figures for all five interface functions.
+
+> Note (2026-09-15): harness deps (`@ethereumjs/vm@7`, `@ethereumjs/common@4`,
+> `@ethereumjs/util@9`) are installed in `contracts/package.json`. `AuditTrail.abi.json`
+> and `AuditTrail.bin` are shipped alongside `smoke-test.js` so the harness is
+> self-contained (re-verified: `ALL PASS`).
 
 ## Next step
 
