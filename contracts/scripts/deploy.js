@@ -29,7 +29,9 @@ async function main() {
   }
 
   const factory = new ethers.ContractFactory(abi, bytecode, wallet);
-  const contract = await factory.deploy();
+  // AuditTrail's constructor requires an initial owner (rejects address(0)).
+  // Owner is the deployer: it is auto-granted the recorder role in the constructor.
+  const contract = await factory.deploy(wallet.address);
   const receipt = await contract.deploymentTransaction().wait();
 
   const { createHash } = await import('node:crypto');
