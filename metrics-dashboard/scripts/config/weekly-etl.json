@@ -1,0 +1,16 @@
+{
+  "inputs": {
+    "sensor_ingest": "testdata/sensor_online.json",
+    "model_monitor": "testdata/yield_runs.json",
+    "activity_logs": "testdata/labor_hours.json",
+    "audit_events": "testdata/audit_events.json"
+  },
+  "output": {
+    "dsn": "${PG_DSN}"
+  },
+  "thresholds": {
+    "audit_gap_alert_minutes": 15,
+    "coverage_alert_pct": 80,
+    "rmse_alert_threshold": 0.18
+  }
+}

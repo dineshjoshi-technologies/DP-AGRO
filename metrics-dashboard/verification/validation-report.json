@@ -1,0 +1,21 @@
+{
+  "validated_at": "2026-09-11T09:16:28.735243+00:00",
+  "total_events": 4,
+  "valid": true,
+  "error_count": 0,
+  "errors": [],
+  "diagnostics": {
+    "total_events": 4,
+    "event_type_counts": {
+      "sensor_batch_ingest": 1,
+      "model_training": 1,
+      "prediction_batch": 1,
+      "model_promotion": 1
+    },
+    "time_range": {
+      "earliest": "2026-09-06T13:58:03.261307+00:00",
+      "latest": "2026-09-06T13:58:03.261307+00:00",
+      "span_minutes": 0.0
+    }
+  }
+}

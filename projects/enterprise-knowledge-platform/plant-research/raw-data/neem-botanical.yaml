@@ -1,0 +1,657 @@
+metadata:
+  plant: Azadirachta indica (Neem)
+  date: '2026-06-29'
+  version: '1.0'
+  researcher: Botanical Research Agent (AI-assisted)
+  confidence_legend:
+    high: Multiple peer-reviewed sources with consensus
+    medium: Limited studies or some variability in findings
+    low: Single study, preliminary evidence, or extrapolated data
+botanical_and_taxonomic_profile:
+  scientific_name: Azadirachta indica A.Juss.
+  authority: 'Adrien-Henri de Jussieu, 1830 (Mem. Mus. Hist. Nat. 19: 221)'
+  synonyms:
+  - Melia azadirachta L. (basionym)
+  - Antelaea azadirachta (L.) Adelb.
+  - Melia indica (A.Juss.) Brandis
+  - Azadirachta indica subsp. vartakii Kothari, Londhe & N.P.Singh
+  family: Meliaceae (Mahogany family)
+  genus: Azadirachta
+  species: Azadirachta indica
+  taxonomic_rank: Species
+  ncbi_taxonomy_id: 124943
+  classification:
+    kingdom: Plantae
+    clade:
+    - Angiosperms
+    - Eudicots
+    - Rosids
+    order: Sapindales
+    family: Meliaceae
+    genus: Azadirachta
+  common_names:
+    english:
+    - Neem
+    - Margosa
+    - Nimtree
+    - Indian Lilac
+    sanskrit:
+    - Nimba
+    - Arishta
+    - Paribhadra
+    hindi:
+    - Neem
+    - Nim
+    tamil:
+    - Vempu
+    - Veppam
+    telugu:
+    - Vepa
+    - Nimbamu
+    - Picumandamu
+    bengali:
+    - Neem
+    marathi:
+    - Neem
+    - Kadu-nim
+    punjabi:
+    - Nimm
+    urdu:
+    - Neem
+    persian:
+    - Azad darakhat-e-hind
+    arabic:
+    - Nim
+    - Nem
+  morphology:
+    growth_habit: Small to medium-sized evergreen tree, sometimes deciduous in severe drought
+    height:
+      typical: 15-20 m
+      maximum: 35-40 m (rare)
+    crown: Round, dense, spreading, 10-20 m diameter
+    trunk:
+      diameter: Up to 90 cm
+      bark: Moderately thick, dark grey outside, reddish inside, deeply fissured and flaking in old trees, produces colorless sticky foetid sap
+    leaves:
+      type: Alternate, simply pinnate, crowded near branch ends
+      length: 20-40 cm
+      leaflet_count: 8-19
+      leaflet_description: Ovate to lanceolate, sometimes falcate, 3.5-10 x 1.2-4 cm, serrate margin, acuminate apex, unequal base
+      color: Light to medium green, glossy
+    flowers:
+      inflorescence: Axillary, many-flowered drooping panicles, up to 25-35 cm long
+      flower_count: 150-250 per panicle
+      symmetry: Actinomorphic, bisexual or male on same tree (polygamous)
+      size: 5-6 mm long, 8-11 mm wide
+      color: White to pale yellow
+      fragrance: Slightly sweet, honey-like
+      calyx: 5-lobed, imbricate, broadly ovate
+      petals: 5, free, imbricate, spathulate
+      staminal_tube: Cylindrical, terminating in 10 appendages
+      ovary: 3-locular, 2 ovules per locule
+      stigma: 3-lobed, cream-colored
+    fruit:
+      type: Drupe, 1-2 seeded
+      shape: Ellipsoidal to ovoid
+      size: 1.0-2.0 cm long
+      color: Greenish to yellow or purple when ripe
+      exocarp: Thin
+      mesocarp: Pulpy, yellowish-white, fibrous, bitter-sweet
+      endocarp: Cartilaginous
+    seed:
+      shape: Ovoid or spherical with pointed apex
+      testa: Thin, composed of shell and kernel (each ~50% of seed weight)
+      seeds_per_kg: 4000-4500
+    root_system: Deep taproot, extensive lateral roots
+  native_range:
+    region: Indian subcontinent and Southeast Asia
+    countries:
+    - India
+    - Pakistan
+    - Sri Lanka
+    - Bangladesh
+    - Myanmar
+    - Thailand
+    - Indonesia
+    - Malaysia
+    habitat: Mixed forests with Acacia spp. and Dalbergia sissoo; lowland monsoon forests
+  current_distribution:
+    status: Naturalized and cultivated pantropically
+    regions:
+    - Tropical and subtropical Africa
+    - Middle East (Saudi Arabia, Yemen)
+    - Australia (Northern)
+    - Caribbean
+    - Central and South America
+    - Pacific Islands
+    elevation_range: 0-1500 m
+  varieties_and_subspecies:
+  - name: Azadirachta indica var. minor Valeton
+    notes: Sometimes recognized in Southeast Asia; generally considered a synonym
+    confidence: low
+  - name: Azadirachta indica var. siamensis Valeton
+    notes: Thai variant; generally considered a synonym
+    confidence: low
+  - name: Azadirachta indica subsp. vartakii Kothari, Londhe & N.P.Singh
+    notes: Described from India; taxonomic status uncertain, treated as synonym by POWO
+    confidence: low
+  phenology:
+    flowering_season:
+      india: February-May (varies by region)
+      thailand: Year-round
+      east_africa: Restricted to wet season (distinct)
+      confidence: high
+    fruiting_period:
+      fruit_development: ~12 weeks from anthesis
+      india: May-August (peak June-July)
+      confidence: high
+    optimal_harvest_window:
+      seeds: When fruits turn yellow-green to yellow, before full ripening and dispersal
+      leaves: Year-round; highest bioactive content during active growth periods
+      confidence: medium
+    age_at_first_fruiting: 4-5 years (economical quantities at 10-12 years)
+    lifespan: 150-200 years; productive up to 40-50 years
+  pollination: Entomophilous (honeybees, other insects); self-incompatibility reported in some trees
+  seed_dispersal: Bats, birds
+  differentiation_from_lookalikes:
+    species: Melia azedarach (Chinaberry)
+    key_differences:
+    - A. indica has unipinnate leaves; M. azedarach has bipinnate leaves
+    - A. indica has white/cream flowers; M. azedarach has lilac flowers
+    - A. indica fruits are ellipsoidal yellow-green; M. azedarach fruits are spherical yellow
+  sources:
+  - POWO (Plants of the World Online). Azadirachta indica A.Juss. https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:1213180-2
+  - ITIS Report. Azadirachta indica A. Juss. Taxonomic Serial No. 29012. https://www.itis.gov
+  - Schmutterer H. (1995). The Neem Tree. VCH Verlagsgesellschaft.
+  - World Agroforestry. Azadirachta indica species profile. https://apps.worldagroforestry.org/treedb2/speciesprofile.php?Spid=271
+  - 'Schoch CL, et al. (2020). NCBI Taxonomy: a comprehensive update. Database. DOI: 10.1093/database/baaa062'
+active_chemical_compounds:
+  primary_bioactive_class: Limonoids (tetranortriterpenoids)
+  total_identified_compounds: '>300 phytochemicals identified'
+  compound_families:
+  - Limonoids (azadirachtins, nimbin, salannin, gedunin, azadiradione)
+  - Flavonoids (quercetin, rutin, kaempferol)
+  - Phenolic acids (gallic acid, gallocatechin, epicatechin)
+  - Steroids (beta-sitosterol, stigmasterol)
+  - Fatty acids (oleic, palmitic, stearic, linoleic)
+  - Alkaloids
+  - Tannins
+  - Carbohydrates
+  key_compounds:
+  - name: Azadirachtin A
+    type: Limonoid (C-seco meliacin)
+    molecular_formula: C35H44O16
+    molecular_weight: 720.71 g/mol
+    role: Primary insecticidal compound; antifeedant, growth regulator, ecdysone antagonist
+    evidence_type: scientific_consensus
+    concentrations_by_plant_part:
+      seed_kernel: 0.3-0.5% (3000-5419 ug/g dry weight) highest
+      seed_kernel_range_across_provenances: 0.48-4.0 mg/g dry weight
+      leaf: 182-970 ug/g dry weight
+      bark: Trace to low
+      callus: ~0.25 ug/g
+    confidence_concentration: high
+    stability:
+      photostability:
+        half_life_UV_thin_film: 48 minutes
+        half_life_sunlight_thin_film: 3.98 days
+        half_life_leaf_surface: 2.47 days
+      thermal_stability:
+        half_life_at_54C_formulation: 1.84-4.53 days
+        half_life_methanol_50C: 6.96 days
+        half_life_methanol_90C: 11.7 hours
+      pH_stability:
+        most_stable: pH 4-6 (mildly acidic)
+        half_life_at_30C_pH4: 10.7 days
+        half_life_at_30C_pH7: 4.8 days
+        half_life_at_30C_pH8: 0.96 days
+      storage_recommendations:
+      - Store in brown/amber bottles (protects from UV)
+      - Refrigerated or room temperature storage preferred
+      - Avoid exposure to sunlight, moisture, and alkaline conditions
+      - Use stabilizers (8-hydroxy quinoline, tert-butyl hydroquinone) to extend shelf life
+      confidence_stability: high
+  - name: Nimbin
+    type: Limonoid
+    molecular_formula: C30H36O9
+    role: Anti-inflammatory, antiviral, spermicidal; contributes to bitter taste
+    evidence_type: scientific_consensus
+    concentrations_by_plant_part:
+      bark_hexane_fraction: 271 ug/g dry weight
+      seed: Moderate
+      leaf: Present
+    confidence_concentration: medium
+  - name: Salannin
+    type: Limonoid
+    role: Insect repellent, antifeedant
+    evidence_type: scientific_consensus
+    concentrations_by_plant_part:
+      seed: Moderate
+      leaf: Present
+    confidence_concentration: medium
+  - name: Nimbidin
+    type: Limonoid (sulfur-containing)
+    role: Antibacterial, anti-inflammatory, anti-ulcer, spermicidal
+    evidence_type: scientific_consensus
+    primary_source: Seed oil
+    confidence: medium
+  - name: Gedunin
+    type: Limonoid
+    role: Anticancer, antimalarial, anti-inflammatory
+    evidence_type: scientific_consensus
+    primary_source: Seed, bark
+    confidence: medium
+  - name: Nimbolide
+    type: Limonoid
+    role: Anticarcinogenic, antimicrobial, anti-inflammatory
+    evidence_type: scientific_consensus
+    primary_source: Leaf, seed
+    confidence: medium
+  - name: Azadiradione
+    type: Limonoid
+    role: Anticancer, anti-inflammatory
+    evidence_type: scientific_consensus
+    concentrations_by_plant_part:
+      leaf: Present
+      seed: High
+      bark: Present
+    confidence: medium
+  - name: Epoxy/hydroxy-azadiradione (E/H-Azadi)
+    type: Limonoid
+    role: Most abundant neem metabolite in leaf extracts; multifunctional properties
+    evidence_type: scientific_consensus
+    concentrations_by_plant_part:
+      leaf: 124239 pg/ug (~10% of leaf extract)
+      bark: 906.97 pg/ug
+      seed: 7309.48 pg/ug
+    notes: ~136-fold higher in leaf than bark; most abundant metabolite in neem leaf
+    confidence: medium
+  - name: Quercetin
+    type: Flavonoid
+    role: Antioxidant, anti-inflammatory, antidiabetic
+    evidence_type: scientific_consensus
+    primary_source: Leaf
+    confidence: medium
+  - name: Rutin
+    type: Flavonoid glycoside
+    role: Antioxidant, anti-inflammatory
+    evidence_type: scientific_consensus
+    primary_source: Leaf
+    confidence: medium
+  neem_oil_composition:
+    oil_content_in_kernel: 44-53% w/w
+    fatty_acid_profile:
+      oleic_acid: ~58%
+      stearic_acid: ~15%
+      palmitic_acid: ~14%
+      linoleic_acid: Trace
+      myristic_acid: Trace
+      arachidic_acid: Trace
+      behenic_acid: Trace
+    confidence: high
+  standardization_markers:
+    values:
+    - Azadirachtin A (primary marker for quality control in biopesticides)
+    - Nimbin
+    - Salannin
+    - Quercetin (pharmacopoeial marker for leaf)
+    - Rutin (pharmacopoeial marker for leaf)
+    confidence: high
+  known_synergistic_interactions:
+  - description: Azadirachtin + salannin + nimbin produce enhanced antifeedant effects vs. individual compounds
+    evidence_type: scientific_consensus
+    confidence: medium
+  - description: Multiple limonoids in crude neem extract show greater bioactivity than purified azadirachtin alone
+    evidence_type: scientific_consensus
+    confidence: medium
+  - description: Neem oil acts as natural stabilizer for azadirachtin, reducing degradation rate compared to purified compound on solid carriers
+    evidence: 'Kumar & Parmar (1999) DOI: 10.1021/jf980667t'
+    confidence: high
+  compound_stability_summary:
+    factor_light: Highly photolabile; UV light causes rapid degradation (half-life 48 min as thin film)
+    factor_temperature: Degrades faster at elevated temperatures; stable at refrigerated or room temperature
+    factor_pH: Most stable at pH 4-6; degrades rapidly in alkaline conditions
+    factor_oxygen: Oxygen accelerates photodegradation
+    factor_moisture: Liable in presence of moisture
+    shelf_life_formulations:
+    - 'NeemAzal T/S commercial formulation: stable up to 24 months under recommended storage'
+    - 'Emulsifiable concentrates: significant degradation at 54C (96-99% in 14 days)'
+    - 'Neem oil: shelf life 24 months (BIS/Indian standards)'
+  sources:
+  - Schmutterer H. (1995). The Neem Tree. VCH Verlagsgesellschaft.
+  - 'Alzohairy M.A. (2016). Therapeutics role of A. indica. Evid Based Complement Alternat Med. DOI: 10.1155/2016/7382506'
+  - Pereira V.V. et al. (2019). Stability of azadirachtin. Chem J. 7(6):386-393.
+  - 'Johnson S. et al. (2003). Photostabilizers for Azadirachtin-A. J Environ Sci Health B. DOI: 10.1081/PFC-120021665'
+  - 'Barrek S. et al. (2004). Analysis of neem oils and degradation kinetics. Anal Bioanal Chem. DOI: 10.1007/s00216-003-2295-4'
+  - 'Kumar L. & Parmar B.S. (2000). Effect of emulsion size and shelf life. J Agric Food Chem. DOI: 10.1021/jf9911141'
+  - 'Kumar J. & Parmar B.S. (1999). Stabilization of Azadirachtin A. J Agric Food Chem. DOI: 10.1021/jf980667t'
+  - 'Song L. et al. (2018). Simultaneous determination of five azadirachtins. BMC Chemistry. DOI: 10.1186/s13065-018-0453-y'
+  - 'Ghimeray A.K. et al. (2009). Antioxidant activity and quantitative estimation. Afr J Biotechnol. 8(13). DOI: 10.4314/ajb.v8i13.60994'
+  - 'Elteraifi I.E. & Hassanali A. (2011). Oil and Azadirachtin contents. Int J Biol Chem Sci. DOI: 10.4314/ijbcs.v5i3.72211'
+  - 'FAO (2007). Specifications and Evaluations for Agricultural Pesticides: Azadirachtin.'
+  - Chaturvedi R. et al. Effect of age and morphometric parameters on azadirachtin production. Res J Chem Environ.
+cultivation_requirements:
+  climate:
+    type: Tropical/subtropical
+    optimal_temperature: 21-32 C
+    maximum_temperature: Up to 50 C (heat tolerant)
+    minimum_temperature: 4 C (frost sensitive, especially seedlings)
+    frost_tolerance: None (seedlings highly sensitive; mature trees can tolerate light frost)
+    annual_rainfall_optimal: 400-1200 mm
+    drought_tolerance: High (once established; deep taproot accesses groundwater)
+    tolerance_to_waterlogging: Very low (quickly dies in waterlogged soils)
+    altitude_range: 0-1500 m
+    light_requirement: Full sunlight for best performance; tolerates partial shade in first 1-3 years
+  soil:
+    pH_optimal: 6.2-7.0
+    pH_tolerable: 5.0-8.5
+    pH_notes: Thrives on neutral to alkaline soils; calcium-rich leaf litter raises soil pH
+    texture:
+    - Sandy
+    - Sandy loam
+    - Laterite
+    - Clay loam
+    - Black cotton soil
+    drainage: Essential - does not tolerate waterlogging or poor drainage
+    tolerant_soils:
+    - Dry stony
+    - Shallow
+    - Calcareous
+    - Saline
+    - Alkaline
+    intolerant_soils:
+    - Silty clays with slow drainage
+    - Sodic soils
+    - Soils with high or fluctuating water table
+    organic_matter: Responds well to organic amendments but not strictly required
+    calcium_mining: Unique property of mining calcium from deep soil layers, neutralizing soil acidity via alkaline leaf litter
+  propagation:
+    seed:
+      viability: Recalcitrant; rapidly loses viability (85% to 60% after 1 month storage at room temperature)
+      germination_rate: 70-90% when fresh
+      germination_time: 5-14 days
+      seed_treatment: Remove pulp; sow fresh; soak in water 12-24h before sowing
+      sowing_depth: 1-1.5 cm
+      seeds_per_kg: 4000-4500
+      storage_behavior: Intermediate; cannot be stored long-term under conventional conditions
+    vegetative_propagation:
+      cuttings: Possible but limited success; root formation variable
+      air_layering: Possible but not commercial scale
+      grafting: Possible for elite genotype multiplication
+    tissue_culture:
+      methods:
+      - Nodal segments
+      - Leaf explants
+      - Callus culture
+      - Anther culture
+      notes: Used for rapid clonal propagation of high-azadirachtin genotypes; genetic improvement programs
+      confidence: medium
+  planting:
+    season: Monsoon/rainy season (July-September in India); spring in other regions
+    pit_size: 30-45 cm3 (depending on soil moisture)
+    pit_filling: Native soil + 5 kg FYM + 25-50 g DAP per pit
+    spacing:
+      block_plantation_dense: 5 x 5 m (400 trees/ha)
+      block_plantation_standard: 6 x 6 m (280 trees/ha)
+      agroforestry_wide: 7 x 7 m to 10 x 10 m (200-100 trees/ha)
+      farm_forestry: 5 x 5 m (400 trees/ha)
+    seedling_age_at_transplanting: 4-12 months old, 15-45 cm tall
+    planting_density_notes: Wider spacing recommended for poorer quality sites; closer spacing for timber production
+  irrigation:
+    establishment_phase: Irrigation every 5-10 days for first 1-2 years
+    mature_trees: Minimal to none; deep taproot accesses subsoil moisture
+    drought_tolerance: Excellent once established; survives on 400 mm annual rainfall
+    irrigation_methods: Drip or basin irrigation efficient; conserve moisture with mulching
+    notes: High irrigation levels do not significantly improve growth; mulch application beneficial
+  fertilizer_and_nutrients:
+    general_requirement: Low - neem is adapted to poor soils
+    at_planting: 5 kg FYM + 25-50 g DAP per pit
+    established_trees: Responds well to chemical and organic fertilizers if applied
+    NPK_demand: Low (N low, P low, K low)
+    organic_practice: FYM or compost sufficient; neem leaf litter self-fertilizes
+  intercropping_compatibility:
+    compatible_crops:
+    - Millet
+    - Sorghum
+    - Pulses
+    - Other annual crops (agri-silviculture)
+    notes: Deep taproot minimizes competition with shallow-rooted crops; wider spacing (7x7 m or more) required
+    windbreak_benefit: Neem windbreaks increase crop yields by 15%+ (Niger study)
+    systems:
+    - Agri-silviculture
+    - Agri-silvi-horticulture
+    - Silvi-pastoral
+    - Windbreaks/shelterbelts
+  pest_and_disease_management:
+    common_pests:
+    - name: Tea mosquito bug (Helopeltis spp.)
+      control: Neem-based sprays; botanical insecticides
+    - name: Neem scale (Pinnaspis strachani)
+      control: Natural predators; neem oil spray
+    - name: Defoliating caterpillars
+      control: Bacillus thuringiensis; neem seed kernel extract
+    - name: Termites
+      control: Soil drench with neem oil; Bursbon treatment in planting pits
+    common_diseases:
+    - name: Powdery mildew (Oidium spp.)
+      control: Sulfur spray; neem leaf extract
+    - name: Root rot (Fusarium, Phytophthora spp.)
+      control: Improve drainage; avoid waterlogging; biocontrol agents
+    - name: Leaf spot (Cercospora, Colletotrichum spp.)
+      control: Remove infected leaves; copper-based fungicides
+    organic_control_methods:
+    - Neem seed kernel extract (NSKE) 5% for general pest management
+    - Neem oil 2-3% spray for scale insects and mites
+    - Azadirachtin-based commercial biopesticides
+    - Soil application of neem cake (250 kg/ha) for nematode control
+    - Trichoderma spp. for soil-borne disease suppression
+    inherent_resistance: Neem produces its own insecticidal compounds; generally pest-hardy
+  harvesting:
+    maturity_indicators:
+      seeds_fruits: Fruits turn from green to yellow-green/yellow; slight softening
+      leaves: Year-round; best during active growth
+    harvest_method:
+      seeds: Collect fallen fruits manually or shake branches onto sheets; depulp immediately
+      leaves: Hand plucking or branch cutting; avoid stripping all leaves from one tree
+    season:
+      india: May-August (peak June-July)
+      east_africa: Wet season (distinct periods)
+      thailand: Year-round
+    frequency: Annual (once per year for seeds)
+    yield_per_tree:
+      initial_5th_year: 5-10 kg seeds/tree
+      mature_10th_year: 20-25 kg seeds/tree
+      stabilized_20_25_years: 35-58 kg seeds/tree
+    yield_per_hectare:
+      seed: 5000-11750 kg/ha (depending on spacing and tree age)
+      timber: 108-137 m3/ha (at 35-40 year rotation)
+    yield_confidence: high
+    tree_production_lifespan: Economically viable up to 40-50 years
+  post_harvest_handling:
+    depulping: Remove fruit pulp manually or mechanically; pulp:seed ratio ~2:1
+    seed_drying: Shade dry for 3-7 days to ~8-10% moisture; avoid sun drying to preserve azadirachtin
+    seed_storage: Store in cool, dry, dark conditions; viability limited (recalcitrant); process oil extraction within weeks
+    leaf_drying: Shade dry in thin layers at <40 C
+    bark_drying: Sun dry after collection; store in moisture-proof containers
+    processing_for_oil:
+    - Mechanical pressing (cold press preferred for oil quality)
+    - Solvent extraction (n-hexane or ethanol; binary solvent 50:50 gives highest yield)
+    - Supercritical fluid extraction (emerging technology)
+    oil_storage: Store in amber glass or HDPE containers; away from light and heat; shelf life ~24 months
+    quality_preservation: Add stabilizers/antioxidants for azadirachtin preservation; store at 4-15 C
+  growth_rates:
+    height_at_5_years: ~4 m
+    height_at_10_years: 6-7 m
+    height_at_25_years: ~10 m
+    mean_annual_girth_increment: 2.3-3.0 cm
+    notes: Growth rate varies significantly with site quality; faster growth on deep, fertile, well-drained soils
+  sources:
+  - 'TNAU Agritech Portal. Biofuels: Neem. https://agritech.tnau.ac.in/bio-fuels/Biofuel_Neem.html'
+  - World Agroforestry. Azadirachta indica. https://apps.worldagroforestry.org/treedb2/speciesprofile.php?Spid=271
+  - 'National Research Council (1992). Neem: A Tree for Solving Global Problems. National Academies Press.'
+  - Schmutterer H. (1995). The Neem Tree. VCH Verlagsgesellschaft.
+  - Divakaran A. et al. (2019). Factors Influencing Establishment of Neem Plantations. IJCMAS. 8(11).
+  - DFID R7348 Report. Improvement of neem and its potential benefits to poor farmers in developing countries.
+  - IAFT. Neem Cultivation Guide. https://iaft.co.in/en/neem/
+quality_grading_standards:
+  pharmacopoeial_references:
+  - name: Ayurvedic Pharmacopoeia of India (API)
+    plant_parts_monographed:
+    - Leaf (Nimba Leaf)
+    - Stem Bark (Nimba Stem Bark)
+    - Root Bark (Nimba Root Bark)
+    - Flower (Nimba Flower)
+    - Fruit (Nimba Fruit)
+    volumes:
+    - Part I, Vol. II (Leaf, Stem Bark)
+    - Part I, Vol. V (Root Bark, Flower, Fruit)
+    jurisdiction: India, Ministry of AYUSH
+  - name: Indian Pharmacopoeia (IP)
+    scope: Physicochemical parameters; monograph for neem-based pharmaceuticals
+    year: '2022'
+    jurisdiction: Indian Pharmacopoeia Commission
+  - name: WHO Monographs on Selected Medicinal Plants
+    scope: Quality control methods for medicinal plant materials
+    jurisdiction: World Health Organization
+  - name: Bureau of Indian Standards (BIS)
+    standards:
+    - 'IS 14300 (1995): Neem Based EC Containing Azadirachtin'
+    - 'IS 18202 (2023): Nimba A. indica Fruit for Traditional Medicine'
+    - 'IS 548 (1964): Methods for oils and fats'
+    jurisdiction: India
+  organoleptic_characteristics:
+    leaf:
+      color: Green (dark green upper, lighter below)
+      odor: Characteristic, pungent, garlic-like when crushed
+      taste: Intensely bitter
+      texture: Glabrous, serrate margin
+    stem_bark:
+      color: Dark grey externally, reddish internally
+      odor: Characteristic, foetid (freshly cut)
+      taste: Bitter, astringent
+    seed_kernel:
+      color: Yellowish-white to light brown
+      odor: Characteristic, pungent (garlic-like)
+      taste: Intensely bitter
+    neem_oil:
+      color: Light to dark brown (viscous liquid)
+      odor: Repulsive, characteristic
+      taste: Bitter
+    fruit:
+      color: Greenish-yellow to yellow when ripe
+      odor: Characteristic
+      taste: Bitter-sweet (pulp), very bitter (seed)
+    flower:
+      color: White to cream
+      odor: Slightly sweet, fragrant
+      taste: Bitter
+  physicochemical_parameters:
+    leaf_powder_API_standards:
+      foreign_matter: NMT 2%
+      total_ash: NMT 10.0%
+      acid_insoluble_ash: NMT 2.0%
+      alcohol_soluble_extractive: NLT 6.0%
+      water_soluble_extractive: NLT 19.0%
+      loss_on_drying: NMT 12.0%
+      confidence: high
+    leaf_observed_values_2023_study:
+      source: 'Yadav A.N. et al. (2023) DOI: 10.5530/pres.15.2.026'
+      total_ash: 9.89 +/- 0.23%
+      acid_insoluble_ash: 1.48 +/- 0.01%
+      alcohol_soluble_extractive: 7.69 +/- 0.25%
+      water_soluble_extractive: 11.25 +/- 0.33%
+      loss_on_drying: 9.72 +/- 0.5%
+      compliance: Complies with IP 2022 limits
+    neem_oil_BIS_standards:
+      moisture_and_insoluble_impurities: NMT 0.3% (kernel), NMT 0.5% (depulped)
+      color_Y_plus_5R: NMT 45 (kernel), NMT 55 (depulped)
+      refractive_index_at_40C: 1.4615 (kernel), 1.4705 (depulped)
+      saponification_value: 180-205 (kernel), 175-200 (depulped)
+      iodine_value_Wijs: 65-80
+      acid_value: NMT 15 (kernel), NMT 20 (depulped)
+      unsaponifiable_matter: NMT 2% (both)
+      titre_degC_min: 36 (both)
+  heavy_metal_limits:
+    reference: WHO guidelines for herbal medicines; API specifications
+    lead: NMT 10 ppm
+    cadmium: NMT 0.3 ppm
+    mercury: NMT 1 ppm
+    arsenic: NMT 3 ppm
+    confidence: medium
+  microbial_contamination_limits:
+    reference: WHO guidelines; USP
+    total_aerobic_bacterial_count: NMT 10^5 CFU/g (raw), NMT 10^4 CFU/g (processed)
+    total_yeast_and_mold: NMT 10^3 CFU/g
+    Escherichia_coli: Absent
+    Salmonella: Absent in 10g
+    Staphylococcus_aureus: Absent
+    Pseudomonas_aeruginosa: Absent
+    confidence: medium
+  aflatoxin_limits:
+    reference: BIS standards
+    aflatoxin_B1: NMT 0.5 ppm
+    total_aflatoxins: NMT 0.5 ppm
+    confidence: medium
+  grade_classifications:
+  - system: IS 14300 (1995)
+    description: Azadirachtin content must not be less than declared nominal value
+    confidence: high
+  - system: API (Ayurvedic Pharmacopoeia)
+    description: Sets minimum quality parameters (ash values, extractives, etc.) rather than formal A/B/C grades
+    confidence: high
+  - system: Informal market grades
+    grades:
+      Grade A: High azadirachtin (>0.4%), clean, depulped, uniform
+      Grade B: Medium azadirachtin (0.25-0.4%), some impurities
+      Grade C: Low azadirachtin (<0.25%), higher foreign matter
+    confidence: medium
+  certification_requirements:
+    organic_certification:
+      applicable_for:
+      - Neem oil
+      - Neem seed cake
+      - Neem-based biopesticides for organic farming
+      standards:
+      - NPOP (India)
+      - NOP (USA)
+      - EU Organic Regulation
+      - JAS (Japan)
+      notes: Neem is inherently low-input; organic certification achievable without major practice changes
+    GAP:
+      scope: WHO guidelines on GAP for medicinal plants
+      requirements:
+      - Proper identification
+      - Traceability
+      - Hygiene in harvesting
+      - Post-harvest sanitation
+    GMP:
+      scope: Processing and manufacturing of neem-based pharmaceuticals and biopesticides
+      requirements:
+      - WHO GMP
+      - Schedule T (India) for Ayurvedic drugs
+      - ISO 9001
+  ayurvedic_properties_traditional_knowledge:
+    source: Ayurvedic Pharmacopoeia of India; classical Ayurvedic texts
+    sanskrit_name: Nimba
+    rasa_taste: Tikta (bitter), Kashaya (astringent)
+    guna_qualities: Laghu (light), Ruksha (dry)
+    virya_potency: Shita (cold)
+    vipaka_post_digestive: Katu (pungent)
+    karma_actions: Krimighna (anthelmintic), Kushthaghna (curative of skin diseases), Jwaraghna (antipyretic), Raktashodhaka (blood purifier), Kaphapittahara (balances Kapha and Pitta doshas)
+    confidence: medium (traditional knowledge, documented in API)
+  data_gaps_and_follow_up:
+  - Comprehensive multi-year azadirachtin variability study across global provenances would strengthen concentration benchmarks
+  - Standardized A/B/C grading system for neem seed quality by industry bodies not yet universally adopted
+  - Heavy metal and microbial limits specific to neem leaf/bark/seed in all pharmacopoeias need compilation
+  - Long-term storage stability data for nimbin, salannin, and gedunin less documented than azadirachtin
+  - Clinical validation of synergistic ratios of multiple limonoids for enhanced efficacy
+  - Impact of climate change (rising temperatures, erratic rainfall) on azadirachtin biosynthesis and yield
+  sources:
+  - Ayurvedic Pharmacopoeia of India, Part I, Vol. II & V. Ministry of AYUSH, Government of India.
+  - Indian Pharmacopoeia 2022. Indian Pharmacopoeia Commission.
+  - 'Yadav A.N. et al. (2023). Pharmacognostic and Pharmacological Activities of A. indica. DOI: 10.5530/pres.15.2.026'
+  - 'Bureau of Indian Standards. IS 14300 (1995): Neem Based EC Containing Azadirachtin.'
+  - 'Bureau of Indian Standards. IS 18202 (2023): Nimba A. indica Fruit for Traditional Medicine.'
+  - WHO (1998). Quality Control Methods for Medicinal Plant Materials. Geneva.
+  - Adigwe et al. (2022). Post Market Analysis of Neem Products. Pharmacog Res. 14(2):211.
+  - WDRA. Neem Oil Specifications. https://wdra.gov.in/web/wdra/neem-oil

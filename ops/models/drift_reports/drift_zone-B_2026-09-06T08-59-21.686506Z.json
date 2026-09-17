@@ -1,0 +1,24 @@
+{
+  "zone": "zone-B",
+  "timestamp_utc": "2026-09-06T08:59:21.686506Z",
+  "psi_per_feature": {
+    "soil_moisture_mean": 0.0,
+    "soil_moisture_std": 0.0,
+    "soil_ph_mean": 0.0,
+    "soil_ec_mean": 0.0,
+    "temp_mean": 0.0,
+    "temp_max": 0.0,
+    "temp_min": 0.0,
+    "humidity_mean": 0.0,
+    "rainfall_total_mm": 0.0,
+    "ndvi_current": 0.0,
+    "ndvi_lag7": 0.0,
+    "ndvi_lag14": 0.0,
+    "ndvi_trend": 0.0,
+    "growing_degree_days": 0.0,
+    "soil_water_deficit": 0.0
+  },
+  "overall_psi": 0.0,
+  "alerts": [],
+  "drift_detected": false
+}

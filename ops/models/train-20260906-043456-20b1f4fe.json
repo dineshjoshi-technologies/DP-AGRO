@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "created_at": "2026-09-06T04:34:58.117496Z",
+  "last_rmse": null,
+  "last_train_ts": null,
+  "zone_models": {},
+  "global_bias": {},
+  "feature_scalers": {},
+  "seed": 42
+}

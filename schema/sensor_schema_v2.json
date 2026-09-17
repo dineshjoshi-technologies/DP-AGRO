@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "schema/sensor_schema_v2.json",
+  "title": "Sensor Data Schema V2",
+  "description": "Aligned with actual sensor event output (measurement is a category string; readings carries the value object). Supersedes v1; v1 retained for audit-trail history per shared verification protocol.",
+  "type": "object",
+  "required": ["farm_id", "sensor_id", "timestamp_utc", "measurement", "quality_flag"],
+  "properties": {
+    "farm_id": {"type": "string", "pattern": "^FARM-[0-9]+$"},
+    "sensor_id": {"type": "string"},
+    "timestamp_utc": {"type": "string", "format": "date-time"},
+    "measurement": {
+      "type": "string",
+      "enum": ["soil_moisture", "soil_temperature", "air_temperature", "air_humidity", "ph", "npk", "light", "co2"]
+    },
+    "quality_flag": {"type": "integer", "minimum": 0, "maximum": 1},
+    "latitude": {"type": "number", "minimum": -90, "maximum": 90},
+    "longitude": {"type": "number", "minimum": -180, "maximum": 180},
+    "readings": {
+      "type": "object",
+      "properties": {
+        "value": {"type": "number"},
+        "unit": {"type": "string"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "required": ["value", "unit"]
+    },
+    "legacy": {
+      "type": "object",
+      "description": "Optional compatibility block for deprecated v1-only fields (e.g. timestamp).",
+      "properties": {
+        "timestamp": {"type": "string", "format": "date-time"}
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,14 @@
+{
+  "zone": "zone-A",
+  "timestamp_utc": "2026-09-11T09:21:42.053569Z",
+  "psi_per_feature": {
+    "x": 0.09676732031266838
+  },
+  "overall_psi": 0.09676732031266838,
+  "alerts": [],
+  "drift_detected": false,
+  "psi_per_feature_calibrated": {
+    "x": 0.09676732031266838
+  },
+  "overall_psi_raw": 0.09676732031266838
+}

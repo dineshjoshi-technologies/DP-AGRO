@@ -1,0 +1,42 @@
+{
+  "zone": "zone-B",
+  "timestamp_utc": "2026-09-06T09:17:58.644852Z",
+  "psi_per_feature": {
+    "soil_moisture_mean": 0.1642322807264631,
+    "soil_moisture_std": 0.05036081574705759,
+    "soil_ph_mean": 0.1436976769305528,
+    "soil_ec_mean": 0.038744369280022575,
+    "temp_mean": 0.09176509922855422,
+    "temp_max": 0.07085349547279292,
+    "temp_min": 0.13719835487481802,
+    "humidity_mean": 0.08487097169438687,
+    "rainfall_total_mm": 0.11362821489133718,
+    "ndvi_current": 0.1330887928693559,
+    "ndvi_lag7": 0.14259109155410407,
+    "ndvi_lag14": 0.05624289052622199,
+    "ndvi_trend": 0.13227638141876616,
+    "growing_degree_days": 0.09176509922855422,
+    "soil_water_deficit": 0.0016669078560227245
+  },
+  "overall_psi": 0.06457699743551157,
+  "alerts": [],
+  "drift_detected": false,
+  "psi_per_feature_calibrated": {
+    "soil_moisture_mean": 0.1094881871509754,
+    "soil_moisture_std": 0.033573877164705064,
+    "soil_ph_mean": 0.0957984512870352,
+    "soil_ec_mean": 0.02582957952001505,
+    "temp_mean": 0.06117673281903615,
+    "temp_max": 0.04723566364852861,
+    "temp_min": 0.09146556991654535,
+    "humidity_mean": 0.05658064779625791,
+    "rainfall_total_mm": 0.07575214326089146,
+    "ndvi_current": 0.08872586191290394,
+    "ndvi_lag7": 0.09506072770273605,
+    "ndvi_lag14": 0.037495260350814665,
+    "ndvi_trend": 0.08818425427917743,
+    "growing_degree_days": 0.06117673281903615,
+    "soil_water_deficit": 0.0011112719040151497
+  },
+  "overall_psi_raw": 0.09686549615326735
+}

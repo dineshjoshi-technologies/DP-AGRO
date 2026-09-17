@@ -1,0 +1,70 @@
+{
+  "zone": "zone-A",
+  "timestamp_utc": "2026-09-06T09:17:58.639605Z",
+  "psi_per_feature": {
+    "soil_moisture_mean": 0.14330821161820342,
+    "soil_moisture_std": 0.6686524662591773,
+    "soil_ph_mean": 0.11951467528348053,
+    "soil_ec_mean": 0.1786072898718279,
+    "temp_mean": 0.09534848440615454,
+    "temp_max": 0.1290524782903343,
+    "temp_min": 0.1627736153816654,
+    "humidity_mean": 0.12483916239455796,
+    "rainfall_total_mm": 0.38574452608882154,
+    "ndvi_current": 0.2011821733296799,
+    "ndvi_lag7": 0.27977549654573347,
+    "ndvi_lag14": 0.19370776521392566,
+    "ndvi_trend": 0.11404242091529285,
+    "growing_degree_days": 0.09534848440615454,
+    "soil_water_deficit": 0.0
+  },
+  "overall_psi": 0.1285287666668893,
+  "alerts": [
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 0.4457683108394515,
+      "threshold": 0.30000000000000004,
+      "message": "Critical drift in soil_moisture_std (calibrated PSI=0.4458)",
+      "timestamp_utc": "2026-09-06T09:17:58.639605Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "medium",
+      "psi": 0.2571630173925477,
+      "threshold": 0.15000000000000002,
+      "message": "Moderate drift in rainfall_total_mm (calibrated PSI=0.2572)",
+      "timestamp_utc": "2026-09-06T09:17:58.639605Z"
+    },
+    {
+      "alert_type": "feature_drift",
+      "zone": "zone-A",
+      "severity": "medium",
+      "psi": 0.18651699769715566,
+      "threshold": 0.15000000000000002,
+      "message": "Moderate drift in ndvi_lag7 (calibrated PSI=0.1865)",
+      "timestamp_utc": "2026-09-06T09:17:58.639605Z"
+    }
+  ],
+  "drift_detected": true,
+  "psi_per_feature_calibrated": {
+    "soil_moisture_mean": 0.09553880774546895,
+    "soil_moisture_std": 0.4457683108394515,
+    "soil_ph_mean": 0.07967645018898702,
+    "soil_ec_mean": 0.1190715265812186,
+    "temp_mean": 0.0635656562707697,
+    "temp_max": 0.08603498552688954,
+    "temp_min": 0.10851574358777694,
+    "humidity_mean": 0.08322610826303864,
+    "rainfall_total_mm": 0.2571630173925477,
+    "ndvi_current": 0.13412144888645325,
+    "ndvi_lag7": 0.18651699769715566,
+    "ndvi_lag14": 0.1291385101426171,
+    "ndvi_trend": 0.07602828061019523,
+    "growing_degree_days": 0.0635656562707697,
+    "soil_water_deficit": 0.0
+  },
+  "overall_psi_raw": 0.19279315000033398
+}

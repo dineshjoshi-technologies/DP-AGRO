@@ -1,0 +1,1 @@
+$(cat /home/paperclip/paperclip/aloe-vera.md)

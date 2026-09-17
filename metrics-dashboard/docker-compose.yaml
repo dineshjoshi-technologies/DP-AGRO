@@ -1,0 +1,40 @@
+# AI-Agriculture metrics stack (DPA-84): PostgreSQL metrics store + Grafana dashboard.
+# Usage: docker compose up -d   (requires docker on the deployment host)
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: agri-metrics-postgres
+    environment:
+      POSTGRES_DB: metrics
+      POSTGRES_USER: metrics
+      POSTGRES_PASSWORD: ${PG_PASSWORD:?set PG_PASSWORD in .env}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./postgres/metrics_schema.sql:/docker-entrypoint-initdb.d/01_metrics_schema.sql:ro
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U metrics -d metrics"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  grafana:
+    image: grafana/grafana:10.2.0
+    container_name: agri-metrics-grafana
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:?set GRAFANA_ADMIN_PASSWORD in .env}
+      PG_PASSWORD: ${PG_PASSWORD}
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:

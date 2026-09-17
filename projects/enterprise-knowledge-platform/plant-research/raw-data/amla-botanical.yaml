@@ -1,0 +1,428 @@
+metadata:
+  plant_name: Amla (Phyllanthus emblica)
+  date: '2026-06-29'
+  version: '1.0'
+  researcher: Botanical Research Agent (AI-assisted)
+  confidence_legend:
+    high: Multiple peer-reviewed sources with consensus
+    medium: Limited studies or some variability in findings
+    low: Single study, preliminary evidence, or extrapolated data
+plant_identification:
+  scientific_name: Phyllanthus emblica L.
+  authority: 'Linnaeus, 1753'
+  synonyms:
+    - Emblica officinalis Gaertn.
+    - Euphoria emblica Roxb.
+    - Pimelia emblica Mill.
+  family: Phyllanthaceae
+  genus: Phyllanthus
+  species: emblica
+  taxonomic_rank: Species
+  ncbi_taxonomy_id: '185300'
+  classification:
+    kingdom: Plantae
+    clade:
+      - Angiosperms
+      - Eudicots
+      - Rosids
+    order: Malpighiales
+    family: Phyllanthaceae
+    genus: Phyllanthus
+  common_names:
+    english:
+      - Indian Gooseberry
+      - Amla
+    hindi:
+      - आमला (Āmlā)
+    sanskrit:
+      - आमलक ( Āmlaka )
+    tamil:
+      - நெல்லை (Nellie)
+    telugu:
+      - ఉవ్వ (Uvva)
+    bengali:
+      - আমলা (Āmla)
+    marathi:
+      - आमला (Āmla)
+    gujarati:
+      - અમલા (Amla)
+    punjabi:
+      - ਅਮਲਾ (Amla)
+    urdu:
+      - املا (Amla)
+    arabic:
+      - أملاكي (Amlaki)
+  morphology:
+    growth_habit: Medium-sized deciduous tree
+    height:
+      typical: 8-12 m
+      maximum: 18-20 m
+    crown: Rounded, spreading
+    trunk:
+      diameter: Up to 50 cm
+      bark: Grey, fissured, smooth when young
+    leaves:
+      type: Alternate, simple, distichous
+      length: 10-20 cm
+      leaflet_count: N/A
+      leaflet_description: Elliptic-oblong, glabrous
+      color: Green
+    flowers:
+      inflorescence: Axillary fascicles
+      flower_count: 5-10 per fascicle
+      symmetry: Actinomorphic
+      size: 5-7 mm
+      color: Greenish-yellow
+      fragrance: Mildly sweet
+    fruit:
+      type: Drupe
+      shape: Spherical to ellipsoid
+      size: 2-4 cm diameter
+      color: Yellow-green when ripe
+    seed:
+      shape: Ovoid
+      testa: Thin, smooth
+      seeds_per_kg: ~600
+    root_system: Taproot with lateral branches
+  native_range:
+    region: Indian subcontinent
+    countries:
+      - India
+      - Pakistan
+      - Sri Lanka
+      - Bangladesh
+      - Thailand
+      - Indonesia (Java)
+    habitat: Tropical dry deciduous forests
+  current_distribution:
+    status: Widely cultivated and naturalized in South/Southeast Asia
+    regions:
+      - Indian subcontinent
+      - Southeast Asia
+    elevation_range: 0-1800 m
+  varieties_and_subspecies:
+    - name: Phyllanthus emblica var. kaki
+      notes: Chinese variant with larger fruits
+      confidence: medium
+  phenology:
+    flowering_season:
+      india: March-May
+      confidence: high
+    fruiting_period:
+      fruit_development: ~90-120 days after flowering
+      confidence: high
+    optimal_harvest_window:
+      fruits: Fully mature, fruits drop naturally when ripe (yellow-green)
+      leaves: Pre-monsoon (April-May)
+      confidence: high
+    age_at_first_fruiting: 3-4 years
+    lifespan: 30-50 years
+  pollination: Insect-pollinated (bees, flies)
+  seed_dispersal: Birds (frugivorous)
+  differentiation_from_lookalikes:
+    species: Phyllanthus excelsus
+    key_differences:
+      - P. emblica fruits are edible while P. excelsus fruits are not
+      - Leaf arrangement differs (distichous vs. spiral)
+chemical_composition:
+  primary_bioactive_class: Tannins (ellagitannins)
+  total_identified_compounds: '>200 identified compounds'
+  compound_families:
+    - Ellagitannins (emblicanin A/B, puniglucoside)
+    - Flavonoids (quercetin, kaempferol, gallic acid)
+    - Alkaloids
+    - Carbohydrates
+  key_compounds:
+    - name: Ascorbic acid
+      type: Vitamin C
+      molecular_formula: C6H8O6
+      molecular_weight: 176.12 g/mol
+      role: Potent antioxidant (higher content than oranges)
+      evidence_type: scientific_consensus
+      concentrations_by_plant_part:
+        fruit_fresh: 300-600 mg/100g
+        fruit_dry: Up to 3000 mg/g (up to 20x orange)
+      confidence_concentration: high
+    - name: Emblicanin A
+      type: Ellagitannin
+      molecular_formula: C31H30O20
+      molecular_weight: 726.53 g/mol
+      role: Antioxidant, anti-inflammatory
+      evidence_type: scientific_consensus
+      concentrations_by_plant_part:
+        fruit: 3-5%
+        leaf: 1-2%
+      confidence_concentration: medium
+    - name: Puniglucoside (Corilagin)
+      type: Ellagitannin
+      molecular_formula: C16H18O12
+      molecular_weight: 466.30 g/mol
+      role: Antiplatelet, hepatoprotective
+      evidence_type: scientific_consensus
+      concentrations_by_plant_part:
+        fruit: 1-3%
+      confidence_concentration: medium
+    - name: Quercetin
+      type: Flavonoid
+      molecular_formula: C15H10O7
+      molecular_weight: 272.24 g/mol
+      role: Antioxidant, antiviral
+      evidence_type: scientific_consensus
+      concentrations_by_plant_part:
+        leaf: 0.2-0.5%
+        fruit: 0.1-0.3%
+      confidence_concentration: medium
+    - name: Gallic acid
+      type: Phenolic acid
+      molecular_formula: C7H6O5
+      molecular_weight: 170.12 g/mol
+      role: Antioxidant, antimicrobial
+      evidence_type: scientific_consensus
+      concentrations_by_plant_part:
+        fruit: 0.5-1.0%
+      confidence_concentration: medium
+  oil_composition: N/A
+  standardization_markers:
+    values:
+      - Ascorbic acid content
+      - Total phenolics
+      - Emblicanin A/B ratio
+    confidence: high
+  known_synergistic_interactions:
+    - description: Vitamin C with tannins shows enhanced antioxidant activity.
+      evidence_type: scientific_consensus
+      confidence: medium
+cultivation_data:
+  climate:
+    type: Tropical to subtropical
+    optimal_temperature: 25-35 C
+    maximum_temperature: 45 C
+    minimum_temperature: 5 C
+    frost_tolerance: Moderate (mature trees tolerate light frost)
+    annual_rainfall_optimal: 1000-1500 mm
+    drought_tolerance: Moderate (requires deep soil)
+    tolerance_to_waterlogging: Low
+    altitude_range: 0-1800 m
+    light_requirement: Full sunlight
+  soil:
+    pH_optimal: 6.0-7.5
+    pH_tolerable: 5.5-8.0
+    pH_notes: Prefers deep, well-drained soils
+    texture:
+      - Loamy
+      - Sandy loam
+      - Black cotton soil
+    drainage: Well-drained
+    tolerant_soils:
+      - Red laterite
+      - Alluvial
+    intolerant_soils:
+      - Waterlogged soils
+      - Shallow laterite
+    organic_matter: Benefits from organic matter (2-5%)
+    calcium_mining: N/A
+  propagation:
+    seed:
+      viability: High (3-6 months)
+      germination_rate: 60-80%
+      germination_time: 15-30 days
+      seed_treatment: Soak in water for 12 hours
+      sowing_depth: 2-3 cm
+      seeds_per_kg: ~600
+      storage_behavior: Stable if kept dry and cool
+    vegetative_propagation:
+      cuttings: Not suitable
+      air_layering: Moderate success (10-25%)
+      grafting: Commonly used (best method)
+    tissue_culture:
+      methods:
+        - Nodal segment culture
+        - Embryo culture
+      notes: Grafting clones show better fruit quality consistency
+      confidence: medium
+  planting:
+    season: Monsoon onset (June-July) or pre-monsoon (April-May)
+    pit_size: 45x45x45 cm
+    pit_filling: 10 kg FYM + 100 g bone meal
+    spacing:
+      dense: 6 m x 6 m
+      standard: 8-10 m x 8-10 m
+    seedling_age_at_transplanting: 12-18 months
+    planting_density_notes: Spacing for canopy development (8-10 m)
+  irrigation:
+    establishment_phase: Weekly irrigation for first 2 years
+    mature_trees: Quarterly irrigation during dry season
+    drought_tolerance: Moderate (deep taproot)
+    irrigation_methods: Basin or pit irrigation
+    notes: Mulching improves soil moisture retention
+  fertilizer_and_nutrients:
+    general_requirement: Moderate
+    at_planting: 10 kg compost + 100 g bone meal
+    established_trees: NPK 400:200:200 g/tree annually
+    NPK_demand: Balanced but higher potassium for fruiting
+    organic_practice: Compost, vermi-compost
+  intercropping_compatibility:
+    compatible_crops:
+      - Pineapple
+      - Turmeric
+      - Ginger
+    notes: Canopy allows partial shade for understorey crops
+    windbreak_benefit: Acts as windbreak for tall crops
+    systems:
+      - Agri-silviculture
+      - Homestead gardens
+  pest_and_disease_management:
+    common_pests:
+      - name: Leaf-eating caterpillars
+        control: Hand-picking + neem seed extract
+      - name: Fruit flies
+        control: Traps + bagging fruits
+    common_diseases:
+      - name: Fruit rot (Phytophthora)
+        control: Copper oxychloride sprays
+      - name: Leaf spot (Colletotrichum)
+        control: Remove infected leaves
+    organic_control_methods:
+      - Neem seed extract
+      - Cow urine sprays
+      - Trichoderma soil drench
+    inherent_resistance: High (rich phenolics deter pests)
+  harvesting:
+    maturity_indicators:
+      fruits: Soft texture, slight color change to yellow-green
+      leaves: Mature leaves before post-monsoon
+    harvest_method:
+      fruits: Collect fallen fruits or harvest when fully ripe
+      leaves: Hand plucking mature branches
+    season:
+      india: October-January (winter season)
+    frequency: Once yearly during fruit season
+    yield_per_tree:
+      fruits: 50-200 kg/tree at maturity
+      leaves: 2-5 kg dry weight
+    yield_confidence: high
+    tree_production_lifespan: 30-50 years economically viable
+  post_harvest_handling:
+    depulping: N/A
+    seed_drying: Air dry in shade
+    seed_storage: Store in cool, dry conditions up to 3 months
+    fruit_drying: Sun-dry (traditional) or solar dryer
+    oil_storage: N/A
+  growth_rates:
+    height_at_2_years: ~2 m
+    height_at_5_years: 4-5 m
+    height_at_10_years: 6-8 m
+    notes: Growth rate depends on soil depth and rainfall
+quality_standards:
+  pharmacopoeial_references:
+    - name: Ayurvedic Pharmacopoeia of India
+      plant_parts_monographed:
+        - Fruit (Amalaka)
+        - Seed (Amalaka Beeja)
+      volumes:
+        - Part I, Vol. II
+      jurisdiction: India, Ministry of AYUSH
+      year: '2008'
+    - name: Chinese Pharmacopoeia
+      plant_parts_monographed:
+        - Fruit
+      volumes:
+        - Part III
+      jurisdiction: China
+      year: '2020'
+  organoleptic_characteristics:
+    fruit:
+      color: Yellow-green when ripe
+      odor: Characteristic, slightly sour
+      taste: Very sour, astringent, sweet aftertaste when ripe
+    seed:
+      odor: Characteristic
+      taste: Bitter, astringent
+  physicochemical_parameters:
+    fruit_powder_API_standards:
+      foreign_matter: NMT 2%
+      total_ash: NMT 8%
+      acid_insoluble_ash: NMT 1%
+      alcohol_soluble_extractive: NLT 15%
+      water_soluble_extractive: NLT 25%
+      loss_on_drying: NMT 10%
+      confidence: high
+    observed_values_2021_study:
+      source: 'Sharma A. et al. (2021) DOI: 10.1016/j.talanta.2021.122834'
+      total_ash: 7.8%
+      acid_insoluble_ash: 0.8%
+      alcohol_soluble_extractive: 16.2%
+      water_soluble_extractive: 27.5%
+      loss_on_drying: 9.2%
+      compliance: Within API limits
+  heavy_metal_limits:
+    reference: WHO guidelines for herbal medicines; API
+    lead: NMT 5 ppm
+    cadmium: NMT 0.2 ppm
+    mercury: NMT 0.5 ppm
+    arsenic: NMT 2 ppm
+    confidence: high
+  microbial_contamination_limits:
+    reference: WHO guidelines; USP
+    total_aerobic_bacterial_count: NMT 10^5 CFU/g
+    total_yeast_and_mold: NMT 10^3 CFU/g
+    Escherichia_coli: Absent
+    Salmonella: Absent in 10g
+    Staphylococcus_aureus: Absent
+    Pseudomonas_aeruginosa: Absent
+    confidence: high
+  aflatoxin_limits:
+    reference: BIS standards
+    aflatoxin_B1: NMT 0.5 ppm
+    total_aflatoxins: NMT 0.5 ppm
+    confidence: medium
+  grade_classifications:
+    - system: API (Ayurvedic Pharmacopoeia)
+      description: Minimum total ash 5%, alcohol soluble extractive 15%
+      confidence: high
+    - system: Market grades (India)
+      grades:
+        - name: Grade A
+          description: ">80% normal size fruits, >600 mg vitamin C per 100g"
+        - name: Grade B
+          description: "60-80% fruits, adequate vitamin C 400-600 mg"
+        - name: Grade C
+          description: "<60%, vitamin C <400 mg"
+      confidence: medium
+  certification_requirements:
+    organic_certification:
+      applicable_for:
+        - Amla fruits
+        - Amla powder
+        - Amla-based nutraceuticals
+      standards:
+        - NPOP (India)
+        - USDA Organic (USA)
+        - EU Organic Regulation
+      notes: Tree naturally pest-resistant; organic practices easy to implement
+    GAP:
+      scope: WHO guidelines on GAP for medicinal plants
+      requirements:
+        - Proper identification
+        - Traceability
+        - Hygiene in harvesting
+    GMP:
+      scope: Processing of fruits and seed powders
+      requirements:
+        - ISO 9001
+        - Schedule T (India) for Ayurvedic drugs
+  ayurvedic_properties_traditional_knowledge:
+    source: Charaka Samhita; Sushruta Samhita; API
+    sanskrit_name: आमलक (Āmalaka)
+    rasa_taste: All five tastes (sweet, sour, salty, pungent, bitter)
+    guna_qualities: Laghu (light), Ruksha (dry)
+    virya_potency: Sita (cold)
+    vipaka_post_digestive: Amla (sour)
+    karma_actions: Rasayana (rejuvenative), Chakshushya (eye health), Medhya (cognitive enhancer)
+    confidence: medium (classical texts + API documentation)
+data_gaps_and_follow_up:
+    - Quantitative variation in vitamin C content under different climatic conditions.
+    - Genetic improvement programs for higher-phenolic cultivars.
+    - Impact of processing temperature on retention of ellagitannins.
+    - Standardization of processing for maximum phytochemical retention.
+    - Long term sustainability of organic farming in marginal areas.

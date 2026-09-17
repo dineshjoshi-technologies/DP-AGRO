@@ -1,0 +1,62 @@
+[
+  {
+    "farm_id": "FARM-001",
+    "season": "2026-Kharif",
+    "hours_saved": 19.75,
+    "timestamp": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "FARM-002",
+    "season": "2026-Kharif",
+    "hours_saved": 22.04,
+    "timestamp": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "FARM-003",
+    "season": "2026-Kharif",
+    "hours_saved": 18.21,
+    "timestamp": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "FARM-004",
+    "season": "2026-Kharif",
+    "hours_saved": 19.59,
+    "timestamp": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "FARM-005",
+    "season": "2026-Kharif",
+    "hours_saved": 23.2,
+    "timestamp": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "FARM-006",
+    "season": "2026-Kharif",
+    "hours_saved": 22.36,
+    "timestamp": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "FARM-007",
+    "season": "2026-Kharif",
+    "hours_saved": 19.76,
+    "timestamp": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "FARM-008",
+    "season": "2026-Kharif",
+    "hours_saved": 22.71,
+    "timestamp": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "FARM-009",
+    "season": "2026-Kharif",
+    "hours_saved": 24.48,
+    "timestamp": "2026-09-06T14:48:44.167221+00:00"
+  },
+  {
+    "farm_id": "FARM-010",
+    "season": "2026-Kharif",
+    "hours_saved": 18.05,
+    "timestamp": "2026-09-06T14:48:44.167221+00:00"
+  }
+]

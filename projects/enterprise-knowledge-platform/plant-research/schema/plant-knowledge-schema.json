@@ -1,0 +1,1199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paperclip.ai/schemas/plant-knowledge/v1",
+  "title": "Plant Knowledge Unified Schema",
+  "description": "Unified data schema for plant botanical, chemical, cultivation, therapeutic, market, and quality data — optimized for AI training, knowledge graphs, and RAG systems.",
+  "version": "1.0.0",
+  "type": "object",
+  "required": ["metadata", "plant_identification"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "description": "Dataset metadata and provenance",
+      "required": ["plant_name", "date", "version"],
+      "properties": {
+        "plant_name": {
+          "type": "string",
+          "description": "Primary common name of the plant"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date of data compilation"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+(\\.\\d+)?$",
+          "description": "Semantic version of the dataset"
+        },
+        "researcher": {
+          "type": "string",
+          "description": "Agent or researcher who compiled the data"
+        },
+        "confidence_legend": {
+          "type": "object",
+          "description": "Explanation of confidence levels used throughout",
+          "properties": {
+            "high": { "type": "string" },
+            "medium": { "type": "string" },
+            "low": { "type": "string" }
+          }
+        },
+        "last_updated": {
+          "type": "string",
+          "format": "date"
+        },
+        "sources_cited": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Aggregated list of all sources cited in the dataset"
+        },
+        "data_gaps": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Flagged missing data requiring follow-up collection"
+        }
+      }
+    },
+    "plant_identification": {
+      "type": "object",
+      "description": "Taxonomic and identification information",
+      "required": ["scientific_name", "family"],
+      "properties": {
+        "scientific_name": {
+          "type": "string",
+          "description": "Full scientific name with authority"
+        },
+        "authority": {
+          "type": "string",
+          "description": "Botanical authority citation"
+        },
+        "synonyms": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Accepted synonyms (including basionym)"
+        },
+        "family": {
+          "type": "string",
+          "description": "Botanical family (with common name in parentheses)"
+        },
+        "genus": { "type": "string" },
+        "species": { "type": "string" },
+        "taxonomic_rank": {
+          "type": "string",
+          "enum": ["Species", "Subspecies", "Variety", "Form", "Hybrid"]
+        },
+        "ncbi_taxonomy_id": {
+          "type": "string",
+          "description": "NCBI Taxonomy database identifier"
+        },
+        "classification": {
+          "type": "object",
+          "properties": {
+            "kingdom": { "type": "string" },
+            "clade": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "order": { "type": "string" },
+            "family": { "type": "string" },
+            "genus": { "type": "string" }
+          }
+        },
+        "common_names": {
+          "type": "object",
+          "description": "Common names keyed by language code",
+          "additionalProperties": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "morphology": {
+          "type": "object",
+          "description": "Physical description of the plant",
+          "properties": {
+            "growth_habit": { "type": "string" },
+            "height": {
+              "type": "object",
+              "properties": {
+                "typical": { "type": "string" },
+                "maximum": { "type": "string" }
+              }
+            },
+            "crown": { "type": "string" },
+            "trunk": {
+              "type": "object",
+              "properties": {
+                "diameter": { "type": "string" },
+                "bark": { "type": "string" }
+              }
+            },
+            "leaves": {
+              "type": "object",
+              "properties": {
+                "type": { "type": "string" },
+                "length": { "type": "string" },
+                "leaflet_count": { "type": "string" },
+                "leaflet_description": { "type": "string" },
+                "color": { "type": "string" }
+              }
+            },
+            "flowers": {
+              "type": "object",
+              "properties": {
+                "inflorescence": { "type": "string" },
+                "flower_count": { "type": "string" },
+                "symmetry": { "type": "string" },
+                "size": { "type": "string" },
+                "color": { "type": "string" },
+                "fragrance": { "type": "string" },
+                "calyx": { "type": "string" },
+                "petals": { "type": "string" },
+                "staminal_tube": { "type": "string" },
+                "ovary": { "type": "string" },
+                "stigma": { "type": "string" }
+              }
+            },
+            "fruit": {
+              "type": "object",
+              "properties": {
+                "type": { "type": "string" },
+                "shape": { "type": "string" },
+                "size": { "type": "string" },
+                "color": { "type": "string" },
+                "exocarp": { "type": "string" },
+                "mesocarp": { "type": "string" },
+                "endocarp": { "type": "string" }
+              }
+            },
+            "seed": {
+              "type": "object",
+              "properties": {
+                "shape": { "type": "string" },
+                "testa": { "type": "string" },
+                "seeds_per_kg": { "type": "string" }
+              }
+            },
+            "root_system": { "type": "string" }
+          }
+        },
+        "native_range": {
+          "type": "object",
+          "properties": {
+            "region": { "type": "string" },
+            "countries": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "habitat": { "type": "string" }
+          }
+        },
+        "current_distribution": {
+          "type": "object",
+          "properties": {
+            "status": { "type": "string" },
+            "regions": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "elevation_range": { "type": "string" }
+          }
+        },
+        "varieties_and_subspecies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "notes": { "type": "string" },
+              "confidence": {
+                "type": "string",
+                "enum": ["high", "medium", "low"]
+              }
+            }
+          }
+        },
+        "phenology": {
+          "type": "object",
+          "properties": {
+            "flowering_season": {
+              "type": "object",
+              "description": "Keyed by region"
+            },
+            "fruiting_period": {
+              "type": "object",
+              "properties": {
+                "fruit_development": { "type": "string" }
+              }
+            },
+            "optimal_harvest_window": {
+              "type": "object",
+              "properties": {
+                "seeds": { "type": "string" },
+                "leaves": { "type": "string" }
+              }
+            },
+            "age_at_first_fruiting": { "type": "string" },
+            "lifespan": { "type": "string" }
+          }
+        },
+        "pollination": { "type": "string" },
+        "seed_dispersal": { "type": "string" },
+        "differentiation_from_lookalikes": {
+          "type": "object",
+          "properties": {
+            "species": { "type": "string" },
+            "key_differences": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "chemical_composition": {
+      "type": "object",
+      "description": "Phytochemical profile and compound details",
+      "properties": {
+        "primary_bioactive_class": {
+          "type": "string",
+          "description": "Primary class of bioactive compounds"
+        },
+        "total_identified_compounds": {
+          "type": "string",
+          "description": "Number or range of identified phytochemicals"
+        },
+        "compound_families": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Major compound families present"
+        },
+        "key_compounds": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "type", "role"],
+            "properties": {
+              "name": { "type": "string" },
+              "type": { "type": "string" },
+              "molecular_formula": { "type": "string" },
+              "molecular_weight": { "type": "string" },
+              "role": { "type": "string" },
+              "evidence_type": {
+                "type": "string",
+                "enum": ["scientific_consensus", "single_study", "traditional_knowledge", "preliminary"]
+              },
+              "concentrations_by_plant_part": {
+                "type": "object",
+                "additionalProperties": { "type": "string" }
+              },
+              "confidence_concentration": {
+                "type": "string",
+                "enum": ["high", "medium", "low"]
+              },
+              "confidence": {
+                "type": "string",
+                "enum": ["high", "medium", "low"]
+              },
+              "primary_source": { "type": "string" },
+              "stability": {
+                "type": "object",
+                "properties": {
+                  "photostability": { "type": "object" },
+                  "thermal_stability": { "type": "object" },
+                  "pH_stability": { "type": "object" },
+                  "storage_recommendations": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                }
+              },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "oil_composition": {
+          "type": "object",
+          "description": "Fixed oil composition where applicable",
+          "properties": {
+            "oil_content_in_kernel": { "type": "string" },
+            "fatty_acid_profile": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            }
+          }
+        },
+        "standardization_markers": {
+          "type": "object",
+          "properties": {
+            "values": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "confidence": {
+              "type": "string",
+              "enum": ["high", "medium", "low"]
+            }
+          }
+        },
+        "known_synergistic_interactions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "description": { "type": "string" },
+              "evidence_type": { "type": "string" },
+              "evidence": { "type": "string" },
+              "confidence": {
+                "type": "string",
+                "enum": ["high", "medium", "low"]
+              }
+            }
+          }
+        },
+        "compound_stability_summary": {
+          "type": "object",
+          "properties": {
+            "factor_light": { "type": "string" },
+            "factor_temperature": { "type": "string" },
+            "factor_pH": { "type": "string" },
+            "factor_oxygen": { "type": "string" },
+            "factor_moisture": { "type": "string" },
+            "shelf_life_formulations": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "cultivation_data": {
+      "type": "object",
+      "description": "Agricultural and cultivation information",
+      "properties": {
+        "climate": {
+          "type": "object",
+          "properties": {
+            "type": { "type": "string" },
+            "optimal_temperature": { "type": "string" },
+            "maximum_temperature": { "type": "string" },
+            "minimum_temperature": { "type": "string" },
+            "frost_tolerance": { "type": "string" },
+            "annual_rainfall_optimal": { "type": "string" },
+            "drought_tolerance": { "type": "string" },
+            "tolerance_to_waterlogging": { "type": "string" },
+            "altitude_range": { "type": "string" },
+            "light_requirement": { "type": "string" }
+          }
+        },
+        "soil": {
+          "type": "object",
+          "properties": {
+            "pH_optimal": { "type": "string" },
+            "pH_tolerable": { "type": "string" },
+            "pH_notes": { "type": "string" },
+            "texture": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "drainage": { "type": "string" },
+            "tolerant_soils": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "intolerant_soils": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "organic_matter": { "type": "string" },
+            "calcium_mining": { "type": "string" }
+          }
+        },
+        "propagation": {
+          "type": "object",
+          "properties": {
+            "seed": {
+              "type": "object",
+              "properties": {
+                "viability": { "type": "string" },
+                "germination_rate": { "type": "string" },
+                "germination_time": { "type": "string" },
+                "seed_treatment": { "type": "string" },
+                "sowing_depth": { "type": "string" },
+                "seeds_per_kg": { "type": "string" },
+                "storage_behavior": { "type": "string" }
+              }
+            },
+            "vegetative_propagation": {
+              "type": "object",
+              "properties": {
+                "cuttings": { "type": "string" },
+                "air_layering": { "type": "string" },
+                "grafting": { "type": "string" }
+              }
+            },
+            "tissue_culture": {
+              "type": "object",
+              "properties": {
+                "methods": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+                "notes": { "type": "string" },
+                "confidence": {
+                  "type": "string",
+                  "enum": ["high", "medium", "low"]
+                }
+              }
+            }
+          }
+        },
+        "planting": {
+          "type": "object",
+          "properties": {
+            "season": { "type": "string" },
+            "pit_size": { "type": "string" },
+            "pit_filling": { "type": "string" },
+            "spacing": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            },
+            "seedling_age_at_transplanting": { "type": "string" },
+            "planting_density_notes": { "type": "string" }
+          }
+        },
+        "irrigation": {
+          "type": "object",
+          "properties": {
+            "establishment_phase": { "type": "string" },
+            "mature_trees": { "type": "string" },
+            "drought_tolerance": { "type": "string" },
+            "irrigation_methods": { "type": "string" },
+            "notes": { "type": "string" }
+          }
+        },
+        "fertilizer_and_nutrients": {
+          "type": "object",
+          "properties": {
+            "general_requirement": { "type": "string" },
+            "at_planting": { "type": "string" },
+            "established_trees": { "type": "string" },
+            "NPK_demand": { "type": "string" },
+            "organic_practice": { "type": "string" }
+          }
+        },
+        "intercropping_compatibility": {
+          "type": "object",
+          "properties": {
+            "compatible_crops": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "notes": { "type": "string" },
+            "windbreak_benefit": { "type": "string" },
+            "systems": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "pest_and_disease_management": {
+          "type": "object",
+          "properties": {
+            "common_pests": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "control": { "type": "string" }
+                }
+              }
+            },
+            "common_diseases": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "control": { "type": "string" }
+                }
+              }
+            },
+            "organic_control_methods": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "inherent_resistance": { "type": "string" }
+          }
+        },
+        "harvesting": {
+          "type": "object",
+          "properties": {
+            "maturity_indicators": {
+              "type": "object",
+              "properties": {
+                "seeds_fruits": { "type": "string" },
+                "leaves": { "type": "string" }
+              }
+            },
+            "harvest_method": {
+              "type": "object",
+              "properties": {
+                "seeds": { "type": "string" },
+                "leaves": { "type": "string" }
+              }
+            },
+            "season": {
+              "type": "object",
+              "description": "Keyed by region"
+            },
+            "frequency": { "type": "string" },
+            "yield_per_tree": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            },
+            "yield_per_hectare": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            },
+            "yield_confidence": {
+              "type": "string",
+              "enum": ["high", "medium", "low"]
+            },
+            "tree_production_lifespan": { "type": "string" }
+          }
+        },
+        "post_harvest_handling": {
+          "type": "object",
+          "properties": {
+            "depulping": { "type": "string" },
+            "seed_drying": { "type": "string" },
+            "seed_storage": { "type": "string" },
+            "leaf_drying": { "type": "string" },
+            "bark_drying": { "type": "string" },
+            "processing_for_oil": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "oil_storage": { "type": "string" },
+            "quality_preservation": { "type": "string" }
+          }
+        },
+        "growth_rates": {
+          "type": "object",
+          "properties": {
+            "height_at_5_years": { "type": "string" },
+            "height_at_10_years": { "type": "string" },
+            "height_at_25_years": { "type": "string" },
+            "mean_annual_girth_increment": { "type": "string" },
+            "notes": { "type": "string" }
+          }
+        }
+      }
+    },
+    "therapeutic_applications": {
+      "type": "object",
+      "description": "Therapeutic uses, evidence, and clinical data",
+      "properties": {
+        "traditional_medicine_systems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "system": { "type": "string" },
+              "traditions": {
+                "type": "object",
+                "properties": {
+                  "classical_texts": { "type": "string" },
+                  "first_mentioned": { "type": "string" },
+                  "sanskrit_names": { "type": "string" }
+                }
+              },
+              "pharmacology": {
+                "type": "object",
+                "properties": {
+                  "rasa_taste": { "type": "string" },
+                  "virya_potency": { "type": "string" },
+                  "vipaka_post_digestive": { "type": "string" },
+                  "guna_qualities": { "type": "string" },
+                  "karma_actions": { "type": "string" }
+                }
+              },
+              "classical_categorization": {
+                "type": "object",
+                "additionalProperties": { "type": "string" }
+              },
+              "key_indications": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "dosage_forms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "form": { "type": "string" },
+                    "dose": { "type": "string" },
+                    "vehicle": { "type": "string" },
+                    "preparation": { "type": "string" },
+                    "route": { "type": "string" }
+                  }
+                }
+              },
+              "classical_formulations": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        },
+        "modern_therapeutic_categories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "category": { "type": "string" },
+              "details": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        },
+        "mechanisms_of_action": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "mechanism": { "type": "string" },
+              "compound": { "type": "string" },
+              "effect": { "type": "string" },
+              "evidence_level": { "type": "string" },
+              "source_doi": { "type": "string" }
+            }
+          }
+        },
+        "safety_profile": {
+          "type": "object",
+          "properties": {
+            "toxicity_data": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "parameter": { "type": "string" },
+                  "value": { "type": "string" },
+                  "source_doi": { "type": "string" }
+                }
+              }
+            },
+            "adverse_effects": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "severity": { "type": "string" },
+                  "effects": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  },
+                  "population": { "type": "string" },
+                  "evidence_level": { "type": "string" }
+                }
+              }
+            },
+            "contraindications": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "drug_interactions": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "clinical_evidence": {
+      "type": "object",
+      "description": "Clinical trial data and evidence review",
+      "properties": {
+        "evidence_quality_framework": { "type": "string" },
+        "overall_assessment": { "type": "string" },
+        "key_clinical_trials": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "condition": { "type": "string" },
+              "study_title": { "type": "string" },
+              "design": { "type": "string" },
+              "n": { "type": "string" },
+              "intervention": { "type": "string" },
+              "duration": { "type": "string" },
+              "comparator": { "type": "string" },
+              "key_findings": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "quality_rating": { "type": "string" },
+              "source_doi": { "type": "string" },
+              "source_pmid": { "type": "string" },
+              "clinicaltrials_gov_id": { "type": "string" },
+              "status": { "type": "string" },
+              "evidence_distinction": { "type": "string" }
+            }
+          }
+        },
+        "evidence_summary_by_condition": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "condition": { "type": "string" },
+              "total_studies": { "type": "string" },
+              "best_evidence": { "type": "string" },
+              "effect_size": { "type": "string" },
+              "grade": { "type": "string" }
+            }
+          }
+        },
+        "ongoing_clinical_trials": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "clinicaltrials_gov_id": { "type": "string" },
+              "title": { "type": "string" },
+              "status": { "type": "string" },
+              "sponsor": { "type": "string" },
+              "phase": { "type": "string" }
+            }
+          }
+        },
+        "evidence_gaps": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "market_data": {
+      "type": "object",
+      "description": "Market intelligence and commercial data",
+      "properties": {
+        "market_size": {
+          "type": "object",
+          "properties": {
+            "estimates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "source": { "type": "string" },
+                  "year": { "type": "string" },
+                  "value_usd": { "type": "string" },
+                  "forecast_year": { "type": "string" },
+                  "forecast_value_usd": { "type": "string" },
+                  "cagr": { "type": "string" },
+                  "scope": { "type": "string" }
+                }
+              }
+            },
+            "consensus_estimate": {
+              "type": "object",
+              "properties": {
+                "current_market_2025": { "type": "string" },
+                "projected_2034": { "type": "string" },
+                "consensus_cagr": { "type": "string" }
+              }
+            }
+          }
+        },
+        "key_producing_countries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "country": { "type": "string" },
+              "role": { "type": "string" },
+              "key_regions": { "type": "string" },
+              "annual_seed_collection": { "type": "string" },
+              "annual_oil_production": { "type": "string" },
+              "annual_cake_production": { "type": "string" },
+              "government_policy": { "type": "string" },
+              "challenges": { "type": "string" }
+            }
+          }
+        },
+        "market_segments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "segment": { "type": "string" },
+              "share": { "type": "string" },
+              "growth_driver": { "type": "string" },
+              "sub_segments": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "applications": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        },
+        "key_industry_players": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "company": { "type": "string" },
+              "headquarters": { "type": "string" },
+              "segment": { "type": "string" },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "price_trends": {
+          "type": "object",
+          "properties": {
+            "neem_leaf_extract_export_india": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "year": { "type": "string" },
+                  "price_range_usd_per_kg": { "type": "string" }
+                }
+              }
+            },
+            "neem_oil_wholesale": {
+              "type": "array",
+              "items": { "type": "object" }
+            },
+            "neem_cake": {
+              "type": "object",
+              "properties": {
+                "price_range_usd_per_tonne": { "type": "string" }
+              }
+            },
+            "azadirachtin_technical": {
+              "type": "object",
+              "properties": {
+                "price_range_usd_per_kg": { "type": "string" }
+              }
+            },
+            "price_drivers": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "supply_chain_structure": {
+          "type": "object",
+          "properties": {
+            "stages": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "stage": { "type": "string" },
+                  "actors": { "type": "string" },
+                  "geography": { "type": "string" },
+                  "volume": { "type": "string" },
+                  "outputs": { "type": "string" },
+                  "technologies": { "type": "string" },
+                  "channels": { "type": "string" },
+                  "sectors": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "consumer_trends": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "trend": { "type": "string" },
+              "detail": { "type": "string" }
+            }
+          }
+        },
+        "export_data_india": {
+          "type": "object",
+          "properties": {
+            "key_destinations": { "type": "string" },
+            "regulatory_challenges": { "type": "string" }
+          }
+        }
+      }
+    },
+    "quality_standards": {
+      "type": "object",
+      "description": "Quality grading, pharmacopoeial specs, and certifications",
+      "properties": {
+        "pharmacopoeial_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "plant_parts_monographed": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "volumes": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "jurisdiction": { "type": "string" },
+              "scope": { "type": "string" },
+              "year": { "type": "string" },
+              "standards": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        },
+        "organoleptic_characteristics": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "color": { "type": "string" },
+              "odor": { "type": "string" },
+              "taste": { "type": "string" },
+              "texture": { "type": "string" }
+            }
+          }
+        },
+        "physicochemical_parameters": {
+          "type": "object",
+          "properties": {
+            "leaf_powder_API_standards": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            },
+            "leaf_observed_values_2023_study": {
+              "type": "object",
+              "properties": {
+                "source": { "type": "string" },
+                "total_ash": { "type": "string" },
+                "acid_insoluble_ash": { "type": "string" },
+                "alcohol_soluble_extractive": { "type": "string" },
+                "water_soluble_extractive": { "type": "string" },
+                "loss_on_drying": { "type": "string" },
+                "compliance": { "type": "string" }
+              }
+            },
+            "neem_oil_BIS_standards": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            }
+          }
+        },
+        "heavy_metal_limits": {
+          "type": "object",
+          "properties": {
+            "reference": { "type": "string" },
+            "lead": { "type": "string" },
+            "cadmium": { "type": "string" },
+            "mercury": { "type": "string" },
+            "arsenic": { "type": "string" },
+            "confidence": {
+              "type": "string",
+              "enum": ["high", "medium", "low"]
+            }
+          }
+        },
+        "microbial_contamination_limits": {
+          "type": "object",
+          "properties": {
+            "reference": { "type": "string" },
+            "total_aerobic_bacterial_count": { "type": "string" },
+            "total_yeast_and_mold": { "type": "string" },
+            "Escherichia_coli": { "type": "string" },
+            "Salmonella": { "type": "string" },
+            "Staphylococcus_aureus": { "type": "string" },
+            "Pseudomonas_aeruginosa": { "type": "string" },
+            "confidence": {
+              "type": "string",
+              "enum": ["high", "medium", "low"]
+            }
+          }
+        },
+        "aflatoxin_limits": {
+          "type": "object",
+          "properties": {
+            "reference": { "type": "string" },
+            "aflatoxin_B1": { "type": "string" },
+            "total_aflatoxins": { "type": "string" },
+            "confidence": { "type": "string" }
+          }
+        },
+        "grade_classifications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "system": { "type": "string" },
+              "description": { "type": "string" },
+              "grades": {
+                "type": "object",
+                "additionalProperties": { "type": "string" }
+              },
+              "confidence": { "type": "string" }
+            }
+          }
+        },
+        "certification_requirements": {
+          "type": "object",
+          "properties": {
+            "organic_certification": {
+              "type": "object",
+              "properties": {
+                "applicable_for": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+                "standards": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+                "notes": { "type": "string" }
+              }
+            },
+            "GAP": {
+              "type": "object",
+              "properties": {
+                "scope": { "type": "string" },
+                "requirements": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            },
+            "GMP": {
+              "type": "object",
+              "properties": {
+                "scope": { "type": "string" },
+                "requirements": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "ayurvedic_properties": {
+          "type": "object",
+          "properties": {
+            "source": { "type": "string" },
+            "sanskrit_name": { "type": "string" },
+            "rasa_taste": { "type": "string" },
+            "guna_qualities": { "type": "string" },
+            "virya_potency": { "type": "string" },
+            "vipaka_post_digestive": { "type": "string" },
+            "karma_actions": { "type": "string" },
+            "confidence": { "type": "string" }
+          }
+        }
+      }
+    },
+    "regulatory_status": {
+      "type": "object",
+      "description": "Regulatory and compliance status by jurisdiction",
+      "properties": {
+        "india": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "authority": { "type": "string" },
+              "status": { "type": "string" },
+              "approved_claims": { "type": "string" },
+              "restrictions": { "type": "string" },
+              "classification": { "type": "string" },
+              "notes": { "type": "string" },
+              "max_permitted_levels": { "type": "string" }
+            }
+          }
+        },
+        "united_states": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "authority": { "type": "string" },
+              "regulatory_pathway": { "type": "string" },
+              "premarket_approval": { "type": "string" },
+              "approved_claims": { "type": "string" },
+              "gras_status": { "type": "string" },
+              "drug_status": { "type": "string" },
+              "restrictions": { "type": "string" },
+              "ndi_requirements": { "type": "string" },
+              "fda_warning": { "type": "string" },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "european_union": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "authority": { "type": "string" },
+              "regulatory_pathway": { "type": "string" },
+              "thmp_requirements": { "type": "string" },
+              "approved_claims": { "type": "string" },
+              "status": { "type": "string" },
+              "permitted_use": { "type": "string" },
+              "restrictions": { "type": "string" },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "japan": { "type": "array" },
+        "china": { "type": "array" },
+        "iucn_cites": {
+          "type": "object",
+          "properties": {
+            "iucn_status": { "type": "string" },
+            "cites": { "type": "string" },
+            "source": { "type": "string" }
+          }
+        },
+        "patent_landscape": {
+          "type": "object",
+          "properties": {
+            "summary": { "type": "string" },
+            "major_patent_holders": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "recent_patents": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "patent_id": { "type": "string" },
+                  "title": { "type": "string" },
+                  "assignee": { "type": "string" },
+                  "year": { "type": "string" },
+                  "focus": { "type": "string" },
+                  "status": { "type": "string" }
+                }
+              }
+            },
+            "freedom_to_operate": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

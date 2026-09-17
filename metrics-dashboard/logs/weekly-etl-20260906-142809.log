@@ -1,0 +1,45 @@
+[2026-09-06T14:28:09Z] Starting weekly ETL
+{"timestamp": "2026-09-06T14:28:09.427450+00:00", "exit_code": 0, "rollups": [{"metric_key": "sensor_coverage", "metric_value": 100.0, "unit": "pct_farms", "farm_id": null, "window_start": "2026-08-30 14:28:09.484549+00:00", "window_end": "2026-09-06 14:28:09.484549+00:00", "source": "iot_ingest"}, {"metric_key": "yield_rmse", "metric_value": 0.122, "unit": "t/ha", "farm_id": null, "window_start": "2026-08-30 14:28:09.484549+00:00", "window_end": "2026-09-06 14:28:09.484549+00:00", "source": "model_monitoring"}, {"metric_key": "labor_hours_saved", "metric_value": 210.15, "unit": "hrs/2026-Kharif", "farm_id": null, "window_start": "2026-08-30 14:28:09.484549+00:00", "window_end": "2026-09-06 14:28:09.484549+00:00", "source": "farmer_activity_logs"}, {"metric_key": "audit_gap_minutes", "metric_value": 1.8, "unit": "min", "farm_id": null, "window_start": "2026-08-30 14:28:09.484549+00:00", "window_end": "2026-09-06 14:28:09.484549+00:00", "source": "blockchain_audit"}]}
+{
+  "timestamp": "2026-09-06T14:28:09.427450+00:00",
+  "exit_code": 0,
+  "rollups": [
+    {
+      "metric_key": "sensor_coverage",
+      "metric_value": 100.0,
+      "unit": "pct_farms",
+      "farm_id": null,
+      "window_start": "2026-08-30 14:28:09.484549+00:00",
+      "window_end": "2026-09-06 14:28:09.484549+00:00",
+      "source": "iot_ingest"
+    },
+    {
+      "metric_key": "yield_rmse",
+      "metric_value": 0.122,
+      "unit": "t/ha",
+      "farm_id": null,
+      "window_start": "2026-08-30 14:28:09.484549+00:00",
+      "window_end": "2026-09-06 14:28:09.484549+00:00",
+      "source": "model_monitoring"
+    },
+    {
+      "metric_key": "labor_hours_saved",
+      "metric_value": 210.15,
+      "unit": "hrs/2026-Kharif",
+      "farm_id": null,
+      "window_start": "2026-08-30 14:28:09.484549+00:00",
+      "window_end": "2026-09-06 14:28:09.484549+00:00",
+      "source": "farmer_activity_logs"
+    },
+    {
+      "metric_key": "audit_gap_minutes",
+      "metric_value": 1.8,
+      "unit": "min",
+      "farm_id": null,
+      "window_start": "2026-08-30 14:28:09.484549+00:00",
+      "window_end": "2026-09-06 14:28:09.484549+00:00",
+      "source": "blockchain_audit"
+    }
+  ]
+}
+[2026-09-06T14:28:09Z] ETL exited with code 0

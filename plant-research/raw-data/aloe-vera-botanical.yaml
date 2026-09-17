@@ -1,0 +1,282 @@
+---
+plant_name: "Aloe Vera"
+scientific_name: "Aloe barbadensis Mill."
+family: "Asphodelaceae"
+genus: "Aloe"
+species: "A. barbadensis"
+common_names:
+  english: ["Aloe Vera", "Aloe", "Burn Plant"]
+  hindi: ["Kumari", "Kathalai"]
+  sanskrit: ["Kumari"]
+  tamil: ["Aloe", "Katrazhai"]
+  spanish: ["Sábila"]
+authorities:
+  scientific_authority: "Mill."
+  basionym: "Aloe vulgaris Lam."
+taxonomy_source: "Plants of the World Online (POWO, 2024); GRIN Taxonomy"
+taxonomy_confidence: "high"
+synonyms:
+  - "Aloe vera (L.) Burm. f."
+  - "Aloe barbadensis Mill."
+  - "Aloe chinensis Baker"
+  - "Aloe elongata Murray"
+  - "Aloe indica Royle"
+data_source: "DPA-75 Botanical Research"
+last_updated: "2026-09-05"
+version: "1.0.0"
+researcher: "Botanical Research Agent (DPA)"
+morphology:
+  growth_habit: "Succulent perennial herb; rosette-forming; 60-100 cm diameter; leaves 15-50 cm long"
+  leaves:
+    type: "Fleshy, lanceolate, thick; arranged in rosette"
+    texture: "Glaucous green; may have white spots (though var. chinensis is glaucous)"
+    margin: "Toothed with small teeth/spines (not sharp)"
+    inner_gel: "Transparent, jelly-like mucilage"
+    latex: "Yellowish latex (aloin-rich) just beneath epidermis"
+  flowers:
+    type: "Tubular, yellow-orange, in terminal racemes"
+    flowering_time: "Spring (April-May in cultivated settings)"
+    note: "Rarely flowers in cultivation"
+  root_system: "Fibrous, shallow, spreading; rhizomatous in some cultivars"
+morphology_confidence: "high"
+morphology_sources:
+  - "POWO (2024). Plants of the World Online. Royal Botanic Gardens, Kew."
+  - "Reynolds, T. (1968). The Aloe Papers. Alfa-Libre."
+  - "Carter, G. F., et al. (1981). Aloe: The Genus Aloe. CRC Press."
+phenology:
+  vegetative_phase: "Perennial; rosette growth year-round in tropics/subtropics"
+  flowering_phenology:
+    timing: "Spring (May-June in tropics)"
+    duration: "2-4 weeks"
+  seed_dispersal: "Seed propagation; offsets (pups) vegetatively"
+  lifespan: "10-12+ years under cultivation"
+phenology_confidence: "high"
+phenology_sources:
+  - "Carter, G. F., et al. (1981). Aloe: The Genus Aloe. CRC Press."
+varieties_and_cultivars:
+  - name: "Aloe barbadensis Mill. (standard cultivar)"
+    note: "Most commonly cultivated; recognized by pharmacopoeia"
+    use: "Pharmaceutical, cosmetic"
+  - name: "Aloe barbadensis var. chinensis (Haw.) Baker"
+    note: "Wider leaves, more glaucous"
+    use: "Ornamental, minor medicinal"
+  - cultivar_selection_criteria:
+      - "High mucilage/gel content (>20% of leaf weight)"
+      - "Low aloin content (<100 ppm in inner leaf gel)"
+      - "Disease resistance (leaf spot, root rot)"
+      - "Cold tolerance for export markets"
+variety_confidence: "high"
+active_chemical_compounds:
+  major_classes:
+    - class: "Anthraquinones and C-glycosylflavones (in latex)"
+      representative_compounds:
+        - compound: "Aloin A (barbaloin)"
+          cas_number: "1415-73-2"
+          typical_concentration: "100-300 ppm in inner gel; much higher in latex (>10%)"
+          confidence: "high"
+        - compound: "Aloin B"
+          cas_number: "1745-41-3"
+          confidence: "medium"
+        - compound: "Aloe-emodin"
+          cas_number: "481-72-1"
+          confidence: "high"
+        - compound: "Chrysophanol"
+          cas_number: "481-73-2"
+          confidence: "high"
+    - class: "Polysaccharides (acemannan and glycoproteins)"
+      representative_compounds:
+        - compound: "Acemannan"
+          cas_number: "56690-48-1"
+          typical_concentration: "10-20% of inner gel (dry weight)"
+          confidence: "high"
+        - compound: "Aloctin A (glycoprotein)"
+          cas_number: "Not standard"
+          confidence: "medium"
+        - compound: "Aloin C (C-glycosylflavone)"
+          cas_number: "13462-50-5"
+          confidence: "high"
+    - class: "Anthraquinones (inner gel — in trace amounts)"
+      representative_compounds:
+        - compound: "Barbaloin (Aloin A)"
+          cas_number: "1415-73-2"
+          typical_concentration: "<100 ppm in inner gel; up to 10% in latex"
+          confidence: "high"
+    - class: "Other bioactive compounds"
+      representative_compounds:
+        - compound: "Lupeol"
+          cas_number: "545-47-1"
+          confidence: "medium"
+        - compound: "Salicylic acid"
+          cas_number: "69-72-7"
+          confidence: "medium"
+        - compound: "Amino acids"
+          note: "20 of 22 common amino acids present; alanine, glutamic acid, aspartic acid"
+          confidence: "high"
+  standardization_markers:
+    primary: "Acemannan content and aloin content — key quality markers"
+    typical_market_specs:
+      - "Inner leaf gel: Aloin <100 ppm (must be <10 ppm for pharmaceutical grade)"
+      - "Acemannan: ≥10% (HPLC)"
+      - "Total anthraquinones in inner gel: <50 ppm"
+      - "Gel viscosity: ≥3000 cP (25°C)"
+    pharmacopoeial_references:
+      - "Indian Pharmacopoeia (IP)"
+      - "United States Pharmacopeia (USP)"
+      - "Japanese Pharmacopoeia (JP)"
+      - "WHO monographs on selected medicinal plants"
+  compound_bioactivity_links:
+    - compound: "Acemannan"
+      mechanism: "Immunomodulatory; activates macrophages, stimulates wound healing; anti-inflammatory"
+      therapeutic: "Wound healing, immunomodulatory, anti-inflammatory"
+      evidence_level: "high (multiple clinical studies)"
+    - compound: "Aloin A (barbaloin)"
+      mechanism: "Laxative (stimulates intestinal motility); anthraquinone glycoside; potential carcinogenicity at high doses"
+      therapeutic: "Laxative (external use only for inner gel)"
+      evidence_level: "high (traditional and modern)"
+    - compound: "Acemannan-glycoproteins (Aloctin A)"
+      mechanism: "Anti-tumor activity via macrophage activation"
+      therapeutic: "Anticancer (preclinical), wound healing"
+      evidence_level: "medium"
+  compound_confidence: "high"
+cultivation_requirements:
+  climate:
+    ideal: "Subtropical to tropical; temperature 20-30°C"
+    rainfall: "250-750 mm/year (drought-tolerant); well-distributed"
+    altitude: "0-1200 m"
+    frost_tolerance: "Sensitive to frost (<0°C); killed by prolonged freezing"
+    confidence: "high"
+  soil:
+    preferred_types: "Well-drained sandy loam; pH 6.0-8.0"
+    tolerance: "Tolerates sandy, rocky, saline soils"
+    drainage: "Excellent drainage essential; cannot tolerate waterlogging"
+    confidence: "high"
+  propagation:
+    primary_methods:
+      - method: "Vegetative (offsets/pups, leaf cuttings)"
+        success_rate: "Very high (>90%); primary commercial method"
+        note: "Offsets removed from mother plant; replanted directly"
+        confidence: "high"
+      - method: "Seed"
+        viability: "Moderate; germination 20-40% at 25-30°C"
+        note: "Rarely used commercially; genetic variability; not true-to-type"
+        confidence: "medium"
+      - method: "Tissue culture"
+        success_rate: "High (commercial protocols available)"
+        use_case: "Large-scale multiplication of disease-free material"
+        confidence: "medium"
+    seedling_production:
+      nursery_duration: "6-8 weeks in pots; transplant when pups have 3-4 roots"
+      outplanting_size: "30-45 cm spacing in rows"
+  irrigation:
+    requirement: "Drought-tolerant; minimal irrigation needed; over-irrigation causes root rot"
+    critical_periods: "Establishment (first 3 months)"
+    method: "Drip irrigation; avoid overhead watering (promotes rot)"
+    confidence: "high"
+  spacing:
+    plantation: "30-45 cm between plants, 60-75 cm between rows (37,000-74,000 plants/ha)"
+    confidence: "high"
+  nutrition:
+    fertilizer_recommendation: "NPK 50:10:50 kg/ha; 2-3 split applications; avoid excess nitrogen"
+    micronutrients: "Potassium important; avoid waterlogging"
+    confidence: "medium"
+  pest_management:
+    major_pests:
+      - pest: "Aloe moth (Achroia grisella)"
+        management: "Sanitation; pheromone traps; biological control"
+        confidence: "medium"
+      - pest: "Aloe scale (Aspidiotus aloeae)"
+        management: "Horticultural oils; biological control (Cryptolaemus)"
+        confidence: "medium"
+      - pest: "Aloe snout weevil (Chlorixys expansa)"
+        management: "Sanitation; trap crops"
+        confidence: "medium"
+    major_diseases:
+      - disease: "Aloe vera decline (various fungal pathogens: Phytophthora, Fusarium)"
+        management: "Avoid waterlogging; resistant rootstocks; fungicide drench"
+        confidence: "high"
+      - disease: "Leaf spot (Cercospora spp.)"
+        management: "Copper fungicides; canopy management"
+        confidence: "medium"
+  harvest:
+    leaf_harvest:
+      timing: "3-4 years after planting; leaves at full size (30+ cm); harvest 3-4 lower leaves per plant"
+      method: "Hand cut or mechanical; remove lower leaves only (leave rosette intact)"
+      yield_per_plant: "1-2 kg per harvest cycle; multiple cycles per year"
+      confidence: "high"
+  post_harvest:
+    gel_extraction:
+      steps:
+        - "Wash leaf surface"
+        - "Filet inner gel from rind (outer green cortex and yellow latex)"
+        - "Remove latex completely (critical for food/pharmaceutical quality — aloin must be <100 ppm)"
+        - "Cold-press or mechanically extract gel"
+        - "Pasteurize (70°C, 5-10 min) or freeze-dry for preservation"
+        - "Package in airtight containers; refrigerate"
+      storage: "Refrigerated (4-8°C); shelf life 7-14 days fresh; freeze-dried powder 12+ months"
+      note: "Latex removal critical — aloin must be <100 ppm for pharmaceutical; <10 ppm for highest grade"
+      confidence: "high"
+    powder_production:
+      method: "Freeze-dry or vacuum-dry gel at low temperature (<45°C to preserve acemannan)"
+      yield: "5-10% dry powder from fresh gel"
+      storage: "Airtight, cool, dry, dark; shelf life 12-18 months"
+      confidence: "high"
+cultivation_confidence: "high"
+cultivation_sources:
+  - "Reynolds, T. (1968). The Aloe Papers. Alfa-Libre."
+  - "Carter, G. F., et al. (1981). Aloe: The Genus Aloe. CRC Press."
+  - "Natri, A., et al. (2005). Aloe vera: A short review of facts and mechanisms. Clin. Dermatol. 23(1), 22-26."
+quality_grading:
+  pharmacopoeial_specs:
+    inner_leaf_gel:
+      - "Aloin (total anthraquinones): <100 ppm (must be <10 ppm for pharmaceutical)"
+      - "Acemannan: ≥10% (HPLC)"
+      - "pH: 4.5-5.5"
+      - "Viscosity: ≥3000 cP"
+    dried_whole_leaf:
+      - "Aloin: <1000 ppm"
+      - "Moisture: <12%"
+      - "Foreign matter: <2%"
+    pharmacopoeial_references:
+      - "Indian Pharmacopoeia (IP)"
+      - "United States Pharmacopeia (USP)"
+      - "Japanese Pharmacopoeia (JP)"
+  organoleptic:
+    inner_gel:
+      color: "Transparent, jelly-like"
+      odor: "Mild, slightly acidic"
+      taste: "Slimy, slightly bitter"
+    dried_powder:
+      color: "Light green to yellowish"
+      odor: "Mild, characteristic"
+      taste: "Slightly bitter"
+  certifications:
+    - "Organic (USDA NOP, EU)"
+    - "ISO 9001 (manufacturing)"
+    - "COSMOS (cosmetics)"
+quality_confidence: "high"
+quality_sources:
+  - "United States Pharmacopeia (USP). Aloe Gel monograph."
+  - "Indian Pharmacopoeia Commission. (2022). Indian Pharmacopoeia, 9th Ed."
+data_gaps:
+  - "Acemannan molecular weight distribution not standardized across suppliers; impacts bioactivity"
+  - "Genetic markers for cultivar purity verification are not widely available; authentication relies on chemotyping"
+  - "Environmental effects on acemannan content (not well characterized)"
+references:
+  - "POWO (2024). Plants of the World Online. Royal Botanic Gardens, Kew."
+  - "Carter, G. F., et al. (1981). Aloe: The Genus Aloe. CRC Press."
+  - "Natri, A., et al. (2005). Aloe vera: A short review of facts and mechanisms. Clin. Dermatol. 23(1), 22-26."
+  - "United States Pharmacopeia (USP). Aloe Gel monograph."
+confidence_summary:
+  taxonomy: "high"
+  morphology: "high"
+  phenology: "high"
+  chemistry: "high"
+  cultivation: "high"
+  quality: "high"
+  genomic_markers: "low (data gap)"
+research_relevance_to_dpa75:
+  why_relevant: "Aloe vera is a key DPA crop; acemannan and aloin pathways are candidates for strain validation"
+  candidate_genes_for_engineering:
+    - "Acemannan synthase (polysaccharide biosynthesis pathway)"
+    - "CYP genes involved in anthraquinone biosynthesis (aloins)"
+  standardization_target: "Acemannan content (HPLC); aloin quantification (ppm)"
