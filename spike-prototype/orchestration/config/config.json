@@ -1,0 +1,31 @@
+{
+  "sandbox": {
+    "containerd_socket": "${CONTAINERD_SOCKET:-/run/containerd/containerd.sock}",
+    "gvisor_runtime": "${GVISOR_RUNTIME:-runsc}",
+    "base_image": "${BASE_IMAGE:-djtech/agent-base:latest}",
+    "network_profile": "${NETWORK_PROFILE:-default-deny}",
+    "default_cpu": "${DEFAULT_CPU:-1000m}",
+    "default_memory": "${DEFAULT_MEMORY:-512Mi}",
+    "default_disk": "${DEFAULT_DISK:-1Gi}",
+    "default_timeout": "24h",
+    "max_concurrent": 50
+  },
+  "executor": {
+    "llm_router_url": "${LLM_ROUTER_URL:-http://localhost:8081}",
+    "llm_gateway_url": "${LLM_GATEWAY_URL:-http://localhost:8080}",
+    "job_queue_redis_addr": "${JOB_QUEUE_REDIS_ADDR:-localhost:6379}",
+    "job_queue_postgres_dsn": "${JOB_QUEUE_POSTGRES_DSN:-postgres://user:pass@localhost:5432/queue?sslmode=require}",
+    "worker_concurrency": 10,
+    "heartbeat_interval": "30s",
+    "job_ttl": "5m",
+    "claim_timeout": "30s"
+  },
+  "billing": {
+    "price_per_cpu_second": "${PRICE_PER_CPU_SECOND:-0.00001}",
+    "price_per_memory_gb_second": "${PRICE_PER_MEMORY_GB_SECOND:-0.000001}",
+    "price_per_llm_token": "${PRICE_PER_LLM_TOKEN:-0.000001}",
+    "webhook_url": "${BILLING_WEBHOOK_URL:-https://billing.example.com/webhook}",
+    "currency": "USD",
+    "enabled": true
+  }
+}

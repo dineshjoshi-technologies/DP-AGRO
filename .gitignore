@@ -4,3 +4,7 @@ __pycache__/
 *.pyc
 .pytest_cache/
 node_modules/
+interaction-payload*.json
+plan-payload.json
+*.egg-info/
+dist/

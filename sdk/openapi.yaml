@@ -1,0 +1,949 @@
+openapi: 3.0.3
+info:
+  title: DJ Tech Agent Runtime API
+  version: 1.0.0
+  description: |
+    Public API for DJ Tech's multi-agent orchestration runtime.
+    Create, manage, and execute AI agents with secure sandboxing, intelligent LLM routing,
+    durable job queues, and usage-based billing.
+  contact:
+    name: DJ Tech
+    url: https://djtech.io
+    email: support@djtech.io
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+  - url: https://api.djtech.io/v1
+    description: Production server
+  - url: https://api-staging.djtech.io/v1
+    description: Staging server
+  - url: http://localhost:8080/v1
+    description: Local development server
+
+security:
+  - BearerAuth: []
+
+paths:
+  /health:
+    get:
+      summary: Health check
+      operationId: healthCheck
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+
+  /agents:
+    post:
+      summary: Create a new agent
+      operationId: createAgent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAgentRequest'
+      responses:
+        '201':
+          description: Agent created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Agent'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      summary: List agents
+      operationId: listAgents
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [pending, running, stopped, failed, deleted]
+        - name: search
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of agents
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentListResponse'
+
+  /agents/{agent_id}:
+    get:
+      summary: Get agent by ID
+      operationId: getAgent
+      parameters:
+        - name: agent_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Agent details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Agent'
+        '404':
+          description: Agent not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      summary: Update agent configuration
+      operationId: updateAgent
+      parameters:
+        - name: agent_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateAgentRequest'
+      responses:
+        '200':
+          description: Agent updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Agent'
+        '404':
+          description: Agent not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Delete an agent
+      operationId: deleteAgent
+      parameters:
+        - name: agent_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '204':
+          description: Agent deleted
+        '404':
+          description: Agent not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /agents/{agent_id}/start:
+    post:
+      summary: Start an agent
+      operationId: startAgent
+      parameters:
+        - name: agent_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '202':
+          description: Agent start initiated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+        '404':
+          description: Agent not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Agent already running
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /agents/{agent_id}/stop:
+    post:
+      summary: Stop an agent
+      operationId: stopAgent
+      parameters:
+        - name: agent_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StopAgentRequest'
+      responses:
+        '202':
+          description: Agent stop initiated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+        '404':
+          description: Agent not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /agents/{agent_id}/logs:
+    get:
+      summary: Stream agent logs
+      operationId: getAgentLogs
+      parameters:
+        - name: agent_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: follow
+          in: query
+          schema:
+            type: boolean
+            default: false
+        - name: since
+          in: query
+          schema:
+            type: string
+            format: date-time
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 1000
+            default: 100
+      responses:
+        '200':
+          description: Log stream
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LogStreamResponse'
+        '404':
+          description: Agent not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /agents/{agent_id}/exec:
+    post:
+      summary: Execute a command in the agent's sandbox
+      operationId: execInAgent
+      parameters:
+        - name: agent_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExecRequest'
+      responses:
+        '200':
+          description: Execution result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExecResponse'
+        '404':
+          description: Agent not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Agent not running
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /jobs:
+    post:
+      summary: Submit a job for execution
+      operationId: submitJob
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubmitJobRequest'
+      responses:
+        '201':
+          description: Job submitted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /jobs/{job_id}:
+    get:
+      summary: Get job status and result
+      operationId: getJob
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Job details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /jobs/{job_id}/cancel:
+    post:
+      summary: Cancel a running job
+      operationId: cancelJob
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Job cancelled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Job not cancellable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /jobs/{job_id}/events:
+    get:
+      summary: Stream job events (Server-Sent Events)
+      operationId: streamJobEvents
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Event stream
+          content:
+            text/event-stream:
+              schema:
+                type: string
+
+  /billing/usage:
+    get:
+      summary: Get usage and billing information
+      operationId: getUsage
+      parameters:
+        - name: start_date
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: end_date
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: agent_id
+          in: query
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Usage summary
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsageResponse'
+
+  /templates:
+    get:
+      summary: List available agent templates
+      operationId: listTemplates
+      responses:
+        '200':
+          description: Available templates
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TemplateListResponse'
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    HealthResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [healthy, degraded, unhealthy]
+        version:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        checks:
+          type: array
+          items:
+            $ref: '#/components/schemas/HealthCheck'
+
+    HealthCheck:
+      type: object
+      properties:
+        name:
+          type: string
+        status:
+          type: string
+          enum: [pass, warn, fail]
+        message:
+          type: string
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        details:
+          type: object
+          additionalProperties: true
+
+    Agent:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+          enum: [pending, running, stopped, failed, deleted]
+        security_tier:
+          type: string
+          enum: [standard, high, system]
+        runtime:
+          $ref: '#/components/schemas/AgentRuntime'
+        resources:
+          $ref: '#/components/schemas/ResourceLimits'
+        llm:
+          $ref: '#/components/schemas/LLMConfig'
+        tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolConfig'
+        networking:
+          $ref: '#/components/schemas/NetworkConfig'
+        autoscaling:
+          $ref: '#/components/schemas/AutoscalingConfig'
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        started_at:
+          type: string
+          format: date-time
+        stopped_at:
+          type: string
+          format: date-time
+
+    AgentRuntime:
+      type: object
+      properties:
+        image:
+          type: string
+        entrypoint:
+          type: array
+          items:
+            type: string
+        env:
+          type: object
+          additionalProperties:
+            type: string
+
+    ResourceLimits:
+      type: object
+      properties:
+        cpu:
+          type: string
+          description: CPU limit (e.g., "1000m" for 1 core)
+        memory:
+          type: string
+          description: Memory limit (e.g., "2Gi")
+        disk:
+          type: string
+          description: Disk limit (e.g., "1Gi")
+        max_execution_time:
+          type: string
+          description: Max execution time (e.g., "24h")
+
+    LLMConfig:
+      type: object
+      properties:
+        default_model:
+          type: string
+        max_tokens_per_request:
+          type: integer
+        monthly_budget_usd:
+          type: number
+        allowed_models:
+          type: array
+          items:
+            type: string
+
+    ToolConfig:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum: [builtin, sandboxed, mcp]
+        config:
+          type: object
+          additionalProperties: true
+
+    NetworkConfig:
+      type: object
+      properties:
+        egress_allowlist:
+          type: array
+          items:
+            type: string
+
+    AutoscalingConfig:
+      type: object
+      properties:
+        min_replicas:
+          type: integer
+          minimum: 0
+        max_replicas:
+          type: integer
+          minimum: 1
+        scale_up_delay_seconds:
+          type: integer
+          minimum: 0
+
+    CreateAgentRequest:
+      type: object
+      required:
+        - name
+        - runtime
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+        description:
+          type: string
+          maxLength: 500
+        security_tier:
+          type: string
+          enum: [standard, high, system]
+          default: standard
+        runtime:
+          $ref: '#/components/schemas/AgentRuntime'
+        resources:
+          $ref: '#/components/schemas/ResourceLimits'
+        llm:
+          $ref: '#/components/schemas/LLMConfig'
+        tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolConfig'
+        networking:
+          $ref: '#/components/schemas/NetworkConfig'
+        autoscaling:
+          $ref: '#/components/schemas/AutoscalingConfig'
+
+    UpdateAgentRequest:
+      type: object
+      properties:
+        description:
+          type: string
+          maxLength: 500
+        resources:
+          $ref: '#/components/schemas/ResourceLimits'
+        llm:
+          $ref: '#/components/schemas/LLMConfig'
+        tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolConfig'
+        networking:
+          $ref: '#/components/schemas/NetworkConfig'
+        autoscaling:
+          $ref: '#/components/schemas/AutoscalingConfig'
+
+    StopAgentRequest:
+      type: object
+      properties:
+        force:
+          type: boolean
+          default: false
+        timeout_seconds:
+          type: integer
+          minimum: 1
+          maximum: 300
+          default: 30
+
+    AgentListResponse:
+      type: object
+      properties:
+        agents:
+          type: array
+          items:
+            $ref: '#/components/schemas/Agent'
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+
+    Pagination:
+      type: object
+      properties:
+        page:
+          type: integer
+        page_size:
+          type: integer
+        total:
+          type: integer
+        total_pages:
+          type: integer
+
+    Operation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        type:
+          type: string
+        status:
+          type: string
+          enum: [pending, running, completed, failed]
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    LogEntry:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        level:
+          type: string
+          enum: [debug, info, warn, error]
+        message:
+          type: string
+        source:
+          type: string
+        metadata:
+          type: object
+          additionalProperties: true
+
+    LogStreamResponse:
+      type: object
+      properties:
+        logs:
+          type: array
+          items:
+            $ref: '#/components/schemas/LogEntry'
+        next_cursor:
+          type: string
+
+    ExecRequest:
+      type: object
+      required:
+        - command
+      properties:
+        command:
+          type: array
+          items:
+            type: string
+        env:
+          type: object
+          additionalProperties:
+            type: string
+        timeout_seconds:
+          type: integer
+          minimum: 1
+          maximum: 300
+          default: 30
+
+    ExecResponse:
+      type: object
+      properties:
+        exit_code:
+          type: integer
+        stdout:
+          type: string
+        stderr:
+          type: string
+        duration_ms:
+          type: integer
+
+    Job:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        type:
+          type: string
+        payload:
+          type: object
+          additionalProperties: true
+        priority:
+          type: integer
+        status:
+          type: string
+          enum: [pending, scheduled, processing, completed, failed, dead_letter, cancelled]
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        scheduled_at:
+          type: string
+          format: date-time
+        started_at:
+          type: string
+          format: date-time
+        completed_at:
+          type: string
+          format: date-time
+        attempts:
+          type: integer
+        max_attempts:
+          type: integer
+        timeout_seconds:
+          type: integer
+        retry_policy:
+          $ref: '#/components/schemas/RetryPolicy'
+        idempotency_key:
+          type: string
+        result:
+          type: object
+          additionalProperties: true
+        error:
+          type: string
+        metadata:
+          type: object
+          additionalProperties: true
+
+    RetryPolicy:
+      type: object
+      properties:
+        max_attempts:
+          type: integer
+          minimum: 1
+        base_delay_seconds:
+          type: integer
+          minimum: 1
+        max_delay_seconds:
+          type: integer
+          minimum: 1
+        multiplier:
+          type: number
+          minimum: 1
+        jitter:
+          type: number
+          minimum: 0
+          maximum: 1
+        retryable_errors:
+          type: array
+          items:
+            type: string
+
+    SubmitJobRequest:
+      type: object
+      required:
+        - type
+        - payload
+      properties:
+        type:
+          type: string
+        payload:
+          type: object
+          additionalProperties: true
+        priority:
+          type: integer
+          default: 0
+        scheduled_at:
+          type: string
+          format: date-time
+        timeout_seconds:
+          type: integer
+          minimum: 1
+          maximum: 86400
+          default: 300
+        retry_policy:
+          $ref: '#/components/schemas/RetryPolicy'
+        idempotency_key:
+          type: string
+        metadata:
+          type: object
+          additionalProperties: true
+
+    UsageResponse:
+      type: object
+      properties:
+        period_start:
+          type: string
+          format: date
+        period_end:
+          type: string
+          format: date
+        total_cost_usd:
+          type: number
+        breakdown:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsageBreakdown'
+
+    UsageBreakdown:
+      type: object
+      properties:
+        agent_id:
+          type: string
+          format: uuid
+        agent_name:
+          type: string
+        event_type:
+          type: string
+          enum: [llm_tokens, tool_call, sandbox_seconds, storage_bytes]
+        quantity:
+          type: integer
+        unit_cost_usd:
+          type: number
+        total_cost_usd:
+          type: number
+
+    Template:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        category:
+          type: string
+        runtime:
+          $ref: '#/components/schemas/AgentRuntime'
+        default_config:
+          type: object
+          additionalProperties: true
+
+    TemplateListResponse:
+      type: object
+      properties:
+        templates:
+          type: array
+          items:
+            $ref: '#/components/schemas/Template'
