@@ -1,0 +1,104 @@
+name: CI - Smart Contracts
+
+on:
+  pull_request:
+    paths:
+      - 'contracts/**'
+  push:
+    branches: [main]
+    paths:
+      - 'contracts/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+
+jobs:
+  lint-and-compile:
+    name: Lint & Compile
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: contracts
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: contracts/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Compile contracts
+        run: npx solc --version && npx hardhat compile || npx solc --base-path . --include-path node_modules/ --optimize --bin --abi --output-dir artifacts contracts/AuditTrail.sol
+
+      - name: Verify artifacts
+        run: |
+          ls -la artifacts/
+          test -f artifacts/AuditTrail.bin
+          test -f artifacts/AuditTrail.abi.json
+
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: contracts
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: contracts/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: |
+          # Add test command here when test framework is configured
+          echo "No test framework configured yet. Add hardhat/foundry tests."
+          # npx hardhat test
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: contracts
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: contracts/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Slither
+        uses: crytic/slither-action@main
+        continue-on-error: true
+        with:
+          args: contracts/AuditTrail.sol
+
+      - name: Run Mythril
+        uses: mythril/mythril-action@main
+        continue-on-error: true
+        with:
+          args: contracts/AuditTrail.sol

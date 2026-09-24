@@ -1,0 +1,101 @@
+name: CI - Main Pipeline
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+  statuses: write
+
+jobs:
+  # Determine which components changed
+  detect-changes:
+    name: Detect Changes
+    runs-on: ubuntu-latest
+    outputs:
+      typescript-sdk: ${{ steps.filter.outputs.typescript-sdk }}
+      python-sdk: ${{ steps.filter.outputs.python-sdk }}
+      contracts: ${{ steps.filter.outputs.contracts }}
+      infra: ${{ steps.filter.outputs.infra }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect changed paths
+        uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            typescript-sdk:
+              - 'sdk/typescript/**'
+            python-sdk:
+              - 'sdk/python/**'
+            contracts:
+              - 'contracts/**'
+            infra:
+              - 'infra/**'
+
+  # TypeScript SDK CI
+  ci-typescript-sdk:
+    name: CI - TypeScript SDK
+    needs: detect-changes
+    if: needs.detect-changes.outputs.typescript-sdk == 'true'
+    uses: ./.github/workflows/ci-typescript-sdk.yml
+    secrets: inherit
+
+  # Python SDK CI
+  ci-python-sdk:
+    name: CI - Python SDK
+    needs: detect-changes
+    if: needs.detect-changes.outputs.python-sdk == 'true'
+    uses: ./.github/workflows/ci-python-sdk.yml
+    secrets: inherit
+
+  # Smart Contracts CI
+  ci-contracts:
+    name: CI - Smart Contracts
+    needs: detect-changes
+    if: needs.detect-changes.outputs.contracts == 'true'
+    uses: ./.github/workflows/ci-contracts.yml
+    secrets: inherit
+
+  # Terraform Plan (Infrastructure)
+  terraform-plan:
+    name: Terraform Plan
+    needs: detect-changes
+    if: needs.detect-changes.outputs.infra == 'true'
+    uses: ./infra/.github/workflows/terraform-plan.yml
+    secrets: inherit
+
+  # Summary check
+  ci-summary:
+    name: CI Summary
+    needs: [detect-changes, ci-typescript-sdk, ci-python-sdk, ci-contracts, terraform-plan]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check job statuses
+        run: |
+          echo "TypeScript SDK: ${{ needs.ci-typescript-sdk.result }}"
+          echo "Python SDK: ${{ needs.ci-python-sdk.result }}"
+          echo "Contracts: ${{ needs.ci-contracts.result }}"
+          echo "Terraform Plan: ${{ needs.terraform-plan.result }}"
+
+          # Fail if any required job failed
+          if [[ "${{ needs.ci-typescript-sdk.result }}" == "failure" ]] || \
+             [[ "${{ needs.ci-python-sdk.result }}" == "failure" ]] || \
+             [[ "${{ needs.ci-contracts.result }}" == "failure" ]] || \
+             [[ "${{ needs.terraform-plan.result }}" == "failure" ]]; then
+            echo "❌ One or more CI jobs failed"
+            exit 1
+          fi
+
+          echo "✅ All CI checks passed"
