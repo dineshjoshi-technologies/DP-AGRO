@@ -1,0 +1,272 @@
+---
+plant_name: "Amla"
+scientific_name: "Phyllanthus emblica L."
+family: "Phyllanthaceae"
+genus: "Phyllanthus"
+species: "P. emblica"
+common_names:
+  english: ["Amla", "Indian Gooseberry", "Emblic"]
+  hindi: ["Amla", "Aamla"]
+  sanskrit: ["Amalaki", "Dhatriphala"]
+  tamil: ["Nelli"]
+  bengali: ["Amlaki"]
+  urdu: ["Amla"]
+authorities:
+  scientific_authority: "L."
+  basionym: null
+taxonomy_source: "Plants of the World Online (POWO, 2024); GRIN Taxonomy"
+taxonomy_confidence: "high"
+synonyms:
+  - "Emblica officinalis Gaertn."
+  - "Phyllanthus emblica var. microcarpa Müll.Arg."
+  - "Phyllanthus emblica var. emblica L."
+data_source: "DPA-75 Botanical Research"
+last_updated: "2026-09-05"
+version: "1.0.0"
+researcher: "Botanical Research Agent (DPA)"
+morphology:
+  growth_habit: "Deciduous or semi-evergreen tree; 8-18 m tall; branchlets often modified into spines"
+  branchlets: "Cylindrical, often with sharp spines (modified branches)"
+  leaves:
+    type: "Simple, subsessile, subopposite to alternate; 1-1.7 cm long"
+    shape: "Subcordate to elliptic; crenate-serrate margin"
+    color: "Light green; deciduous"
+  flowers:
+    type: "Small, yellowish-green, solitary or in fascicles"
+    calyx: "6-lobed"
+    petal: "6, small, caducous"
+    flowering_time: "February-March"
+  fruits:
+    type: "Smooth, globose drupe, 1-2 cm diameter; 6-ribbed"
+    color: "Green when immature, yellow to brown when ripe"
+    flesh: "Fleshy, six-celled, tart-sweet taste"
+    seeds: "6 small, yellow, nut-like"
+  root_system: "Deep tap root; extensive lateral roots; nitrogen-fixing via symbiotic bacteria (Rhizobium)"
+morphology_confidence: "high"
+morphology_sources:
+  - "POWO (2024). Plants of the World Online. Royal Botanic Gardens, Kew."
+  - "Khare, C. P. (Ed.). (2007). Indian Medicinal Plants. Springer."
+phenology:
+  vegetative_phase: "Deciduous to semi-evergreen; leaf flush in March-April"
+  flowering_phenology:
+    timing: "February-March in Indian subcontinent"
+    duration: "2-3 weeks"
+  fruiting_phenology:
+    timing: "November-January"
+    seed_maturation: "6-8 months after flowering"
+  seed_dispersal: "Birds (bulbuls), gravity"
+  lifespan: "100+ years; prolific fruiting from year 6-8"
+phenology_confidence: "high"
+phenology_sources:
+  - "Khare, C. P. (Ed.). (2007). Indian Medicinal Plants. Springer."
+varieties_and_cultivars:
+  - name: "Wild type (local varieties)"
+    note: "Diverse landraces across India; fruit size and color vary"
+    use: "Traditional medicine, food"
+  - name: "Francis (selection)"
+    note: "Larger fruits, higher yield, fewer spines"
+    use: "Commercial cultivation"
+  - name: "Banarsi (selection)"
+    note: "Early bearing, high yield"
+    use: "Commercial"
+  - cultivar_selection_criteria:
+      - "High ascorbic acid content (>600 mg/100g)"
+      - "Fruit size and yield"
+      - "Disease resistance"
+      - "Early bearing"
+variety_confidence: "medium"
+active_chemical_compounds:
+  major_classes:
+    - class: "Vitamin C (Ascorbic acid)"
+      representative_compounds:
+        - compound: "L-Ascorbic acid"
+          cas_number: "50-81-7"
+          typical_concentration: "600-700 mg/100g fresh fruit (one of the richest plant sources)"
+          confidence: "high"
+        - compound: "Dehydroascorbic acid"
+          cas_number: "3254-31-3"
+          confidence: "high"
+        - compound: "Tannoids (amla-specific tannic acid derivatives)"
+          cas_number: "Not standard"
+          typical_concentration: "15-20% of fruit"
+          confidence: "high"
+    - class: "Ellagitannins"
+      representative_compounds:
+        - compound: "Emblicanin A"
+          cas_number: "Not standard"
+          typical_concentration: "2-5% of fruit"
+          confidence: "high"
+        - compound: "Emblicanin B"
+          cas_number: "Not standard"
+          confidence: "high"
+        - compound: "Punigluconin"
+          cas_number: "Not standard"
+          confidence: "medium"
+    - class: "Flavonoids"
+      representative_compounds:
+        - compound: "Phyllanthin"
+          cas_number: "520-11-6"
+          confidence: "medium"
+        - compound: "Ascorbigen"
+          cas_number: "Not standard"
+          confidence: "medium"
+    - class: "Minerals"
+      representative_compounds:
+        - compound: "Chromium (Cr)"
+          typical_concentration: "Trace; bioavailable forms"
+          confidence: "medium"
+        - compound: "Zinc (Zn)"
+          confidence: "medium"
+  standardization_markers:
+    primary: "Ascorbic acid content (titration or HPLC); total tannoids"
+    typical_market_specs:
+      - "Dried fruit powder: ≥600 mg ascorbic acid/g (HPLC)"
+      - "Amla murabba (preserve): ≥200 mg ascorbic acid/100g"
+      - "Extract: ≥25% vitamin C, ≥10% tannoids"
+    pharmacopoeial_references:
+      - "Indian Pharmacopoeia (IP)"
+      - "Ayurvedic Pharmacopoeia of India (API)"
+      - "WHO monographs on selected medicinal plants"
+  compound_bioactivity_links:
+    - compound: "Ascorbic acid"
+      mechanism: "Antioxidant, ROS scavenger, immune modulator; regenerates vitamin E"
+      therapeutic: "Antioxidant, anti-aging, cardioprotective, immunomodulatory"
+      evidence_level: "high (multiple clinical trials)"
+    - compound: "Emblicanin A/B"
+      mechanism: "Antioxidant, anti-inflammatory; may inhibit LDL oxidation"
+      therapeutic: "Cardioprotective, anticancer (preclinical)"
+      evidence_level: "high"
+    - compound: "Amla tannoids"
+      mechanism: "Antibacterial, antifungal, anti-inflammatory via membrane interaction"
+      therapeutic: "Antimicrobial, gastroprotective"
+      evidence_level: "high"
+  compound_confidence: "high"
+cultivation_requirements:
+  climate:
+    ideal: "Tropical to subtropical; temperature 20-35°C"
+    rainfall: "750-1500 mm/year (well-distributed)"
+    altitude: "Up to 1600 m"
+    frost_tolerance: "Tolerates light frost; severe frost damages young plants"
+    confidence: "high"
+  soil:
+    preferred_types: "Well-drained loamy soil; pH 6.0-7.5"
+    tolerance: "Tolerates saline and alkaline soils; does not tolerate waterlogging"
+    drainage: "Well-drained; deep soil preferred"
+    confidence: "high"
+  propagation:
+    primary_methods:
+      - method: "Seed"
+        viability: "Good; viability retained 6-8 months"
+        pretreatment: "Scarification or soaking in water 24-48 h improves germination"
+        germination: "15-30 days at 25-30°C"
+        confidence: "high"
+      - method: "Grafting (chip, cleft, whip-and-tongue)"
+        success_rate: "High (>80%) with scion from high-yielding cultivar on seedling rootstock"
+        use_case: "Commercial orchards for true-to-type fruit"
+        confidence: "high"
+      - method: "Tissue culture"
+        success_rate: "High via meristem culture; commercialized for elite rootstocks"
+        confidence: "medium"
+    seedling_production:
+      nursery_duration: "6-12 months; transplant at 30-50 cm height"
+      outplanting_size: "5-6 m x 5-6 m (250-300 trees/ha)"
+  irrigation:
+    requirement: "Moderate; drought-tolerant once established; irrigation improves yield"
+    critical_periods: "Establishment, flowering, fruit development"
+    method: "Drip irrigation preferred; furrow irrigation acceptable"
+    confidence: "high"
+  spacing:
+    commercial: "5 m x 5 m to 8 m x 8 m (156-400 trees/ha)"
+    agroforestry: "8-10 m x 4-5 m with intercrops"
+    confidence: "high"
+  nutrition:
+    fertilizer_recommendation: "NPK 100:50:100 kg/ha; 3-4 split applications; organic manure beneficial"
+    micronutrients: "Zinc and boron deficiency may occur"
+    confidence: "medium"
+  pest_management:
+    major_pests:
+      - pest: "Amla fruit fly (Dacus ciliatus)"
+        management: "Sanitation; protein baits; sterile insect technique"
+        confidence: "high"
+      - pest: "Amla leaf webber (Althaadivesa)"
+        management: "Mechanical removal; insecticide sprays"
+        confidence: "medium"
+    major_diseases:
+      - disease: "Valsa canker (Valsa ammothalameia)"
+        management: "Pruning; copper-based sprays; resistant rootstocks"
+        confidence: "medium"
+  harvest:
+    fruit_harvest:
+      timing: "November-January (peak maturity; fruits fall naturally when ripe)"
+      method: "Hand-picking from tree or collection from ground"
+      yield_per_tree: "10-15 kg/year at maturity (year 6-8); up to 50-100 kg/tree"
+      confidence: "high"
+  post_harvest:
+    fruit_processing:
+      steps:
+        - "Sort and wash"
+        - "Processing into amla murabba, juice, candy, or dried powder"
+        - "For powder: slice, blanch briefly, sun-dry or mechanical drying at <50°C"
+        - "Grind to powder; store in airtight containers"
+      storage: "Cool, dry, dark; shelf life 12 months (powder)"
+      confidence: "high"
+    oil_extraction:
+      method: "Cold press from seeds"
+      yield: "10-15% oil"
+      storage: "Cool, dark"
+      confidence: "medium"
+cultivation_confidence: "high"
+cultivation_sources:
+  - "Khare, C. P. (Ed.). (2007). Indian Medicinal Plants. Springer."
+  - "Reddy, M. N., & Reddy, M. V. (2003). Amla (Phyllanthus emblica): A comprehensive review."
+  - "National Research Council. (1996). Minor Crops and Products. National Academies Press."
+quality_grading:
+  pharmacopoeial_specs:
+    dried_fruit_powder:
+      - "Foreign matter: <2%"
+      - "Total ash: <12%"
+      - "Acid-insoluble ash: <2%"
+      - "Moisture: <10%"
+      - "Ascorbic acid: ≥600 mg/g (HPLC)"
+      - "Tannoids: ≥15%"
+    pharmacopoeial_references:
+      - "Indian Pharmacopoeia (IP)"
+      - "Ayurvedic Pharmacopoeia of India (API)"
+  organoleptic:
+    dried_fruit_powder:
+      color: "Yellowish-green to brown"
+      odor: "Characteristic, slightly astringent"
+      taste: "Tart, astringent"
+    fresh_fruit:
+      color: "Green to yellow-green"
+      taste: "Tart, astringent"
+  certifications:
+    - "Organic (USDA NOP)"
+    - "India Organic"
+quality_confidence: "high"
+quality_sources:
+  - "Indian Pharmacopoeia Commission. (2022). Indian Pharmacopoeia, 9th Ed."
+  - "Reddy, M. N., & Reddy, M. V. (2003). Amla: A comprehensive review."
+data_gaps:
+  - "Standardized tissue culture protocols for elite cultivars are available but not universally adopted"
+  - "Geographic variation in ascorbic acid and tannoid content across Indian landraces not systematically mapped"
+  - "Long-term stability of ascorbic acid during processing and storage needs more rigorous data"
+references:
+  - "POWO (2024). Plants of the World Online. Royal Botanic Gardens, Kew."
+  - "Khare, C. P. (Ed.). (2007). Indian Medicinal Plants. Springer."
+  - "Reddy, M. N., & Reddy, M. V. (2003). Amla (Phyllanthus emblica): A comprehensive review."
+  - "Indian Pharmacopoeia Commission. (2022). Indian Pharmacopoeia, 9th Ed."
+confidence_summary:
+  taxonomy: "high"
+  morphology: "high"
+  phenology: "high"
+  chemistry: "high"
+  cultivation: "high"
+  quality: "high"
+  genomic_markers: "low (data gap)"
+research_relevance_to_dpa75:
+  why_relevant: "Amla is a key DPA crop; ascorbic acid and tannoid pathways are candidates for strain validation"
+  candidate_genes_for_engineering:
+    - "GDP-L-galactose phosphorylase (VTC2) for ascorbic acid biosynthesis"
+    - "Tannase and polyphenol oxidase for tannoid metabolism"
+  standardization_target: "Ascorbic acid quantification (HPLC/titration); total tannoids"

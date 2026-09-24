@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-09-06T04:12:52.481141Z",
+  "metrics": {
+    "sensor_data_coverage_pct": 100.0,
+    "schema_compliance_pct": 98.87798036465638,
+    "anomaly_detection_pct": 3.155680224403927,
+    "gateway_uptime_pct": 100.0,
+    "audit_trail_completeness_pct": 100.0,
+    "yield_prediction_rmse": 0.34765606890143974,
+    "labor_hours_saved": 33.31457387174468
+  },
+  "per_farm": {
+    "readings": {
+      "FARM-001": 749,
+      "FARM-002": 688,
+      "FARM-003": 727,
+      "FARM-004": 730,
+      "FARM-005": 704,
+      "FARM-006": 676,
+      "FARM-007": 746,
+      "FARM-008": 702,
+      "FARM-009": 722,
+      "FARM-010": 686
+    },
+    "flagged": {
+      "FARM-001": 29,
+      "FARM-002": 18,
+      "FARM-003": 21,
+      "FARM-004": 23,
+      "FARM-005": 20,
+      "FARM-006": 20,
+      "FARM-007": 20,
+      "FARM-008": 25,
+      "FARM-009": 19,
+      "FARM-010": 30
+    }
+  }
+}

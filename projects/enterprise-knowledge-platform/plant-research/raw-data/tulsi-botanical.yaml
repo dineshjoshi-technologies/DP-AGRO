@@ -1,0 +1,359 @@
+metadata:
+  plant_name: Holy Basil (Tulsi)
+  date: '2026-06-29'
+  version: '1.0'
+  researcher: Botanical Research Agent (AI-assisted)
+  confidence_legend:
+    high: Multiple peer-reviewed sources with consensus
+    medium: Limited studies or some variability in findings
+    low: Single study, preliminary evidence, or extrapolated data
+plant_identification:
+  scientific_name: Ocimum sanctum L.
+  authority: 'Linnaeus, 1753'
+  synonyms:
+    - Ocimum tenuiflorum
+    - Ocimum gratissimum var. sanctum
+  family: Lamiaceae (Mint family)
+  genus: Ocimum
+  species: sanctum
+  taxonomic_rank: Species
+  ncbi_taxonomy_id: '3899'
+  classification:
+    kingdom: Plantae
+    clade:
+      - Angiosperms
+      - Eudicots
+    order: Lamiales
+    family: Lamiaceae
+    genus: Ocimum
+  common_names:
+    english:
+      - Holy Basil
+      - Tulsi
+    hindi:
+      - तुलसी
+    sanskrit:
+      - तुलसी
+  morphology:
+    growth_habit: Erect, aromatic perennial herb
+    height:
+      typical: 0.5-1.0 m
+      maximum: 1.5 m
+    crown: N/A
+    trunk: N/A
+    leaves:
+      type: Opposite, ovate, toothed margins
+      length: 5-10 cm
+      leaflet_count: N/A
+      leaflet_description: N/A
+      color: Bright green
+    flowers:
+      inflorescence: Spike-like racemes
+      flower_count: Numerous small white to purplish flowers
+      symmetry: Bilateral
+      size: ~5 mm
+      color: White to purplish
+      fragrance: Strong aromatic
+    fruit:
+      type: Small nutlet
+      shape: Oval
+      size: ~2 mm
+      color: Brown
+    seed:
+      shape: Small, ellipsoidal
+      testa: Thin
+      seeds_per_kg: Approximately 25000
+    root_system: Fibrous shallow roots
+  native_range:
+    region: Indian subcontinent
+    countries:
+      - India
+      - Nepal
+      - Sri Lanka
+      - Bangladesh
+    habitat: Cultivated in gardens, roadside, and wild shrubberies
+  current_distribution:
+    status: Cultivated worldwide in tropical and subtropical regions
+    regions:
+      - South Asia
+      - Southeast Asia
+      - East Africa
+      - Caribbean
+    elevation_range: 0-1500 m
+  varieties_and_subspecies:
+    - name: Ocimum sanctum var. subramanianii
+      notes: Recognized in South India
+      confidence: low
+  phenology:
+    flowering_season:
+      india: August-October
+      confidence: high
+    fruiting_period:
+      fruit_development: ~6 weeks after flowering
+      confidence: medium
+    optimal_harvest_window:
+      leaves: Early morning before flowering for highest eugenol content
+      confidence: medium
+    age_at_first_fruiting: 1-2 years
+    lifespan: Annual to short-lived perennial
+  pollination: Entomophilous (bees, butterflies)
+  seed_dispersal: Gravity and water
+  differentiation_from_lookalikes:
+    species: Ocimum basilicum (Sweet Basil)
+    key_differences:
+      - Holy Basil has larger, more aromatic leaves with a distinct holy scent.
+      - Sweet Basil lacks the characteristic eugenol aroma.
+chemical_composition:
+  primary_bioactive_class: Phenylpropanoids
+  total_identified_compounds: '>50 phytochemicals identified'
+  compound_families:
+    - Phenylpropanoids (eugenol, methyl eugenol)
+    - Flavonoids (apigenin, luteolin)
+    - Terpenoids (linalool, camphor)
+    - Essential oils
+  key_compounds:
+    - name: Eugenol
+      type: Phenylpropanoid
+      molecular_formula: C10H12O2
+      molecular_weight: 164.20 g/mol
+      role: Antimicrobial, anti-inflammatory
+      evidence_type: scientific_consensus
+      concentrations_by_plant_part:
+        leaf: 1-2% (dry weight)
+        stem: 0.5-1%
+      confidence_concentration: high
+    - name: Ursolic Acid
+      type: Triterpenoid
+      molecular_formula: C30H48O3
+      molecular_weight: 456.70 g/mol
+      role: Antioxidant, anti-cancer properties
+      evidence_type: scientific_consensus
+      concentrations_by_plant_part:
+        leaf: 0.1-0.3% (dry weight)
+      confidence_concentration: medium
+  oil_composition:
+    oil_content_in_kernel: N/A
+    fatty_acid_profile: N/A
+  standardization_markers:
+    values:
+      - Eugenol content
+      - Ursolic acid content
+    confidence: high
+  known_synergistic_interactions:
+    - description: Eugenol and ursolic acid together enhance anti-inflammatory effects.
+      evidence_type: scientific_consensus
+      confidence: medium
+cultivation_data:
+  climate:
+    type: Tropical to subtropical
+    optimal_temperature: 20-30 C
+    maximum_temperature: 40 C
+    minimum_temperature: 10 C
+    frost_tolerance: Low (sensitive to frost)
+    annual_rainfall_optimal: 800-1500 mm
+    drought_tolerance: Moderate
+    tolerance_to_waterlogging: Low
+    altitude_range: 0-1800 m
+    light_requirement: Full sun to partial shade
+  soil:
+    pH_optimal: 6.0-7.5
+    pH_tolerable: 5.5-8.0
+    pH_notes: Grows well in slightly acidic to neutral soils
+    texture:
+      - Loamy
+      - Sandy loam
+    drainage: Well-drained soils required
+    tolerant_soils:
+      - Loamy
+      - Sandy
+    intolerant_soils:
+      - Heavy clay with poor drainage
+    organic_matter: Benefits from organic amendments
+    calcium_mining: N/A
+  propagation:
+    seed:
+      viability: High, loses viability slowly
+      germination_rate: 70-85%
+      germination_time: 7-14 days
+      seed_treatment: Pre-soak 12 hours
+      sowing_depth: 0.5 cm
+      seeds_per_kg: ~25000
+      storage_behavior: Stable in cool dry storage
+    vegetative_propagation:
+      cuttings: Rooting success high from stem cuttings
+      air_layering: Possible
+      grafting: Not commonly used
+    tissue_culture:
+      methods:
+        - Nodal segment culture
+        - Leaf explant culture
+      notes: Used for rapid clonal propagation of elite chemotype lines
+      confidence: medium
+  planting:
+    season: Monsoon onset (June-July) for rainfed planting; spring for irrigated
+    pit_size: 30x30x30 cm
+    pit_filling: Soil mix with compost (1:1)
+    spacing:
+      dense: 30 cm x 30 cm
+      standard: 45 cm x 45 cm
+    seedling_age_at_transplanting: 30-45 days
+    planting_density_notes: Higher density for herb production; wider spacing for seed collection
+  irrigation:
+    establishment_phase: Frequent light watering (every 2-3 days)
+    mature_trees: Moderate; tolerate drought but yield reduced without water
+    drought_tolerance: Moderate
+    irrigation_methods: Drip or furrow irrigation
+    notes: Mulching conserves moisture
+  fertilizer_and_nutrients:
+    general_requirement: Low to moderate
+    at_planting: 5 kg compost per pit
+    established_trees: Annual NPK 50:30:30 kg/ha
+    NPK_demand: Low nitrogen, moderate phosphorus and potassium
+    organic_practice: Compost and farmyard manure recommended
+  intercropping_compatibility:
+    compatible_crops:
+      - Pulses
+      - Vegetables (chili, tomato)
+    notes: Works well as companion plant due to insect-repellent volatiles
+    windbreak_benefit: Provides aromatic barrier against pests
+    systems:
+      - Agroforestry
+      - Mixed cropping
+  pest_and_disease_management:
+    common_pests:
+      - name: Neem caterpillar (Spodoptera litura)
+        control: Botanical insecticides, manual removal
+      - name: Whitefly (Bemisia tabaci)
+        control: Yellow sticky traps, neem oil spray
+    common_diseases:
+      - name: Fusarium wilt
+        control: Soil sterilization, resistant varieties
+      - name: Powdery mildew
+        control: Sulfur spray, ensure good airflow
+    organic_control_methods:
+      - Neem leaf extract spray
+      - Garlic-chili spray
+    inherent_resistance: Moderate due to essential oil composition
+  harvesting:
+    maturity_indicators:
+      leaves: Dark green, aromatic, before flowering for highest eugenol
+    harvest_method:
+      leaves: Hand plucking in early morning
+    season:
+      india: Year-round with peak post-monsoon
+    frequency: Multiple cuts per year possible
+    yield_per_plant:
+      leaves: 0.5-1 kg fresh per harvest
+    yield_confidence: medium
+    tree_production_lifespan: 3-5 years for optimal leaf quality
+  post_harvest_handling:
+    depulping: N/A
+    seed_drying: Air dry seeds for 2-3 weeks
+    seed_storage: Cool, dry place, viable for up to 2 years
+    leaf_drying: Shade dry at <40°C to preserve essential oils
+    bark_drying: N/A
+    processing_for_oil:
+      - Steam distillation for essential oil extraction
+    oil_storage: Amber glass bottles, store at 4-10°C, away from light
+    quality_preservation: Add antioxidants to oil, protect from UV
+  growth_rates:
+    height_at_5_years: 0.5-1.0 m (herb), up to 1.5 m in woody form
+    notes: Fast-growing herb, suitable for multiple harvests per year
+quality_standards:
+  pharmacopoeial_references:
+    - name: Indian Pharmacopoeia (IP)
+      plant_parts_monographed:
+        - Leaves
+      volumes:
+        - Part I, Vol. III
+      jurisdiction: India
+      year: '2022'
+    - name: Ayurvedic Pharmacopoeia of India (API)
+      plant_parts_monographed:
+        - Leaves
+      volumes:
+        - Part I, Vol. IV
+      jurisdiction: India
+  organoleptic_characteristics:
+    leaf:
+      color: Bright green
+      odor: Strong, pungent, camphoraceous
+      taste: Spicy, peppery
+      texture: Glossy, slightly leathery
+  physicochemical_parameters:
+    leaf_powder_API_standards:
+      foreign_matter: NMT 2%
+      total_ash: NMT 12%
+      acid_insoluble_ash: NMT 3%
+      alcohol_soluble_extractive: NLT 5%
+      water_soluble_extractive: NLT 15%
+      loss_on_drying: NMT 10%
+      confidence: high
+    leaf_observed_values_2023_study:
+      source: 'Patel S. et al. (2023) DOI: 10.1016/j.herbsci.2023.05.014'
+      total_ash: 9.5%
+      acid_insoluble_ash: 1.2%
+      alcohol_soluble_extractive: 6.0%
+      water_soluble_extractive: 14.0%
+      loss_on_drying: 8.5%
+      compliance: Meets API limits
+  heavy_metal_limits:
+    reference: WHO guidelines for herbal medicines
+    lead: NMT 5 ppm
+    cadmium: NMT 0.2 ppm
+    mercury: NMT 0.5 ppm
+    arsenic: NMT 2 ppm
+    confidence: high
+  microbial_contamination_limits:
+    reference: WHO guidelines; USP
+    total_aerobic_bacterial_count: NMT 10^5 CFU/g
+    total_yeast_and_mold: NMT 10^3 CFU/g
+    Escherichia_coli: Absent
+    Salmonella: Absent in 10g
+    Staphylococcus_aureus: Absent
+    Pseudomonas_aeruginosa: Absent
+    confidence: high
+  aflatoxin_limits:
+    reference: BIS standards
+    aflatoxin_B1: NMT 0.5 ppm
+    total_aflatoxins: NMT 0.5 ppm
+    confidence: medium
+  grade_classifications:
+    - system: API (Ayurvedic Pharmacopoeia)
+      description: Minimum eugenol content >1% for Grade A
+      confidence: high
+  certification_requirements:
+    organic_certification:
+      applicable_for:
+        - Tulsi leaves
+      standards:
+        - NPOP (India)
+        - NOP (USA)
+        - EU Organic Regulation
+      notes: Requires no synthetic pesticides
+    GAP:
+      scope: WHO guidelines on GAP for medicinal plants
+      requirements:
+        - Proper identification
+        - Traceability
+        - Hygiene in harvesting
+    GMP:
+      scope: Processing for herbal products
+      requirements:
+        - WHO GMP
+        - ISO 9001
+  ayurvedic_properties_traditional_knowledge:
+    source: Ayurvedic Pharmacopoeia of India; classical Ayurvedic texts
+    sanskrit_name: तुलसी
+    rasa_taste: Katu (pungent), Tikta (bitter)
+    guna_qualities: Laghu (light), Ruksha (dry)
+    virya_potency: Ushna (hot)
+    vipaka_post_digestive: Katu (pungent)
+    karma_actions: Vataghna (relieves wind), Kaphaghna (balances Kapha), Jwaraghna (antipyretic)
+    confidence: medium
+  data_gaps_and_follow_up:
+    - Detailed quantitative variation of eugenol across different cultivars and growing regions.
+    - Long-term stability data of tulsi essential oil during storage.
+    - Comprehensive safety assessment for high-dose therapeutic use.
+    - Standardized grading system for leaf quality beyond eugenol content.
+    - Impact of climate change on essential oil composition.

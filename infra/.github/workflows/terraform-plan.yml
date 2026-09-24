@@ -1,0 +1,179 @@
+name: Terraform Plan
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'infra/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  id-token: write
+
+jobs:
+  terraform-plan:
+    name: Terraform Plan
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: infra
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.0
+          terraform_wrapper: true
+
+      - name: Configure AWS credentials
+        if: ${{ secrets.AWS_ROLE_ARN != '' }}
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Configure GCP credentials
+        if: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER != '' }}
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+      - name: Configure Vercel token
+        if: ${{ secrets.VERCEL_TOKEN != '' }}
+        run: echo "VERCEL_TOKEN=${{ secrets.VERCEL_TOKEN }}" >> $GITHUB_ENV
+
+      - name: Initialize Terraform (AWS)
+        if: ${{ secrets.AWS_ROLE_ARN != '' }}
+        run: |
+          cd aws
+          terraform init -backend-config="bucket=${{ secrets.AWS_TERRAFORM_STATE_BUCKET }}" -backend-config="key=${{ github.event.repository.name }}/${{ github.head_ref || github.ref_name }}/terraform.tfstate" -backend-config="dynamodb_table=${{ secrets.AWS_TERRAFORM_LOCKS_TABLE }}"
+
+      - name: Initialize Terraform (GCP)
+        if: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER != '' }}
+        run: |
+          cd gcp
+          terraform init -backend-config="bucket=${{ secrets.GCP_TERRAFORM_STATE_BUCKET }}" -backend-config="prefix=${{ github.event.repository.name }}/${{ github.head_ref || github.ref_name }}"
+
+      - name: Initialize Terraform (Vercel)
+        if: ${{ secrets.VERCEL_TOKEN != '' }}
+        run: |
+          cd vercel
+          terraform init
+
+      - name: Terraform Format Check
+        run: |
+          terraform fmt -check -recursive
+
+      - name: Terraform Validate (AWS)
+        if: ${{ secrets.AWS_ROLE_ARN != '' }}
+        run: |
+          cd aws
+          terraform validate
+
+      - name: Terraform Validate (GCP)
+        if: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER != '' }}
+        run: |
+          cd gcp
+          terraform validate
+
+      - name: Terraform Validate (Vercel)
+        if: ${{ secrets.VERCEL_TOKEN != '' }}
+        run: |
+          cd vercel
+          terraform validate
+
+      - name: Terraform Plan (AWS Staging)
+        if: ${{ secrets.AWS_ROLE_ARN != '' && github.base_ref == 'main' }}
+        id: plan-aws-staging
+        run: |
+          cd aws
+          terraform plan -var="environment=staging" -out=tfplan-staging
+          terraform show -json tfplan-staging > tfplan-staging.json
+
+      - name: Terraform Plan (AWS Production)
+        if: ${{ secrets.AWS_ROLE_ARN != '' && github.base_ref == 'main' }}
+        id: plan-aws-prod
+        run: |
+          cd aws
+          terraform plan -var="environment=production" -out=tfplan-production
+          terraform show -json tfplan-production > tfplan-production.json
+
+      - name: Terraform Plan (GCP Staging)
+        if: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER != '' && github.base_ref == 'main' }}
+        id: plan-gcp-staging
+        run: |
+          cd gcp
+          terraform plan -var="environment=staging" -out=tfplan-staging
+          terraform show -json tfplan-staging > tfplan-staging.json
+
+      - name: Terraform Plan (GCP Production)
+        if: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER != '' && github.base_ref == 'main' }}
+        id: plan-gcp-prod
+        run: |
+          cd gcp
+          terraform plan -var="environment=production" -out=tfplan-production
+          terraform show -json tfplan-production > tfplan-production.json
+
+      - name: Terraform Plan (Vercel Staging)
+        if: ${{ secrets.VERCEL_TOKEN != '' && github.base_ref == 'main' }}
+        id: plan-vercel-staging
+        run: |
+          cd vercel
+          terraform plan -var="environment=staging" -out=tfplan-staging
+          terraform show -json tfplan-staging > tfplan-staging.json
+
+      - name: Terraform Plan (Vercel Production)
+        if: ${{ secrets.VERCEL_TOKEN != '' && github.base_ref == 'main' }}
+        id: plan-vercel-prod
+        run: |
+          cd vercel
+          terraform plan -var="environment=production" -out=tfplan-production
+          terraform show -json tfplan-production > tfplan-production.json
+
+      - name: Comment PR with Plan Summary
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let comment = '## Terraform Plan Summary\n\n';
+            
+            // Add plan summaries for each provider/environment
+            const plans = [
+              { path: 'infra/aws/tfplan-staging.json', label: 'AWS Staging' },
+              { path: 'infra/aws/tfplan-production.json', label: 'AWS Production' },
+              { path: 'infra/gcp/tfplan-staging.json', label: 'GCP Staging' },
+              { path: 'infra/gcp/tfplan-production.json', label: 'GCP Production' },
+              { path: 'infra/vercel/tfplan-staging.json', label: 'Vercel Staging' },
+              { path: 'infra/vercel/tfplan-production.json', label: 'Vercel Production' }
+            ];
+            
+            for (const plan of plans) {
+              if (fs.existsSync(plan.path)) {
+                const planData = JSON.parse(fs.readFileSync(plan.path, 'utf8'));
+                const changes = planData.resource_changes || [];
+                const toAdd = changes.filter(r => r.change.actions.includes('create')).length;
+                const toChange = changes.filter(r => r.change.actions.includes('update')).length;
+                const toDestroy = changes.filter(r => r.change.actions.includes('delete')).length;
+                
+                comment += `### ${plan.label}\n`;
+                comment += `- **To add:** ${toAdd}\n`;
+                comment += `- **To change:** ${toChange}\n`;
+                comment += `- **To destroy:** ${toDestroy}\n\n`;
+              }
+            }
+            
+            comment += '---\n*Generated by GitHub Actions*';
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });

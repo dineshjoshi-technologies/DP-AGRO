@@ -1,0 +1,23 @@
+{
+  "allowed_models": ["gpt-4o", "claude-3.5-sonnet", "gpt-4o-mini"],
+  "token_budgets": {
+    "agent-default": 100000,
+    "agent-test": 10000
+  },
+  "rate_limits": {
+    "agent-default": 60,
+    "agent-test": 10
+  },
+  "pii_patterns": [
+    "\\b\\d{3}-\\d{2}-\\d{4}\\b",
+    "\\b\\d{4}[\\s-]?\\d{4}[\\s-]?\\d{4}[\\s-]?\\d{4}\\b",
+    "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b",
+    "\\b(?:\\+?1[-.\\s]?)?\\(?\\d{3}\\)?[-.\\s]?\\d{3}[-.\\s]?\\d{4}\\b"
+  ],
+  "upstream_endpoints": {
+    "gpt-4o": "https://api.openai.com/v1",
+    "claude-3.5-sonnet": "https://api.anthropic.com/v1",
+    "gpt-4o-mini": "https://api.openai.com/v1"
+  },
+  "port": "8080"
+}

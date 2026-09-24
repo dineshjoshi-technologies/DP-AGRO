@@ -1,0 +1,4421 @@
+{
+  "version": "2.0",
+  "updated_utc": "2026-09-06T04:30:00Z",
+  "phase": "2",
+  "coverage_target": {
+    "pilot_farms": 10,
+    "scale_target": 100,
+    "min_uptime_pct": 95.0,
+    "min_schema_compliance_pct": 98.0,
+    "total_farms": 100
+  },
+  "farms": [
+    {
+      "farm_id": "FARM-001",
+      "name": "Farm 1 \u2014 Central",
+      "region": "zone-A",
+      "lat": 13.1958,
+      "lon": 77.379,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-001",
+            "SOIL-ZA-001-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-001"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-001"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-001",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-002",
+      "name": "Farm 2 \u2014 South",
+      "region": "zone-B",
+      "lat": 12.7891,
+      "lon": 77.4998,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-002",
+            "SOIL-ZB-002-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-002"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-002"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-002",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-003",
+      "name": "Farm 3 \u2014 Estuary",
+      "region": "zone-C",
+      "lat": 12.3255,
+      "lon": 77.4947,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-003",
+            "SOIL-ZC-003-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-003"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-003"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-003",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-004",
+      "name": "Farm 4 \u2014 Cliff",
+      "region": "zone-D",
+      "lat": 13.4446,
+      "lon": 77.4557,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-004",
+            "SOIL-ZD-004-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-004"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-004"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-004",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-005",
+      "name": "Farm 5 \u2014 Valley",
+      "region": "zone-A",
+      "lat": 13.1842,
+      "lon": 77.4973,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-005",
+            "SOIL-ZA-005-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-005"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-005"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-005",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-006",
+      "name": "Farm 6 \u2014 Ravine",
+      "region": "zone-B",
+      "lat": 13.1838,
+      "lon": 76.9853,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-006",
+            "SOIL-ZB-006-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-006"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-006"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-006",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-007",
+      "name": "Farm 7 \u2014 Spring",
+      "region": "zone-C",
+      "lat": 12.7459,
+      "lon": 77.6433,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-007",
+            "SOIL-ZC-007-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-007"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-007"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-007",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-008",
+      "name": "Farm 8 \u2014 Pass",
+      "region": "zone-D",
+      "lat": 13.071,
+      "lon": 77.2821,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-008",
+            "SOIL-ZD-008-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-008"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-008"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-008",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-009",
+      "name": "Farm 9 \u2014 Hill",
+      "region": "zone-A",
+      "lat": 13.06,
+      "lon": 78.4245,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-009",
+            "SOIL-ZA-009-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-009"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-009"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-009",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-010",
+      "name": "Farm 10 \u2014 Terrace",
+      "region": "zone-B",
+      "lat": 13.1081,
+      "lon": 78.1998,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-010",
+            "SOIL-ZB-010-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-010"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-010"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-010",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-011",
+      "name": "Farm 11 \u2014 Bay",
+      "region": "zone-C",
+      "lat": 12.7643,
+      "lon": 77.3824,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-011",
+            "SOIL-ZC-011-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-011"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-011"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-011",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-012",
+      "name": "Farm 12 \u2014 Cwm",
+      "region": "zone-D",
+      "lat": 13.0815,
+      "lon": 78.0394,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-012",
+            "SOIL-ZD-012-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-012"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-012"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-012",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-013",
+      "name": "Farm 13 \u2014 Grove",
+      "region": "zone-A",
+      "lat": 13.327,
+      "lon": 77.7624,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-013",
+            "SOIL-ZA-013-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-013"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-013"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-013",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-014",
+      "name": "Farm 14 \u2014 Hollow",
+      "region": "zone-B",
+      "lat": 12.9215,
+      "lon": 77.7894,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-014",
+            "SOIL-ZB-014-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-014"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-014"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-014",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-015",
+      "name": "Farm 15 \u2014 Firth",
+      "region": "zone-C",
+      "lat": 13.109,
+      "lon": 77.1149,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-015",
+            "SOIL-ZC-015-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-015"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-015"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-015",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-016",
+      "name": "Farm 16 \u2014 Horn",
+      "region": "zone-D",
+      "lat": 13.16,
+      "lon": 77.3677,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-016",
+            "SOIL-ZD-016-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-016"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-016"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-016",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-017",
+      "name": "Farm 17 \u2014 Brook",
+      "region": "zone-A",
+      "lat": 12.9936,
+      "lon": 76.7672,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-017",
+            "SOIL-ZA-017-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-017"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-017"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-017",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-018",
+      "name": "Farm 18 \u2014 Spur",
+      "region": "zone-B",
+      "lat": 12.177,
+      "lon": 77.2382,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-018",
+            "SOIL-ZB-018-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-018"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-018"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-018",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-019",
+      "name": "Farm 19 \u2014 Outwash",
+      "region": "zone-C",
+      "lat": 13.2935,
+      "lon": 76.7205,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-019",
+            "SOIL-ZC-019-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-019"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-019"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-019",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-020",
+      "name": "Farm 20 \u2014 Wold",
+      "region": "zone-D",
+      "lat": 12.9257,
+      "lon": 77.7184,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-020",
+            "SOIL-ZD-020-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-020"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-020"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-020",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-021",
+      "name": "Farm 21 \u2014 Central",
+      "region": "zone-A",
+      "lat": 13.2981,
+      "lon": 77.6987,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-021",
+            "SOIL-ZA-021-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-021"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-021"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-021",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-022",
+      "name": "Farm 22 \u2014 South",
+      "region": "zone-B",
+      "lat": 12.7915,
+      "lon": 77.7632,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-022",
+            "SOIL-ZB-022-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-022"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-022"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-022",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-023",
+      "name": "Farm 23 \u2014 Estuary",
+      "region": "zone-C",
+      "lat": 12.9067,
+      "lon": 77.9546,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-023",
+            "SOIL-ZC-023-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-023"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-023"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-023",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-024",
+      "name": "Farm 24 \u2014 Cliff",
+      "region": "zone-D",
+      "lat": 13.3381,
+      "lon": 76.735,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-024",
+            "SOIL-ZD-024-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-024"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-024"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-024",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-025",
+      "name": "Farm 25 \u2014 Valley",
+      "region": "zone-A",
+      "lat": 12.8313,
+      "lon": 77.3542,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-025",
+            "SOIL-ZA-025-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-025"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-025"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-025",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-026",
+      "name": "Farm 26 \u2014 Ravine",
+      "region": "zone-B",
+      "lat": 12.5573,
+      "lon": 77.7656,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-026",
+            "SOIL-ZB-026-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-026"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-026"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-026",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-027",
+      "name": "Farm 27 \u2014 Spring",
+      "region": "zone-C",
+      "lat": 13.2446,
+      "lon": 77.2093,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-027",
+            "SOIL-ZC-027-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-027"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-027"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-027",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-028",
+      "name": "Farm 28 \u2014 Pass",
+      "region": "zone-D",
+      "lat": 12.9731,
+      "lon": 76.8361,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-028",
+            "SOIL-ZD-028-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-028"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-028"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-028",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-029",
+      "name": "Farm 29 \u2014 Hill",
+      "region": "zone-A",
+      "lat": 12.5974,
+      "lon": 77.7568,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-029",
+            "SOIL-ZA-029-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-029"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-029"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-029",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-030",
+      "name": "Farm 30 \u2014 Terrace",
+      "region": "zone-B",
+      "lat": 12.7748,
+      "lon": 77.1484,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-030",
+            "SOIL-ZB-030-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-030"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-030"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-030",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-031",
+      "name": "Farm 31 \u2014 Bay",
+      "region": "zone-C",
+      "lat": 13.0038,
+      "lon": 77.6498,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-031",
+            "SOIL-ZC-031-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-031"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-031"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-031",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-032",
+      "name": "Farm 32 \u2014 Cwm",
+      "region": "zone-D",
+      "lat": 13.1828,
+      "lon": 77.4309,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-032",
+            "SOIL-ZD-032-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-032"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-032"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-032",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-033",
+      "name": "Farm 33 \u2014 Grove",
+      "region": "zone-A",
+      "lat": 12.7139,
+      "lon": 77.6921,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-033",
+            "SOIL-ZA-033-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-033"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-033"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-033",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-034",
+      "name": "Farm 34 \u2014 Hollow",
+      "region": "zone-B",
+      "lat": 12.9978,
+      "lon": 77.0558,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-034",
+            "SOIL-ZB-034-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-034"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-034"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-034",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-035",
+      "name": "Farm 35 \u2014 Firth",
+      "region": "zone-C",
+      "lat": 12.988,
+      "lon": 77.3885,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-035",
+            "SOIL-ZC-035-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-035"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-035"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-035",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-036",
+      "name": "Farm 36 \u2014 Horn",
+      "region": "zone-D",
+      "lat": 12.8153,
+      "lon": 77.7403,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-036",
+            "SOIL-ZD-036-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-036"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-036"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-036",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-037",
+      "name": "Farm 37 \u2014 Brook",
+      "region": "zone-A",
+      "lat": 13.0155,
+      "lon": 77.4638,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-037",
+            "SOIL-ZA-037-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-037"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-037"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-037",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-038",
+      "name": "Farm 38 \u2014 Spur",
+      "region": "zone-B",
+      "lat": 12.821,
+      "lon": 77.609,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-038",
+            "SOIL-ZB-038-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-038"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-038"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-038",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-039",
+      "name": "Farm 39 \u2014 Outwash",
+      "region": "zone-C",
+      "lat": 12.9008,
+      "lon": 77.4758,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-039",
+            "SOIL-ZC-039-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-039"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-039"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-039",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-040",
+      "name": "Farm 40 \u2014 Wold",
+      "region": "zone-D",
+      "lat": 12.8211,
+      "lon": 77.4668,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-040",
+            "SOIL-ZD-040-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-040"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-040"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-040",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-041",
+      "name": "Farm 41 \u2014 Central",
+      "region": "zone-A",
+      "lat": 12.8302,
+      "lon": 77.6041,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-041",
+            "SOIL-ZA-041-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-041"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-041"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-041",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-042",
+      "name": "Farm 42 \u2014 South",
+      "region": "zone-B",
+      "lat": 12.6914,
+      "lon": 77.306,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-042",
+            "SOIL-ZB-042-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-042"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-042"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-042",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-043",
+      "name": "Farm 43 \u2014 Estuary",
+      "region": "zone-C",
+      "lat": 12.9129,
+      "lon": 77.4361,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-043",
+            "SOIL-ZC-043-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-043"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-043"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-043",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-044",
+      "name": "Farm 44 \u2014 Cliff",
+      "region": "zone-D",
+      "lat": 13.027,
+      "lon": 77.2686,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-044",
+            "SOIL-ZD-044-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-044"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-044"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-044",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-045",
+      "name": "Farm 45 \u2014 Valley",
+      "region": "zone-A",
+      "lat": 13.0947,
+      "lon": 77.5295,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-045",
+            "SOIL-ZA-045-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-045"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-045"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-045",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-046",
+      "name": "Farm 46 \u2014 Ravine",
+      "region": "zone-B",
+      "lat": 12.8991,
+      "lon": 78.0381,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-046",
+            "SOIL-ZB-046-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-046"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-046"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-046",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-047",
+      "name": "Farm 47 \u2014 Spring",
+      "region": "zone-C",
+      "lat": 13.5336,
+      "lon": 77.289,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-047",
+            "SOIL-ZC-047-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-047"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-047"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-047",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-048",
+      "name": "Farm 48 \u2014 Pass",
+      "region": "zone-D",
+      "lat": 13.526,
+      "lon": 77.678,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-048",
+            "SOIL-ZD-048-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-048"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-048"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-048",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-049",
+      "name": "Farm 49 \u2014 Hill",
+      "region": "zone-A",
+      "lat": 13.1071,
+      "lon": 77.5958,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-049",
+            "SOIL-ZA-049-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-049"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-049"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-049",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-050",
+      "name": "Farm 50 \u2014 Terrace",
+      "region": "zone-B",
+      "lat": 12.5795,
+      "lon": 77.3917,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-050",
+            "SOIL-ZB-050-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-050"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-050"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-050",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-051",
+      "name": "Farm 51 \u2014 Bay",
+      "region": "zone-C",
+      "lat": 13.4943,
+      "lon": 77.5216,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-051",
+            "SOIL-ZC-051-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-051"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-051"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-051",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-052",
+      "name": "Farm 52 \u2014 Cwm",
+      "region": "zone-D",
+      "lat": 13.2369,
+      "lon": 77.1012,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-052",
+            "SOIL-ZD-052-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-052"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-052"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-052",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-053",
+      "name": "Farm 53 \u2014 Grove",
+      "region": "zone-A",
+      "lat": 12.9792,
+      "lon": 78.0979,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-053",
+            "SOIL-ZA-053-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-053"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-053"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-053",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-054",
+      "name": "Farm 54 \u2014 Hollow",
+      "region": "zone-B",
+      "lat": 13.0571,
+      "lon": 77.0508,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-054",
+            "SOIL-ZB-054-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-054"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-054"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-054",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-055",
+      "name": "Farm 55 \u2014 Firth",
+      "region": "zone-C",
+      "lat": 12.8188,
+      "lon": 77.4063,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-055",
+            "SOIL-ZC-055-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-055"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-055"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-055",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-056",
+      "name": "Farm 56 \u2014 Horn",
+      "region": "zone-D",
+      "lat": 13.129,
+      "lon": 77.653,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-056",
+            "SOIL-ZD-056-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-056"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-056"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-056",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-057",
+      "name": "Farm 57 \u2014 Brook",
+      "region": "zone-A",
+      "lat": 13.0863,
+      "lon": 77.3918,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-057",
+            "SOIL-ZA-057-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-057"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-057"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-057",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-058",
+      "name": "Farm 58 \u2014 Spur",
+      "region": "zone-B",
+      "lat": 12.714,
+      "lon": 77.9164,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-058",
+            "SOIL-ZB-058-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-058"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-058"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-058",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-059",
+      "name": "Farm 59 \u2014 Outwash",
+      "region": "zone-C",
+      "lat": 12.7137,
+      "lon": 77.796,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-059",
+            "SOIL-ZC-059-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-059"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-059"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-059",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-060",
+      "name": "Farm 60 \u2014 Wold",
+      "region": "zone-D",
+      "lat": 13.181,
+      "lon": 76.8458,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-060",
+            "SOIL-ZD-060-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-060"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-060"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-060",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-061",
+      "name": "Farm 61 \u2014 Central",
+      "region": "zone-A",
+      "lat": 12.7499,
+      "lon": 77.3142,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-061",
+            "SOIL-ZA-061-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-061"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-061"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-061",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-062",
+      "name": "Farm 62 \u2014 South",
+      "region": "zone-B",
+      "lat": 13.1618,
+      "lon": 77.6533,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-062",
+            "SOIL-ZB-062-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-062"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-062"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-062",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-063",
+      "name": "Farm 63 \u2014 Estuary",
+      "region": "zone-C",
+      "lat": 12.8316,
+      "lon": 77.2428,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-063",
+            "SOIL-ZC-063-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-063"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-063"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-063",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-064",
+      "name": "Farm 64 \u2014 Cliff",
+      "region": "zone-D",
+      "lat": 13.1775,
+      "lon": 76.9455,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-064",
+            "SOIL-ZD-064-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-064"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-064"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-064",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-065",
+      "name": "Farm 65 \u2014 Valley",
+      "region": "zone-A",
+      "lat": 13.2643,
+      "lon": 76.9973,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-065",
+            "SOIL-ZA-065-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-065"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-065"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-065",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-066",
+      "name": "Farm 66 \u2014 Ravine",
+      "region": "zone-B",
+      "lat": 13.0669,
+      "lon": 77.3913,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-066",
+            "SOIL-ZB-066-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-066"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-066"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-066",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-067",
+      "name": "Farm 67 \u2014 Spring",
+      "region": "zone-C",
+      "lat": 12.8349,
+      "lon": 78.0868,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-067",
+            "SOIL-ZC-067-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-067"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-067"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-067",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-068",
+      "name": "Farm 68 \u2014 Pass",
+      "region": "zone-D",
+      "lat": 12.9189,
+      "lon": 77.3596,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-068",
+            "SOIL-ZD-068-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-068"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-068"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-068",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-069",
+      "name": "Farm 69 \u2014 Hill",
+      "region": "zone-A",
+      "lat": 12.7089,
+      "lon": 77.4059,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-069",
+            "SOIL-ZA-069-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-069"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-069"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-069",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-070",
+      "name": "Farm 70 \u2014 Terrace",
+      "region": "zone-B",
+      "lat": 13.1114,
+      "lon": 77.3764,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-070",
+            "SOIL-ZB-070-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-070"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-070"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-070",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-071",
+      "name": "Farm 71 \u2014 Bay",
+      "region": "zone-C",
+      "lat": 12.9492,
+      "lon": 77.6552,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-071",
+            "SOIL-ZC-071-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-071"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-071"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-071",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-072",
+      "name": "Farm 72 \u2014 Cwm",
+      "region": "zone-D",
+      "lat": 12.8413,
+      "lon": 77.5551,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-072",
+            "SOIL-ZD-072-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-072"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-072"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-072",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-073",
+      "name": "Farm 73 \u2014 Grove",
+      "region": "zone-A",
+      "lat": 13.5142,
+      "lon": 78.8569,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-073",
+            "SOIL-ZA-073-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-073"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-073"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-073",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-074",
+      "name": "Farm 74 \u2014 Hollow",
+      "region": "zone-B",
+      "lat": 12.9329,
+      "lon": 76.8822,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-074",
+            "SOIL-ZB-074-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-074"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-074"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-074",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-075",
+      "name": "Farm 75 \u2014 Firth",
+      "region": "zone-C",
+      "lat": 12.9379,
+      "lon": 76.9628,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-075",
+            "SOIL-ZC-075-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-075"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-075"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-075",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-076",
+      "name": "Farm 76 \u2014 Horn",
+      "region": "zone-D",
+      "lat": 13.1251,
+      "lon": 77.52,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-076",
+            "SOIL-ZD-076-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-076"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-076"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-076",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-077",
+      "name": "Farm 77 \u2014 Brook",
+      "region": "zone-A",
+      "lat": 12.479,
+      "lon": 77.6971,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-077",
+            "SOIL-ZA-077-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-077"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-077"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-077",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-078",
+      "name": "Farm 78 \u2014 Spur",
+      "region": "zone-B",
+      "lat": 13.079,
+      "lon": 77.2208,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-078",
+            "SOIL-ZB-078-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-078"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-078"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-078",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-079",
+      "name": "Farm 79 \u2014 Outwash",
+      "region": "zone-C",
+      "lat": 12.7956,
+      "lon": 78.2117,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-079",
+            "SOIL-ZC-079-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-079"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-079"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-079",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-080",
+      "name": "Farm 80 \u2014 Wold",
+      "region": "zone-D",
+      "lat": 13.3469,
+      "lon": 77.6778,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-080",
+            "SOIL-ZD-080-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-080"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-080"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-080",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-081",
+      "name": "Farm 81 \u2014 Central",
+      "region": "zone-A",
+      "lat": 12.975,
+      "lon": 78.1452,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-081",
+            "SOIL-ZA-081-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-081"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-081"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-081",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-082",
+      "name": "Farm 82 \u2014 South",
+      "region": "zone-B",
+      "lat": 12.9361,
+      "lon": 76.4933,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-082",
+            "SOIL-ZB-082-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-082"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-082"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-082",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-083",
+      "name": "Farm 83 \u2014 Estuary",
+      "region": "zone-C",
+      "lat": 13.015,
+      "lon": 77.7097,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-083",
+            "SOIL-ZC-083-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-083"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-083"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-083",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-084",
+      "name": "Farm 84 \u2014 Cliff",
+      "region": "zone-D",
+      "lat": 13.5108,
+      "lon": 77.5393,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-084",
+            "SOIL-ZD-084-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-084"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-084"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-084",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-085",
+      "name": "Farm 85 \u2014 Valley",
+      "region": "zone-A",
+      "lat": 13.0098,
+      "lon": 77.4942,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-085",
+            "SOIL-ZA-085-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-085"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-085"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-085",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-086",
+      "name": "Farm 86 \u2014 Ravine",
+      "region": "zone-B",
+      "lat": 12.39,
+      "lon": 77.5309,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-086",
+            "SOIL-ZB-086-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-086"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-086"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-086",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-087",
+      "name": "Farm 87 \u2014 Spring",
+      "region": "zone-C",
+      "lat": 11.9792,
+      "lon": 77.5389,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-087",
+            "SOIL-ZC-087-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-087"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-087"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-087",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-088",
+      "name": "Farm 88 \u2014 Pass",
+      "region": "zone-D",
+      "lat": 13.2745,
+      "lon": 77.9391,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-088",
+            "SOIL-ZD-088-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-088"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-088"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-088",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-089",
+      "name": "Farm 89 \u2014 Hill",
+      "region": "zone-A",
+      "lat": 13.2155,
+      "lon": 76.9548,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-089",
+            "SOIL-ZA-089-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-089"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-089"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-089",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-090",
+      "name": "Farm 90 \u2014 Terrace",
+      "region": "zone-B",
+      "lat": 12.6044,
+      "lon": 77.2785,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-090",
+            "SOIL-ZB-090-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-090"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-090"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-090",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-091",
+      "name": "Farm 91 \u2014 Bay",
+      "region": "zone-C",
+      "lat": 13.0862,
+      "lon": 77.526,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-091",
+            "SOIL-ZC-091-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-091"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-091"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-091",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-092",
+      "name": "Farm 92 \u2014 Cwm",
+      "region": "zone-D",
+      "lat": 13.2352,
+      "lon": 77.2635,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-092",
+            "SOIL-ZD-092-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-092"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-092"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-092",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-093",
+      "name": "Farm 93 \u2014 Grove",
+      "region": "zone-A",
+      "lat": 13.1515,
+      "lon": 77.6211,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-093",
+            "SOIL-ZA-093-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-093"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-093"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-093",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-094",
+      "name": "Farm 94 \u2014 Hollow",
+      "region": "zone-B",
+      "lat": 12.77,
+      "lon": 77.7505,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-094",
+            "SOIL-ZB-094-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-094"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-094"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-094",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-095",
+      "name": "Farm 95 \u2014 Firth",
+      "region": "zone-C",
+      "lat": 13.125,
+      "lon": 77.6044,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-095",
+            "SOIL-ZC-095-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-095"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-095"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-095",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-096",
+      "name": "Farm 96 \u2014 Horn",
+      "region": "zone-D",
+      "lat": 12.8584,
+      "lon": 77.7133,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-096",
+            "SOIL-ZD-096-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-096"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-096"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-096",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-097",
+      "name": "Farm 97 \u2014 Brook",
+      "region": "zone-A",
+      "lat": 12.7473,
+      "lon": 77.6452,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZA-097",
+            "SOIL-ZA-097-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZA-097"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZA-097"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-097",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-098",
+      "name": "Farm 98 \u2014 Spur",
+      "region": "zone-B",
+      "lat": 12.5615,
+      "lon": 77.5587,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZB-098",
+            "SOIL-ZB-098-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZB-098"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZB-098"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-098",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-099",
+      "name": "Farm 99 \u2014 Outwash",
+      "region": "zone-C",
+      "lat": 12.2852,
+      "lon": 77.3995,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZC-099",
+            "SOIL-ZC-099-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZC-099"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZC-099"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-099",
+        "hw": "Quectel BG95-M3 (dual-source)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "NB-IoT",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    },
+    {
+      "farm_id": "FARM-100",
+      "name": "Farm 100 \u2014 Wold",
+      "region": "zone-D",
+      "lat": 13.0817,
+      "lon": 76.8655,
+      "sensors": {
+        "soil": {
+          "count": 30,
+          "interval_min": 15,
+          "sensor_ids": [
+            "SOIL-ZD-100",
+            "SOIL-ZD-100-alt"
+          ]
+        },
+        "weather": {
+          "count": 1,
+          "interval_min": 5,
+          "sensor_ids": [
+            "WX-ZD-100"
+          ]
+        },
+        "spectral": {
+          "count": 1,
+          "interval": "daily-satellite+hourly-edge",
+          "sensor_ids": [
+            "SPEC-ZD-100"
+          ]
+        }
+      },
+      "gateway": {
+        "gateway_id": "GW-FARM-100",
+        "hw": "Particle Boron (primary vendor)",
+        "buffer_hours": 48,
+        "connectivity": [
+          "LTE-M",
+          "BLE",
+          "USB"
+        ],
+        "ram_gb": 4,
+        "storage_gb": 32
+      },
+      "status": "deployed"
+    }
+  ],
+  "fleet_totals": {
+    "soil_sensors": 3000,
+    "weather_stations": 100,
+    "spectral_sensors": 100,
+    "edge_gateways": 100,
+    "source": "DPA-83 Phase 2 scaling \u2014 expanded from 10 pilot to 100 farms"
+  }
+}

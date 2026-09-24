@@ -1,0 +1,278 @@
+name: Deploy to Production
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to deploy (tag or commit SHA)'
+        required: true
+        type: string
+      confirm:
+        description: 'Type "DEPLOY" to confirm production deployment'
+        required: true
+        type: string
+      rollback:
+        description: 'Rollback to previous version'
+        required: false
+        default: 'false'
+        type: boolean
+
+permissions:
+  contents: read
+  id-token: write
+  deployments: write
+
+jobs:
+  # Validate deployment request
+  validate-deployment:
+    name: Validate Deployment
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.validate.outputs.version }}
+      is-rollback: ${{ steps.validate.outputs.is-rollback }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate confirmation
+        id: validate
+        run: |
+          if [[ "${{ github.event.inputs.confirm }}" != "DEPLOY" ]]; then
+            echo "❌ Confirmation must be exactly 'DEPLOY'"
+            exit 1
+          fi
+
+          VERSION="${{ github.event.inputs.version }}"
+          ROLLBACK="${{ github.event.inputs.rollback }}"
+
+          if [[ "$ROLLBACK" == "true" ]]; then
+            echo "is-rollback=true" >> $GITHUB_OUTPUT
+            # Get previous production tag
+            PREV_TAG=$(git tag -l 'v*' --sort=-v:refname | head -2 | tail -1)
+            if [[ -z "$PREV_TAG" ]]; then
+              echo "❌ No previous version found for rollback"
+              exit 1
+            fi
+            echo "version=$PREV_TAG" >> $GITHUB_OUTPUT
+            echo "Rolling back to $PREV_TAG"
+          else
+            echo "is-rollback=false" >> $GITHUB_OUTPUT
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "Deploying version $VERSION"
+          fi
+
+  # Deploy TypeScript SDK to production
+  deploy-typescript-sdk:
+    name: Deploy TypeScript SDK (Production)
+    needs: validate-deployment
+    if: needs.validate-deployment.outputs.is-rollback == 'false'
+    runs-on: ubuntu-latest
+    environment: production
+    defaults:
+      run:
+        working-directory: sdk/typescript
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.validate-deployment.outputs.version }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+          cache-dependency-path: sdk/typescript/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build package
+        run: npm run build
+
+      - name: Publish to npm (latest)
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Tag release in Git
+        run: |
+          git tag -f "v${{ needs.validate-deployment.outputs.version }}"
+          git push origin "v${{ needs.validate-deployment.outputs.version }}" -f
+
+  # Rollback TypeScript SDK
+  rollback-typescript-sdk:
+    name: Rollback TypeScript SDK
+    needs: validate-deployment
+    if: needs.validate-deployment.outputs.is-rollback == 'true'
+    runs-on: ubuntu-latest
+    environment: production
+    defaults:
+      run:
+        working-directory: sdk/typescript
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+          cache-dependency-path: sdk/typescript/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Rollback npm package
+        run: |
+          PREV_VERSION="${{ needs.validate-deployment.outputs.version }}"
+          # Get the version from the previous tag
+          npm dist-tag add @djtech/sdk@${PREV_VERSION} latest
+          npm dist-tag rm @djtech/sdk staging || true
+
+  # Deploy Python SDK to production
+  deploy-python-sdk:
+    name: Deploy Python SDK (Production)
+    needs: validate-deployment
+    if: needs.validate-deployment.outputs.is-rollback == 'false'
+    runs-on: ubuntu-latest
+    environment: production
+    defaults:
+      run:
+        working-directory: sdk/python
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.validate-deployment.outputs.version }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install build dependencies
+        run: |
+          pip install build twine
+
+      - name: Build package
+        run: python -m build
+
+      - name: Publish to PyPI (production)
+        run: twine upload dist/*
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+
+  # Rollback Python SDK
+  rollback-python-sdk:
+    name: Rollback Python SDK
+    needs: validate-deployment
+    if: needs.validate-deployment.outputs.is-rollback == 'true'
+    runs-on: ubuntu-latest
+    environment: production
+    defaults:
+      run:
+        working-directory: sdk/python
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install twine
+        run: pip install twine
+
+      - name: Rollback PyPI package
+        run: |
+          PREV_VERSION="${{ needs.validate-deployment.outputs.version }}"
+          # Note: PyPI doesn't support easy rollback, manual intervention may be needed
+          echo "Rollback to version $PREV_VERSION - manual PyPI rollback may be required"
+          echo "Use: twine upload dist/djtech_sdk-${PREV_VERSION}*"
+
+  # Deploy infrastructure to production
+  deploy-infrastructure:
+    name: Deploy Infrastructure (Production)
+    needs: validate-deployment
+    uses: ./infra/.github/workflows/terraform-apply.yml
+    secrets: inherit
+    with:
+      environment: 'production'
+      provider: 'all'
+
+  # Deploy services to production
+  deploy-services:
+    name: Deploy Services (Production)
+    needs: [validate-deployment, deploy-infrastructure]
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.validate-deployment.outputs.version }}
+
+      - name: Deploy services to production
+        run: |
+          echo "Deploying services to production..."
+          # Add production deployment commands here
+          echo "Service deployment placeholder - implement based on target platform"
+
+  # Post-deployment verification
+  post-deploy-verification:
+    name: Post-Deploy Verification
+    needs: [deploy-typescript-sdk, deploy-python-sdk, deploy-services, rollback-typescript-sdk, rollback-python-sdk]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify production deployment
+        run: |
+          echo "Verifying production deployment..."
+          npm view @djtech/sdk version
+          pip index versions djtech-sdk
+
+      - name: Run production smoke tests
+        run: |
+          echo "Running production smoke tests..."
+          # Add production smoke test commands
+          echo "Production smoke tests placeholder"
+
+      - name: Notify deployment status
+        if: always()
+        run: |
+          STATUS="${{ job.status }}"
+          IS_ROLLBACK="${{ needs.validate-deployment.outputs.is-rollback }}"
+          VERSION="${{ needs.validate-deployment.outputs.version }}"
+          
+          if [[ "$IS_ROLLBACK" == "true" ]]; then
+            echo "🔄 Rollback to $VERSION completed with status: $STATUS"
+          else
+            echo "🚀 Deployment of $VERSION completed with status: $STATUS"
+          fi
+          # Add Slack/Discord/webhook notification here
+
+      - name: Create deployment record
+        run: |
+          IS_ROLLBACK="${{ needs.validate-deployment.outputs.is-rollback }}"
+          VERSION="${{ needs.validate-deployment.outputs.version }}"
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          
+          echo "{
+            \"version\": \"$VERSION\",
+            \"timestamp\": \"$TIMESTAMP\",
+            \"environment\": \"production\",
+            \"is_rollback\": $IS_ROLLBACK,
+            \"status\": \"${{ job.status }}\",
+            \"deployed_by\": \"${{ github.actor }}\"
+          }" > deployment-record.json
+          
+          # Store as artifact for audit trail
+          echo "Deployment record created"

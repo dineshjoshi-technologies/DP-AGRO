@@ -1,0 +1,149 @@
+name: Terraform Apply
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'infra/**'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to apply (staging or production)'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+      provider:
+        description: 'Provider to apply (aws, gcp, vercel, or all)'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - aws
+          - gcp
+          - vercel
+          - all
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  terraform-apply-aws:
+    name: Terraform Apply (AWS)
+    if: ${{ github.event.inputs.provider == 'aws' || github.event.inputs.provider == 'all' || github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment || 'staging' }}
+    defaults:
+      run:
+        working-directory: infra/aws
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.0
+          terraform_wrapper: true
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Initialize Terraform
+        run: |
+          terraform init -backend-config="bucket=${{ secrets.AWS_TERRAFORM_STATE_BUCKET }}" -backend-config="key=${{ github.event.repository.name }}/${{ github.event.inputs.environment || 'staging' }}/terraform.tfstate" -backend-config="dynamodb_table=${{ secrets.AWS_TERRAFORM_LOCKS_TABLE }}"
+
+      - name: Terraform Plan
+        id: plan
+        run: |
+          terraform plan -var="environment=${{ github.event.inputs.environment || 'staging' }}" -out=tfplan
+          terraform show -json tfplan > tfplan.json
+
+      - name: Terraform Apply
+        if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'push' }}
+        run: |
+          terraform apply -auto-approve tfplan
+
+  terraform-apply-gcp:
+    name: Terraform Apply (GCP)
+    if: ${{ github.event.inputs.provider == 'gcp' || github.event.inputs.provider == 'all' || github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment || 'staging' }}
+    defaults:
+      run:
+        working-directory: infra/gcp
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.0
+          terraform_wrapper: true
+
+      - name: Configure GCP credentials
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+      - name: Initialize Terraform
+        run: |
+          terraform init -backend-config="bucket=${{ secrets.GCP_TERRAFORM_STATE_BUCKET }}" -backend-config="prefix=${{ github.event.repository.name }}/${{ github.event.inputs.environment || 'staging' }}"
+
+      - name: Terraform Plan
+        id: plan
+        run: |
+          terraform plan -var="environment=${{ github.event.inputs.environment || 'staging' }}" -out=tfplan
+          terraform show -json tfplan > tfplan.json
+
+      - name: Terraform Apply
+        if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'push' }}
+        run: |
+          terraform apply -auto-approve tfplan
+
+  terraform-apply-vercel:
+    name: Terraform Apply (Vercel)
+    if: ${{ github.event.inputs.provider == 'vercel' || github.event.inputs.provider == 'all' || github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment || 'staging' }}
+    defaults:
+      run:
+        working-directory: infra/vercel
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.0
+          terraform_wrapper: true
+
+      - name: Configure Vercel token
+        run: echo "VERCEL_TOKEN=${{ secrets.VERCEL_TOKEN }}" >> $GITHUB_ENV
+
+      - name: Initialize Terraform
+        run: |
+          terraform init
+
+      - name: Terraform Plan
+        id: plan
+        run: |
+          terraform plan -var="environment=${{ github.event.inputs.environment || 'staging' }}" -out=tfplan
+          terraform show -json tfplan > tfplan.json
+
+      - name: Terraform Apply
+        if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'push' }}
+        run: |
+          terraform apply -auto-approve tfplan

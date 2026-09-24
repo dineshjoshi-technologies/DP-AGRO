@@ -1,0 +1,34 @@
+research_partnership_id: "RP-SEA-MYS-001"
+parent_partner_id: "SEA-MYS-001"
+partner_name: "MARDI"
+project_title: "Genomic Selection for High-Value Phyllanthus"
+tier: 1
+research_type: "Genomics / AI Breeding"
+species_focus: ["Phyllanthus niruri", "Phyllanthus amarus"]
+ai_models: ["Genomic prediction", "Phenotype-genotype association"]
+data_assets:
+  - type: "Germplasm collection"
+    access_level: "Shared under MTA"
+    records: 2400
+  - type: "Phenotypic data"
+    access_level: "Federated"
+    records: 15000
+ip_framework: "Co-ownership with publication rights"
+funding:
+  company_contribution: 120000
+  partner_contribution: 80000
+  external_grants: 0
+timeline:
+  start: "2026-08-01"
+  milestones:
+    - "M1: Genotyping complete"
+    - "M2: Prediction model v1"
+    - "M3: Field validation"
+  end: "2028-07-31"
+governance:
+  steering_committee: ["CTO", "Chief AI Officer", "MARDI Director"]
+  meeting_cadence: "monthly"
+compliance:
+  mta_status: "Executed"
+  data_localization: "Malaysia (PDPA)"
+  export_controls: "Not applicable"

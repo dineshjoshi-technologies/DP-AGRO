@@ -1,0 +1,786 @@
+# =============================================================================
+# NEEM (Azadirachta indica) — Therapeutic & Market Research Dossier
+# =============================================================================
+# File        : neem-therapeutic-market.yaml
+# Purpose     : AI-model-training dataset for therapeutic, clinical, regulatory
+#               and market intelligence on Neem.
+# Researcher  : Therapeutic & Market Research Agent
+# Date        : 2026-06-29
+# Version     : 1.0
+# =============================================================================
+
+metadata:
+  plant:
+    scientific_name: "Azadirachta indica A. Juss."
+    family: Meliaceae
+    common_names:
+      - Neem
+      - Nimba (Sanskrit)
+      - Margosa
+      - Indian Lilac
+      - Azad-Darakht-e-Hindi (Urdu/Unani)
+      - Vemmu / Vembu (Siddha)
+      - Nim Pa (Tibetan)
+  date_researched: "2026-06-29"
+  researcher: "Therapeutic & Market Research Agent"
+  version: "1.0"
+
+# =============================================================================
+# SECTION 1 — THERAPEUTIC APPLICATIONS
+# =============================================================================
+therapeutic_applications:
+
+  # --- Traditional Medicine Systems ---
+  traditional_medicine_systems:
+    - system: Ayurveda
+      traditions:
+        - Classical texts: Charaka Samhita, Sushruta Samhita, Ashtanga Hridaya, Bhavaprakasha Nighantu
+        - First mentioned: ~1500 BCE in Sanskrit texts
+        - Sanskrit names: Nimba, Pichumanda, Arishta, Tiktaka, Paribhadra, Hinguniryasa
+      pharmacology:
+        - rasa (taste): Tikta (bitter), Kashaya (astringent)
+        - virya (potency): Sheeta (cold)
+        - vipaka (post-digestive effect): Katu (pungent)
+        - guna (qualities): Laghu (light), Ruksha (dry)
+        - karma (actions): Pacifies Kapha and Pitta doshas; Vata aggravating in excess
+      classical_categorization:
+        - Charaka Samhita: Kandughna (anti-pruritic group), Tiktaskandha (bitter herb group)
+        - Susruta Samhita: Aragwadhadi, Guduchyadi groups
+      key_indications_ayurveda:
+        - Kushtha (skin diseases, leprosy)
+        - Jwara (fever)
+        - Prameha (diabetes/metabolic disorders)
+        - Krimi (intestinal worms)
+        - Vrana (ulcers/wounds)
+        - Kandu (itching)
+        - Visarpa (erysipelas)
+        - Raktapitta (bleeding disorders)
+        - Stanya dosha (breast milk disorders)
+      dosage_forms_ayurvedic:
+        - form: Churna (powder)
+          dose: "1-3 g twice daily"
+          vehicle: warm water or honey
+        - form: Kwatha (decoction)
+          dose: "50-100 ml twice daily"
+          preparation: "Boil 5-10 g in 200 ml water, reduce to half"
+        - form: Svarasa (fresh juice)
+          dose: "10-20 ml"
+        - form: Lepa (paste)
+          dose: "10-20 g"
+          route: topical
+        - form: Taila (oil)
+          dose: "5-10 drops internal; apply topically"
+        - form: Vati (tablet)
+          dose: "500 mg extract, 1-2 tablets twice daily"
+      classical_formulations:
+        - Nimbadi Churna
+        - Pancha Nimba Churna
+        - Nimbamritasavam (fermented decoction)
+        - Pancatikta Ghrita (medicated ghee)
+        - Arogyavardhini Vati
+        - Mahasudarshana Churna
+        - Nimbaharidra Khanda
+        - Nimbarishta
+
+    - system: Siddha
+      traditions:
+        - Known as Vemmu / Vembu / Veppan
+        - Bark decoctions used for skin eruptions
+        - Believed to have dobhrvagni (sharp digestive fire) that burns toxins
+
+    - system: Unani
+      traditions:
+        - Known as Azad-Darakht-e-Hindi
+        - Used for blood purification, skin diseases, fevers
+        - Classical preparation: Habb-e-Nimba
+
+  # --- Modern Therapeutic Categories ---
+  modern_therapeutic_categories:
+    - category: Antimicrobial
+      details:
+        - Antibacterial (broad-spectrum, Gram-positive and Gram-negative)
+        - Antiviral (including HCV NS3 protease inhibition)
+        - Antifungal (including Aspergillus flavus, dermatophytes)
+        - Antiparasitic (antimalarial, antileishmanial, anthelmintic)
+        - Key compounds: azadirachtin, nimbin, nimbidin, gedunin
+    - category: Antidiabetic
+      details:
+        - Multiple RCTs show hypoglycemic effect
+        - Reduces PPBS, FBS, HbA1c, insulin resistance
+        - Adjunctive to metformin therapy
+    - category: Anti-inflammatory
+      details:
+        - Modulates NF-κB, TNF-α, IL-6 pathways
+        - Dose-dependent edema suppression in animal models
+        - Weaker than standard NSAIDs but with broader safety margin
+    - category: Anticancer / Chemopreventive
+      details:
+        - In vitro activity against breast, cervical, colon, prostate cancer cells
+        - Enhances phase II detoxifying enzymes
+        - Compounds: nimbolide, gedunin, azadirachtin, quercetin
+        - No published Phase II/III human trials for systemic cancers
+    - category: Immunomodulatory
+      details:
+        - Enhances macrophage phagocytosis
+        - Promotes M2 macrophage polarization (tissue repair)
+        - Suppresses pro-inflammatory M1 phenotype
+        - Balances ROS and NO production
+    - category: Oral Health
+      details:
+        - Anti-plaque, anti-gingivitis
+        - Reduces periodontal pocket depth
+        - Active against P. gingivalis, T. denticola, T. forsythia
+        - Traditional use: chewing sticks (datun)
+    - category: Dermatological
+      details:
+        - Antiacne, anti-psoriatic, anti-eczema
+        - Wound healing
+        - Antipruritic
+    - category: Neuroprotective
+      details:
+        - Experimental models of Alzheimer's and Parkinson's
+        - Antioxidant activity via Nrf2 pathway
+        - Limited human evidence
+    - category: Cardiovascular
+      details:
+        - Cardioprotective in preclinical models
+        - Endothelial function improvement in T2DM (RCT)
+        - No effect on lipid profile or platelet aggregation in human studies
+    - category: Hepatoprotective
+      details:
+        - Preclinical evidence only
+        - Conflicting: neem oil also associated with hepatotoxicity at high doses
+    - category: Antifertility / Reproductive
+      details:
+        - Reversible antifertility in both male and female mammals
+        - Intra-vaginal neem oil used as traditional contraceptive
+        - Uterine stimulant effects in labour
+        - Consistent finding across animal studies
+
+  # --- Mechanisms of Action ---
+  mechanisms_of_action:
+    - mechanism: NF-κB Pathway Modulation
+      compound: nimbolide, gedunin
+      effect: Suppresses pro-inflammatory cytokine production (TNF-α, IL-6)
+      evidence_level: "Preclinical (in vitro + in vivo)"
+      source_doi: "10.1016/j.semcancer.2016.03.002"
+    - mechanism: PI3K/Akt/mTOR Inhibition
+      compound: nimbolide
+      effect: Anti-proliferative and pro-apoptotic in cancer cell lines
+      evidence_level: "Preclinical (in vitro)"
+      source_doi: "10.1016/j.semcancer.2016.03.002"
+    - mechanism: Nrf2 Activation
+      compound: quercetin, catechins
+      effect: Antioxidant response element activation, phase II enzyme induction
+      evidence_level: "Preclinical (in vitro + in vivo)"
+    - mechanism: MAPK Pathway Modulation
+      compound: azadirachtin, gedunin
+      effect: Cell cycle arrest, apoptosis induction
+      evidence_level: "Preclinical (in vitro)"
+    - mechanism: NS3 Protease Inhibition
+      compound: 3-Deacetyl-3-cinnamoyl-azadirachtin
+      effect: Reduces HCV viral replication
+      evidence_level: "Preclinical (in vitro)"
+      source_doi: "10.1002/ptr.6076"
+    - mechanism: Mitochondrial Uncoupling
+      compound: neem oil components
+      effect: Uncouples oxidative phosphorylation, inhibits respiratory chain (toxicity mechanism)
+      evidence_level: "Animal studies"
+    - mechanism: Ecdysone Mimicry
+      compound: azadirachtin
+      effect: Disrupts insect molting and metamorphosis (pesticidal action)
+      evidence_level: "Well-established"
+
+  # --- Safety Profile ---
+  safety_profile:
+    toxicity_data:
+      - parameter: "LD50 (neem oil, oral, rat)"
+        value: "14 mL/kg"
+        source_doi: "10.1016/S0378-8741(04)00249-1"
+      - parameter: "LD50 (neem oil, oral, rabbit)"
+        value: "24 mL/kg"
+        source_doi: "10.1016/S0378-8741(04)00249-1"
+      - parameter: "LD50 (neem oil, oral, mouse)"
+        value: "31.95 g/kg"
+        source_doi: "10.1016/S1382-6689(12)00216-5"
+      - parameter: "LD50 (aqueous leaf extract, oral, rat)"
+        value: ">5000 mg/kg"
+        source_doi: "PMC7825405"
+      - parameter: "Estimated safe dose (azadirachtin)"
+        value: "15 mg/kg bw/day"
+        source_doi: "10.1016/S0378-8741(04)00249-1"
+      - parameter: "Estimated safe dose (neem oil)"
+        value: "0.26 mg/kg bw/day"
+        source_doi: "10.1016/S0378-8741(04)00249-1"
+      - parameter: "Estimated safe dose (aqueous extracts)"
+        value: "0.3 mg/kg bw/day"
+        source_doi: "10.1016/S0378-8741(04)00249-1"
+
+    adverse_effects:
+      - severity: Serious
+        effects:
+          - Pediatric encephalopathy / Reye-like syndrome (neem oil ingestion, 5-30 mL in infants)
+          - Metabolic acidosis, seizures, coma, death
+          - Hepatotoxicity / hepatic encephalopathy
+          - Bilateral vision loss (150 mL neem oil, adult case report)
+        population: "Infants, children, and high-dose adult cases"
+        evidence_level: "Case reports, case series"
+      - severity: Moderate
+        effects:
+          - Vomiting, drowsiness, diarrhea
+          - Metabolic acidosis
+          - Encephalopathy
+        population: "Adults (acute overdose)"
+        evidence_level: "Case reports"
+      - severity: Mild
+        effects:
+          - Skin/eye irritation (topical)
+          - Mild GI upset
+        population: "General (therapeutic doses)"
+        evidence_level: "Clinical trials"
+
+    contraindications:
+      - Pregnancy (embryotoxicity in animal studies, uterine stimulant)
+      - Lactation (insufficient safety data)
+      - Children <2 years (neem oil, risk of encephalopathy)
+      - Pre-existing liver disease
+      - Male/female partners planning conception (reversible antifertility)
+
+    drug_interactions:
+      - Antidiabetic drugs (additive hypoglycemic effect)
+      - Immunosuppressants (potential immunostimulatory counteraction)
+      - Anticoagulants (theoretical; limited evidence)
+
+  # --- Source DOIs for Therapeutic Applications ---
+  source_dois_therapeutic:
+    - "10.1155/2016/7382506"            # Alzohairy 2016 – comprehensive review
+    - "10.1002/ptr.6076"                # Phytotherapy Research review
+    - "10.1016/j.semcancer.2016.03.002" # Patel et al. 2016 – oncologic
+    - "10.1016/j.phymed.2017.07.001"    # Gupta et al. 2017 – modern molecular basis
+    - "10.1016/S0378-8741(04)00249-1"   # Boeke et al. 2004 – safety evaluation
+    - "10.1016/S1382-6689(12)00216-5"   # Neem oil acute/subacute toxicity
+    - "PMC7825405"                      # Braga et al. 2021 – in vivo toxicity review
+    - "10.1007/s44372-025-00196-2"      # Discover Plants 2025 – comprehensive review
+    - "10.3390/molecules25030493"       # Braga et al. 2020 – gedunin activities
+
+# =============================================================================
+# SECTION 2 — CLINICAL EVIDENCE REVIEW
+# =============================================================================
+clinical_evidence:
+
+  evidence_quality_framework: "Modified GRADE (adapted for botanicals)"
+  overall_assessment: >
+    PROMISING. Neem has consistent preclinical evidence and several well-conducted
+    RCTs in oral health and diabetes. However, only ~5-15 interventional trials
+    are registered globally, most for oro-dental conditions. No published Phase II/III
+    results for systemic diseases (oncology, metabolic disease at scale). The evidence
+    base is strongest for: (1) type 2 diabetes mellitus, (2) psoriasis, (3) oral health
+    (plaque, gingivitis, periodontitis).
+
+  key_clinical_trials:
+
+    - condition: "Type 2 Diabetes Mellitus"
+      study_title: "Evaluation of Aqueous Neem Extract on Glycemic Control, Endothelial Dysfunction and Systemic Inflammation in T2DM"
+      design: "Randomized, double-blind, placebo-controlled"
+      n: 80
+      intervention: "Standardized aqueous extract of neem leaves and twigs (NEEM): 125, 250, 500 mg BID"
+      duration: "12 weeks"
+      comparator: "Placebo (on background metformin)"
+      key_findings:
+        - "PPBS reduced: 205.9→159.3 mg/dL (500 mg BID)"
+        - "FBS reduced: 120.7→97.3 mg/dL (500 mg BID)"
+        - "HbA1c reduced: 7.78%→6.26% (500 mg BID)"
+        - "Insulin resistance reduced: 4.6→2.0 (HOMA-IR)"
+        - "Significant improvement in endothelial function, oxidative stress, systemic inflammation"
+        - "No effect on platelet aggregation or lipid profile"
+        - "All doses well-tolerated; dose-response trend observed"
+      quality_rating: "Moderate (RCT, single-center, adequate sample size)"
+      source_pmid: 33244247
+      source_doi: "10.1007/s12013-020-00951-0"
+      evidence_distinction: "Clinical evidence"
+
+    - condition: "Psoriasis"
+      study_title: "Neem extract in mild-to-moderate psoriasis"
+      design: "RCT"
+      n: 50
+      intervention: "Neem extract 3 capsules/day"
+      duration: "12 weeks"
+      comparator: "Placebo (alongside coal tar regimen)"
+      key_findings:
+        - "Significant reduction in PASI score vs control"
+        - "Faster and better response vs placebo group"
+      quality_rating: "Moderate (RCT, single-center, no active comparator)"
+      source_doi: "Referenced in Discover Plants 2025 review"
+      evidence_distinction: "Clinical evidence"
+
+    - condition: "Chronic Periodontitis with T2DM"
+      study_title: "Locally delivered 10% Neem gel as adjunct to SRP"
+      design: "Split-mouth RCT"
+      n: 15 (30 sites)
+      intervention: "10% Azadirachta indica gel + scaling/root planing (SRP)"
+      duration: "3 months"
+      comparator: "SRP alone"
+      key_findings:
+        - "Significant improvement in clinical parameters"
+        - "Reduction in P. gingivalis, T. denticola, T. forsythia"
+        - "Reduction in HbA1c at 3 months"
+      quality_rating: "Low-Moderate (small sample, split-mouth design)"
+      source_doi: "10.21276/ijmrhs.2020.9.5.02"
+      evidence_distinction: "Clinical evidence"
+
+    - condition: "Periodontitis"
+      study_title: "Neem extract gel as adjunct to non-surgical periodontal management"
+      design: "RCT, Phase 2"
+      n: 32
+      intervention: "Azadirachta indica gel local drug delivery"
+      duration: "Completed Jul 2023"
+      status: Completed
+      clinicaltrials_gov_id: NCT06050174
+      quality_rating: "Moderate (Phase 2, randomized, but not blinded)"
+      evidence_distinction: "Clinical evidence"
+
+    - condition: "Plaque and Gingivitis"
+      study_title: "Neem containing toothpaste on plaque and gingivitis"
+      design: "Randomized, double-blind"
+      n: 30
+      intervention: "Neem-containing toothpaste"
+      duration: "30 days"
+      comparator: "Placebo toothpaste"
+      key_findings:
+        - "Statistically significant reduction in Plaque Index (PI)"
+        - "Statistically significant reduction in Gingival Index (GI)"
+      quality_rating: "Moderate (RCT, small sample, short duration)"
+      source_doi: "10.5005/jp-journals-10024-1776"
+      evidence_distinction: "Clinical evidence"
+
+    - condition: "Plaque and Gingivitis"
+      study_title: "Comparative evaluation of 2% neem mouthwash vs 0.2% chlorhexidine"
+      design: "Randomized, double-blind, crossover"
+      n: 40
+      intervention: "2% neem mouthwash"
+      duration: "15 days per phase"
+      comparator: "0.2% chlorhexidine gluconate mouthwash"
+      key_findings:
+        - "Neem and chlorhexidine both significantly reduced GI scores"
+        - "No statistically significant difference between groups"
+        - "Comparable anti-plaque efficacy"
+      quality_rating: "Moderate (RCT, single-center)"
+      source_doi: "10.5005/jp-journals-10024-2085"
+      evidence_distinction: "Clinical evidence"
+
+    - condition: "Gastric Ulcer"
+      study_title: "Neem bark extract antisecretory and antiulcer effects"
+      design: "Clinical study (non-randomized)"
+      n: Not specified in available abstracts
+      intervention: "Lyophilised bark extract powder 30-60 mg BID"
+      duration: "6-10 weeks"
+      key_findings:
+        - "77% reduction in gastric acid secretion at 30 mg BID"
+        - "Complete duodenal ulcer healing at 30-60 mg BID for 10 weeks"
+        - "Complete esophageal and gastric ulcer healing at 30 mg BID for 6 weeks"
+      quality_rating: "Low (non-randomized, historical)"
+      evidence_distinction: "Clinical evidence"
+
+  evidence_summary_by_condition:
+    - condition: "Type 2 Diabetes"
+      total_studies: 3+
+      best_evidence: "RCT n=80, 12 weeks, double-blind, placebo-controlled"
+      effect_size: "HbA1c reduction 1.52% (500 mg BID)"
+      grade: "Low-Moderate (limited number of RCTs, single-center)"
+    - condition: "Psoriasis"
+      total_studies: 2+
+      best_evidence: "RCT n=50, 12 weeks"
+      effect_size: "Significant PASI reduction"
+      grade: "Low-Moderate (no active comparator)"
+    - condition: "Oral Health (plaque/gingivitis)"
+      total_studies: 5+
+      best_evidence: "Multiple RCTs, n=30-40, double-blind"
+      effect_size: "Comparable to 0.2% chlorhexidine"
+      grade: "Moderate (consistent findings, but small sample sizes)"
+    - condition: "Oncologic"
+      total_studies: 0 (human)
+      best_evidence: "None; preclinical only"
+      effect_size: "N/A"
+      grade: "Insufficient evidence"
+
+  ongoing_clinical_trials:
+    - clinicaltrials_gov_id: NCT06050174
+      title: "Azadirachta Indica Extract as Adjunct to Non-Surgical Periodontal Management"
+      status: Completed (2023)
+      sponsor: Ain Shams University
+      phase: 2
+    - clinicaltrials_gov_id: NCT07069166
+      title: "Para-Probiotic Oral Care in Periodontal Patients With Type 2 Diabetes"
+      status: Recruiting (2025-2026)
+      sponsor: University of Pavia
+      note: "Not neem-specific; reference for periodontal-diabetes research"
+
+  evidence_gaps:
+    - "No published Phase II/III trials for systemic cancers"
+    - "No large-scale (n>200) multi-center RCTs for any indication"
+    - "No head-to-head trials against gold-standard treatments at clinical scale"
+    - "Pharmacokinetic data (bioavailability, tissue distribution) in humans is minimal"
+    - "Standardized extract reference materials not established"
+    - "Long-term safety data beyond 12-16 weeks not available"
+    - "Most dermatological claims (acne, eczema) extrapolated from in vitro data"
+
+# =============================================================================
+# SECTION 3 — REGULATORY & COMPLIANCE STATUS
+# =============================================================================
+regulatory_status:
+
+  india:
+    - authority: "AYUSH (Ministry of Ayush)"
+      status: "Regulated as traditional medicine under Drugs & Cosmetics Act, 1940 and Rules, 1945"
+      approved_claims: "Therapeutic claims allowed when marketed as Ayurvedic drug (ASU category)"
+      restrictions: "Must be manufactured under GMP license from State/Central Drug Controller under AYUSH"
+      classification: "Classical Ayurvedic herb; multiple formulations in Ayurvedic Pharmacopoeia"
+      notes: "Over 150+ ASU formulations containing Neem are listed"
+    - authority: "FSSAI (Food Safety and Standards Authority of India)"
+      status: "Permitted botanical under FSS (Health Supplements, Nutraceuticals…) Regulations, 2016"
+      approved_claims: "Structure/function claims only ('supports skin health', 'natural antioxidants')"
+      restrictions: "No disease claims allowed on food products; requires product approval"
+      max_permitted_levels: "By product approval; no universal MPL established"
+      notes: "Neem is a well-known herb; traditional use documentation accepted for safety"
+
+  united_states:
+    - authority: "FDA (Food and Drug Administration)"
+      regulatory_pathway: "Dietary Supplement under DSHEA 1994"
+      premarket_approval: "Not required"
+      approved_claims: "Structure/function claims only; no disease prevention/treatment claims"
+      gras_status: "Neem oil fatty acids considered GRAS; neem leaf/bark extracts not established as GRAS"
+      drug_status: "Not FDA-approved as a drug for any indication"
+      restrictions: "Cannot be marketed to diagnose, treat, cure or prevent disease without NDA"
+      ndi_requirements: "New Dietary Ingredient notification may apply for novel extracts"
+      fda_warning: "FDA has not evaluated neem supplements for safety/effectiveness"
+      notes: "Ayurvedic products not specifically defined under US law; case-by-case determination"
+
+  european_union:
+    - authority: "EMA (European Medicines Agency) / HMPC"
+      regulatory_pathway: "Traditional Herbal Medicinal Product (THMPD) or food supplement"
+      thmp_requirements: "30 years traditional use (including 15 years in EU); safety and efficacy dossier"
+      approved_claims: "THMP registration for specific traditional uses"
+      status: "Some neem products marketed as food supplements; not systematically authorized as THMP"
+    - authority: "EFSA (European Food Safety Authority) / Novel Food"
+      status: "Neem extracts not on EU Novel Food list (Regulation EU 2015/2283)"
+      restrictions: "Novel food authorization needed if no history of consumption before May 1997"
+      permitted_use: "Food supplement use may be permitted under certain conditions"
+      notes: "Regulatory status for neem in food is complex and case-dependent"
+
+  japan:
+    - authority: "MHLW (Ministry of Health, Labour and Welfare)"
+      status: "Neem is not listed in the Japanese Pharmacopoeia; regulated as non-medicinal"
+      restrictions: "Limited use; some neem oil in cosmetics"
+
+  china:
+    - authority: "NMPA (National Medical Products Administration)"
+      status: "Not listed in Chinese Pharmacopoeia; limited traditional use"
+      notes: "Growing interest for biopesticide application"
+
+  iucn_cites:
+    iucn_status: "Least Concern"
+    cites: "Not listed (unrestricted international trade)"
+    source: "ITTO Tropical Timber Database; IUCN Red List"
+
+  patent_landscape:
+    summary: >
+      Over 540+ patents related to azadirachtin globally (PatSnap analysis).
+      Key patent clusters: (1) Azadirachtin formulations for biopesticides,
+      (2) Nimbolide enrichment via supercritical CO2 extraction,
+      (3) Nanoencapsulation and controlled-release delivery systems.
+    major_patent_holders:
+      - Certis USA LLC
+      - Bayer CropScience NV
+      - Coromandel International Ltd
+      - Council of Scientific & Industrial Research (CSIR, India)
+      - South China Agricultural University
+    recent_patents:
+      - patent_id: WO2022149077A1
+        title: "Azadirachtin formulations and process for preparing and use thereof"
+        assignee: Coromandel International Ltd
+        year: 2022
+        focus: "Microemulsion formulation with improved stability"
+      - patent_id: EP4342482A1
+        title: "Neem tree leaves extract"
+        assignee: Individual (EU)
+        year: 2024
+        focus: "Nimbolide-enriched, azadirachtin-depleted extract via supercritical CO2"
+        status: Withdrawn
+    freedom_to_operate: >
+      Moderate. Base compounds (azadirachtin, nimbin) are not patentable as natural
+      products; however, specific extraction methods, formulations, and delivery
+      systems are covered by active patents. Freedom-to-operate analysis is
+      recommended before commercialization of novel formulations or delivery technologies.
+
+# =============================================================================
+# SECTION 4 — MARKET INTELLIGENCE
+# =============================================================================
+market_intelligence:
+
+  market_size:
+    estimates:
+      - source: "Mordor Intelligence"
+        year: 2025
+        value_usd: "2.45 billion"
+        forecast_year: 2031
+        forecast_value_usd: "4.37 billion"
+        cagr: "10.19% (2026-2031)"
+        scope: "Neem Extract Market"
+      - source: "Fortune Business Insights"
+        year: 2025
+        value_usd: "2.37 billion"
+        forecast_year: 2034
+        forecast_value_usd: "6.28 billion"
+        cagr: "11.44% (2026-2034)"
+        scope: "Neem Extracts Market"
+      - source: "SNS Insider"
+        year: 2025
+        value_usd: "2.54 billion"
+        forecast_year: 2035
+        forecast_value_usd: "8.69 billion"
+        cagr: "13.08% (2026-2035)"
+        scope: "Neem Extracts Market"
+      - source: "Market.us"
+        year: 2024
+        value_usd: "1.9 billion"
+        forecast_year: 2034
+        forecast_value_usd: "5.7 billion"
+        cagr: "11.6% (2025-2034)"
+        scope: "Neem Extracts Market"
+      - source: "Market Intelo"
+        year: 2025
+        value_usd: "1.2 billion"
+        forecast_year: 2034
+        forecast_value_usd: "2.8 billion"
+        cagr: "9.8% (2026-2034)"
+        scope: "Neem Extracts Market (conservative estimate)"
+      - source: "Maximize Market Research"
+        year: 2025
+        value_usd: "2.71 billion"
+        forecast_year: 2032
+        forecast_value_usd: "6.92 billion"
+        cagr: "14.3% (2025-2032)"
+        scope: "Neem Oil Market"
+      - source: "Fundamental Business Insights"
+        year: 2024
+        value_usd: "2.02 billion"
+        forecast_year: 2034
+        forecast_value_usd: "5.43 billion"
+        cagr: "10.4% (2025-2034)"
+        scope: "Neem Extract Market"
+      - source: "IMARC Group"
+        year: 2025
+        value_usd: "1.7 billion"
+        forecast_year: 2034
+        forecast_value_usd: "3.5 billion"
+        scope: "Neem Extract Market"
+    consensus_estimate:
+      current_market_2025: "USD 2.0-2.7 billion (variance reflects scope differences)"
+      projected_2034: "USD 3.5-6.3 billion (average ~USD 4.5 billion)"
+      consensus_cagr: "~10-11%"
+
+  key_producing_countries:
+    - country: India
+      role: "Largest global producer and consumer; 60%+ of global production"
+      key_regions: "Tamil Nadu, Andhra Pradesh, Karnataka, Rajasthan, Telangana"
+      annual_seed_collection: "~442,300 tonnes (est.)"
+      annual_oil_production: "~88,400 tonnes (est.)"
+      annual_cake_production: "~353,800 tonnes (est.)"
+      government_policy: "Mandated 17,000 tons/year neem oil for urea coating (fertilizer)"
+      challenges: "Dieback disease wiped out >60% mature trees in Telangana (2025)"
+    - country: Myanmar
+      role: "Emerging producer; exports raw seeds to India"
+    - country: "East African nations (Kenya, Tanzania, Somalia)"
+      role: "Growing seed supply source; demand amplified by India's domestic shortfall"
+    - country: "Australia"
+      role: "Small but growing cultivation; specialized neem products for export"
+      companies: "Neeming Australia Pty Ltd"
+
+  market_segments:
+    - segment: Agriculture & Biopesticides
+      share: "Largest segment"
+      growth_driver: "EU Green Deal (50% synthetic pesticide reduction by 2030), organic farming expansion"
+      sub_segments:
+        - Bio-insecticides
+        - Bio-fungicides
+        - Bio-herbicides
+        - Neem-coated urea (fertilizer)
+        - Soil conditioners (neem cake)
+    - segment: "Personal Care & Cosmetics"
+      share: "Second largest; fast-growing"
+      growth_driver: "Clean beauty demand, natural ingredients preference"
+      applications:
+        - Skincare (acne, anti-inflammatory)
+        - Haircare (anti-dandruff)
+        - Oral care (toothpaste, mouthwash)
+        - Soaps
+    - segment: "Pharmaceuticals & Nutraceuticals"
+      share: "~37% of extracts market (leaf extracts dominant)"
+      growth_driver: "Herbal medicine revival, diabetes management"
+      applications:
+        - Diabetes supplements
+        - Immune support
+        - Oral health formulations
+    - segment: "Animal Feed & Veterinary"
+      share: "Small but growing"
+      applications:
+        - Antimicrobial feed additive
+        - Antiparasitic
+    - segment: "Food & Beverage"
+      share: "Emerging"
+      applications:
+        - Natural preservatives
+        - Bittering agents (limited use)
+
+  key_industry_players:
+    - company: "E.I.D. Parry (India) Ltd (Murugappa Group)"
+      headquarters: "Chennai, India"
+      segment: "Sugar, nutraceuticals, biopesticides"
+      notes: "Largest neem bioproducts manufacturer globally via Coromandel International; 700-acre captive neem plantation; 22.5 MT aza capacity; exports to 80+ nations"
+    - company: "Coromandel International Ltd (subsidiary of E.I.D. Parry)"
+      headquarters: "India"
+      segment: "Crop protection, bioproducts"
+      notes: "22 patents (8 granted); 1 R&D center; global organic certifications (DNV, IMO); export markets include US, Canada, Europe"
+    - company: "Agro Extracts Ltd"
+      headquarters: "Bengaluru, India"
+      segment: "Neem oil, neem cake, azadirachtin extracts"
+      notes: "Founded 1973; processes 6,000+ tons neem fruits/seeds annually; 200 MT neem oil; 5,800 MT neem cake; exports to Korea, Japan, France, EU"
+    - company: "GreeNeem Agri Pvt Ltd"
+      headquarters: "Virudhunagar, Tamil Nadu, India"
+      segment: "Cold-pressed neem oil, neem cake"
+      notes: "OMRI listed; launched EU-standardized extracts for European organic market (2024); ECOCERT/Cosmos compliant"
+    - company: "Parker Biotech Pvt Ltd"
+      headquarters: "India"
+      segment: "Azadirachtin-based formulations"
+      notes: "R&D with academic institutions; focus on formulation innovation and export licensing"
+    - company: "Fortune Biotech Ltd"
+      headquarters: "Hyderabad, India"
+      segment: "Biopesticides"
+      notes: "First to register neem pesticides with US EPA and Indian CIBRC"
+    - company: "Patanjali Ayurved Ltd"
+      headquarters: "Haridwar, India"
+      segment: "Personal care, nutraceuticals"
+      notes: "Major domestic consumer brand using neem extracts; significant market driver"
+    - company: "PJ Margo Pvt Ltd"
+      headquarters: "India"
+      segment: "Neem products"
+    - company: "Ozone Biotech Pvt Ltd"
+      headquarters: "India"
+      segment: "Neem extracts"
+    - company: "Trifolio-M GmbH"
+      headquarters: "Germany"
+      segment: "Neem-based biopesticides (EU market)"
+    - company: "Certis USA LLC"
+      headquarters: "USA"
+      segment: "Biopesticides (major patent holder)"
+    - company: "Himalaya Drug Company"
+      headquarters: "India"
+      segment: "Pharmaceuticals, personal care"
+    - company: "Organic India Pvt Ltd"
+      headquarters: "India"
+      segment: "Nutraceuticals, teas"
+
+  price_trends:
+    neem_leaf_extract_export_india:
+      prices:
+        - year: 2023
+          price_range_usd_per_kg: "$2.50 - $17.71"
+        - year: 2024
+          price_range_usd_per_kg: "$6.51 - $30.18"
+      trend: "Rising sharply (+100-160% in 2 years)"
+      source: "Tridge export price data"
+    neem_oil_wholesale:
+      prices:
+        - year: 2024
+          price_range_usd_per_kg: "$3.95 - $8.00 (standard)"
+          premium_organic: "$8.00 - $15.00"
+        - year: 2026
+          price_range_usd_per_kg: "$8.00 - $15.00 (standard bulk FOB)"
+      trend: "Stable with slight upward pressure; seasonal fluctuations"
+    neem_cake:
+      price_range_usd_per_tonne: "$100 - $300 (varies by azadirachtin content)"
+    azadirachtin_technical:
+      price_range_usd_per_kg: "$500 - $2,000+ (depending on purity, >10,000 ppm grade)"
+    price_drivers:
+      - "Dieback disease in Telangana (60%+ tree loss, Dec 2025)"
+      - "Government mandate for neem-coated urea (17,000 tons/year)"
+      - "Growing demand from European organic farming"
+      - "Seasonal seed availability"
+      - "Extraction method (cold-pressed > solvent-extracted in price)"
+      - "Azadirachtin concentration premium"
+      - "Certification premiums (organic, ECOCERT, OMRI)"
+
+  supply_chain_structure:
+    stages:
+      - stage: "1. Seed Collection"
+        actors: "Rural cooperatives, smallholder farmers, tribal collectors"
+        geography: "Tamil Nadu, Andhra Pradesh, Karnataka, Rajasthan, Telangana"
+        volume: "~442,300 tonnes/year (India)"
+      - stage: "2. Primary Processing"
+        actors: "Local expeller units, medium-scale processors"
+        outputs: "Neem oil (crude), neem cake"
+      - stage: "3. Secondary Processing / Extraction"
+        actors: "Industrial processors (Agro Extracts, E.I.D. Parry, GreeNeem, Parker Biotech)"
+        technologies: "Cold-pressing, solvent extraction, supercritical CO2 extraction"
+        outputs: "Standardized extracts, azadirachtin concentrates, refined oil"
+      - stage: "4. Formulation & Manufacturing"
+        actors: "FMCG companies (Patanjali, Himalaya, Dabur), agrochemical formulators, cosmetic manufacturers"
+        outputs: "Finished products (pesticides, toothpaste, soaps, supplements)"
+      - stage: "5. Distribution"
+        channels:
+          - "Domestic: Retail (FMCG), agricultural supply chains, e-commerce"
+          - "Export: B2B bulk (Europe, USA, Southeast Asia, Latin America)"
+      - stage: "6. End Users"
+        sectors: "Agriculture, personal care, pharmaceutical/nutraceutical, animal feed"
+
+  consumer_trends:
+    - trend: "Organic certification premium"
+      detail: "OMRI, ECOCERT, Cosmos certifications command 30-50% price premium"
+    - trend: "Clean beauty / natural personal care"
+      detail: "Neem serums and soaps for sensitive skin on Amazon and Whole Foods (2024-25)"
+    - trend: "Herbal medicine revival in India"
+      detail: "Driven by Patanjali and government AYUSH promotion; increased domestic consumption"
+    - trend: "EU Green Deal pesticide reduction"
+      detail: "50% synthetic pesticide reduction target by 2030; accelerating neem biopesticide registrations"
+    - trend: "Blockchain traceability"
+      detail: "QR-code traceability platforms enable exporters to meet organic labeling and transparency requirements"
+    - trend: "Nanotechnology-enhanced delivery"
+      detail: "Supercritical CO2 extraction, nanoemulsions, liposomal encapsulation for improved stability and efficacy"
+    - trend: "Supply chain vulnerability"
+      detail: "Dieback disease in Telangana (2025) and chronic neem oil shortfall in India driving import dependency on East Africa"
+
+  export_data_india:
+    key_destinations: "USA, Vietnam, Spain, Italy, France, Germany, Japan, South Korea, UK, Netherlands, Sri Lanka, Bangladesh"
+    regulatory_challenges: "Varying regulatory status across markets (dietary supplement vs. traditional medicine vs. pesticide registration)"
+
+  data_gaps_and_commercial_sensitivities:
+    - "Exact market share by company is proprietary; revenue breakdown of private and unlisted companies not publicly available"
+    - "Azadirachtin content variation by region/genotype not systematically mapped across all producing regions"
+    - "Price transparency limited for high-grade pharmaceutical extracts"
+    - "Exact impact of Telangana dieback disease on national production quantified only in industry reports (not peer-reviewed)"
+    - "Consumer willingness-to-pay data for neem-based products not publicly available"
+    - "Intra-EU regulatory status of neem in food supplements remains ambiguous and case-dependent"
+
+  source_dois_market:
+    - "Mordor Intelligence — Neem Extract Market Report 2026-2031"
+    - "Fortune Business Insights — Neem Extracts Market Size 2026-2034"
+    - "SNS Insider — Neem Extracts Market Report 2026-2035"
+    - "Market.us — Neem Extracts Market 2025-2034"
+    - "IMARC Group — Global Neem Extract Market 2026-2034"
+    - "Maximize Market Research — Global Neem Oil Market 2025-2032"
+    - "Strategic Market Research — Neem Extracts Market 2024-2030"
+    - "PS Market Research — India Neem Extract Market 2030"
+    - "Tridge — Neem Leaf Extract Export Price Data"
+    - "Trade Exim — India Neem Oil Export Data"
+
+# =============================================================================
+# FLAGGED DATA GAPS (for future research)
+# =============================================================================
+data_gaps:
+  - "GRADE or equivalent systematic quality assessment of all neem clinical trials has not been published"
+  - "No meta-analysis of neem for diabetes or oral health exists"
+  - "Pharmacovigilance data for neem-containing products is minimal (spontaneous reporting only)"
+  - "Clinical trial registration search (clinicaltrials.gov, CTRI) should be updated periodically"
+  - "Detailed production cost breakdown for neem extracts is not publicly available"
+  - "Patent landscape should be updated with freedom-to-operate analysis for specific use cases"
+  - "Consumer perception and brand equity data for neem-based consumer products"

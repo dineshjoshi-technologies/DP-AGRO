@@ -1,0 +1,46 @@
+============================================================
+DPA-83 — Per-Zone Model Validation Report
+Generated: 2026-09-06T08:58:19.318365Z
+============================================================
+
+GOVERNANCE THRESHOLDS:
+  RMSE <= 0.15 t/ha
+  MAE <= 0.1 t/ha
+  R²  >= 0.85
+
+ZONE RESULTS:
+  zone-A:
+    Samples:     30
+    RMSE:        0.0588 t/ha
+    MAE:         0.0467 t/ha
+    R²:          -0.5309
+    Governance:  FAIL
+    Top features: soil_moisture_mean(0.300), temp_max(0.202), temp_mean(-0.145), humidity_mean(0.058), temp_min(-0.058)
+
+  zone-B:
+    Samples:     30
+    RMSE:        0.0524 t/ha
+    MAE:         0.0426 t/ha
+    R²:          -0.6563
+    Governance:  FAIL
+    Top features: temp_max(0.191), ndvi_lag14(0.053), soil_moisture_mean(0.052), temp_min(-0.046), soil_ph_mean(-0.046)
+
+  zone-C:
+    Samples:     30
+    RMSE:        0.0498 t/ha
+    MAE:         0.0396 t/ha
+    R²:          -0.5784
+    Governance:  FAIL
+    Top features: humidity_mean(0.261), temp_mean(0.253), soil_ph_mean(-0.111), temp_max(-0.099), rainfall_total_mm(-0.075)
+
+  zone-D:
+    Samples:     30
+    RMSE:        0.0485 t/ha
+    MAE:         0.0379 t/ha
+    R²:          -0.5034
+    Governance:  FAIL
+    Top features: temp_mean(0.253), soil_ec_mean(0.105), ndvi_current(-0.064), temp_min(-0.060), soil_moisture_mean(0.057)
+
+============================================================
+OVERALL: REQUIRES REVIEW
+============================================================

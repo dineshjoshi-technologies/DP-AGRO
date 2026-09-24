@@ -1,0 +1,75 @@
+Partner: MARDI (Malaysian Agricultural Research and Development Institute)
+Country: Malaysia
+Type: Government research institute
+Priority: Tier-2 candidate
+Status: Evaluation in progress
+
+Evaluation Date: 2026-07-03
+
+## 1. Strategic Alignment (25%)
+- Mission & values compatibility: 4 - Strong alignment with agricultural development goals
+- Long-term vision match: 4 - National agricultural modernization plans
+- Commitment to AI-driven agriculture: 3 - Some precision agriculture initiatives
+- Sustainable/regenerative farming ethos: 4 - Research focus on sustainable practices
+- Willingness for deep integration: 3 - Preference for collaborative research models
+
+## 2. Operational Capability (20%)
+- Cultivation/processing scale: 2 - Research facilities, limited commercial scale
+- Technical talent: 5 - Excellent research team with diverse expertise
+- Digital infrastructure: 3 - Moderate digital infrastructure in research
+- Quality systems: 4 - Research protocols with some GMP alignment
+- Supply chain resilience: 2 - Limited commercial supply chain experience
+
+## 3. Financial Viability (20%)
+- Revenue stability: 3 - Mixed government grants and commercial revenue
+- Profitability: 2 - Breakeven operations
+- Investment capacity: 2 - Limited expansion capital
+- ROI potential: 3 - Moderate potential through technology transfer
+- Financial risk: 3 - Moderate risk due to funding dependencies
+
+## 4. Market Access & Influence (15%)
+- Farmer network size: 3 - Extension services to ~1,000 farmers
+- Regulatory relationships: 4 - Strong ties to Ministry of Agriculture
+- Distribution channels: 2 - Limited commercial distribution experience
+- Brand reputation: 4 - Highly respected in agricultural research
+- Germplasm access: 5 - Access to national germplasm banks
+
+## 5. Innovation Readiness (10%)
+- AI/ML pilots: 2 - Limited AI in agriculture initiatives
+- Data maturity: 3 - Good research data, improving standardization
+- R&D budget: 4 - Significant research investment
+- IP portfolio: 4 - Strong patent portfolio in agricultural tech
+- Cultural openness: 4 - Open to industry partnerships with clear terms
+
+## 6. Governance & Compliance (10%)
+- ESG reporting: 4 - Comprehensive sustainability reporting
+- Data sovereignty: 4 - Compliant with Malaysian data laws
+- IP protection: 5 - Strong IP management and commercialization office
+- Anti-corruption: 4 - Standard government oversight
+- Board transparency: 3 - Government reporting requirements
+
+## Weighted Score Calculation
+Strategic Alignment: 3.8 * 0.25 = 0.95
+Operational Capability: 2.8 * 0.20 = 0.56
+Financial Viability: 2.5 * 0.20 = 0.50
+Market Access: 3.4 * 0.15 = 0.51
+Innovation Readiness: 3.2 * 0.10 = 0.32
+Governance & Compliance: 3.8 * 0.10 = 0.38
+
+Total Weighted Score: 3.22
+
+## Tier Assignment: Tier-2 (Growth Partner)
+Score between 3.0-3.49 qualifies for Tier-2.
+
+## Recommendation
+Proceed with Tier-2 partnership as a Growth Partner. Opportunities:
+- Joint research projects on medicinal plant cultivation optimization
+- Technology transfer for precision agriculture in herbal farming
+- Validation studies for traditional medicinal plants
+- Potential for technology licensing agreements
+
+## Next Steps
+1. Define research collaboration scope and objectives (30 days)
+2. Establish joint technical committee (45 days)
+3. Identify 2-3 pilot projects with clear deliverables (60 days)
+4. Quarterly review to assess progress and potential for Tier-1 upgrade

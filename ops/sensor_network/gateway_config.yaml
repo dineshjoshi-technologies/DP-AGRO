@@ -1,0 +1,76 @@
+# Edge Gateway Config — Phase 1 Crop Sensor Network
+# Governance policy §3.3: 48h offline buffering, local anomaly detection (isolation forest),
+# AES-256 at rest, TLS 1.3 in transit, batch hash export for blockchain audit trail (§5).
+#
+# Provisioning: gateway_provisioning.sh renders one config per gateway from farm_registry.json.
+# Applied via OTA with vendor security signing (DPA-80 §3 compliance).
+
+version: 1
+gateway:
+  # ${GATEWAY_ID} / ${FARM_ID} substituted at provisioning time
+  gateway_id: "${GATEWAY_ID}"
+  farm_id: "${FARM_ID}"
+  hardware_profile: particle-boron-v1   # alt: quectel-bg95-m3 (dual-source)
+  local_listeners:
+    - protocol: ble
+      port: 5
+      sensors: [soil, weather, spectral]
+    - protocol: usb-serial
+      sensors: [soil, weather, spectral]
+
+buffering:
+  offline_buffer_hours: 48              # policy §3.3
+  store_path: /var/spool/edge_buffer
+  store_encryption: AES-256-GCM         # policy §2 P1 classification
+  max_buffer_bytes: 2684354560          # 2.5 GiB cap ≈ 48h of all sensor streams
+  flush_order: oldest_first
+  overflow_policy: drop_oldest_with_audit_note
+
+sampling:                                # policy §3.1 collection standards
+  soil: { interval_min: 15 }
+  weather: { interval_min: 5 }
+  spectral_edge: { interval_hours: 1 }
+  spectral_satellite: { interval: daily }
+
+anomaly_detection:
+  enabled: true
+  model: isolation_forest
+  n_estimators: 100
+  contamination: 0.02
+  window_days: 7                        # rolling window aligns with quality gate §3.1
+  feature_order: [moisture, ec, ph, temperature_c, humidity, rainfall_mm, ndvi_delta]
+  decision:
+    on_outlier: flag_quality_flag_1     # flagged readings are rejected at cloud ingest
+    on_model_error: fail_closed         # degraded model ⇒ flag, never silent-pass
+  retrain:
+    cadence_days: 7
+    source: buffered_local_readings
+
+quality_gates:                           # policy §3.1
+  reject_quality_flag_not_zero: true
+  sigma_gate:
+    enabled: true
+    threshold_sigma: 3.0
+    baseline: rolling_7d_median
+
+outbound:
+  ingest_endpoint: "https://ingest.agri.internal/v1/sensor-batch"
+  transport_security: TLS_1.3           # policy §2 / DPA-80 §3
+  batch_max_records: 500
+  batch_max_seconds: 300
+  audit_hashing:
+    algorithm: sha256
+    canonicalization: rfc8785_json      # stable hash for blockchain batch entries
+    hash_fields: [batch_id, farm_id, gateway_id, record_count, window_start_utc, window_end_utc, records_sha256_merkle_root]
+    emit: ingest_queue                  # cloud relay records hash to audit trail (§5)
+
+security:
+  tls_min_version: "1.3"
+  server_ca_pin: "internal-ca-agri-2026"
+  ota:
+    required_signed: true               # vendor firmware OTA with security signing (DPA-80 §3)
+    rollback_slots: 2
+
+telemetry:
+  uptime_heartbeat_seconds: 60          # uptime SLA evidence for §3.2 (>=90% Phase 1)
+  report_to: metrics/edge_fleet.jsonl

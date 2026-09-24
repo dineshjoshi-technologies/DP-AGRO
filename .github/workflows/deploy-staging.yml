@@ -1,0 +1,142 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+
+permissions:
+  contents: read
+  id-token: write
+  deployments: write
+
+env:
+  ENVIRONMENT: ${{ github.event.inputs.environment || 'staging' }}
+
+jobs:
+  # Deploy TypeScript SDK to npm (staging tag)
+  deploy-typescript-sdk:
+    name: Deploy TypeScript SDK
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: ${{ env.ENVIRONMENT }}
+    defaults:
+      run:
+        working-directory: sdk/typescript
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+          cache-dependency-path: sdk/typescript/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build package
+        run: npm run build
+
+      - name: Publish to npm with staging tag
+        run: npm publish --tag staging
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  # Deploy Python SDK to PyPI (pre-release)
+  deploy-python-sdk:
+    name: Deploy Python SDK
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: ${{ env.ENVIRONMENT }}
+    defaults:
+      run:
+        working-directory: sdk/python
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install build dependencies
+        run: |
+          pip install build twine
+
+      - name: Build package
+        run: python -m build
+
+      - name: Publish to PyPI as pre-release
+        run: twine upload dist/* --repository-url https://test.pypi.org/legacy/
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.TEST_PYPI_TOKEN }}
+
+  # Deploy infrastructure to staging
+  deploy-infrastructure:
+    name: Deploy Infrastructure (${{ env.ENVIRONMENT }})
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    uses: ./infra/.github/workflows/terraform-apply.yml
+    secrets: inherit
+    with:
+      environment: ${{ env.ENVIRONMENT }}
+      provider: 'all'
+
+  # Deploy application services (placeholder for future services)
+  deploy-services:
+    name: Deploy Services
+    needs: [deploy-infrastructure]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: ${{ env.ENVIRONMENT }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy services
+        run: |
+          echo "Deploying services to ${{ env.ENVIRONMENT }}..."
+          # Add service deployment commands here (e.g., Vercel, Cloud Run, ECS, etc.)
+          echo "Service deployment placeholder - implement based on target platform"
+
+  # Post-deployment verification
+  post-deploy-verification:
+    name: Post-Deploy Verification
+    needs: [deploy-typescript-sdk, deploy-python-sdk, deploy-services]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify SDK installations
+        run: |
+          echo "Verifying TypeScript SDK..."
+          npm view @djtech/sdk@staging version
+          
+          echo "Verifying Python SDK..."
+          pip index versions djtech-sdk --index-url https://test.pypi.org/simple/
+
+      - name: Run smoke tests
+        run: |
+          echo "Running smoke tests against ${{ env.ENVIRONMENT }}..."
+          # Add smoke test commands here
+          echo "Smoke tests placeholder - implement based on service endpoints"
+
+      - name: Notify deployment status
+        if: always()
+        run: |
+          STATUS="${{ job.status }}"
+          echo "Deployment to ${{ env.ENVIRONMENT }} completed with status: $STATUS"
+          # Add Slack/Discord/webhook notification here

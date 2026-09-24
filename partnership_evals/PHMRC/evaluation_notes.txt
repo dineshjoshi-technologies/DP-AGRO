@@ -1,0 +1,75 @@
+Partner: PHMRC (Philippine Medicinal Herb Research Center)
+Country: Philippines
+Type: Government research institute
+Priority: Tier-2 candidate
+Status: Evaluation in progress
+
+Evaluation Date: 2026-07-03
+
+## 1. Strategic Alignment (25%)
+- Mission & values compatibility: 4 - Strong focus on medicinal plant research
+- Long-term vision match: 3 - Research-focused, may need commercial partnership
+- Commitment to AI-driven agriculture: 3 - Emerging interest in precision agriculture
+- Sustainable/regenerative farming ethos: 4 - Research emphasis on sustainable practices
+- Willingness for deep integration: 3 - May prefer collaborative research model
+
+## 2. Operational Capability (20%)
+- Cultivation/processing scale: 2 - Research plots, limited commercial scale
+- Technical talent: 5 - Strong research team with PhD-level expertise
+- Digital infrastructure: 2 - Basic lab systems, limited field sensors
+- Quality systems: 4 - Research-grade protocols, some GMP elements
+- Supply chain resilience: 2 - Limited commercial supply chain
+
+## 3. Financial Viability (20%)
+- Revenue stability: 2 - Grant-dependent funding
+- Profitability: 1 - Non-profit research institute
+- Investment capacity: 1 - Limited capital for expansion
+- ROI potential: 2 - Indirect ROI through research outputs
+- Financial risk: 2 - Dependent on government grants
+
+## 4. Market Access & Influence (15%)
+- Farmer network size: 2 - Works with smallholder farmers in research areas
+- Regulatory relationships: 4 - Strong government connections
+- Distribution channels: 1 - Primarily research outputs, limited commercial
+- Brand reputation: 3 - Respected in research community
+- Germplasm access: 5 - Access to national germplasm repository
+
+## 5. Innovation Readiness (10%)
+- AI/ML pilots: 1 - No current AI initiatives
+- Data maturity: 2 - Research data collection, limited standardization
+- R&D budget: 4 - Dedicated research budget, grant opportunities
+- IP portfolio: 3 - Some research publications, limited commercial IP
+- Cultural openness: 4 - Open to collaborative research projects
+
+## 6. Governance & Compliance (10%)
+- ESG reporting: 3 - Basic sustainability research focus
+- Data sovereignty: 4 - Compliant with Philippine data regulations
+- IP protection: 3 - University-like IP policies
+- Anti-corruption: 4 - Government institution with oversight
+- Board transparency: 3 - Government reporting requirements
+
+## Weighted Score Calculation
+Strategic Alignment: 3.4 * 0.25 = 0.85
+Operational Capability: 3.0 * 0.20 = 0.60
+Financial Viability: 1.6 * 0.20 = 0.32
+Market Access: 2.6 * 0.15 = 0.39
+Innovation Readiness: 2.6 * 0.10 = 0.26
+Governance & Compliance: 3.4 * 0.10 = 0.34
+
+Total Weighted Score: 2.76
+
+## Tier Assignment: Tier-3 (Exploratory)
+Score between 2.5-2.99 qualifies for Tier-3 exploratory engagement.
+
+## Recommendation
+Consider for Tier-3 exploratory partnership. Focus areas:
+- Joint research projects on high-value medicinal plants
+- Germplasm exchange and validation studies
+- Pilot programs for AI-assisted research methods
+- Potential transition to Tier-2 with commercial development
+
+## Next Steps
+1. Define research collaboration framework (30 days)
+2. Identify 2-3 pilot research projects (45 days)
+3. Establish data sharing agreements (60 days)
+4. Annual review to assess progression to Tier-2

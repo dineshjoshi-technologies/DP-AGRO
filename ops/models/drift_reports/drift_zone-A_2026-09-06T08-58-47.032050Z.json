@@ -1,0 +1,9 @@
+{
+  "zone": "zone-A",
+  "timestamp_utc": "2026-09-06T08:58:47.032050Z",
+  "psi_per_feature": {},
+  "overall_psi": 0.0,
+  "alerts": [],
+  "drift_detected": false,
+  "warning": "No reference distribution for zone zone-A"
+}

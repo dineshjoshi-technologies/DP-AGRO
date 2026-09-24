@@ -1,0 +1,73 @@
+{
+  "parameters": {
+    "events_per_week": 4,
+    "batch_size": 4,
+    "gas_price_gwei": 15.0,
+    "eth_price_usd": 3500.0
+  },
+  "single_write": {
+    "gas_units": 260000,
+    "eth_cost": 0.00026,
+    "usd_cost": 0.91,
+    "breakdown": {
+      "single_sensor_batch_ingest": {
+        "events": 1,
+        "batches": 1,
+        "gas": 65000
+      },
+      "single_model_training": {
+        "events": 1,
+        "batches": 1,
+        "gas": 65000
+      },
+      "single_model_promotion": {
+        "events": 1,
+        "batches": 1,
+        "gas": 65000
+      },
+      "single_prediction_batch": {
+        "events": 1,
+        "batches": 1,
+        "gas": 65000
+      }
+    }
+  },
+  "batched_write": {
+    "gas_units": 260000,
+    "eth_cost": 0.00026,
+    "usd_cost": 0.91,
+    "breakdown": {
+      "single_sensor_batch_ingest": {
+        "events": 1,
+        "batches": 1,
+        "gas": 65000
+      },
+      "single_model_training": {
+        "events": 1,
+        "batches": 1,
+        "gas": 65000
+      },
+      "single_model_promotion": {
+        "events": 1,
+        "batches": 1,
+        "gas": 65000
+      },
+      "single_prediction_batch": {
+        "events": 1,
+        "batches": 1,
+        "gas": 65000
+      }
+    }
+  },
+  "savings": {
+    "eth_saved": 0.0,
+    "usd_saved": 0.0,
+    "savings_pct": 0.0
+  },
+  "weekly_projection": {
+    "estimated_weekly_gas": 260000,
+    "estimated_weekly_eth": 0.00026,
+    "estimated_monthly_eth": 0.00104,
+    "estimated_annual_eth": 0.01352
+  }
+}

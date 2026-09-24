@@ -1,0 +1,30 @@
+{
+  "zone": "zone-A",
+  "n_test_samples": 15,
+  "rmse": 0.0,
+  "mae": 0.0,
+  "r2": 0.0,
+  "passes_governance": false,
+  "feature_importance": {
+    "f1": 0.0,
+    "f2": 0.0
+  },
+  "errors": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "timestamp_utc": "2026-09-06T04:50:47.639854Z"
+}

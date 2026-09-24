@@ -1,0 +1,24 @@
+{
+  "zone": "zone-A",
+  "timestamp_utc": "2026-09-11T09:21:42.005599Z",
+  "psi_per_feature": {
+    "x": 0.09676732031266838
+  },
+  "overall_psi": 0.09676732031266838,
+  "alerts": [
+    {
+      "alert_type": "performance_degradation",
+      "zone": "zone-A",
+      "severity": "high",
+      "psi": 1.4999999999999998,
+      "threshold": 0.1,
+      "message": "RMSE degraded 150.0% (now 0.2500 vs baseline 0.1000)",
+      "timestamp_utc": "2026-09-11T09:21:42.005599Z"
+    }
+  ],
+  "drift_detected": true,
+  "psi_per_feature_calibrated": {
+    "x": 0.09676732031266838
+  },
+  "overall_psi_raw": 0.09676732031266838
+}

@@ -1,0 +1,121 @@
+version: '3.8'
+
+services:
+  # Redis for job queue
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # PostgreSQL for durable job storage
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: queue
+      POSTGRES_USER: queue
+      POSTGRES_PASSWORD: queue
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U queue -d queue"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # LLM Router
+  llm-router:
+    build:
+      context: .
+      dockerfile: spike-prototype/llm-router/Dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+    volumes:
+      - ./spike-prototype/llm-router/config:/etc/llm-router
+    depends_on:
+      - redis
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8081/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # LLM Gateway
+  llm-gateway:
+    build:
+      context: .
+      dockerfile: spike-prototype/llm-gateway/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+    volumes:
+      - ./spike-prototype/llm-gateway/config.json:/etc/llm-gateway/config.json
+    depends_on:
+      - llm-router
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Orchestration Service
+  orchestration:
+    build:
+      context: .
+      dockerfile: spike-prototype/orchestration/Dockerfile
+    ports:
+      - "8082:8082"
+    environment:
+      - CONTAINERD_SOCKET=/run/containerd/containerd.sock
+      - GVISOR_RUNTIME=runsc
+      - BASE_IMAGE=djtech/agent-base:latest
+      - LLM_ROUTER_URL=http://llm-router:8081
+      - LLM_GATEWAY_URL=http://llm-gateway:8080
+      - JOB_QUEUE_REDIS_ADDR=redis:6379
+      - JOB_QUEUE_POSTGRES_DSN=postgres://queue:queue@postgres:5432/queue?sslmode=disable
+      - BILLING_WEBHOOK_URL=http://billing:8083/webhook
+    volumes:
+      - ./spike-prototype/orchestration/config/config.json:/etc/orchestration/config.json
+      - /run/containerd/containerd.sock:/run/containerd/containerd.sock
+    depends_on:
+      llm-router:
+        condition: service_healthy
+      llm-gateway:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8082/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    # Required for containerd/gVisor
+    privileged: true
+    pid: host
+
+  # Billing webhook receiver (for testing)
+  billing:
+    image: nginx:alpine
+    ports:
+      - "8083:80"
+    volumes:
+      - ./spike-prototype/billing/nginx.conf:/etc/nginx/nginx.conf:ro
+
+volumes:
+  redis-data:
+  postgres-data:

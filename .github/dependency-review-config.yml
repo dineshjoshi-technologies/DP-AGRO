@@ -1,0 +1,23 @@
+# Dependency Review Configuration
+# See: https://github.com/actions/dependency-review-action
+
+# Fail on high or critical vulnerabilities
+fail-on-severity: high
+
+# Allow specific vulnerabilities with justification
+allow-ghsas:
+  # Example: GHSA-xxxx-xxxx-xxxx: "Justification for allowing this vulnerability"
+  # GHSA-2qrg-3f96-8472: "Known issue in transitive dependency, no direct impact"
+
+# Ignore specific packages
+ignore-packages:
+  # Example: "lodash": "Known vulnerability in dev dependency only"
+
+# Configuration for specific ecosystems
+ecosystems:
+  npm:
+    # Ignore dev dependencies by default
+    ignore-dev-dependencies: true
+  pypi:
+    # Ignore dev dependencies by default
+    ignore-dev-dependencies: true
